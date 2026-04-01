@@ -1,3 +1,7 @@
+/* Regla de Oro: Evita que los elementos se desborden por su padding */
+* {
+  box-sizing: border-box;
+}
 :root {
   --font-main: 'Teko', sans-serif;
   --color-green: #388e3c;
