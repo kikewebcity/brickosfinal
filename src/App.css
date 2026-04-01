@@ -988,6 +988,36 @@ h4 {
   .right-col {
     align-items: center;
   }
+  /* =========================================
+   MEDIA QUERIES GLOBALES (RESPONSIVE)
+   ========================================= */
+  
+  /* Mantén tus reglas existentes de navbar... */
+
+  /* OPTIMIZACIÓN DE LA PORTADA (HERO SLIDER) PARA MÓVILES */
+  .hero-slider {
+    height: 60vh; /* Reducimos la altura para que el contenido de abajo suba */
+    background-color: #1a1a1a; /* Fondo oscuro de seguridad para el contraste del texto */
+  }
+
+  .slide {
+    background-size: cover; /* Asegura que la imagen de fondo cubra el espacio sin estirarse */
+    background-position: center; /* Centra la imagen en pantallas pequeñas */
+  }
+
+  /* El texto monumental se reduce para legibilidad, manteniendo su jerarquía */
+  .titulo-monumental-limpio {
+    font-size: 3.5rem; 
+    line-height: 1.1;
+    margin-bottom: 25px;
+  }
+
+  /* El botón de acción se ajusta a un tamaño de toque cómodo */
+  .boton-accion-aislado {
+    padding: 15px 35px;
+    font-size: 1.4rem;
+  }
+
 }
 /* =========================================
    RESTAURACIÓN DE VISTAS INTERNAS
