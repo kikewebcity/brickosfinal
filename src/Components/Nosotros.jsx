@@ -11,7 +11,7 @@ const Nosotros = () => {
           <div className="nosotros-caja-logo">
             {/* Se utiliza el logo original con colores corporativos sobre fondo blanco */}
             <img
-              src="assets/logobricko.png"
+              src="src/assets/logobricko.png"
               alt="Logo Bricko Original"
               className="nosotros-logo-color"
             />
