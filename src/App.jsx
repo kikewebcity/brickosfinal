@@ -192,14 +192,21 @@ function App() {
       </div>
 
      <nav className={`barra-navegacion ${scrolled ? 'navbar-scrolled' : ''}`}>
-  <div className="contenedor-logo" onClick={() => setVistaActual('inicio')} style={{ cursor: 'pointer' }}>
-    {/* El logo cambia según el estado del scroll para mantener el contraste */}
-    <img 
-      src={scrolled ? logoWhite : logoBricko} 
-      alt="Bricko" 
-      className="logo-img" 
-    />
-  </div>
+  <div 
+  className="contenedor-logo" 
+  onClick={() => {
+    setVistaActual('inicio');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }} 
+  style={{ cursor: 'pointer' }}
+>
+  {/* El motor de decisión visual */}
+  <img 
+    src={scrolled ? logoWhite : logoBricko} 
+    alt="Bricko" 
+    className="logo-img" 
+  />
+</div>
 
   <ul className={`enlaces-navegacion ${menuOpen ? 'activos' : ''}`}>
     {secciones.map((sec) => (
