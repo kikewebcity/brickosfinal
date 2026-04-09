@@ -4,21 +4,30 @@ import '../App.css';
 const Nosotros = () => {
   return (
     <div className="nosotros-pagina">
-      {/* BANNER INSTITUCIONAL: El primer contacto visual con la marca */}
-      <section className="nosotros-banner-verde">
-        <div className="nosotros-banner-contenido">
-          <img
-            src="/logo-blanco.png"
-            alt="Logo Bricko Blanco"
-            className="nosotros-logo-centro"
-          />
-          <p className="nosotros-banner-texto">
-            Nuestro slogan, La Revolución Ecológica en Construcción, encapsula
-            nuestra misión de transformar la industria mediante prácticas
-            innovadoras y productos eco amigables. En Bricko, estamos
-            comprometidos a liderar un cambio hacia métodos de construcción más
-            sostenibles y responsables con el medio ambiente.
-          </p>
+      {/* BANNER INSTITUCIONAL MODERNO: Diseño asimétrico con anclaje visual */}
+      <section className="nosotros-banner-moderno">
+        <div className="nosotros-banner-grid">
+          
+          <div className="nosotros-caja-logo">
+            {/* Se utiliza el logo original con colores corporativos sobre fondo blanco */}
+            <img
+              src="/logobricko.png"
+              alt="Logo Bricko Original"
+              className="nosotros-logo-color"
+            />
+          </div>
+
+          <div className="nosotros-caja-texto">
+            <div className="nosotros-fondo-verde-acento"></div>
+            <p className="nosotros-texto-formal">
+              Nuestro slogan, <strong>La Revolución Ecológica en Construcción</strong>, encapsula
+              nuestra misión de transformar la industria mediante prácticas
+              innovadoras y productos eco amigables. En Bricko, estamos
+              comprometidos a liderar un cambio hacia métodos de construcción más
+              sostenibles y responsables con el medio ambiente.
+            </p>
+          </div>
+
         </div>
       </section>
 
