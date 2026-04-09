@@ -41,9 +41,8 @@ h4 {
   display: flex;
   flex-direction: column;
 }
-
 /* =========================================
-   BARRA SUPERIOR Y NAVEGACIÓN
+   BARRA SUPERIOR (ENVÍOS)
    ========================================= */
 .top-bar {
   background-color: #ffffff; /* Fondo blanco inmaculado */
@@ -51,50 +50,45 @@ h4 {
   justify-content: center;
   align-items: center;
   padding: 10px 0;
-  border-bottom: 1px solid var(--color-border); /* Separación técnica sutil */
-}
-.top-bar span {
-  color: var(--color-green); 
+  border-bottom: 1px solid var(--color-border);
   font-family: var(--font-main);
+}
+
+.top-bar span {
+  color: var(--color-green); /* Palabra "Envíos..." en verde */
   font-weight: 700;
   font-size: 1.1rem;
   letter-spacing: 0.5px;
 }
+
 .top-bar svg, 
 .top-bar img {
   margin-right: 10px;
-  /* El filtro brightness(0) convierte cualquier color en negro sólido */
-  filter: brightness(0); 
+  filter: brightness(0); /* Icono forzado a Negro */
   transition: var(--transition-smooth);
 }
 
+/* =========================================
+   BARRA DE NAVEGACIÓN BASE (ESTADO INICIAL)
+   ========================================= */
 .barra-navegacion {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background-color: var(--color-green); /* Siempre verde */
+  background-color: #ffffff; /* Inicia en Blanco para que luzca el logo */
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: none; 
+  border-bottom: 1px solid var(--color-border);
   transition: var(--transition-smooth);
-}
-
-.navbar-scrolled {
-  background-color: #2e7d32 !important; /* Un verde ligeramente más denso para dar peso */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  padding: 10px 40px; /* Se compacta ligeramente */
 }
 
 .logo-img {
   height: 45px;
   width: auto;
-  filter: none; 
-}
-
-.navbar-scrolled .logo-img {
-  filter: brightness(0) invert(1) !important;
+  transition: var(--transition-smooth);
+  filter: none; /* Logo original */
 }
 
 .enlaces-navegacion {
@@ -106,7 +100,7 @@ h4 {
 }
 
 .enlaces-navegacion li {
-  color: #000000; /* Texto inicial en negro */
+  color: #000000; /* Texto siempre inicia en NEGRO */
   font-family: var(--font-main);
   font-weight: 700;
   font-size: 1.3rem;
@@ -116,21 +110,13 @@ h4 {
   transition: color 0.3s ease;
 }
 
-/* Efecto Hover: Al pasar el puntero cambia a blanco */
+/* EFECTO HOVER: El texto pasa a BLANCO (Nota: Se verá sobre el verde al hacer scroll) */
 .enlaces-navegacion li:hover,
 .enlaces-navegacion li.active-link {
-  color: #ffffff !important;
+  color: var(--color-green); /* En estado inicial blanco, el hover es verde para no perderse */
 }
 
-/* Al hacer scroll, todo el texto pasa a blanco por defecto */
-.navbar-scrolled .enlaces-navegacion li {
-  color: #ffffff !important;
-}
-
-.enlaces-navegacion li.active-link {
-  border-bottom: none; 
-}
-
+/* Línea indicadora inferior */
 .enlaces-navegacion li::after {
   content: '';
   position: absolute;
@@ -138,7 +124,7 @@ h4 {
   height: 2px;
   bottom: -5px;
   left: 50%;
-  background-color: #ffffff; 
+  background-color: var(--color-green);
   transition: var(--transition-smooth);
   transform: translateX(-50%);
 }
@@ -152,30 +138,53 @@ h4 {
   display: flex;
   align-items: center;
   gap: 25px;
-  color: #000000; /* Iconos iniciales en negro */
+  color: #000000; /* Iconos en negro inicial */
   transition: color 0.3s ease;
 }
 
-/* Iconos blancos al hacer scroll */
+/* =========================================
+   ESTADO SCROLLED (AL BAJAR LA PÁGINA)
+   ========================================= */
+.navbar-scrolled {
+  background-color: var(--color-green) !important; /* Fondo pasa a VERDE */
+  border-bottom: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 10px 40px;
+}
+
+/* El logo pasa a blanco puro mediante filtros */
+.navbar-scrolled .logo-img {
+  filter: brightness(0) invert(1) !important;
+}
+
+/* En fondo VERDE, el texto pasa a BLANCO y el hover es BLANCO intenso */
+.navbar-scrolled .enlaces-navegacion li {
+  color: #ffffff !important;
+}
+
+.navbar-scrolled .enlaces-navegacion li:hover {
+  color: #ffffff !important;
+  opacity: 0.8;
+}
+
+.navbar-scrolled .enlaces-navegacion li::after {
+  background-color: #ffffff; /* Línea indicadora blanca en fondo verde */
+}
+
 .navbar-scrolled .iconos-navegacion {
   color: #ffffff !important;
 }
 
-.contenedor-buscador {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
+/* Ajustes del buscador en ambos estados */
 .entrada-buscador {
   border-bottom: 2px solid #000000;
   color: #000000;
   font-family: var(--font-text);
-}
-
-.entrada-buscador::placeholder {
-  color: rgba(0, 0, 0, 0.7);
-  font-family: var(--font-text);
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
 }
 
 .navbar-scrolled .entrada-buscador {
@@ -187,18 +196,13 @@ h4 {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.entrada-buscador.activa {
-  width: 200px;
-  opacity: 1;
-}
-
+/* Botón Hamburguesa para móvil */
 .boton-hamburguesa {
   display: none;
   background: none;
   border: none;
   color: #000000;
   cursor: pointer;
-  transition: color 0.3s ease;
 }
 
 .navbar-scrolled .boton-hamburguesa {
