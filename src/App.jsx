@@ -12,6 +12,7 @@ import Ventaja from './Components/Ventaja';
 import FaqsProductos from './Components/FaqsProductos';
 
 import { Search, ShoppingCart, Truck } from 'lucide-react';
+import logoBricko from './assets/logobricko.png';
 import logoWhite from './assets/logowhite.png';
 import iconYt from './assets/iconoyoutube.png';
 import iconInsta from './assets/iconoinstagram.png';
@@ -27,6 +28,7 @@ function App() {
   const heroImages = ['/oficina.png', '/banop.jpg', '/murorecamara.png'];
 
   const secciones = [
+    { id: 'inicio', label: 'Inicio' },
     { id: 'nosotros', label: 'Quienes Somos' },
     { id: 'productos', label: 'Productos' },
     { id: 'ventaja', label: 'Ventaja' },
@@ -189,29 +191,32 @@ function App() {
         <span>Envíos a todo el país</span>
       </div>
 
-      <nav className={`barra-navegacion ${scrolled ? 'navbar-scrolled' : ''}`}>
-        <div
-          className="contenedor-logo"
-          onClick={() => setVistaActual('inicio')}
-          style={{ cursor: 'pointer' }}
-        >
-          <img src={logoWhite} alt="Bricko" className="logo-img" />
-        </div>
+     <nav className={`barra-navegacion ${scrolled ? 'navbar-scrolled' : ''}`}>
+  <div className="contenedor-logo" onClick={() => setVistaActual('inicio')} style={{ cursor: 'pointer' }}>
+    {/* El logo cambia según el estado del scroll para mantener el contraste */}
+    <img 
+      src={scrolled ? logoWhite : logoBricko} 
+      alt="Bricko" 
+      className="logo-img" 
+    />
+  </div>
 
-        <ul className={`enlaces-navegacion ${menuOpen ? 'activos' : ''}`}>
-          {secciones.map((sec) => (
-            <li
-              key={sec.id}
-              className={vistaActual === sec.id ? 'active-link' : ''}
-              onClick={() => {
-                setVistaActual(sec.id);
-                setMenuOpen(false);
-              }}
-            >
-              {sec.label}
-            </li>
-          ))}
-        </ul>
+  <ul className={`enlaces-navegacion ${menuOpen ? 'activos' : ''}`}>
+    {secciones.map((sec) => (
+      <li
+        key={sec.id}
+        className={vistaActual === sec.id ? 'active-link' : ''}
+        onClick={() => { 
+          setVistaActual(sec.id); 
+          setMenuOpen(false); 
+          // Si es inicio, hacemos scroll al tope
+          if(sec.id === 'inicio') window.scrollTo({top: 0, behavior: 'smooth'});
+        }}
+      >
+        {sec.label}
+      </li>
+    ))}
+  </ul>
 
         <div className="iconos-navegacion">
           <div className="contenedor-buscador">
