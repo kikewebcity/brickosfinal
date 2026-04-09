@@ -60,6 +60,13 @@ h4 {
   font-size: 1.1rem;
   letter-spacing: 0.5px;
 }
+.top-bar svg, 
+.top-bar img {
+  margin-right: 10px;
+  /* El filtro brightness(0) convierte cualquier color en negro sólido */
+  filter: brightness(0); 
+  transition: var(--transition-smooth);
+}
 
 .barra-navegacion {
   display: flex;
