@@ -59,26 +59,21 @@ h4 {
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
- background-color: var(--color-green); 
+  background-color: var(--color-green); /* Siempre verde */
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+  border-bottom: none; 
   transition: var(--transition-smooth);
 }
 .navbar-scrolled {
-  background-color: var(--color-green) !important;
-  border-bottom: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-
-
 
 .logo-img {
   height: 45px;
   width: auto;
   filter: none; 
-  transition: var(--transition-smooth);
 }
 
 .navbar-scrolled .logo-img {
@@ -96,15 +91,20 @@ h4 {
 .navbar-scrolled .enlaces-navegacion li {
   color: #ffffff !important;
 }
-
 .enlaces-navegacion li {
-  color: #ffffff; 
+  color: #ffffff; /* Texto siempre blanco */
   font-family: var(--font-main);
   font-weight: 700;
   font-size: 1.3rem;
+  letter-spacing: 1px;
   cursor: pointer;
   position: relative;
 }
+
+.enlaces-navegacion li.active-link {
+  border-bottom: none; /* Quitamos el borde viejo */
+}
+
 .enlaces-navegacion li::after {
   content: '';
   position: absolute;
@@ -112,7 +112,7 @@ h4 {
   height: 2px;
   bottom: -5px;
   left: 50%;
-  background-color: #ffffff; /* Siempre blanca para ambos estados */
+  background-color: #ffffff; 
   transition: var(--transition-smooth);
   transform: translateX(-50%);
 }
@@ -133,9 +133,11 @@ h4 {
 }
 
 .iconos-navegacion {
-  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  color: #ffffff; /* Iconos siempre blancos */
 }
-
 .navbar-scrolled .iconos-navegacion,
 .navbar-scrolled .boton-icono {
   color: #ffffff !important;
@@ -150,6 +152,9 @@ h4 {
 .entrada-buscador {
   border-bottom: 2px solid #ffffff;
   color: #ffffff;
+}
+.entrada-buscador::placeholder {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .navbar-scrolled .entrada-buscador {
