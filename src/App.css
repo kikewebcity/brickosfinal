@@ -2,8 +2,10 @@
 * {
   box-sizing: border-box;
 }
+
 :root {
   --font-main: 'Teko', sans-serif;
+  --font-text: 'Roboto', sans-serif; /* Nueva tipografía principal para lectura */
   --color-green: #388e3c;
   --color-dark: #1a1a1a;
   --color-light: #f4f4f4;
@@ -17,7 +19,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-text);
   background-color: #ffffff;
   color: var(--color-dark);
   overflow-x: hidden;
@@ -66,6 +68,7 @@ h4 {
   border-bottom: none; 
   transition: var(--transition-smooth);
 }
+
 .navbar-scrolled {
   background-color: #2e7d32 !important; /* Un verde ligeramente más denso para dar peso */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -75,7 +78,7 @@ h4 {
 .logo-img {
   height: 45px;
   width: auto;
-  filter: none; /* Se asume que logobricko.png ya tiene los colores de marca correctos */
+  filter: none; 
 }
 
 .navbar-scrolled .logo-img {
@@ -90,11 +93,8 @@ h4 {
   padding: 0;
 }
 
-.navbar-scrolled .enlaces-navegacion li {
-  color: #ffffff !important;
-}
 .enlaces-navegacion li {
-  color: #000000; /* CAMBIO: Texto inicial en negro */
+  color: #000000; /* Texto inicial en negro */
   font-family: var(--font-main);
   font-weight: 700;
   font-size: 1.3rem;
@@ -104,8 +104,19 @@ h4 {
   transition: color 0.3s ease;
 }
 
+/* Efecto Hover: Al pasar el puntero cambia a blanco */
+.enlaces-navegacion li:hover,
 .enlaces-navegacion li.active-link {
-  border-bottom: none; /* Quitamos el borde viejo */
+  color: #ffffff !important;
+}
+
+/* Al hacer scroll, todo el texto pasa a blanco por defecto */
+.navbar-scrolled .enlaces-navegacion li {
+  color: #ffffff !important;
+}
+
+.enlaces-navegacion li.active-link {
+  border-bottom: none; 
 }
 
 .enlaces-navegacion li::after {
@@ -125,23 +136,17 @@ h4 {
   width: 100%;
 }
 
-.navbar-scrolled .enlaces-navegacion li::after {
-  background-color: #ffffff;
-}
-
-.enlaces-navegacion li:hover,
-.navbar-scrolled .enlaces-navegacion li:hover {
-  color: inherit !important;
-  opacity: 0.8;
-}
-
 .iconos-navegacion {
-  color: #000000;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  color: #000000; /* Iconos iniciales en negro */
   transition: color 0.3s ease;
 }
 
+/* Iconos blancos al hacer scroll */
 .navbar-scrolled .iconos-navegacion {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .contenedor-buscador {
@@ -153,9 +158,12 @@ h4 {
 .entrada-buscador {
   border-bottom: 2px solid #000000;
   color: #000000;
+  font-family: var(--font-text);
 }
+
 .entrada-buscador::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.7);
+  font-family: var(--font-text);
 }
 
 .navbar-scrolled .entrada-buscador {
@@ -176,8 +184,9 @@ h4 {
   display: none;
   background: none;
   border: none;
-  color: var(--color-green);
+  color: #000000;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .navbar-scrolled .boton-hamburguesa {
@@ -272,7 +281,7 @@ h4 {
   font-size: 2.5rem;
   line-height: 1.4;
   font-weight: 400;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: var(--font-text);
   text-transform: none;
 }
 
@@ -315,13 +324,14 @@ h4 {
 }
 
 .subtitulo-seccion-limpio {
-  text-align: center;
+  text-align: justify; /* Justificado */
   font-size: 1.1rem;
   color: #666;
   margin-bottom: 60px;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  font-family: var(--font-text);
 }
 
 .reveal-header,
@@ -424,10 +434,12 @@ h4 {
 }
 
 .feature-paragraph {
+  font-family: var(--font-text);
   font-size: 1.15rem;
   color: #555555;
   line-height: 1.6;
   margin: 0;
+  text-align: justify; /* Justificado */
 }
 
 /* =========================================
@@ -503,6 +515,7 @@ h4 {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 1.1rem;
+  font-family: var(--font-text);
 }
 
 .custom-range {
@@ -536,6 +549,7 @@ h4 {
   display: block;
   color: #666;
   margin-top: -5px;
+  font-family: var(--font-text);
 }
 
 .calc-cta {
@@ -648,10 +662,12 @@ h4 {
 }
 
 .faq-respuesta {
+  font-family: var(--font-text);
   font-size: 1.05rem;
   color: #555555;
   line-height: 1.6;
   margin: 0;
+  text-align: justify; /* Justificado */
 }
 
 /* =========================================
@@ -705,10 +721,12 @@ h4 {
 }
 
 .slide-parrafo {
+  font-family: var(--font-text);
   color: #555555;
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 30px;
+  text-align: justify; /* Justificado */
 }
 
 .slide-enlace-cta {
@@ -747,9 +765,11 @@ h4 {
 .descripcion-cabecera-tecnica {
   max-width: 800px;
   margin: 0 auto;
+  font-family: var(--font-text);
   font-size: 1.2rem;
   color: #eaeded;
   line-height: 1.6;
+  text-align: justify; /* Justificado */
 }
 
 .contacto-grid-principal {
@@ -773,6 +793,7 @@ h4 {
 }
 
 .contacto-etiqueta {
+  font-family: var(--font-text);
   font-size: 0.9rem;
   color: #888888;
   letter-spacing: 1px;
@@ -814,6 +835,7 @@ h4 {
 }
 
 .form-etiqueta {
+  font-family: var(--font-text);
   font-size: 0.95rem;
   color: #555555;
   font-weight: 600;
@@ -825,6 +847,7 @@ h4 {
   padding: 15px;
   border: 1px solid #cccccc;
   border-radius: 6px;
+  font-family: var(--font-text);
   font-size: 1rem;
   box-sizing: border-box;
   transition: border-color 0.3s ease;
@@ -925,97 +948,6 @@ h4 {
 }
 
 /* =========================================
-   MEDIA QUERIES (RESPONSIVE)
-   ========================================= */
-@media (max-width: 900px) {
-  .barra-navegacion {
-    padding: 15px 20px;
-  }
-
-  .enlaces-navegacion {
-    position: absolute;
-    top: 100%;
-    left: -100%;
-    width: 100%;
-    background: #ffffff;
-    flex-direction: column;
-    padding: 30px;
-    transition: 0.4s;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  }
-
-  .enlaces-navegacion.activos {
-    left: 0;
-  }
-
-  .boton-hamburguesa {
-    display: block;
-  }
-
-  .titulo-monumental-limpio {
-    font-size: 4rem;
-  }
-
-  .features-main-grid,
-  .calc-main-layout,
-  .carrusel-inspiracion-home,
-  .contacto-grid-principal {
-    flex-direction: column;
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .calc-dark-panel {
-    width: 100%;
-    padding: 30px;
-  }
-
-  .inspiracion-slide-imagen {
-    height: 300px;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    gap: 40px;
-    text-align: center;
-  }
-
-  .left-col,
-  .right-col {
-    align-items: center;
-  }
-  /* =========================================
-   MEDIA QUERIES GLOBALES (RESPONSIVE)
-   ========================================= */
-  
-  /* Mantén tus reglas existentes de navbar... */
-
-  /* OPTIMIZACIÓN DE LA PORTADA (HERO SLIDER) PARA MÓVILES */
-  .hero-slider {
-    height: 60vh; /* Reducimos la altura para que el contenido de abajo suba */
-    background-color: #1a1a1a; /* Fondo oscuro de seguridad para el contraste del texto */
-  }
-
-  .slide {
-    background-size: cover; /* Asegura que la imagen de fondo cubra el espacio sin estirarse */
-    background-position: center; /* Centra la imagen en pantallas pequeñas */
-  }
-
-  /* El texto monumental se reduce para legibilidad, manteniendo su jerarquía */
-  .titulo-monumental-limpio {
-    font-size: 3.5rem; 
-    line-height: 1.1;
-    margin-bottom: 25px;
-  }
-
-  /* El botón de acción se ajusta a un tamaño de toque cómodo */
-  .boton-accion-aislado {
-    padding: 15px 35px;
-    font-size: 1.4rem;
-  }
-
-}
-/* =========================================
    RESTAURACIÓN DE VISTAS INTERNAS
    ========================================= */
 
@@ -1029,20 +961,6 @@ h4 {
   text-align: center;
   padding: 80px 20px;
   background-color: #f8f9fa;
-}
-
-.titulo-seccion-productos {
-  font-size: 4.5rem;
-  color: var(--color-dark);
-  margin-bottom: 20px;
-}
-
-.descripcion-cabecera-tecnica {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #555555;
 }
 
 .productos-grid-principal {
@@ -1076,6 +994,12 @@ h4 {
   margin-bottom: 15px;
 }
 
+.mini-tabla-datos p {
+  font-family: var(--font-text);
+  color: #666;
+  margin: 5px 0;
+}
+
 /* PÁGINA NOSOTROS */
 .nosotros-pagina {
   width: 100%;
@@ -1096,11 +1020,12 @@ h4 {
 
 .nosotros-banner-texto {
   color: #ffffff;
-  font-family: var(--font-main);
-  font-size: 1.8rem;
+  font-family: var(--font-text); /* Cambiado a Roboto */
+  font-size: 1.2rem; /* Ajustado el tamaño para la nueva tipografía */
   max-width: 1000px;
   margin: 0 auto;
-  line-height: 1.3;
+  line-height: 1.5;
+  text-align: justify; /* Justificado */
 }
 
 .nosotros-zigzag-contenedor {
@@ -1123,11 +1048,12 @@ h4 {
 }
 
 .zigzag-parrafo {
-  font-family: var(--font-main);
-  font-size: 1.8rem;
-  line-height: 1.2;
+  font-family: var(--font-text); /* Cambiado a Roboto */
+  font-size: 1.15rem; /* Ajuste de escala */
+  line-height: 1.6;
   color: var(--color-dark);
   margin-bottom: 25px;
+  text-align: justify; /* Justificado */
 }
 
 .zigzag-imagen {
@@ -1146,6 +1072,11 @@ h4 {
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.zigzag-imagen img:hover {
+  transform: scale(1.02);
 }
 
 .nosotros-pilares-contenedor {
@@ -1166,6 +1097,34 @@ h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid var(--color-border);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.pilar-tarjeta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(56, 142, 60, 0.08);
+  border-color: rgba(56, 142, 60, 0.3);
+}
+
+.pilar-icono-caja {
+  height: 90px;
+  width: 90px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pilar-icono-caja img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.pilar-tarjeta:hover .pilar-icono-caja img {
+  transform: scale(1.1);
 }
 
 .pilar-titulo-valor {
@@ -1176,11 +1135,12 @@ h4 {
 }
 
 .pilar-descripcion {
-  font-family: sans-serif;
+  font-family: var(--font-text);
   color: #444444;
   font-size: 1.1rem;
-  line-height: 1.4;
+  line-height: 1.5;
   margin: 0;
+  text-align: justify; /* Justificado */
 }
 
 /* PÁGINA VENTAJA COMPETITIVA */
@@ -1215,23 +1175,23 @@ h4 {
   z-index: 10;
 }
 
-.ventaja-tarjeta-bloque:hover {
-  transform: translateY(-10px);
-  border-color: var(--color-green);
-  box-shadow: 0 20px 40px rgba(56, 142, 60, 0.1); /* Brillo verde sutil */
-}
-
 .ventaja-tarjeta-bloque {
   background-color: #ffffff;
   border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 40px;
   position: relative;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); /* Transición de alta ingeniería */
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); 
   overflow: hidden;
   cursor: pointer;
   display: flex;
   flex-direction: column;
+}
+
+.ventaja-tarjeta-bloque:hover {
+  transform: translateY(-10px);
+  border-color: var(--color-green);
+  box-shadow: 0 20px 40px rgba(56, 142, 60, 0.1);
 }
 
 .ventaja-icono-cabecera {
@@ -1246,16 +1206,15 @@ h4 {
 .ventaja-numero {
   font-family: var(--font-main);
   font-size: 3.5rem;
-  color: #eaeded; /* Color tenue por defecto */
+  color: #eaeded; 
   transition: color 0.4s ease;
   line-height: 1;
 }
 
 .ventaja-tarjeta-bloque:hover .ventaja-numero {
-  color: var(--color-green); /* El número cobra vida al interactuar */
+  color: var(--color-green);
 }
 
-/* Línea de acento que aparece al pasar el puntero */
 .ventaja-tarjeta-bloque::before {
   content: '';
   position: absolute;
@@ -1264,7 +1223,9 @@ h4 {
   width: 4px;
   height: 0;
   background-color: var(--color-green);
+  transition: height 0.4s ease-in-out;
 }
+
 .ventaja-tarjeta-bloque:hover::before {
   height: 100%;
 }
@@ -1277,11 +1238,12 @@ h4 {
 }
 
 .ventaja-texto-tarjeta {
-  font-family: sans-serif;
+  font-family: var(--font-text);
   font-size: 1.05rem;
   color: #555555;
   line-height: 1.6;
   margin: 0;
+  text-align: justify; /* Justificado */
 }
 
 /* PÁGINA APLICACIONES */
@@ -1305,12 +1267,13 @@ h4 {
 }
 
 .aplicaciones-descripcion-hero {
-  font-family: sans-serif;
+  font-family: var(--font-text);
   font-size: 1.2rem;
   color: #eaeded;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
+  text-align: justify; /* Justificado */
 }
 
 .aplicaciones-galeria-seccion {
@@ -1344,6 +1307,11 @@ h4 {
   width: 100%;
   height: 500px;
   object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.aplicacion-imagen-caja:hover .aplicacion-img {
+  transform: scale(1.03);
 }
 
 .aplicacion-texto-caja {
@@ -1368,10 +1336,11 @@ h4 {
 }
 
 .aplicacion-parrafo {
-  font-family: sans-serif;
+  font-family: var(--font-text);
   font-size: 1.1rem;
   color: #555555;
   line-height: 1.7;
+  text-align: justify; /* Justificado */
 }
 
 .aplicaciones-cierre-tecnico {
@@ -1389,39 +1358,14 @@ h4 {
 }
 
 .cierre-tecnico-texto {
-  font-family: sans-serif;
+  font-family: var(--font-text);
   font-size: 1.1rem;
   color: #666666;
   max-width: 700px;
   margin: 0 auto;
+  text-align: justify; /* Justificado */
 }
 
-/* RESPONSIVE PARA VISTAS INTERNAS */
-@media (min-width: 900px) {
-  .zigzag-fila {
-    flex-direction: row;
-  }
-  .zigzag-fila.reversa {
-    flex-direction: row-reverse;
-  }
-}
-
-@media (max-width: 900px) {
-  .aplicacion-bloque,
-  .aplicacion-bloque.reversa {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .aplicacion-img {
-    height: 350px;
-  }
-
-  .ventaja-grid-contenedor,
-  .nosotros-pilares-contenedor {
-    grid-template-columns: 1fr;
-  }
-}
 /* TABLA COMPARATIVA DE RENDIMIENTO */
 .seccion-tabla-comparativa {
   max-width: 1100px;
@@ -1445,7 +1389,7 @@ h4 {
 .tabla-bricko-vs-tradicional {
   width: 100%;
   border-collapse: collapse;
-  font-family: sans-serif;
+  font-family: var(--font-text);
   background-color: #ffffff;
 }
 
@@ -1476,7 +1420,6 @@ h4 {
   width: 100%;
   height: 70vh;
   min-height: 500px;
-  /* Asegurate de poner el nombre exacto de tu imagen aqui */
   background-image: url(/murorecamara.png);
   background-size: cover;
   background-position: center;
@@ -1517,12 +1460,14 @@ h4 {
 }
 
 .parrafo-extension {
-  font-family: sans-serif;
-  font-size: 1.25rem;
+  font-family: var(--font-text);
+  font-size: 1.15rem;
   line-height: 1.6;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
   color: #f4f4f4;
+  text-align: justify; /* Justificado */
 }
+
 /* =========================================
    SECCIÓN ESTÁTICA DE ACTUALIDAD TÉCNICA
    ========================================= */
@@ -1547,7 +1492,7 @@ h4 {
 }
 
 .noticias-subtitulo {
-  font-family: sans-serif;
+  font-family: var(--font-text);
   font-size: 1.1rem;
   color: #555555;
   line-height: 1.6;
@@ -1612,8 +1557,8 @@ h4 {
 }
 
 .noticia-titular {
-  font-family: sans-serif;
-  font-size: 1.35rem;
+  font-family: var(--font-text);
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--color-dark);
   margin-bottom: 15px;
@@ -1621,155 +1566,112 @@ h4 {
 }
 
 .noticia-extracto {
-  font-family: sans-serif;
+  font-family: var(--font-text);
   font-size: 1rem;
   color: #666666;
   line-height: 1.6;
   margin: 0;
+  text-align: justify; /* Justificado */
 }
 
 /* =========================================
-   RESTAURACIÓN: PÁGINA QUIENES SOMOS (NOSOTROS)
+   MEDIA QUERIES GLOBALES (RESPONSIVE)
    ========================================= */
-.nosotros-pagina {
-  width: 100%;
-  background-color: #ffffff;
+@media (min-width: 900px) {
+  .zigzag-fila {
+    flex-direction: row;
+  }
+  .zigzag-fila.reversa {
+    flex-direction: row-reverse;
+  }
 }
 
-.nosotros-banner-verde {
-  background: var(--color-green);
-  padding: 80px 20px;
-  text-align: center;
-}
+@media (max-width: 900px) {
+  .barra-navegacion {
+    padding: 15px 20px;
+  }
 
-.nosotros-logo-centro {
-  height: 90px;
-  margin-bottom: 30px;
-  object-fit: contain;
-}
+  .enlaces-navegacion {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 30px;
+    transition: transform 0.4s ease-in-out;
+    transform: translateX(-100%);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
 
-.nosotros-banner-texto {
-  color: #ffffff;
-  font-family: var(--font-main);
-  font-size: 1.8rem;
-  max-width: 1000px;
-  margin: 0 auto;
-  line-height: 1.3;
-}
+  .enlaces-navegacion.activos {
+    transform: translateX(0);
+    left: 0;
+  }
 
-/* Estructura Zig-Zag de la narrativa */
-.nosotros-zigzag-contenedor {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 100px 20px;
-}
+  .boton-hamburguesa {
+    display: block;
+  }
 
-.zigzag-fila {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 60px;
-  margin-bottom: 100px;
-}
+  .hero-slider {
+    height: 60vh; 
+    background-color: #1a1a1a; 
+  }
 
-.zigzag-texto {
-  flex: 1;
-  padding: 0 20px;
-}
+  .slide {
+    background-size: cover; 
+    background-position: center; 
+  }
 
-.zigzag-parrafo {
-  font-family: var(--font-main);
-  font-size: 1.8rem;
-  line-height: 1.2;
-  color: var(--color-dark);
-  margin-bottom: 25px;
-}
+  .titulo-monumental-limpio {
+    font-size: 3.5rem; 
+    line-height: 1.1;
+    margin-bottom: 25px;
+  }
 
-.zigzag-imagen {
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .boton-accion-aislado {
+    padding: 15px 35px;
+    font-size: 1.4rem;
+  }
 
-.zigzag-imagen img {
-  max-width: 550px;
-  max-height: 450px;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-}
+  .features-main-grid,
+  .calc-main-layout,
+  .carrusel-inspiracion-home,
+  .contacto-grid-principal {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
-.zigzag-imagen img:hover {
-  transform: scale(1.02);
-}
+  .calc-dark-panel {
+    width: 100%;
+    padding: 30px;
+  }
 
-/* Cuadrícula de Pilares Corporativos (Corrección del colapso) */
-.nosotros-pilares-contenedor {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px 100px 20px;
-}
+  .inspiracion-slide-imagen,
+  .aplicacion-img {
+    height: 300px;
+  }
 
-.pilar-tarjeta {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 50px 30px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid var(--color-border);
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-}
+  .aplicacion-bloque,
+  .aplicacion-bloque.reversa {
+    flex-direction: column;
+    gap: 40px;
+  }
 
-.pilar-tarjeta:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(56, 142, 60, 0.08);
-  border-color: rgba(56, 142, 60, 0.3);
-}
+  .ventaja-grid-contenedor,
+  .nosotros-pilares-contenedor {
+    grid-template-columns: 1fr;
+  }
 
-/* Contención estricta para los iconos desbordados */
-.pilar-icono-caja {
-  height: 90px;
-  width: 90px;
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .footer-container {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
 
-.pilar-icono-caja img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  transition: transform 0.5s ease;
-}
-
-.pilar-tarjeta:hover .pilar-icono-caja img {
-  transform: scale(1.1);
-}
-
-.pilar-titulo-valor {
-  font-family: var(--font-main);
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: var(--color-dark);
-  line-height: 1;
-}
-
-.pilar-descripcion {
-  font-family: sans-serif;
-  color: #555555;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  margin: 0;
+  .left-col,
+  .right-col {
+    align-items: center;
+  }
 }
