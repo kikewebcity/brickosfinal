@@ -67,13 +67,15 @@ h4 {
   transition: var(--transition-smooth);
 }
 .navbar-scrolled {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #2e7d32 !important; /* Un verde ligeramente más denso para dar peso */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 10px 40px; /* Se compacta ligeramente */
 }
 
 .logo-img {
   height: 45px;
   width: auto;
-  filter: none; 
+  filter: none; /* Se asume que logobricko.png ya tiene los colores de marca correctos */
 }
 
 .navbar-scrolled .logo-img {
@@ -92,13 +94,14 @@ h4 {
   color: #ffffff !important;
 }
 .enlaces-navegacion li {
-  color: #ffffff; /* Texto siempre blanco */
+  color: #000000; /* CAMBIO: Texto inicial en negro */
   font-family: var(--font-main);
   font-weight: 700;
   font-size: 1.3rem;
   letter-spacing: 1px;
   cursor: pointer;
   position: relative;
+  transition: color 0.3s ease;
 }
 
 .enlaces-navegacion li.active-link {
@@ -133,14 +136,12 @@ h4 {
 }
 
 .iconos-navegacion {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  color: #ffffff; /* Iconos siempre blancos */
+  color: #000000;
+  transition: color 0.3s ease;
 }
-.navbar-scrolled .iconos-navegacion,
-.navbar-scrolled .boton-icono {
-  color: #ffffff !important;
+
+.navbar-scrolled .iconos-navegacion {
+  color: #ffffff;
 }
 
 .contenedor-buscador {
@@ -150,8 +151,8 @@ h4 {
 }
 
 .entrada-buscador {
-  border-bottom: 2px solid #ffffff;
-  color: #ffffff;
+  border-bottom: 2px solid #000000;
+  color: #000000;
 }
 .entrada-buscador::placeholder {
   color: rgba(255, 255, 255, 0.7);
