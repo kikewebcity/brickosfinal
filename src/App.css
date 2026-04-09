@@ -59,26 +59,25 @@ h4 {
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background-color: #ffffff;
+  background-color: var(--color-dark); /* CAMBIO: Ahora inicia en Negro */
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 2px solid var(--color-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
   transition: var(--transition-smooth);
 }
-
 .navbar-scrolled {
   background-color: var(--color-green) !important;
   border-bottom: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
+
 
 .logo-img {
   height: 45px;
   width: auto;
-  filter: brightness(0) saturate(100%) invert(29%) sepia(85%) saturate(1637%)
-    hue-rotate(97deg) brightness(97%) contrast(105%);
-  cursor: pointer;
+  filter: none; 
   transition: var(--transition-smooth);
 }
 
@@ -94,20 +93,18 @@ h4 {
   padding: 0;
 }
 
-.enlaces-navegacion li {
-  position: relative;
-  color: var(--color-green);
-  font-family: var(--font-main);
-  font-weight: 700;
-  font-size: 1.3rem;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-
 .navbar-scrolled .enlaces-navegacion li {
   color: #ffffff !important;
 }
 
+.enlaces-navegacion li {
+  color: #ffffff; 
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 1.3rem;
+  cursor: pointer;
+  position: relative;
+}
 .enlaces-navegacion li::after {
   content: '';
   position: absolute;
@@ -115,8 +112,8 @@ h4 {
   height: 2px;
   bottom: -5px;
   left: 50%;
-  background-color: var(--color-green);
-  transition: all 0.3s ease-in-out;
+  background-color: #ffffff; /* Siempre blanca para ambos estados */
+  transition: var(--transition-smooth);
   transform: translateX(-50%);
 }
 
@@ -136,10 +133,7 @@ h4 {
 }
 
 .iconos-navegacion {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  color: var(--color-green);
+  color: #ffffff;
 }
 
 .navbar-scrolled .iconos-navegacion,
@@ -154,16 +148,8 @@ h4 {
 }
 
 .entrada-buscador {
-  width: 0;
-  opacity: 0;
-  border: none;
-  border-bottom: 2px solid var(--color-green);
-  outline: none;
-  padding: 5px;
-  transition: all 0.4s ease;
-  position: absolute;
-  right: 35px;
-  background: transparent;
+  border-bottom: 2px solid #ffffff;
+  color: #ffffff;
 }
 
 .navbar-scrolled .entrada-buscador {
