@@ -46,14 +46,19 @@ h4 {
    BARRA SUPERIOR Y NAVEGACIÓN
    ========================================= */
 .top-bar {
-  background-color: var(--color-green);
-  color: #ffffff;
+  background-color: #ffffff; 
+  color: var(--color-dark); 
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px 0;
   font-family: var(--font-main);
   font-size: 1rem;
+}
+.top-bar svg,
+.top-bar .icon {
+  color: var(--color-green); 
+  margin-right: 8px;
 }
 
 .barra-navegacion {
