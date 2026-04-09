@@ -45,7 +45,7 @@ h4 {
    BARRA SUPERIOR (ENVÍOS)
    ========================================= */
 .top-bar {
-  background-color: #ffffff; /* Fondo blanco inmaculado */
+  background-color: #fffff; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +55,7 @@ h4 {
 }
 
 .top-bar span {
-  color: var(--color-green); /* Palabra "Envíos..." en verde */
+  color: #fffff; 
   font-weight: 700;
   font-size: 1.1rem;
   letter-spacing: 0.5px;
