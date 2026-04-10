@@ -19,7 +19,7 @@ const Inspiracion = () => {
         <div className="aplicacion-bloque">
           <div className="aplicacion-imagen-caja">
             <img
-              src="/oficina.png"
+              src="/oficina.webp"
               alt="Muros Bricko en espacios corporativos"
               className="aplicacion-img"
             />
@@ -45,7 +45,7 @@ const Inspiracion = () => {
         <div className="aplicacion-bloque reversa">
           <div className="aplicacion-imagen-caja">
             <img
-              src="/recamara.png"
+              src="/recamara.webp"
               alt="Muros Bricko en interiores residenciales"
               className="aplicacion-img"
             />
@@ -71,7 +71,7 @@ const Inspiracion = () => {
         <div className="aplicacion-bloque">
           <div className="aplicacion-imagen-caja">
             <img
-              src="/equipo.png"
+              src="/equipo.webp"
               alt="Muros Bricko en escenografía y teatro"
               className="aplicacion-img"
             />
