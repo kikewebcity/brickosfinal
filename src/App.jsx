@@ -25,7 +25,7 @@ function App() {
   const [vistaActual, setVistaActual] = useState('inicio');
   const [scrolled, setScrolled] = useState(false);
 
-  const heroImages = ['/oficina.png', '/banop.jpg', '/murorecamara.png'];
+  const heroImages = ['/oficina.webp', '/banop.webp', '/murorecamara.webp'];
 
   const secciones = [
     { id: 'inicio', label: 'Inicio' },
