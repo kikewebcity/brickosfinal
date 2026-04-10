@@ -4,14 +4,11 @@ import '../App.css';
 const Nosotros = () => {
   return (
     <div className="nosotros-pagina">
-      {/* BANNER INSTITUCIONAL MODERNO: Diseño asimétrico con anclaje visual */}
       <section className="nosotros-banner-moderno">
         <div className="nosotros-banner-grid">
-          
           <div className="nosotros-caja-logo">
-            {/* Se utiliza el logo original con colores corporativos sobre fondo blanco */}
             <img
-              src="/assets/logobricko.png"
+              src="/src/assets/logobricko.png"
               alt="Logo Bricko Original"
               className="nosotros-logo-color"
             />
@@ -20,18 +17,16 @@ const Nosotros = () => {
           <div className="nosotros-caja-texto">
             <div className="nosotros-fondo-verde-acento"></div>
             <p className="nosotros-texto-formal">
-              Nuestro slogan, <strong>La Revolución Ecológica en Construcción</strong>, encapsula
-              nuestra misión de transformar la industria mediante prácticas
-              innovadoras y productos eco amigables. En Bricko, estamos
-              comprometidos a liderar un cambio hacia métodos de construcción más
-              sostenibles y responsables con el medio ambiente.
+              Nuestro slogan,{' '}
+              <strong>La Revolución Ecológica en Construcción</strong>,
+              encapsula nuestra misión de transformar la industria mediante
+              prácticas innovadoras y productos eco amigables. En Bricko,
+              estamos comprometidos a liderar un cambio hacia métodos de
+              construcción más sostenibles y responsables con el medio ambiente.
             </p>
           </div>
-
         </div>
       </section>
-
-      {/* NARRATIVA EN ZIG-ZAG: Equilibrio entre texto e imagen */}
       <section className="nosotros-zigzag-contenedor">
         <div className="zigzag-fila">
           <div className="zigzag-texto">
