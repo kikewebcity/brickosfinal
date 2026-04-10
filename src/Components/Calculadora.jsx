@@ -8,9 +8,9 @@ const Calculadora = () => {
   const [total, setTotal] = useState(0);
 
   const imagenesEstructura = {
-    muro: '/muro.png',
-    barra: '/barra.png',
-    columna: '/columna.png',
+  muro: '/muro.webp',    
+  columna: '/columna.webp', 
+  barra: '/barra.webp'    
   };
 
   useEffect(() => {
