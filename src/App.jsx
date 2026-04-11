@@ -156,7 +156,7 @@ function App() {
         <div className="carrusel-inspiracion-home reveal-content">
           <div className="inspiracion-slide-imagen">
             <img
-              src="/oficina.png"
+              src="/oficina.webp"
               alt="Espacio Bricko"
               className="inspiracion-img-img"
             />
@@ -191,39 +191,39 @@ function App() {
         <span>Envíos a todo el país</span>
       </div>
 
-     <nav className={`barra-navegacion ${scrolled ? 'navbar-scrolled' : ''}`}>
-  <div 
-  className="contenedor-logo" 
-  onClick={() => {
-    setVistaActual('inicio');
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  }} 
-  style={{ cursor: 'pointer' }}
->
-  {/* El motor de decisión visual */}
-  <img 
-    src={scrolled ? logoWhite : logoBricko} 
-    alt="Bricko" 
-    className="logo-img" 
-  />
-</div>
+      <nav className={`barra-navegacion ${scrolled ? 'navbar-scrolled' : ''}`}>
+        <div 
+          className="contenedor-logo" 
+          onClick={() => {
+            setVistaActual('inicio');
+            window.scrollTo({top: 0, behavior: 'smooth'});
+          }} 
+          style={{ cursor: 'pointer' }}
+        >
+          {/* El motor de decisión visual */}
+          <img 
+            src={scrolled ? logoWhite : logoBricko} 
+            alt="Bricko" 
+            className="logo-img" 
+          />
+        </div>
 
-  <ul className={`enlaces-navegacion ${menuOpen ? 'activos' : ''}`}>
-    {secciones.map((sec) => (
-      <li
-        key={sec.id}
-        className={vistaActual === sec.id ? 'active-link' : ''}
-        onClick={() => { 
-          setVistaActual(sec.id); 
-          setMenuOpen(false); 
-          // Si es inicio, hacemos scroll al tope
-          if(sec.id === 'inicio') window.scrollTo({top: 0, behavior: 'smooth'});
-        }}
-      >
-        {sec.label}
-      </li>
-    ))}
-  </ul>
+        <ul className={`enlaces-navegacion ${menuOpen ? 'activos' : ''}`}>
+          {secciones.map((sec) => (
+            <li
+              key={sec.id}
+              className={vistaActual === sec.id ? 'active-link' : ''}
+              onClick={() => { 
+                setVistaActual(sec.id); 
+                setMenuOpen(false); 
+                // Si es inicio, hacemos scroll al tope
+                if(sec.id === 'inicio') window.scrollTo({top: 0, behavior: 'smooth'});
+              }}
+            >
+              {sec.label}
+            </li>
+          ))}
+        </ul>
 
         <div className="iconos-navegacion">
           <div className="contenedor-buscador">
