@@ -1,14 +1,18 @@
 import React from 'react';
 import '../App.css';
+// 1. IMPORTACIÓN DEL LOGO DE COLOR (Ubicado en src/assets)
+import logobrickoColor from '../assets/logobricko.png'; 
 
 const Nosotros = () => {
   return (
     <div className="nosotros-pagina">
+      {/* BANNER INSTITUCIONAL MODERNO */}
       <section className="nosotros-banner-moderno">
         <div className="nosotros-banner-grid">
           <div className="nosotros-caja-logo">
+            {/* 2. USO DE LA VARIABLE IMPORTADA EN EL SRC */}
             <img
-              src="/src/assets/logobricko.png"
+              src={logobrickoColor}
               alt="Logo Bricko Original"
               className="nosotros-logo-color"
             />
@@ -27,6 +31,8 @@ const Nosotros = () => {
           </div>
         </div>
       </section>
+
+      {/* NARRATIVA EN ZIG-ZAG */}
       <section className="nosotros-zigzag-contenedor">
         <div className="zigzag-fila">
           <div className="zigzag-texto">
@@ -44,6 +50,7 @@ const Nosotros = () => {
             </p>
           </div>
           <div className="zigzag-imagen">
+            {/* CORRECTO: Ruta absoluta a la carpeta public */}
             <img src="/oficina.webp" alt="Bloques ecológicos Bricko" />
           </div>
         </div>
@@ -63,12 +70,13 @@ const Nosotros = () => {
             </p>
           </div>
           <div className="zigzag-imagen">
+            {/* CORRECTO: Ruta absoluta a la carpeta public */}
             <img src="/recamara.webp" alt="Interiorismo con Bricko" />
           </div>
         </div>
       </section>
 
-      {/* CUADRÍCULA DE VALORES: Los pilares de la organización */}
+      {/* CUADRÍCULA DE VALORES */}
       <section className="nosotros-pilares-contenedor">
         <div className="pilar-tarjeta">
           <div className="pilar-icono-caja">
