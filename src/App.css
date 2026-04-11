@@ -1670,22 +1670,56 @@ h1, h2, h3, h4 {
     padding: 15px 20px;
   }
 
+@media (max-width: 900px) {
+  /* PROTOCOLO 1: FORZAR PERSISTENCIA DEL MENÚ DESPLEGABLE */
   .enlaces-navegacion {
-    position: absolute;
-    top: 100%;
+    position: fixed; /* CAMBIO CLAVE: Se ancla a la pantalla, no al documento */
+    top: 80px; /* Asegúrate de que coincida con la altura de tu navbar */
     left: 0;
     width: 100%;
-    background: #ffffff;
+    height: calc(100vh - 80px); /* Ocupa el resto de la pantalla visual */
+    background-color: inherit; /* Hereda el color verde al principio y blanco al hacer scroll */
+    
+    /* Efecto Drawer */
+    transform: translateY(-100%); 
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1050; /* Por debajo de los iconos principales pero por encima del contenido */
+    opacity: 0;
+    pointer-events: none;
+    padding: 60px 30px;
     flex-direction: column;
-    padding: 30px;
-    transition: transform 0.4s ease-in-out;
-    transform: translateX(-100%);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   .enlaces-navegacion.activos {
-    transform: translateX(0);
-    left: 0;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  /* PROTOCOLO 2: GESTIÓN DE CONTRASTE FORZADO (PUNTOS FOCALES) */
+  .enlaces-navegacion li {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    transition: color 0.3s ease; /* Suavizamos el cambio de color al scroll */
+  }
+
+  /* --- CORRECCIÓN CRÍTICA DE VISIBILIDAD AL SCROLL --- */
+
+  /* 2.A: Estado Base (Al principio de la página: Fondo Verde, Links Blancos) */
+  .barra-navegacion:not(.navbar-scrolled) .enlaces-navegacion li {
+    color: #ffffff !important;
+  }
+
+  /* 2.B: Estado Scrolled (Al bajar la página: Fondo Blanco, Links Verdes/Oscuros) */
+  .barra-navegacion.navbar-scrolled .enlaces-navegacion li {
+    color: var(--color-green) !important; /* O color-dark si lo prefieres */
+    border-bottom: 1px solid rgba(0,0,0,0.05); /* Línea sutil de división */
+    padding-bottom: 10px;
   }
 
   .boton-hamburguesa {
