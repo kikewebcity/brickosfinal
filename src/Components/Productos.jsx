@@ -21,7 +21,7 @@ const Productos = () => {
       <section className="productos-grid-principal">
         <div className="producto-item-card">
           <img
-            src="/ladrillodivisorio.png"
+            src="/ladrillodivisorio.webp"  /* CORREGIDO: De .png a .webp */
             alt="Ladrillo Divisorio"
             className="img-producto-tecnica"
           />
@@ -35,7 +35,7 @@ const Productos = () => {
 
         <div className="producto-item-card">
           <img
-            src="/blockhexagonales.png"
+            src="/blockhexagonales.webp" /* CORREGIDO: De .png a .webp */
             alt="Block Ligero"
             className="img-producto-tecnica"
           />
@@ -49,7 +49,7 @@ const Productos = () => {
 
         <div className="producto-item-card">
           <img
-            src="/paneldivisorio.png"
+            src="/paneldivisorio.png" /* Mantenido: Según tu captura, sigue siendo .png */
             alt="Panel Monolítico"
             className="img-producto-tecnica"
           />
