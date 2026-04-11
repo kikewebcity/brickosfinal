@@ -63,7 +63,7 @@ const Nosotros = () => {
             </p>
           </div>
           <div className="zigzag-imagen">
-            <img src="/murorecamara.png" alt="Interiorismo con Bricko" />
+            <img src="/recamara.webp" alt="Interiorismo con Bricko" />
           </div>
         </div>
       </section>
