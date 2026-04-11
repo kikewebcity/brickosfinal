@@ -44,7 +44,7 @@ const Nosotros = () => {
             </p>
           </div>
           <div className="zigzag-imagen">
-            <img src="/oficina.png" alt="Bloques ecológicos Bricko" />
+            <img src="/oficina.webp" alt="Bloques ecológicos Bricko" />
           </div>
         </div>
 
