@@ -4,6 +4,11 @@
 * {
   box-sizing: border-box;
 }
+html, body {
+  overflow-x: hidden; /* Prohibido el movimiento lateral */
+  width: 100%;
+  position: relative;
+}
 
 :root {
   --font-main: 'Teko', sans-serif;
