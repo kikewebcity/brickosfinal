@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
+// Importación de componentes modulares
 import GaleriaAcabados from './Components/GaleriaAcabados';
 import FeaturesSection from './Components/FeaturesSection';
 import Calculadora from './Components/Calculadora';
@@ -11,6 +12,7 @@ import Productos from './Components/Productos';
 import Ventaja from './Components/Ventaja';
 import FaqsProductos from './Components/FaqsProductos';
 
+// Importación de iconos y activos visuales
 import { Search, ShoppingCart, Truck } from 'lucide-react';
 import logoBricko from './assets/logobricko.png';
 import logoWhite from './assets/logowhite.png';
@@ -25,6 +27,7 @@ function App() {
   const [vistaActual, setVistaActual] = useState('inicio');
   const [scrolled, setScrolled] = useState(false);
 
+  // Protocolo de activos optimizados
   const heroImages = ['/oficina.webp', '/banop.webp', '/murorecamara.webp'];
 
   const secciones = [
@@ -36,6 +39,7 @@ function App() {
     { id: 'contacto', label: 'Contacto' },
   ];
 
+  // Control de intervalo del Slider Principal
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
@@ -43,6 +47,7 @@ function App() {
     return () => clearInterval(slideInterval);
   }, [heroImages.length]);
 
+  // Manejo de eventos Globales (Scroll y Revelación)
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -89,6 +94,7 @@ function App() {
 
   const renderInicio = () => (
     <>
+      {/* SECCIÓN HERO: Imagen de alto impacto */}
       <section className="hero-slider">
         {heroImages.map((img, index) => (
           <div
@@ -116,81 +122,87 @@ function App() {
         </div>
       </section>
 
-      <section className="intro-section">
-        <div className="intro-container">
-          <h2 className="intro-title">
-            Redefine los espacios interiores convirtiendo el{' '}
-            <span className="text-highlight">papel reciclado</span> en{' '}
-            <span className="text-highlight">arquitectura</span>.
-          </h2>
-        </div>
-      </section>
-
-      <FeaturesSection />
-
-      <section className="contenedor-seccion-aire">
-        <div className="reveal-header">
-          <h2 className="titulo-seccion-limpio">
-            Calcula el <span className="enfasis-verde">material</span> de tu
-            proyecto
-          </h2>
-          <p className="subtitulo-seccion-limpio">
-            Selecciona el tipo de estructura y ajusta las dimensiones para una
-            precisión técnica inmediata.
-          </p>
-        </div>
-        <div className="reveal-content">
-          <Calculadora />
-        </div>
-      </section>
-
-      <FaqsProductos />
-
-      <section className="seccion-inspiracion-unificada">
-        <div className="reveal-header">
-          <h2 className="titulo-seccion-unificada">
-            GALERÍA DE <span className="enfasis-verde">INSPIRACIONES</span> CON
-            BRICKO
-          </h2>
-        </div>
-        <div className="carrusel-inspiracion-home reveal-content">
-          <div className="inspiracion-slide-imagen">
-            <img
-              src="/oficina.webp"
-              alt="Espacio Bricko"
-              className="inspiracion-img-img"
-            />
+      {/* ENVOLTURA DINÁMICA: Efecto Hexagonal con Scroll-Driven Animation */}
+      <div className="fondo-dinamico-hexagonal">
+        
+        <section className="intro-section">
+          <div className="intro-container">
+            <h2 className="intro-title">
+              Redefine los espacios interiores convirtiendo el{' '}
+              <span className="text-highlight">papel reciclado</span> en{' '}
+              <span className="text-highlight">arquitectura</span>.
+            </h2>
           </div>
-          <div className="inspiracion-slide-texto">
-            <h3 className="slide-titulo">MODULARIDAD Y CONFORT ACÚSTICO</h3>
-            <p className="slide-parrafo">
-              Nuestros bloques de celulosa prensada segmentan oficinas abiertas
-              de forma rápida y limpia. La alta densidad garantiza un ambiente
-              aislado del ruido.
+        </section>
+
+        <FeaturesSection />
+
+        <section className="contenedor-seccion-aire">
+          <div className="reveal-header">
+            <h2 className="titulo-seccion-limpio">
+              Calcula el <span className="enfasis-verde">material</span> de tu
+              proyecto
+            </h2>
+            <p className="subtitulo-seccion-limpio">
+              Selecciona el tipo de estructura y ajusta las dimensiones para una
+              precisión técnica inmediata.
             </p>
-            <a
-              href="#"
-              className="slide-enlace-cta"
-              onClick={(e) => {
-                e.preventDefault();
-                setVistaActual('aplicaciones');
-              }}
-            >
-              Ver Aplicaciones Corporativas {'>'}
-            </a>
           </div>
-        </div>
-      </section>
+          <div className="reveal-content">
+            <Calculadora />
+          </div>
+        </section>
+
+        <FaqsProductos />
+
+        <section className="seccion-inspiracion-unificada">
+          <div className="reveal-header">
+            <h2 className="titulo-seccion-unificada">
+              GALERÍA DE <span className="enfasis-verde">INSPIRACIONES</span> CON
+              BRICKO
+            </h2>
+          </div>
+          <div className="carrusel-inspiracion-home reveal-content">
+            <div className="inspiracion-slide-imagen">
+              <img
+                src="/oficina.webp"
+                alt="Espacio Bricko"
+                className="inspiracion-img-img"
+              />
+            </div>
+            <div className="inspiracion-slide-texto">
+              <h3 className="slide-titulo">MODULARIDAD Y CONFORT ACÚSTICO</h3>
+              <p className="slide-parrafo">
+                Nuestros bloques de celulosa prensada segmentan oficinas abiertas
+                de forma rápida y limpia. La alta densidad garantiza un ambiente
+                aislado del ruido.
+              </p>
+              <a
+                href="#"
+                className="slide-enlace-cta"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setVistaActual('aplicaciones');
+                }}
+              >
+                Ver Aplicaciones Corporativas {'>'}
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
     </>
   );
 
   return (
     <div className="main-container">
+      {/* BARRA DE SERVICIO SUPERIOR */}
       <div className="top-bar">
         <Truck size={16} strokeWidth={2.5} style={{ marginRight: '8px' }} />
         <span>Envíos a todo el país</span>
       </div>
 
+      {/* NAVEGACIÓN PRINCIPAL */}
       <nav className={`barra-navegacion ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div 
           className="contenedor-logo" 
@@ -200,7 +212,6 @@ function App() {
           }} 
           style={{ cursor: 'pointer' }}
         >
-          {/* El motor de decisión visual */}
           <img 
             src={scrolled ? logoWhite : logoBricko} 
             alt="Bricko" 
@@ -208,6 +219,7 @@ function App() {
           />
         </div>
 
+        {/* MENÚ DE ENLACES (DESPLEGABLE MÓVIL) */}
         <ul className={`enlaces-navegacion ${menuOpen ? 'activos' : ''}`}>
           {secciones.map((sec) => (
             <li
@@ -216,7 +228,6 @@ function App() {
               onClick={() => { 
                 setVistaActual(sec.id); 
                 setMenuOpen(false); 
-                // Si es inicio, hacemos scroll al tope
                 if(sec.id === 'inicio') window.scrollTo({top: 0, behavior: 'smooth'});
               }}
             >
@@ -225,6 +236,7 @@ function App() {
           ))}
         </ul>
 
+        {/* PANEL DE ICONOS Y CONTROL MÓVIL */}
         <div className="iconos-navegacion">
           <div className="contenedor-buscador">
             <input
@@ -240,6 +252,7 @@ function App() {
             />
           </div>
           <ShoppingCart size={22} strokeWidth={2.5} className="boton-icono" />
+          
           <button
             className="boton-hamburguesa"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -269,8 +282,10 @@ function App() {
         </div>
       </nav>
 
+      {/* ÁREA DE RENDERIZADO DINÁMICO */}
       <main className="contenido-principal">{renderContenido()}</main>
 
+      {/* PIE DE PÁGINA INSTITUCIONAL */}
       <footer className="footer">
         <div className="footer-overlay"></div>
         <div className="footer-container">
