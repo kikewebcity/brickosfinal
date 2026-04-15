@@ -1704,25 +1704,23 @@ h1, h2, h3, h4 {
   }
 }
 
+/* BLOQUE ÚNICO UNIFICADO (MAX-WIDTH: 900PX) */
 @media (max-width: 900px) {
   .barra-navegacion {
     padding: 15px 20px;
   }
 
-@media (max-width: 900px) {
   /* PROTOCOLO 1: FORZAR PERSISTENCIA DEL MENÚ DESPLEGABLE */
   .enlaces-navegacion {
-    position: fixed; /* CAMBIO CLAVE: Se ancla a la pantalla, no al documento */
-    top: 80px; /* Asegúrate de que coincida con la altura de tu navbar */
+    position: fixed; 
+    top: 80px; 
     left: 0;
     width: 100%;
-    height: calc(100vh - 80px); /* Ocupa el resto de la pantalla visual */
-    background-color: inherit; /* Hereda el color verde al principio y blanco al hacer scroll */
-    
-    /* Efecto Drawer */
+    height: calc(100vh - 80px); 
+    background-color: inherit; 
     transform: translateY(-100%); 
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    z-index: 1050; /* Por debajo de los iconos principales pero por encima del contenido */
+    z-index: 1050; 
     opacity: 0;
     pointer-events: none;
     padding: 60px 30px;
@@ -1744,20 +1742,18 @@ h1, h2, h3, h4 {
     text-align: left;
     margin-bottom: 30px;
     font-size: 1.4rem;
-    transition: color 0.3s ease; /* Suavizamos el cambio de color al scroll */
+    transition: color 0.3s ease; 
   }
 
-  /* --- CORRECCIÓN CRÍTICA DE VISIBILIDAD AL SCROLL --- */
-
-  /* 2.A: Estado Base (Al principio de la página: Fondo Verde, Links Blancos) */
+  /* 2.A: Estado Base */
   .barra-navegacion:not(.navbar-scrolled) .enlaces-navegacion li {
     color: #ffffff !important;
   }
 
-  /* 2.B: Estado Scrolled (Al bajar la página: Fondo Blanco, Links Verdes/Oscuros) */
+  /* 2.B: Estado Scrolled */
   .barra-navegacion.navbar-scrolled .enlaces-navegacion li {
-    color: var(--color-green) !important; /* O color-dark si lo prefieres */
-    border-bottom: 1px solid rgba(0,0,0,0.05); /* Línea sutil de división */
+    color: var(--color-green) !important; 
+    border-bottom: 1px solid rgba(0,0,0,0.05); 
     padding-bottom: 10px;
   }
 
@@ -1842,3 +1838,4 @@ h1, h2, h3, h4 {
     padding: 40px 30px;
   }
 }
+
