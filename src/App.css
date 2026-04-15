@@ -75,24 +75,20 @@ h1, h2, h3, h4 {
   /* Protección de lectura del plano Z */
   z-index: 1;
 }
-
-/* 4. PROTECCIÓN DE TARJETAS Y TEXTO (Z-INDEX) */
-/* Asegura que el acordeón y los textos floten por encima del patrón */
+/* 4. PROTECCIÓN DE TARJETAS Y TEXTO */
 .fondo-dinamico-hexagonal > * {
   position: relative;
   z-index: 2;
 }
 
-/* ==========================================================================
-   5. DEPURACIÓN DE CAPAS (TRANSPARENCIA OBLIGATORIA)
-   Permite que el SVG sea visible a través de los contenedores de la portada
-   ========================================================================== */
+/* 5. DEPURACIÓN DE CAPAS */
 .fondo-dinamico-hexagonal .intro-section,
 .fondo-dinamico-hexagonal .contenedor-seccion-aire,
 .fondo-dinamico-hexagonal .seccion-inspiracion-unificada {
   background: transparent !important;
   background-color: transparent !important;
 }
+
 
 /* Si las tarjetas individuales (como la calculadora) tienen fondo blanco, 
    este se mantendrá para asegurar la legibilidad de los datos de ingeniería */
