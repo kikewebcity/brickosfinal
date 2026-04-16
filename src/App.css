@@ -1015,12 +1015,64 @@ h1, h2, h3, h4 {
   margin-bottom: 15px;
 }
 
-.mini-tabla-datos p {
-  font-family: var(--font-text);
-  color: var(--color-dark) !important; /* CORRECCIÓN: Contraste optimizado a negro */
-  margin: 5px 0;
-  font-weight: 500;
+/* =========================================
+   TABLA COMPARATIVA DE RENDIMIENTO (SOBRESCRITURA ESTRICTA)
+   ========================================= */
+.seccion-tabla-comparativa {
+  max-width: 1100px;
+  margin: 100px auto;
+  padding: 0 20px;
 }
+
+.titulo-tabla-rendimiento {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.8rem;
+  color: var(--color-dark);
+}
+
+/* Habilita el desplazamiento táctil lateral en móviles */
+.contenedor-tabla-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  margin-bottom: 40px;
+  background-color: #ffffff;
+}
+
+/* Captura cualquier tabla dentro del contenedor, tenga clase o no */
+.contenedor-tabla-scroll table,
+.tabla-bricko-vs-tradicional {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-text);
+  background-color: #ffffff;
+  min-width: 650px; /* ESTO ES CLAVE: Evita que se apachurre en el teléfono */
+}
+
+.contenedor-tabla-scroll th,
+.tabla-bricko-vs-tradicional th {
+  background-color: var(--color-dark) !important;
+  color: #ffffff !important;
+  padding: 18px 20px;
+  text-align: left;
+  font-family: var(--font-main);
+  letter-spacing: 1px;
+  font-size: 1.4rem;
+}
+
+.contenedor-tabla-scroll td,
+.tabla-bricko-vs-tradicional td {
+  padding: 18px 20px;
+  border-bottom: 1px solid #eaeded;
+  color: #1a1a1a !important; /* Forzamos color oscuro */
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.contenedor-tabla-scroll tr:hover {
+  background-color: #f8f9fa;
 
 /* =========================================
    PÁGINA NOSOTROS
