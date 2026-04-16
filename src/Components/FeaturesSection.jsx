@@ -1,85 +1,89 @@
-import React, { useState } from 'react';
-import { Sparkles, ShieldCheck, Hammer, VolumeX, Feather } from 'lucide-react';
-import '../App.css';
+import React, { useState, useEffect } from 'react';
+// Importamos iconos técnicos estandarizados
+import { Sparkles, ShieldCheck, Hammer, VolumeX, Leaf } from 'lucide-react'; 
 
 const FeaturesSection = () => {
-  const [activeFeature, setActiveFeature] = useState('limpia');
+  const [activeFeature, setActiveFeature] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const featuresData = [
+  // Detector de dimensiones de pantalla (Viewport)
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 900);
+    handleResize(); // Verificación inicial
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const features = [
     {
-      id: 'limpia',
-      label: 'Instalación Limpia',
-      icon: Sparkles,
-      title: 'INSTALACIÓN LIMPIA',
-      description:
-        'Nuestros bloques se ensamblan en seco, eliminando escombros y polvos nocivos en la obra. Es la solución ideal para remodelaciones rápidas y espacios que requieren máxima higiene.',
+      titulo: 'Instalación Limpia',
+      texto: 'Eliminación de aglomerantes húmedos. El ensamblaje modular permite modificaciones limpias, cortes con herramienta básica y cero generación de escombros.',
+      icono: <Sparkles size={22} />
     },
     {
-      id: 'ignifuga',
-      label: 'Seguridad Ignífuga',
-      icon: ShieldCheck,
-      title: 'SEGURIDAD IGNÍFUGA',
-      description:
-        'La matriz de celulosa está tratada químicamente para resistir altas temperaturas y retardar la propagación de la llama. Proporciona una capa de seguridad pasiva crucial para escenografías y desarrollos habitacionales.',
+      titulo: 'Seguridad Ignífuga',
+      texto: 'La matriz de celulosa está tratada químicamente para resistir altas temperaturas y retardar la propagación de la llama. Proporciona una capa de seguridad pasiva crucial.',
+      icono: <ShieldCheck size={22} />
     },
     {
-      id: 'total',
-      label: 'Manejabilidad Total',
-      icon: Hammer,
-      title: 'MANEJABILIDAD TOTAL',
-      description:
-        'Se corta, clava y atornilla con la misma facilidad que la madera, simplificando la instalación y los acabados. No se requiere maquinaria pesada ni técnicos especializados.',
+      titulo: 'Manejabilidad Total',
+      texto: 'Permite cortes precisos, ranurados para instalaciones eléctricas o hidráulicas sin comprometer la integridad estructural del bloque.',
+      icono: <Hammer size={22} />
     },
     {
-      id: 'acustico',
-      label: 'Aislamiento Acústico',
-      icon: VolumeX,
-      title: 'AISLAMIENTO ACÚSTICO',
-      description:
-        'La alta densidad de los enlaces poliméricos en la matriz de celulosa actúa como un absorbedor de ondas sonoras, reduciendo la transmisión de ruido entre espacios y mejorando el confort ambiental.',
+      titulo: 'Aislamiento Acústico',
+      texto: 'La alta densidad de nuestra matriz biopolimérica actúa como una barrera natural, mitigando la transferencia de sonido entre espacios de manera altamente eficiente.',
+      icono: <VolumeX size={22} />
     },
     {
-      id: 'extrema',
-      label: 'Ligereza Extrema',
-      icon: Feather,
-      title: 'LIGEREZA EXTREMA',
-      description:
-        'Reduce drásticamente la carga estructural y facilita el transporte, permitiendo construcciones mucho más ágiles. Su bajo peso permite una logística eficiente y un manejo manual sin fatiga.',
-    },
+      titulo: 'Ligereza Extrema',
+      texto: 'Reduce drásticamente la carga estructural y facilita el transporte, permitiendo construcciones mucho más ágiles. Su bajo peso permite una logística eficiente y un manejo manual sin fatiga.',
+      icono: <Leaf size={22} />
+    }
   ];
-
-  const currentFeature = featuresData.find((f) => f.id === activeFeature);
 
   return (
     <section className="features-section">
       <div className="features-main-grid">
-        {/* Columna Izquierda: Lista de Pills Interactivos */}
+        
+        {/* COLUMNA IZQUIERDA: BOTONES (PILLS) Y CONTENIDO MÓVIL */}
         <div className="features-pills-col">
-          {featuresData.map((feature) => (
-            <div
-              key={feature.id}
-              className={`feature-pill ${
-                activeFeature === feature.id ? 'active' : ''
-              }`}
-              onClick={() => setActiveFeature(feature.id)}
-            >
-              <div className="pill-content-left">
-                {/* Renderizado dinámico del icono con Lucide-React */}
-                <feature.icon className="pill-icon" size={20} strokeWidth={2} />
-                <span className="pill-label">{feature.label}</span>
+          {features.map((feature, index) => (
+            <div key={index} className="feature-item-wrapper">
+              
+              {/* EL BOTÓN (PILL) */}
+              <div
+                className={`feature-pill ${activeFeature === index ? 'active' : ''}`}
+                onClick={() => setActiveFeature(index)}
+              >
+                <div className="pill-content-left">
+                  <span className="pill-icon">{feature.icono}</span>
+                  <span className="pill-label">{feature.titulo}</span>
+                </div>
+                <span className="pill-action">
+                  {activeFeature === index ? '−' : '+'}
+                </span>
               </div>
-              <span className="pill-action">
-                {activeFeature === feature.id ? '−' : '+'}
-              </span>
+
+              {/* RENDERIZADO CONDICIONAL: Aparece debajo del botón SOLO en móvil */}
+              {isMobile && activeFeature === index && (
+                <div className="features-content-col contenido-acordeon-movil">
+                  <h3 className="feature-title">{feature.titulo}</h3>
+                  <p className="feature-paragraph">{feature.texto}</p>
+                </div>
+              )}
             </div>
           ))}
         </div>
 
-        {/* Columna Derecha: Bloque de Contenido Dinámico con Color Institucional */}
-        <div className="features-content-col">
-          <h3 className="feature-title">{currentFeature.title}</h3>
-          <p className="feature-paragraph">{currentFeature.description}</p>
-        </div>
+        {/* COLUMNA DERECHA: CAJA ESTÁTICA (SOLO VISIBLE EN ESCRITORIO) */}
+        {!isMobile && (
+          <div className="features-content-col contenido-escritorio">
+            <h3 className="feature-title">{features[activeFeature].titulo}</h3>
+            <p className="feature-paragraph">{features[activeFeature].texto}</p>
+          </div>
+        )}
+
       </div>
     </section>
   );
