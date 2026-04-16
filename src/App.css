@@ -7,7 +7,7 @@
 }
 
 html, body {
-  overflow-x: hidden;
+  overflow-x: clip; /* Permite cortar el contenido lateral sin romper el 'sticky' */
   width: 100%;
   position: relative;
 }
