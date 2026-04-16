@@ -122,7 +122,7 @@ const Nosotros = () => {
 
         <div className="pilar-tarjeta">
           <div className="pilar-icono-caja">
-            <img src="/equipo.webp" alt="Trabajo en equipo" />
+            <img src="/equipo.png" alt="Trabajo en equipo" />
           </div>
           <h2 className="pilar-titulo-valor">TRABAJO EN EQUIPO</h2>
           <p className="pilar-descripcion">
