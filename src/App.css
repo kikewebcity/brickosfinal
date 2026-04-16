@@ -1,7 +1,4 @@
-Este es el archivo **App.css** definitivo, depurado y unificado.
-He eliminado los bloques duplicados que estaban causando el conflicto entre el fondo y el texto al hacer scroll, he limpiado el código viejo del buscador y he asegurado que el menú móvil tenga **siempre fondo blanco y letras negras**, garantizando una lectura perfecta en tu presentación.
-Por favor, **borra absolutamente todo el contenido actual de tu archivo App.css** y pega este código completo. Es la versión final para producción:
-```css
+
 /* =========================================
    REGLAS GENERALES Y VARIABLES
    ========================================= */
@@ -1542,4 +1539,4 @@ h1, h2, h3, h4 {
   }
 }
 
-```
+
