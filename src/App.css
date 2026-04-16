@@ -44,30 +44,66 @@ h1, h2, h3, h4 {
 }
 
 
- 
-/* ==========================================================================
-   MÓDULO: FONDO ECOSUSTENTABLE (TEXTURA CELULOSA)
-   ========================================================================== */
+ /* --- FONDO ECOSUSTENTABLE --- */
 .fondo-ecosustentable {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  /* Color base que simula papel reciclado crudo */
-  background-color: #F7F5F0; 
-  /* Gradiente radial sutil para simular iluminación natural */
+  background-color: #f7f5f0;
   background-image: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.8) 0%, transparent 80%);
-  z-index: 1;
+  padding-bottom: 50px;
 }
 
-.fondo-ecosustentable > * {
-  position: relative;
-  z-index: 2;
+/* --- AJUSTES NAVBAR SCROLLED --- */
+.navbar-scrolled {
+  background-color: #388e3c !important;
+  padding: 10px 20px;
 }
 
-.fondo-ecosustentable .intro-section,
-.fondo-ecosustentable .contenedor-seccion-aire,
-.fondo-ecosustentable .seccion-inspiracion-unificada {
-  background: transparent !important;
+/* --- AJUSTES MÓVIL (MAX-WIDTH: 900px) --- */
+@media (max-width: 900px) {
+  .enlaces-navegacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%; /* Menú lateral */
+    height: 100vh;
+    background-color: #ffffff !important; /* FONDO SIEMPRE BLANCO */
+    flex-direction: column;
+    padding: 100px 30px;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    z-index: 1050;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+  }
+
+  .enlaces-navegacion.activos {
+    transform: translateX(0);
+  }
+
+  /* CORRECCIÓN CRÍTICA: Letras siempre visibles en el menú móvil */
+  .enlaces-navegacion li {
+    color: #1a1a1a !important; /* SIEMPRE NEGRAS EN EL MENÚ ABIERTO */
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+
+  .boton-hamburguesa {
+    display: block !important;
+    color: inherit; /* Toma el color del nav (negro arriba, blanco abajo) */
+    z-index: 1100;
+  }
+
+  /* El buscador ya no existe, así que el logo tiene espacio */
+  .logo-img {
+    height: 35px;
+  }
+}
+
+/* Evitar el descuadre blanco lateral */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 
