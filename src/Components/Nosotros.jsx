@@ -121,9 +121,11 @@ const Nosotros = () => {
         </div>
 
         <div className="pilar-tarjeta">
-          <div className="pilar-icono-caja">
-            <img src="/equipo.png" alt="Trabajo en equipo" />
+                    <div className="pilar-icono-caja">
+            {/* Se agrega ?v=2 para romper la caché */}
+            <img src="/equipo.png?v=2" alt="Trabajo en equipo" />
           </div>
+
           <h2 className="pilar-titulo-valor">TRABAJO EN EQUIPO</h2>
           <p className="pilar-descripcion">
             Sinergia perfecta entre ingeniería, diseño y las necesidades de tu
