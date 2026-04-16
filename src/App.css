@@ -44,43 +44,33 @@ h1, h2, h3, h4 {
 }
 
 
- /* ==========================================================================
-   MÓDULO: FONDO ESTRUCTURAL DINÁMICO (HEXAGONAL)
+ 
+/* ==========================================================================
+   MÓDULO: FONDO ECOSUSTENTABLE (TEXTURA CELULOSA)
    ========================================================================== */
-
-/* 1. MOTOR DE ANIMACIÓN (Keyframes) */
-/* El valor 138px corresponde al ciclo matemático de repetición del SVG */
-@keyframes parallaxEstructural {
-  from { background-position: 0px 0px; }
-  to { background-position: 0px 138px; } 
-}
-
-/* 2. CLASE DEL CONTENEDOR MAESTRO */
-.fondo-dinamico-hexagonal {
+.fondo-ecosustentable {
   position: relative;
   width: 100%;
-  overflow: hidden; /* Control estricto de desbordamiento lateral */
-  background-color: #fafafa; /* Base de contraste para la lectura */
-  background-image: url("data:image/svg+xml,%3Csvg width='40' height='69.282' viewBox='0 0 40 69.282' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232E7D32' fill-opacity='0.04'%3E%3Cpath d='M40 11.547L20 0 0 11.547v23.094l20 11.547 20-11.547V11.547zM20 69.282L0 57.735V34.64l20 11.548 20-11.548v23.095L20 69.282z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-size: 50px auto;
-  background-repeat: repeat;
-  animation: parallaxEstructural linear;
-  animation-timeline: scroll(root);
+  overflow: hidden;
+  /* Color base que simula papel reciclado crudo */
+  background-color: #F7F5F0; 
+  /* Gradiente radial sutil para simular iluminación natural */
+  background-image: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.8) 0%, transparent 80%);
   z-index: 1;
 }
-/* 4. PROTECCIÓN DE TARJETAS Y TEXTO */
-.fondo-dinamico-hexagonal > * {
+
+.fondo-ecosustentable > * {
   position: relative;
   z-index: 2;
 }
 
-/* 5. DEPURACIÓN DE CAPAS */
-.fondo-dinamico-hexagonal .intro-section,
-.fondo-dinamico-hexagonal .contenedor-seccion-aire,
-.fondo-dinamico-hexagonal .seccion-inspiracion-unificada {
+.fondo-ecosustentable .intro-section,
+.fondo-ecosustentable .contenedor-seccion-aire,
+.fondo-ecosustentable .seccion-inspiracion-unificada {
   background: transparent !important;
-  background-color: transparent !important;
 }
+
+
 
 /* =========================================
    BARRA SUPERIOR (ENVÍOS)
