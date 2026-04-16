@@ -27,7 +27,7 @@ function App() {
   const [scrolled, setScrolled] = useState(false);
 
   // Protocolo de activos optimizados (.webp)
-  const heroImages = ['/oficina.webp', '/banop.webp', '/murorecamara.webp'];
+  const heroImages = ['/oficina.webp', '/banop.webp', 'recamara.webp'];
 
   const secciones = [
     { id: 'inicio', label: 'Inicio' },
