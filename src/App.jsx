@@ -12,7 +12,7 @@ import Productos from './Components/Productos';
 import Ventaja from './Components/Ventaja';
 import FaqsProductos from './Components/FaqsProductos';
 
-// Importación de iconos y activos visuales (Buscador eliminado por eficiencia UX)
+// Importación de iconos y activos visuales
 import { ShoppingCart, Truck } from 'lucide-react';
 import logoBricko from './assets/logobricko.png';
 import logoWhite from './assets/logowhite.png';
@@ -311,9 +311,15 @@ function App() {
           {/* COLUMNA 3: CONTACTO Y REDES */}
           <div className="footer-col right-col">
             <p className="footer-contact">Email: ventas@bricko.com</p>
-            <p className="footer-contact">Tel: -55-55-55-5
-       
-      
+            <p className="footer-contact">Tel: -55-55-55-55-55</p>
+            <div className="social-icons">
+              <img src={iconYt} alt="YT" className="social-img" />
+              <img src={iconInsta} alt="IG" className="social-img" />
+              <img src={iconFb} alt="FB" className="social-img" />
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
