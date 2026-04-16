@@ -12,8 +12,8 @@ import Productos from './Components/Productos';
 import Ventaja from './Components/Ventaja';
 import FaqsProductos from './Components/FaqsProductos';
 
-// Importación de iconos y activos visuales
-import { Search, ShoppingCart, Truck } from 'lucide-react';
+// Importación de iconos y activos visuales (Buscador eliminado por eficiencia UX)
+import { ShoppingCart, Truck } from 'lucide-react';
 import logoBricko from './assets/logobricko.png';
 import logoWhite from './assets/logowhite.png';
 import iconYt from './assets/iconoyoutube.png';
@@ -22,12 +22,11 @@ import iconFb from './assets/iconofacebook.png';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [buscadorAbierto, setBuscadorAbierto] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [vistaActual, setVistaActual] = useState('inicio');
   const [scrolled, setScrolled] = useState(false);
 
-  // Protocolo de activos optimizados
+  // Protocolo de activos optimizados (.webp)
   const heroImages = ['/oficina.webp', '/banop.webp', '/murorecamara.webp'];
 
   const secciones = [
@@ -122,8 +121,8 @@ function App() {
         </div>
       </section>
 
-      {/* ENVOLTURA DINÁMICA: Efecto Hexagonal con Scroll-Driven Animation */}
-      <div className="fondo-dinamico-hexagonal">
+      {/* ENVOLTURA ECOSUSTENTABLE: Fondo de textura de celulosa */}
+      <div className="fondo-ecosustentable">
         
         <section className="intro-section">
           <div className="intro-container">
@@ -236,21 +235,8 @@ function App() {
           ))}
         </ul>
 
-        {/* PANEL DE ICONOS Y CONTROL MÓVIL */}
+        {/* PANEL DE ICONOS Y CONTROL MÓVIL (Interfaz limpia) */}
         <div className="iconos-navegacion">
-          <div className="contenedor-buscador">
-            <input
-              type="text"
-              className={`entrada-buscador ${buscadorAbierto ? 'activa' : ''}`}
-              placeholder="Buscar material..."
-            />
-            <Search
-              size={22}
-              strokeWidth={2.5}
-              className="boton-icono"
-              onClick={() => setBuscadorAbierto(!buscadorAbierto)}
-            />
-          </div>
           <ShoppingCart size={22} strokeWidth={2.5} className="boton-icono" />
           
           <button
