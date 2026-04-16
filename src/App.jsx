@@ -270,36 +270,50 @@ function App() {
 
       {/* ÁREA DE RENDERIZADO DINÁMICO */}
       <main className="contenido-principal">{renderContenido()}</main>
-
-      {/* PIE DE PÁGINA INSTITUCIONAL */}
       <footer className="footer">
         <div className="footer-overlay"></div>
         <div className="footer-container">
+          
+          {/* COLUMNA 1: MARCA */}
           <div className="footer-col left-col">
             <img src={logoWhite} alt="Bricko" className="footer-logo-img" />
             <p className="footer-slogan">
               Revolución Ecológica en Construcción
             </p>
           </div>
+          
+          {/* COLUMNA 2: DOCUMENTACIÓN LEGAL Y OPERATIVA */}
           <div className="footer-col center-col">
             <ul className="footer-links">
-              <li>Preguntas Frecuentes</li>
-              <li>Tiempos de Envío</li>
-              <li>Garantía y Devoluciones</li>
-              <li>Aviso de Privacidad</li>
+              <li>
+                <a href="/preguntas-frecuentes.pdf" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none'}}>
+                  Preguntas Frecuentes
+                </a>
+              </li>
+              <li>
+                <a href="/politica-envios.pdf" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none'}}>
+                  Tiempos de Envío
+                </a>
+              </li>
+              <li>
+                <a href="/garantias.pdf" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none'}}>
+                  Garantía y Devoluciones
+                </a>
+              </li>
+              <li>
+                <a href="/aviso-privacidad.pdf" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none'}}>
+                  Aviso de Privacidad
+                </a>
+              </li>
             </ul>
           </div>
+          
+          {/* COLUMNA 3: CONTACTO Y REDES */}
           <div className="footer-col right-col">
             <p className="footer-contact">Email: ventas@bricko.com</p>
-            <p className="footer-contact">Tel: -55-55-55-55-55</p>
-            <div className="social-icons">
-              <img src={iconYt} alt="YT" className="social-img" />
-              <img src={iconInsta} alt="IG" className="social-img" />
-              <img src={iconFb} alt="FB" className="social-img" />
-            </div>
-          </div>
-        </div>
-      </footer>
+            <p className="footer-contact">Tel: -55-55-55-5
+       
+      
     </div>
   );
 }
