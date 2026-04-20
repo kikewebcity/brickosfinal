@@ -25,35 +25,21 @@ const Productos = () => {
             alt="Ladrillo Divisorio"
             className="img-producto-tecnica"
           />
-          <h2 className="nombre-producto-ficha">LADRILLO DIVISORIO E-100</h2>
+          <h2 className="nombre-producto-ficha">Bloque</h2>
           <div className="mini-tabla-datos">
             <p>Dimensiones: 23 x 14 x 7 cm</p>
             <p>Peso: 0.5 kg (72% más ligero)</p>
             <p>Resistencia: 60 kg/cm²</p>
           </div>
         </div>
-
+        
         <div className="producto-item-card">
           <img
-            src="/blockhexagonales.webp" /* CORREGIDO: De .png a .webp */
-            alt="Block Ligero"
-            className="img-producto-tecnica"
-          />
-          <h2 className="nombre-producto-ficha">BLOCK LIGERO B-200</h2>
-          <div className="mini-tabla-datos">
-            <p>Dimensiones: 40 x 15 x 20 cm</p>
-            <p>Peso: 4.0 kg (51% más ligero)</p>
-            <p>Aislamiento: 13.5 Kcal/hr °C</p>
-          </div>
-        </div>
-
-        <div className="producto-item-card">
-          <img
-            src="/paneldivisorio.png" /* Mantenido: Según tu captura, sigue siendo .png */
+            src="/paneldivisorio.png" 
             alt="Panel Monolítico"
             className="img-producto-tecnica"
           />
-          <h2 className="nombre-producto-ficha">PANEL MONOLÍTICO P-300</h2>
+          <h2 className="nombre-producto-ficha">PANEL MONOLÍTICO </h2>
           <div className="mini-tabla-datos">
             <p>Dimensiones: 1.22 x 2.44 m</p>
             <p>Peso: 92.5 kg</p>
