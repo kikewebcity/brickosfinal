@@ -33,7 +33,7 @@ function App() {
     { id: 'inicio', label: 'Inicio' },
     { id: 'nosotros', label: 'Quienes Somos' },
     { id: 'productos', label: 'Productos & Aplicaciones' },
-    { id: 'ventaja', label: 'Ventaja' },
+    { id: 'ventaja', label: 'Ventajas' },
     { id: 'aplicaciones', label: 'Bricko News' },
     { id: 'contacto', label: 'Contacto' },
   ];
