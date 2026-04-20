@@ -24,7 +24,7 @@ const Ventaja = () => {
           </div>
           <h2 className="pilar-titulo-valor">IMPACTO ECOLÓGICO POSITIVO</h2>
           <p className="pilar-descripcion">
-            Fabricación fundamentada en la economía circular mediante celulosa reciclada. Reducción directa de residuos sólidos y menor consumo energético en el proceso de curado.
+            Fabricación fundamentada en la economía circular mediante celulosa reciclada. Reducción directa de residuos sólidos y menor consumo energético en el proceso de fabricación.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ const Ventaja = () => {
           </div>
           <h2 className="pilar-titulo-valor">ULTRA LIGEREZA ESTRUCTURAL</h2>
           <p className="pilar-descripcion">
-            Hasta un 72% más ligero que los sistemas tradicionales. Esta propiedad reduce las cargas muertas en la edificación, optimiza la logística de transporte y acelera los tiempos de maniobra en obra.
+            Hasta un 75% más ligero que los sistemas tradicionales. Esta propiedad reduce las cargas muertas en la edificación, optimiza la logística de transporte y acelera los tiempos de maniobra en obra.
           </p>
         </div>
 
@@ -44,8 +44,8 @@ const Ventaja = () => {
           </div>
           <h2 className="pilar-titulo-valor">AISLAMIENTO TERMOACÚSTICO</h2>
           <p className="pilar-descripcion">
-            La alta densidad de nuestra matriz biopolimérica actúa como una barrera natural, mitigando la transferencia de sonido entre espacios y conservando la estabilidad térmica en interiores.
-          </p>
+            La alta densidad de nuestra matriz biopolimérica actúa como una barrera natural, mitigando la transferencia de sonido entre espacios (hasta 37.6 dB) y conservando la estabilidad térmica en interiores.
+          </p> 
         </div>
 
         <div className="pilar-tarjeta">
