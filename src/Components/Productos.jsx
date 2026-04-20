@@ -46,19 +46,6 @@ const Productos = () => {
         </div>
       </section>
 
-      {/* SECCIÓN 4: EXTENSIÓN DEL CATÁLOGO (DISEÑO Y ESCENOGRAFÍA) */}
-      <section className="seccion-extension-diseno">
-        <div className="extension-contenido">
-          <h2 className="titulo-extension">LÍNEA DE DISEÑO Y ESCENOGRAFÍA</h2>
-          <p className="parrafo-extension">
-            La Tabla Base de 80 x 10 x 122 cm ofrece una densidad de 256 kg/m³
-            ideal para la manufactura de mobiliario sustentable como libreros y
-            mesas. En el ámbito escénico, la ligereza del material y su cualidad
-            ignífuga permiten crear sets de grabación y teatros seguros,
-            modulares y de montaje ultra rápido sin generar escombros en el set.
-          </p>
-        </div>
-      </section>
 
       {/* SECCIÓN 5: SOPORTE TÉCNICO / FAQS UNIFICADO */}
       <FaqsProductos />
