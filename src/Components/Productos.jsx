@@ -29,7 +29,6 @@ const Productos = () => {
           <div className="mini-tabla-datos">
             <p>Dimensiones: 23 x 14 x 7 cm</p>
             <p>Peso: 0.5 kg (72% más ligero)</p>
-            <p>Resistencia: 60 kg/cm²</p>
           </div>
         </div>
         
@@ -43,7 +42,6 @@ const Productos = () => {
           <div className="mini-tabla-datos">
             <p>Dimensiones: 1.22 x 2.44 m</p>
             <p>Peso: 92.5 kg</p>
-            <p>Uso: Sustituto de yeso encartonado</p>
           </div>
         </div>
       </section>
