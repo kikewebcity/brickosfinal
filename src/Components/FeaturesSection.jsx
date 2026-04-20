@@ -22,7 +22,7 @@ const FeaturesSection = () => {
     },
     {
       titulo: 'Seguridad Ignífuga',
-      texto: 'La matriz de celulosa está tratada químicamente para resistir altas temperaturas y retardar la propagación de la llama. Proporciona una capa de seguridad pasiva crucial.',
+      texto: 'La conformación del material con el que se produce Bricko no permite la propagación de la llama. Representa una capa de seguridad pasiva crucial.',
       icono: <ShieldCheck size={22} />
     },
     {
@@ -32,12 +32,12 @@ const FeaturesSection = () => {
     },
     {
       titulo: 'Aislamiento Acústico',
-      texto: 'La alta densidad de nuestra matriz biopolimérica actúa como una barrera natural, mitigando la transferencia de sonido entre espacios de manera altamente eficiente.',
+      texto: 'La conformación del material con el que se produce Bricko actúa como una barrera natural, mitigando la transferencia de sonido entre espacios de manera altamente eficiente, atenuando hasta 37.6 dB.',
       icono: <VolumeX size={22} />
     },
     {
       titulo: 'Ligereza Extrema',
-      texto: 'Reduce drásticamente la carga estructural y facilita el transporte, permitiendo construcciones mucho más ágiles. Su bajo peso permite una logística eficiente y un manejo manual sin fatiga.',
+      texto: 'Reduce drásticamente la carga estructural y facilita el transporte, permitiendo construcciones mucho más ligeras. Su bajo peso (aproximadamente 2.15 kg.) permite una logística eficiente y un manejo manual sin fatiga.',
       icono: <Leaf size={22} />
     }
   ];
