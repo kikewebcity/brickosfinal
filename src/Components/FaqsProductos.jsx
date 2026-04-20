@@ -9,13 +9,13 @@ const FaqsProductos = () => {
       id: 1,
       pregunta: '1. COMPORTAMIENTO DEL MATERIAL ANTE LA HUMEDAD',
       respuesta:
-        'Bricko se ha diseñado con un enfoque riguroso para aplicaciones en interiores. Debido a su naturaleza higroscópica, el material debe permanecer resguardado de la precipitación pluvial y vientos fuertes. La exposición directa al agua compromete la estabilidad estructural de la matriz de celulosa, por lo que su uso óptimo se limita estrictamente a ambientes secos y controlados.',
+        'Bricko se ha diseñado con un enfoque riguroso para aplicaciones en interiores. Debido a su naturaleza higroscópica, el material debe permanecer resguardado de la precipitación pluvial y medio ambiente exterior. La exposición directa al agua compromete la estabilidad estructural de la matriz de celulosa, por lo que su uso óptimo se limita estrictamente a ambientes secos y controlados.',
     },
     {
       id: 2,
       pregunta: '2. SEGURIDAD Y RESISTENCIA ANTE EL FUEGO',
       respuesta:
-        'La composición química de la pasta base, fundamentada en enlaces poliméricos de amilopectina, garantiza una alta resistencia al fuego. Al ser sometido a calor extremo, el bloque no propaga la llama; en su lugar, experimenta un proceso de carbonización gradual. Esta característica es una ventaja crítica para la seguridad en escenografías y desarrollos habitacionales.',
+        'La composición química de la pasta base, fundamentada en enlaces poliméricos de amilopectina, garantiza una alta resistencia al fuego. Al ser sometido a calor extremo, el bloque no propaga la llama; en su lugar, experimenta un proceso de carbonización gradual. Esta característica es una ventaja crítica para la seguridad en desarrollos habitacionales y laborales.',
     },
     {
       id: 3,
