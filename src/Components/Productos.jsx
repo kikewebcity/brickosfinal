@@ -46,51 +46,6 @@ const Productos = () => {
         </div>
       </section>
 
-      {/* SECCIÓN 3: TABLA COMPARATIVA DE RENDIMIENTO */}
-      <section className="seccion-tabla-comparativa">
-        <h2 className="titulo-tabla-rendimiento">
-          RENDIMIENTO FRENTE A SISTEMAS TRADICIONALES
-        </h2>
-        <div className="contenedor-tabla-scroll">
-          <table className="tabla-bricko-vs-tradicional">
-            <thead>
-              <tr>
-                <th>Especificación Técnica</th>
-                <th>Sistema Bricko</th>
-                <th>Ladrillo/Block Convencional</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Peso en Ladrillo (23x14x7)</td>
-                <td>0.5 kg</td>
-                <td>1.8 kg</td>
-              </tr>
-              <tr>
-                <td>Tiempo de Secado / Fraguado</td>
-                <td>150 - 200 horas</td>
-                <td>28 días (672 horas)</td>
-              </tr>
-              <tr>
-                <td>Resistencia a la Compresión</td>
-                <td>60 kg/cm²</td>
-                <td>Variable (Estructural)</td>
-              </tr>
-              <tr>
-                <td>Comportamiento al Fuego</td>
-                <td>Carbonización sin llama</td>
-                <td>No combustible (Arcilla)</td>
-              </tr>
-              <tr>
-                <td>Instalación en Obra</td>
-                <td>Corte con segueta / Atornillable</td>
-                <td>Cortes mecánicos / Cemento</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
       {/* SECCIÓN 4: EXTENSIÓN DEL CATÁLOGO (DISEÑO Y ESCENOGRAFÍA) */}
       <section className="seccion-extension-diseno">
         <div className="extension-contenido">
