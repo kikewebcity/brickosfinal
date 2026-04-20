@@ -1012,7 +1012,7 @@ h1, h2, h3, h4 {
 .producto-item-card p,
 .producto-item-card span,
 .mini-tabla-datos p {
-  color: #1a1a1a !important; 
+  color: #000000 !important; 
   font-weight: 500 !important;
 }
 
