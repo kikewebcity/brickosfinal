@@ -32,9 +32,9 @@ function App() {
   const secciones = [
     { id: 'inicio', label: 'Inicio' },
     { id: 'nosotros', label: 'Quienes Somos' },
-    { id: 'productos', label: 'Productos' },
+    { id: 'productos', label: 'Productos & Aplicaciones' },
     { id: 'ventaja', label: 'Ventaja' },
-    { id: 'aplicaciones', label: 'Aplicaciones' },
+    { id: 'aplicaciones', label: 'Bricko News' },
     { id: 'contacto', label: 'Contacto' },
   ];
 
