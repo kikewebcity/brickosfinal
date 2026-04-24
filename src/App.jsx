@@ -76,7 +76,7 @@ function App() {
     };
   }, []);
 
-  const renderContenido = () => {
+    const renderContenido = () => {
     switch (vistaActual) {
       case 'nosotros':
         return <Nosotros />;
@@ -88,10 +88,13 @@ function App() {
         return <Contacto />;
       case 'ventaja':
         return <Ventaja />;
+      case 'faq': // <--- NUEVO CASO AÑADIDO
+        return <PreguntasFrecuentes />;
       default:
         return renderInicio();
     }
   };
+
 
   const renderInicio = () => (
     <>
