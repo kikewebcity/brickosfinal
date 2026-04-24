@@ -1,101 +1,137 @@
-import React, { useState, useEffect } from 'react';
-import { LayoutGrid, Square, Columns } from 'lucide-react';
+import React, { useState } from 'react';
 
 const Calculadora = () => {
-  const [tipo, setTipo] = useState('muro');
-  const [ancho, setAncho] = useState(4.5);
-  const [alto, setAlto] = useState(3.0);
-  const [total, setTotal] = useState(0);
+  // 1. ESTADO DE LAS VARIABLES (Por defecto 1.0m como en el mockup)
+  const [ancho, setAncho] = useState(1.0);
+  const [alto, setAlto] = useState(1.0);
 
-  const imagenesEstructura = {
-  muro: '/muro.webp',    
-  columna: '/columna.webp', 
-  barra: '/barra.webp'    
-  };
+  // 2. LÓGICA MATEMÁTICA ESTRICTA (Requerimiento del Cliente)
+  const area = ancho * alto;
+  // Multiplicación por 15 piezas por m2 y redondeo estándar a entero
+  const brickosTotales = Math.round(area * 15); 
+  // Costo por unidad: 14 pesos
+  const costoTotal = brickosTotales * 14;
 
-  useEffect(() => {
-    const factor = tipo === 'barra' ? 2 : tipo === 'columna' ? 1.5 : 1;
-    const area = (parseFloat(ancho) || 0) * (parseFloat(alto) || 0);
-    const calculo = Math.ceil(area * 50 * factor);
-    setTotal(calculo);
-  }, [ancho, alto, tipo]);
+  // 3. GENERACIÓN DINÁMICA DE ENLACE WA
+  const mensajeWA = `Hola, me interesa adquirir ${brickosTotales} Brickos para mi proyecto. El costo estimado de la calculadora es de $${costoTotal} pesos.`;
+  const urlWA = `https://wa.me/525555555555?text=${encodeURIComponent(mensajeWA)}`;
 
   return (
     <div className="calc-main-layout">
-      {/* PANEL OSCURO DE CONTROL */}
-      <div className="calc-dark-panel">
-        <div className="calc-type-selector">
-          <button
-            onClick={() => setTipo('muro')}
-            className={`type-btn ${tipo === 'muro' ? 'active' : ''}`}
-          >
-            <LayoutGrid size={32} />
-            <span>Muro</span>
-          </button>
-          <button
-            onClick={() => setTipo('barra')}
-            className={`type-btn ${tipo === 'barra' ? 'active' : ''}`}
-          >
-            <Square size={32} />
-            <span>Barra/Isla</span>
-          </button>
-          <button
-            onClick={() => setTipo('columna')}
-            className={`type-btn ${tipo === 'columna' ? 'active' : ''}`}
-          >
-            <Columns size={32} />
-            <span>Columna</span>
-          </button>
-        </div>
-
+      {/* PANEL IZQUIERDO: CONTROLES TÉCNICOS */}
+      <div className="calc-dark-panel" style={{ backgroundColor: '#0a0a0a' }}>
+        
+        {/* CONTROLES DE RANGO (SLIDERS) */}
         <div className="calc-sliders-container">
           <div className="slider-col">
-            <div className="slider-bubble">{ancho} m</div>
+            <div className="slider-bubble">{ancho.toFixed(1)} m</div>
             <input
               type="range"
-              min="1"
-              max="15"
+              min="0.5"
+              max="10"
               step="0.1"
               value={ancho}
-              onChange={(e) => setAncho(e.target.value)}
+              onChange={(e) => setAncho(parseFloat(e.target.value))}
               className="custom-range"
             />
-            <span className="slider-label">Ancho de Pared</span>
+            <span className="slider-label">Ancho de pared</span>
           </div>
+
           <div className="slider-col">
-            <div className="slider-bubble">{alto} m</div>
+            <div className="slider-bubble">{alto.toFixed(1)} m</div>
             <input
               type="range"
-              min="1"
+              min="0.5"
               max="5"
               step="0.1"
               value={alto}
-              onChange={(e) => setAlto(e.target.value)}
+              onChange={(e) => setAlto(parseFloat(e.target.value))}
               className="custom-range"
             />
-            <span className="slider-label">Alto de Pared</span>
+            <span className="slider-label">Alto de pared</span>
           </div>
         </div>
 
-        <div className="calc-result-pill">
-          {total} <span>BRICKOS ESTIMADOS.</span>
+        {/* ÁREA DE RESULTADOS */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
+          
+          {/* RESULTADO 1: CANTIDAD */}
+          <div 
+            style={{
+              backgroundColor: '#114a1a', /* Verde oscuro tipo mockup */
+              border: '2px solid var(--color-green)',
+              borderRadius: '50px',
+              padding: '20px 40px',
+              textAlign: 'center',
+              width: '80%'
+            }}
+          >
+            <span style={{ display: 'block', color: '#fff', fontSize: '1.2rem', fontFamily: 'var(--font-text)' }}>
+              Necesitas
+            </span>
+            <strong style={{ display: 'block', color: '#fff', fontSize: '3.5rem', fontFamily: 'var(--font-main)', lineHeight: '1' }}>
+              {brickosTotales}
+            </strong>
+            <span style={{ display: 'block', color: 'var(--color-green)', fontSize: '1.2rem', fontWeight: 'bold' }}>
+              Brickos
+            </span>
+          </div>
+
+          {/* RESULTADO 2: COSTO */}
+          <div 
+            style={{
+              backgroundColor: 'transparent',
+              border: '2px solid var(--color-green)',
+              borderRadius: '50px',
+              padding: '15px 40px',
+              textAlign: 'center',
+              width: '80%'
+            }}
+          >
+            <strong style={{ color: '#fff', fontSize: '1.4rem', fontFamily: 'var(--font-text)', fontWeight: '500' }}>
+              Costo: <span style={{ color: 'var(--color-green)', fontWeight: 'bold' }}>{costoTotal}</span> pesos
+            </strong>
+          </div>
         </div>
 
-        <button className="calc-cta">Agregar a carrito</button>
+        {/* CALL TO ACTION (CTA) TRANSSACCIONAL */}
+        <a 
+          href={urlWA} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="calc-cta"
+        >
+          Agregar al carrito
+        </a>
       </div>
 
-      {/* PANEL DE IMAGEN DINÁMICA */}
-      <div className="calc-image-panel">
-        <img
-          src={imagenesEstructura[tipo]}
-          alt={`Visualización de ${tipo}`}
-          onError={(e) => {
-            e.target.src = '/muro.png';
-          }}
+      {/* PANEL DERECHO: VISUALIZACIÓN Y POLÍTICA DE RETORNO */}
+      <div className="calc-image-panel" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <img 
+          src="/ladrillodivisorio.webp" 
+          alt="Muro Bricko" 
+          style={{ maxWidth: '100%', height: 'auto', marginBottom: '20px' }} 
         />
+        
+        {/* LEYENDA LEGAL Y OPERATIVA */}
+        <p style={{ 
+          fontFamily: 'var(--font-text)', 
+          fontSize: '0.95rem', 
+          color: '#1a1a1a', 
+          textAlign: 'justify', 
+          maxWidth: '90%', 
+          lineHeight: '1.6',
+          backgroundColor: '#f4f4f4',
+          padding: '15px',
+          borderLeft: '4px solid var(--color-green)',
+          borderRadius: '4px'
+        }}>
+          <strong>Te vendemos solo el material que necesitas.</strong> Si te sobran piezas completas, nos las traes y te <strong>DEVOLVEMOS</strong> el dinero equivalente a su costo.
+        </p>
       </div>
     </div>
   );
 };
 
 export default Calculadora;
+
