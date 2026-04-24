@@ -291,10 +291,10 @@ function App() {
           <div className="footer-col center-col">
             <ul className="footer-links">
               <li>
-                <a href="/preguntas-frecuentes.pdf" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none'}}>
-                  Preguntas Frecuentes
-                </a>
-              </li>
+  <a href="/preguntas-frecuentes.pdf" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none'}}>
+    Preguntas Frecuentes
+  </a>
+</li>
               <li>
                 <a href="/politica-envios.pdf" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none'}}>
                   Tiempos de Envío
