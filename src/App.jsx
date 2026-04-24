@@ -11,6 +11,8 @@ import Inspiracion from './Components/Inspiracion';
 import Productos from './Components/Productos';
 import Ventaja from './Components/Ventaja';
 import FaqsProductos from './Components/FaqsProductos';
+import PreguntasFrecuentes from './Components/PreguntasFrecuentes';
+
 
 // Importación de iconos y activos visuales
 import { ShoppingCart, Truck } from 'lucide-react';
