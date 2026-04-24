@@ -300,11 +300,14 @@ function App() {
                   Tiempos de Envío
                 </a>
               </li>
-              <li>
-                <a href="/garantias.pdf" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none'}}>
-                  Garantía y Devoluciones
-                </a>
-              </li>
+          <li 
+  onClick={() => { 
+    setVistaActual('faq'); 
+    window.scrollTo({top: 0, behavior: 'smooth'}); 
+  }}
+>
+  Preguntas Frecuentes
+</li>
               <li>
                 <a href="/aviso-privacidad.pdf" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none'}}>
                   Aviso de Privacidad
