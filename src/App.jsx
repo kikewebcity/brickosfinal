@@ -12,7 +12,7 @@ import Productos from './Components/Productos';
 import Ventaja from './Components/Ventaja';
 import FaqsProductos from './Components/FaqsProductos';
 import PreguntasFrecuentes from './Components/PreguntasFrecuentes';
-
+import NoticiasSustentables from './Components/NoticiasSustentables';
 
 // Importación de iconos y activos visuales
 import { ShoppingCart, Truck } from 'lucide-react';
@@ -28,19 +28,17 @@ function App() {
   const [vistaActual, setVistaActual] = useState('inicio');
   const [scrolled, setScrolled] = useState(false);
 
-  // Protocolo de activos optimizados (.webp)
   const heroImages = ['/recamara.webp','/oficina.webp', '/banop.webp'];
 
   const secciones = [
     { id: 'inicio', label: 'Inicio' },
     { id: 'nosotros', label: 'Quienes Somos' },
     { id: 'productos', label: 'Productos & Aplicaciones' },
-    { id: 'ventajas', label: 'Ventaja' },
-    { id: 'aplicaciones', label: 'Bricko News' },
+    { id: 'ventaja', label: 'Ventaja' }, // ID corregido a singular
+    { id: 'noticias', label: 'Bricko News' }, // ID actualizado para noticias
     { id: 'contacto', label: 'Contacto' },
   ];
 
-  // Control de intervalo del Slider Principal
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
@@ -48,57 +46,39 @@ function App() {
     return () => clearInterval(slideInterval);
   }, [heroImages.length]);
 
-  // Manejo de eventos Globales (Scroll y Revelación)
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => { setScrolled(window.scrollY > 50); };
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
+          if (entry.isIntersecting) entry.target.classList.add('visible');
         });
       },
       { threshold: 0.1 }
     );
 
     window.addEventListener('scroll', handleScroll);
-    document
-      .querySelectorAll('.reveal-header, .reveal-content')
-      .forEach((el) => observer.observe(el));
-
+    document.querySelectorAll('.reveal-header, .reveal-content').forEach((el) => observer.observe(el));
     return () => {
       window.removeEventListener('scroll', handleScroll);
       observer.disconnect();
     };
   }, []);
 
-    const renderContenido = () => {
+  const renderContenido = () => {
     switch (vistaActual) {
-      case 'nosotros':
-        return <Nosotros />;
-      case 'productos':
-        return <Productos />;
-      case 'aplicaciones':
-        return <Inspiracion />;
-      case 'contacto':
-        return <Contacto />;
-      case 'ventaja':
-        return <Ventaja />;
-      case 'faq': // <--- NUEVO CASO AÑADIDO
-        return <PreguntasFrecuentes />;
-      default:
-        return renderInicio();
+      case 'nosotros': return <Nosotros />;
+      case 'productos': return <Productos />;
+      case 'noticias': return <NoticiasSustentables />; // Vinculación correcta
+      case 'contacto': return <Contacto />;
+      case 'ventaja': return <Ventaja />;
+      case 'faq': return <PreguntasFrecuentes />;
+      default: return renderInicio();
     }
   };
 
-
   const renderInicio = () => (
     <>
-      {/* SECCIÓN HERO: Imagen de alto impacto */}
       <section className="hero-slider">
         {heroImages.map((img, index) => (
           <div
@@ -108,215 +88,85 @@ function App() {
           />
         ))}
         <div className="hero-slider-content">
-          <h1 className="titulo-monumental-limpio">
-            Bloques ecológicos
-            <br />
-            para tus proyectos
-          </h1>
-          <button
-            className="boton-accion-aislado"
-            onClick={() =>
-              document
-                .querySelector('.contenedor-seccion-aire')
-                .scrollIntoView({ behavior: 'smooth' })
-            }
-          >
+          <h1 className="titulo-monumental-limpio">Bloques ecológicos<br />para tus proyectos</h1>
+          <button className="boton-accion-aislado" onClick={() => document.querySelector('.contenedor-seccion-aire').scrollIntoView({ behavior: 'smooth' })}>
             Calcula tu material
           </button>
         </div>
       </section>
 
-      {/* ENVOLTURA ECOSUSTENTABLE: Fondo de textura de celulosa */}
       <div className="fondo-ecosustentable">
-        
         <section className="intro-section">
           <div className="intro-container">
             <h2 className="intro-title">
-              Redefine los espacios interiores convirtiendo el{' '}
-              <span className="text-highlight">papel reciclado</span> en{' '}
-              <span className="text-highlight">arquitectura</span>.
+              Redefine los espacios interiores convirtiendo el <span className="text-highlight">papel reciclado</span> en <span className="text-highlight">arquitectura</span>.
             </h2>
           </div>
         </section>
-
         <FeaturesSection />
-
         <section className="contenedor-seccion-aire">
           <div className="reveal-header">
-            <h2 className="titulo-seccion-limpio">
-              Calcula el <span className="enfasis-verde">material</span> de tu
-              proyecto
-            </h2>
-            <p className="subtitulo-seccion-limpio">
-              Selecciona el tipo de estructura y ajusta las dimensiones para una
-              precisión técnica inmediata.
-            </p>
+            <h2 className="titulo-seccion-limpio">Calcula el <span className="enfasis-verde">material</span> de tu proyecto</h2>
+            <p className="subtitulo-seccion-limpio">Selecciona dimensiones para una precisión técnica inmediata.</p>
           </div>
-          <div className="reveal-content">
-            <Calculadora />
-          </div>
+          <div className="reveal-content"><Calculadora /></div>
         </section>
-
         <FaqsProductos />
-
-        <section className="seccion-inspiracion-unificada">
-          <div className="reveal-header">
-            <h2 className="titulo-seccion-unificada">
-              GALERÍA DE <span className="enfasis-verde">INSPIRACIONES</span> CON
-              BRICKO
-            </h2>
-          </div>
-          <div className="carrusel-inspiracion-home reveal-content">
-            <div className="inspiracion-slide-imagen">
-              <img
-                src="/oficina.webp"
-                alt="Espacio Bricko"
-                className="inspiracion-img-img"
-              />
-            </div>
-            <div className="inspiracion-slide-texto">
-              <h3 className="slide-titulo">MODULARIDAD Y CONFORT ACÚSTICO</h3>
-              <p className="slide-parrafo">
-                Nuestros bloques de celulosa prensada segmentan oficinas abiertas
-                de forma rápida y limpia. La alta densidad garantiza un ambiente
-                aislado del ruido.
-              </p>
-              <a
-                href="#"
-                className="slide-enlace-cta"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setVistaActual('aplicaciones');
-                }}
-              >
-                Ver Aplicaciones Corporativas {'>'}
-              </a>
-            </div>
-          </div>
-        </section>
       </div>
     </>
   );
 
   return (
     <div className="main-container">
-      {/* BARRA DE SERVICIO SUPERIOR */}
       <div className="top-bar">
         <Truck size={16} strokeWidth={2.5} style={{ marginRight: '8px' }} />
         <span>Envíos a todo el país</span>
       </div>
 
-      {/* NAVEGACIÓN PRINCIPAL */}
       <nav className={`barra-navegacion ${scrolled ? 'navbar-scrolled' : ''}`}>
-        <div 
-          className="contenedor-logo" 
-          onClick={() => {
-            setVistaActual('inicio');
-            window.scrollTo({top: 0, behavior: 'smooth'});
-          }} 
-          style={{ cursor: 'pointer' }}
-        >
-          <img 
-            src={scrolled ? logoWhite : logoBricko} 
-            alt="Bricko" 
-            className="logo-img" 
-          />
+        <div className="contenedor-logo" onClick={() => { setVistaActual('inicio'); window.scrollTo({top: 0, behavior: 'smooth'}); }} style={{ cursor: 'pointer' }}>
+          <img src={scrolled ? logoWhite : logoBricko} alt="Bricko" className="logo-img" />
         </div>
 
-        {/* MENÚ DE ENLACES (DESPLEGABLE MÓVIL) */}
         <ul className={`enlaces-navegacion ${menuOpen ? 'activos' : ''}`}>
           {secciones.map((sec) => (
             <li
               key={sec.id}
               className={vistaActual === sec.id ? 'active-link' : ''}
-              onClick={() => { 
-                setVistaActual(sec.id); 
-                setMenuOpen(false); 
-                if(sec.id === 'inicio') window.scrollTo({top: 0, behavior: 'smooth'});
-              }}
+              onClick={() => { setVistaActual(sec.id); setMenuOpen(false); }}
             >
               {sec.label}
             </li>
           ))}
         </ul>
 
-        {/* PANEL DE ICONOS Y CONTROL MÓVIL (Interfaz limpia) */}
         <div className="iconos-navegacion">
-          <ShoppingCart size={22} strokeWidth={2.5} className="boton-icono" />
-          
-          <button
-            className="boton-hamburguesa"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <svg
-              viewBox="0 0 24 24"
-              width="26"
-              height="26"
-              stroke="currentColor"
-              strokeWidth="2"
-              fill="none"
-            >
-              {menuOpen ? (
-                <>
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </>
-              ) : (
-                <>
-                  <line x1="3" y1="12" x2="21" y2="12"></line>
-                  <line x1="3" y1="6" x2="21" y2="6"></line>
-                  <line x1="3" y1="18" x2="21" y2="18"></line>
-                </>
-              )}
+          <ShoppingCart size={22} strokeWidth={2.5} />
+          <button className="boton-hamburguesa" onClick={() => setMenuOpen(!menuOpen)}>
+            <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" strokeWidth="2" fill="none">
+              {menuOpen ? <path d="M18 6L6 18M6 6l12 12" /> : <path d="M3 12h18M3 6h18M3 18h18" />}
             </svg>
           </button>
         </div>
       </nav>
 
-      {/* ÁREA DE RENDERIZADO DINÁMICO */}
       <main className="contenido-principal">{renderContenido()}</main>
+
       <footer className="footer">
-        <div className="footer-overlay"></div>
         <div className="footer-container">
-          
-          {/* COLUMNA 1: MARCA */}
           <div className="footer-col left-col">
             <img src={logoWhite} alt="Bricko" className="footer-logo-img" />
-            <p className="footer-slogan">
-              Revolución Ecológica en Construcción
-            </p>
+            <p className="footer-slogan">Revolución Ecológica en Construcción</p>
           </div>
           
-          {/* COLUMNA 2: DOCUMENTACIÓN LEGAL Y OPERATIVA */}
           <div className="footer-col center-col">
             <ul className="footer-links">
-              <li>
-  <a href="/preguntas-frecuentes.pdf" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none'}}>
-    Preguntas Frecuentes
-  </a>
-</li>
-              <li>
-                <a href="/politica-envios.pdf" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none'}}>
-                  Tiempos de Envío
-                </a>
-              </li>
-          <li 
-  onClick={() => { 
-    setVistaActual('faq'); 
-    window.scrollTo({top: 0, behavior: 'smooth'}); 
-  }}
->
-  Preguntas Frecuentes
-</li>
-              <li>
-                <a href="/aviso-privacidad.pdf" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none'}}>
-                  Aviso de Privacidad
-                </a>
-              </li>
+              <li onClick={() => { setVistaActual('faq'); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Preguntas Frecuentes</li>
+              <li><a href="/politica-envios.pdf" target="_blank" rel="noopener noreferrer">Tiempos de Envío</a></li>
+              <li><a href="/aviso-privacidad.pdf" target="_blank" rel="noopener noreferrer">Aviso de Privacidad</a></li>
             </ul>
           </div>
           
-          {/* COLUMNA 3: CONTACTO Y REDES */}
           <div className="footer-col right-col">
             <p className="footer-contact">Email: ventas@bricko.com</p>
             <p className="footer-contact">Tel: -55-55-55-55-55</p>
