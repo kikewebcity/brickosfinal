@@ -118,19 +118,29 @@ function App() {
     <span className="btn-text-mobile">Calcula tu proyecto</span>
   </button>
 </div>
+<section className="intro-section-v2">
+  <div className="intro-container">
+    {/* Frase de Misión con énfasis */}
+    <div className="mision-destacada">
+      <h2 className="mision-titulo">
+        En Bricko no solo vendemos bloques...
+      </h2>
+      <p className="mision-texto">
+        Construimos soluciones que contribuyen a mejorar la vida de los 
+        <strong> ecosistemas terrestres</strong> y a la construcción de 
+        <strong> ciudades sustentables</strong>.
+      </p>
+    </div>
 
-      </section>
+    <div className="divisor-linea"></div>
 
-      <div className="fondo-ecosustentable">
-        <section className="intro-section">
-          <div className="intro-container">
-            <h2 className="intro-title">
-              Redefine los espacios interiores convirtiendo el{' '}
-              <span className="text-highlight">papel reciclado</span> en{' '}
-              <span className="text-highlight">arquitectura</span>.
-            </h2>
-          </div>
-        </section>
+    <h3 className="intro-title-secundario">
+      Redefine los espacios interiores convirtiendo el <br/>
+      <span className="text-highlight">papel reciclado</span> en <span className="text-highlight">arquitectura</span>.
+    </h3>
+  </div>
+</section>
+
 
         <FeaturesSection />
 
