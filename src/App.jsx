@@ -28,10 +28,8 @@ function App() {
   const [vistaActual, setVistaActual] = useState('inicio');
   const [scrolled, setScrolled] = useState(false);
 
-  // Imágenes del carrusel principal (Rutas absolutas carpeta public)
   const heroImages = ['/recamara.webp', '/oficina.webp', '/banop.webp'];
 
-  // Definición de navegación (IDs normalizados)
   const secciones = [
     { id: 'inicio', label: 'Inicio' },
     { id: 'nosotros', label: 'Quienes Somos' },
@@ -41,7 +39,6 @@ function App() {
     { id: 'contacto', label: 'Contacto' },
   ];
 
-  // Efecto: Temporizador del Slider Hero
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
@@ -49,18 +46,12 @@ function App() {
     return () => clearInterval(slideInterval);
   }, [heroImages.length]);
 
-  // Efecto: Manejo de Scroll y Animaciones de Revelación
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => { setScrolled(window.scrollY > 50); };
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
+          if (entry.isIntersecting) entry.target.classList.add('visible');
         });
       },
       { threshold: 0.1 }
@@ -75,29 +66,21 @@ function App() {
     };
   }, []);
 
-  // Lógica de Enrutamiento Interno
   const renderContenido = () => {
     switch (vistaActual) {
-      case 'nosotros':
-        return <Nosotros />;
-      case 'productos':
-        return <Productos />;
-      case 'noticias':
-        return <NoticiasSustentables />;
-      case 'contacto':
-        return <Contacto />;
-      case 'ventaja':
-        return <Ventaja />;
-      case 'faq':
-        return <PreguntasFrecuentes />;
-      default:
-        return renderInicio();
+      case 'nosotros': return <Nosotros />;
+      case 'productos': return <Productos />;
+      case 'noticias': return <NoticiasSustentables />;
+      case 'contacto': return <Contacto />;
+      case 'ventaja': return <Ventaja />;
+      case 'faq': return <PreguntasFrecuentes />;
+      default: return renderInicio();
     }
   };
 
-  // Renderizado de la Página de Inicio
   const renderInicio = () => (
     <>
+      {/* SECCIÓN HERO: Títulos y Botón Corregidos */}
       <section className="hero-slider">
         {heroImages.map((img, index) => (
           <div
@@ -106,41 +89,43 @@ function App() {
             style={{ backgroundImage: `url(${img})` }}
           />
         ))}
-      <div className="hero-slider-content">
-  <h1 className="titulo-monumental-limpio">
-    Bloques ecológicos <br /> para tus proyectos
-  </h1>
-  <p className="subtitulo-hero">
-    Modificación estructural en tu casa, oficina o lugar de trabajo.
-  </p>
-  <button className="boton-accion-aislado">
-    <span className="btn-text-desktop">Calcula la cantidad de brickos para tu proyecto</span>
-    <span className="btn-text-mobile">Calcula tu proyecto</span>
-  </button>
-</div>
-<section className="intro-section-v2">
-  <div className="intro-container">
-    {/* Frase de Misión con énfasis */}
-    <div className="mision-destacada">
-      <h2 className="mision-titulo">
-        En Bricko no solo vendemos bloques...
-      </h2>
-      <p className="mision-texto">
-        Construimos soluciones que contribuyen a mejorar la vida de los 
-        <strong> ecosistemas terrestres</strong> y a la construcción de 
-        <strong> ciudades sustentables</strong>.
-      </p>
-    </div>
+        <div className="hero-slider-content">
+          <h1 className="titulo-monumental-limpio">
+            Bloques ecológicos <br /> para tus proyectos
+          </h1>
+          <p className="subtitulo-hero">
+            Modificación estructural en tu casa, oficina o lugar de trabajo.
+          </p>
+          <button 
+            className="boton-accion-aislado"
+            onClick={() => document.querySelector('.intro-section-v2').scrollIntoView({ behavior: 'smooth' })}
+          >
+            <span className="btn-text-desktop">Calcula la cantidad de brickos para tu proyecto</span>
+            <span className="btn-text-mobile">Calcula tu proyecto</span>
+          </button>
+        </div>
+      </section>
 
-    <div className="divisor-linea"></div>
-
-    <h3 className="intro-title-secundario">
-      Redefine los espacios interiores convirtiendo el <br/>
-      <span className="text-highlight">papel reciclado</span> en <span className="text-highlight">arquitectura</span>.
-    </h3>
-  </div>
-</section>
-
+      {/* ENVOLTURA ECOSUSTENTABLE: Inicia con la nueva Intro de Misión */}
+      <div className="fondo-ecosustentable">
+        
+        <section className="intro-section-v2">
+          <div className="intro-container">
+            <div className="mision-destacada">
+              <h2 className="mision-titulo">En Bricko no solo vendemos bloques...</h2>
+              <p className="mision-texto">
+                Construimos soluciones que contribuyen a mejorar la vida de los 
+                <strong> ecosistemas terrestres</strong> y a la construcción de 
+                <strong> ciudades sustentables</strong>.
+              </p>
+            </div>
+            <div className="divisor-linea"></div>
+            <h3 className="intro-title-secundario">
+              Redefine los espacios interiores convirtiendo el <br/>
+              <span className="text-highlight">papel reciclado</span> en <span className="text-highlight">arquitectura</span>.
+            </h3>
+          </div>
+        </section>
 
         <FeaturesSection />
 
@@ -165,13 +150,11 @@ function App() {
 
   return (
     <div className="main-container">
-      {/* 1. BARRA DE SERVICIO */}
       <div className="top-bar">
         <Truck size={16} strokeWidth={2.5} style={{ marginRight: '8px' }} />
         <span>Envíos a todo el país</span>
       </div>
 
-      {/* 2. NAVEGACIÓN PRINCIPAL (Sticky habilitado en CSS) */}
       <nav className={`barra-navegacion ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div 
           className="contenedor-logo" 
@@ -211,32 +194,21 @@ function App() {
         </div>
       </nav>
 
-      {/* 3. CONTENIDO DINÁMICO */}
       <main className="contenido-principal">{renderContenido()}</main>
 
-      {/* 4. PIE DE PÁGINA (Footer) */}
       <footer className="footer">
         <div className="footer-container">
-          
           <div className="footer-col left-col">
             <img src={logoWhite} alt="Bricko" className="footer-logo-img" />
             <p className="footer-slogan">Revolución Ecológica en Construcción</p>
           </div>
-          
           <div className="footer-col center-col">
             <ul className="footer-links">
-              {/* Enlace dinámico a Preguntas Frecuentes (Sin 404) */}
-              <li 
-                style={{ cursor: 'pointer' }} 
-                onClick={() => { setVistaActual('faq'); window.scrollTo({top: 0, behavior: 'smooth'}); }}
-              >
-                Preguntas Frecuentes
-              </li>
+              <li onClick={() => { setVistaActual('faq'); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Preguntas Frecuentes</li>
               <li><a href="/politica-envios.pdf" target="_blank" rel="noopener noreferrer">Tiempos de Envío</a></li>
               <li><a href="/aviso-privacidad.pdf" target="_blank" rel="noopener noreferrer">Aviso de Privacidad</a></li>
             </ul>
           </div>
-          
           <div className="footer-col right-col">
             <p className="footer-contact">Email: ventas@bricko.com</p>
             <p className="footer-contact">Tel: -55-55-55-55-55</p>
