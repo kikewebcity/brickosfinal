@@ -264,6 +264,18 @@ h1, h2, h3, h4 {
   margin-bottom: 40px;
   text-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8);
 }
+/* Estilos para el subtítulo del banner */
+.subtitulo-hero {
+  color: #ffffff;
+  font-family: var(--font-text);
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
 
 .boton-accion-aislado {
   background-color: var(--color-green);
@@ -1638,6 +1650,15 @@ h1, h2, h3, h4 {
 /* =========================================
    MEDIA QUERIES GLOBALES (RESPONSIVE)
    ========================================= */
+  /* Manejo del texto del botón */
+.btn-text-mobile { display: none; }
+
+@media (max-width: 600px) {
+  .btn-text-desktop { display: none; }
+  .btn-text-mobile { display: inline; }
+  .subtitulo-hero { font-size: 1.1rem; padding: 0 20px; }
+}
+
 @media (min-width: 900px) {
   .zigzag-fila {
     flex-direction: row;
