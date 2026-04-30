@@ -94,7 +94,7 @@ function App() {
             Bloques ecológicos <br /> para tus proyectos
           </h1>
           <p className="subtitulo-hero">
-            Modificación estructural en tu casa, oficina o lugar de trabajo.
+            Modificación estructural en tu casa, oficina o lugar de trabajo
           </p>
           <button 
             className="boton-accion-aislado"
@@ -120,10 +120,6 @@ function App() {
               </p>
             </div>
             <div className="divisor-linea"></div>
-            <h3 className="intro-title-secundario">
-              Redefine los espacios interiores convirtiendo el <br/>
-              <span className="text-highlight">papel reciclado</span> en <span className="text-highlight">arquitectura</span>.
-            </h3>
           </div>
         </section>
 
