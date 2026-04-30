@@ -244,15 +244,17 @@ p {
   text-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8);
 }
 
+
+/* 1. ESTILOS PARA EL BANNER */
 .subtitulo-hero {
-  color: #ffffff;
-  font-family: var(--font-text);
-  font-size: 1.4rem;
-  margin-bottom: 30px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  /* El color por defecto podría ser negro o gris oscuro */
+}
+
+.subtitulo-blanco {
+  color: #ffffff !important; /* Forzamos el color blanco */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Añadimos sombra para contraste si el fondo es claro */
 }
 
 .boton-accion-aislado {
@@ -528,7 +530,15 @@ p {
   gap: 15px;
   margin-bottom: 40px;
 }
-
+.leyenda-material {
+  font-size: 0.9rem;
+  color: #555555; /* Un gris medio para que sea sutil */
+  font-style: italic; /* En cursiva para diferenciarlo */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-top: 1px solid #ddd; /* Una línea divisoria opcional */
+  padding-top: 0.5rem;
+}
 .type-btn {
   flex: 1;
   background: transparent;
