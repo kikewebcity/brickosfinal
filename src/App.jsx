@@ -106,21 +106,19 @@ function App() {
             style={{ backgroundImage: `url(${img})` }}
           />
         ))}
-        <div className="hero-slider-content">
-          <h1 className="titulo-monumental-limpio">
-            Bloques ecológicos
-            <br />
-            para tus proyectos
-          </h1>
-          <button
-            className="boton-accion-aislado"
-            onClick={() =>
-              document.querySelector('.contenedor-seccion-aire').scrollIntoView({ behavior: 'smooth' })
-            }
-          >
-            Calcula tu material
-          </button>
-        </div>
+      <div className="hero-slider-content">
+  <h1 className="titulo-monumental-limpio">
+    Bloques ecológicos <br /> para tus proyectos
+  </h1>
+  <p className="subtitulo-hero">
+    Modificación estructural en tu casa, oficina o lugar de trabajo.
+  </p>
+  <button className="boton-accion-aislado">
+    <span className="btn-text-desktop">Calcula la cantidad de brickos para tu proyecto</span>
+    <span className="btn-text-mobile">Calcula tu proyecto</span>
+  </button>
+</div>
+
       </section>
 
       <div className="fondo-ecosustentable">
