@@ -1,12 +1,9 @@
-/* =========================================
-   REGLAS GENERALES Y VARIABLES
-   ========================================= */
 * {
   box-sizing: border-box;
 }
 
 html, body {
-  overflow-x: clip; /* Permite cortar el contenido lateral sin romper el 'sticky' */
+  overflow-x: clip; 
   width: 100%;
   position: relative;
 }
@@ -37,79 +34,16 @@ h1, h2, h3, h4 {
   letter-spacing: 1px;
 }
 
+p {
+  color: #1a1a1a !important; 
+  font-weight: 500 !important;
+  line-height: 1.6;
+}
+
 .main-container {
   width: 100%;
   display: flex;
   flex-direction: column;
-}
-
-/* =========================================
-   FONDO ECOSUSTENTABLE
-   ========================================= */
-  .intro-section-v2 {
-  padding: 120px 20px;
-  text-align: center;
-  background-color: #ffffff;
-}
-
-.mision-destacada {
-  max-width: 800px;
-  margin: 0 auto 50px auto;
-}
-
-.mision-titulo {
-  font-family: var(--font-main);
-  font-size: 1.8rem;
-  color: var(--color-green);
-  margin-bottom: 20px;
-  letter-spacing: 2px;
-}
-
-.mision-texto {
-  font-size: 1.5rem !important;
-  line-height: 1.4 !important;
-  color: #333 !important;
-}
-
-.mision-texto strong {
-  color: var(--color-dark);
-  border-bottom: 3px solid var(--color-green);
-}
-
-.divisor-linea {
-  width: 60px;
-  height: 4px;
-  background-color: var(--color-green);
-  margin: 40px auto;
-}
-
-.intro-title-secundario {
-  font-family: var(--font-text);
-  font-size: 2rem;
-  font-weight: 300;
-  color: #666;
-}
-
-  
-.fondo-ecosustentable {
-  background-color: #f7f5f0;
-  background-image: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.8) 0%, transparent 80%);
-  padding-bottom: 50px;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.fondo-ecosustentable > * {
-  position: relative;
-  z-index: 2;
-}
-
-.fondo-ecosustentable .intro-section,
-.fondo-ecosustentable .contenedor-seccion-aire,
-.fondo-ecosustentable .seccion-inspiracion-unificada {
-  background: transparent !important;
 }
 
 /* =========================================
@@ -149,11 +83,11 @@ h1, h2, h3, h4 {
   align-items: center;
   padding: 15px 40px;
   background-color: #ffffff;
-  position: -webkit-sticky; /* Compatibilidad WebKit/iOS */
+  position: -webkit-sticky; 
   position: sticky;         
   top: 0;                   
   z-index: 1000;            
-  will-change: transform;   /* Aceleración de hardware */
+  will-change: transform;   
   border-bottom: 1px solid var(--color-border);
   transition: var(--transition-smooth);
 }
@@ -306,10 +240,10 @@ h1, h2, h3, h4 {
   font-size: 6.5rem;
   line-height: 0.9;
   color: #ffffff;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8);
 }
-/* Estilos para el subtítulo del banner */
+
 .subtitulo-hero {
   color: #ffffff;
   font-family: var(--font-text);
@@ -320,7 +254,6 @@ h1, h2, h3, h4 {
   margin-right: auto;
   text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
-
 
 .boton-accion-aislado {
   background-color: var(--color-green);
@@ -340,25 +273,75 @@ h1, h2, h3, h4 {
   transform: translateY(-3px);
 }
 
+.btn-text-mobile { 
+  display: none; 
+}
+
 /* =========================================
-   SECCIONES DINÁMICAS (REVEAL Y ESPACIADO)
+   FONDO ECOSUSTENTABLE Y SECCIÓN INTRO
    ========================================= */
-.intro-section {
-  padding: 100px 20px;
+.fondo-ecosustentable {
+  background-color: #f7f5f0;
+  background-image: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.8) 0%, transparent 80%);
+  padding-bottom: 50px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.fondo-ecosustentable > * {
+  position: relative;
+  z-index: 2;
+}
+
+.fondo-ecosustentable .intro-section-v2,
+.fondo-ecosustentable .contenedor-seccion-aire,
+.fondo-ecosustentable .seccion-inspiracion-unificada {
+  background: transparent !important;
+}
+
+.intro-section-v2 {
+  padding: 120px 20px;
   text-align: center;
 }
 
-.intro-container {
-  max-width: 900px;
-  margin: 0 auto;
+.mision-destacada {
+  max-width: 800px;
+  margin: 0 auto 50px auto;
 }
 
-.intro-title {
-  font-size: 2.5rem;
-  line-height: 1.4;
-  font-weight: 400;
+.mision-titulo {
+  font-family: var(--font-main);
+  font-size: 1.8rem;
+  color: var(--color-green);
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.mision-texto {
+  font-size: 1.5rem !important;
+  line-height: 1.4 !important;
+  color: #333 !important;
+}
+
+.mision-texto strong {
+  color: var(--color-dark);
+  border-bottom: 3px solid var(--color-green);
+}
+
+.divisor-linea {
+  width: 60px;
+  height: 4px;
+  background-color: var(--color-green);
+  margin: 40px auto;
+}
+
+.intro-title-secundario {
   font-family: var(--font-text);
-  text-transform: none;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #666;
 }
 
 .text-highlight {
@@ -750,77 +733,6 @@ h1, h2, h3, h4 {
 }
 
 /* =========================================
-   SECCIÓN INSPIRACIÓN
-   ========================================= */
-.seccion-inspiracion-unificada {
-  max-width: 1200px;
-  margin: 0 auto 100px auto;
-  padding: 0 20px;
-}
-
-.titulo-seccion-unificada {
-  text-align: center;
-  font-size: 2.8rem;
-  color: var(--color-dark);
-  margin-bottom: 60px;
-}
-
-.carrusel-inspiracion-home {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  background-color: #f8f9fa;
-  border-radius: 20px;
-  padding: 40px;
-  border: 1px solid var(--color-border);
-}
-
-.inspiracion-slide-imagen {
-  flex: 1.5;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.inspiracion-img-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.inspiracion-slide-texto {
-  flex: 1;
-}
-
-.slide-titulo {
-  font-size: 2rem;
-  color: var(--color-dark);
-  margin-bottom: 20px;
-}
-
-.slide-parrafo {
-  font-family: var(--font-text);
-  color: #555555;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  text-align: justify;
-}
-
-.slide-enlace-cta {
-  font-family: var(--font-main);
-  color: var(--color-green);
-  font-size: 1.4rem;
-  text-decoration: none;
-  font-weight: 700;
-}
-
-.slide-enlace-cta:hover {
-  text-decoration: underline;
-}
-
-/* =========================================
    PÁGINA DE CONTACTO
    ========================================= */
 .contacto-pagina-maestra {
@@ -1027,7 +939,7 @@ h1, h2, h3, h4 {
 }
 
 /* =========================================
-   PÁGINA DE PRODUCTOS
+   PÁGINA DE PRODUCTOS Y APLICACIONES
    ========================================= */
 .productos-pagina-maestra {
   background-color: #ffffff;
@@ -1065,7 +977,6 @@ h1, h2, h3, h4 {
   margin-bottom: 20px;
 }
 
-/* FORZAR TEXTO NEGRO EN PRODUCTOS (SOBRESCRITURA DE HERENCIA) */
 .producto-item-card p,
 .producto-item-card span,
 .mini-tabla-datos p {
@@ -1079,8 +990,101 @@ h1, h2, h3, h4 {
   margin-bottom: 15px;
 }
 
+.aplicaciones-hero {
+  background-color: var(--color-dark);
+  color: #ffffff;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.aplicaciones-titulo-principal {
+  font-family: var(--font-main);
+  font-size: 4.5rem;
+  color: var(--color-green);
+  margin-bottom: 25px;
+}
+
+.aplicaciones-descripcion-hero {
+  font-family: var(--font-text);
+  font-size: 1.2rem;
+  color: #eaeded;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.aplicaciones-galeria-seccion {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.aplicacion-bloque {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.aplicacion-bloque.reversa {
+  flex-direction: row-reverse;
+}
+
+.aplicacion-imagen-caja {
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.aplicacion-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.aplicacion-imagen-caja:hover .aplicacion-img {
+  transform: scale(1.03);
+}
+
+.aplicacion-texto-caja {
+  flex: 1;
+  padding: 20px;
+}
+
+.aplicacion-categoria {
+  font-family: var(--font-main);
+  font-size: 1.2rem;
+  color: #888888;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.aplicacion-subtitulo {
+  font-family: var(--font-main);
+  font-size: 3rem;
+  color: var(--color-dark);
+  margin-bottom: 25px;
+}
+
+.aplicacion-parrafo,
+.aplicacion-parrafo * {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  color: #1a1a1a !important; 
+  line-height: 1.7;
+  text-align: justify;
+  font-weight: 500 !important;
+}
+
 /* =========================================
-   TABLA COMPARATIVA DE RENDIMIENTO (SOBRESCRITURA ESTRICTA)
+   TABLA COMPARATIVA DE RENDIMIENTO 
    ========================================= */
 .seccion-tabla-comparativa {
   max-width: 1100px;
@@ -1095,7 +1099,6 @@ h1, h2, h3, h4 {
   color: var(--color-dark);
 }
 
-/* Habilita el desplazamiento táctil lateral en móviles */
 .contenedor-tabla-scroll {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -1105,14 +1108,13 @@ h1, h2, h3, h4 {
   background-color: #ffffff;
 }
 
-/* Captura cualquier tabla dentro del contenedor, tenga clase o no */
 .contenedor-tabla-scroll table,
 .tabla-bricko-vs-tradicional {
   width: 100%;
   border-collapse: collapse;
   font-family: var(--font-text);
   background-color: #ffffff;
-  min-width: 650px; /* ESTO ES CLAVE: Evita que se apachurre en el teléfono */
+  min-width: 650px; 
 }
 
 .contenedor-tabla-scroll th,
@@ -1130,7 +1132,7 @@ h1, h2, h3, h4 {
 .tabla-bricko-vs-tradicional td {
   padding: 18px 20px;
   border-bottom: 1px solid #eaeded;
-  color: #1a1a1a !important; /* Forzamos color oscuro */
+  color: #1a1a1a !important; 
   font-size: 1.05rem;
   line-height: 1.5;
 }
@@ -1432,129 +1434,6 @@ h1, h2, h3, h4 {
 }
 
 /* =========================================
-   PÁGINA APLICACIONES
-   ========================================= */
-.aplicaciones-pagina-maestra {
-  background-color: #ffffff;
-  width: 100%;
-}
-
-.aplicaciones-hero {
-  background-color: var(--color-dark);
-  color: #ffffff;
-  padding: 120px 20px;
-  text-align: center;
-}
-
-.aplicaciones-titulo-principal {
-  font-family: var(--font-main);
-  font-size: 4.5rem;
-  color: var(--color-green);
-  margin-bottom: 25px;
-}
-
-.aplicaciones-descripcion-hero {
-  font-family: var(--font-text);
-  font-size: 1.2rem;
-  color: #eaeded;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
-  text-align: justify;
-}
-
-.aplicaciones-galeria-seccion {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 100px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 120px;
-}
-
-.aplicacion-bloque {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-}
-
-.aplicacion-bloque.reversa {
-  flex-direction: row-reverse;
-}
-
-.aplicacion-imagen-caja {
-  flex: 1;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 4px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-}
-
-.aplicacion-img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.aplicacion-imagen-caja:hover .aplicacion-img {
-  transform: scale(1.03);
-}
-
-.aplicacion-texto-caja {
-  flex: 1;
-  padding: 20px;
-}
-
-.aplicacion-categoria {
-  font-family: var(--font-main);
-  font-size: 1.2rem;
-  color: #888888;
-  letter-spacing: 2px;
-  display: block;
-  margin-bottom: 15px;
-}
-
-.aplicacion-subtitulo {
-  font-family: var(--font-main);
-  font-size: 3rem;
-  color: var(--color-dark);
-  margin-bottom: 25px;
-}
-
-.aplicacion-parrafo {
-  font-family: var(--font-text);
-  font-size: 1.1rem;
-  color: #555555;
-  line-height: 1.7;
-  text-align: justify;
-}
-
-.aplicaciones-cierre-tecnico {
-  background-color: #f8f9fa;
-  padding: 100px 20px;
-  text-align: center;
-  border-top: 1px solid var(--color-border);
-}
-
-.cierre-tecnico-titulo {
-  font-family: var(--font-main);
-  font-size: 3.5rem;
-  color: var(--color-dark);
-  margin-bottom: 20px;
-}
-
-.cierre-tecnico-texto {
-  font-family: var(--font-text);
-  font-size: 1.1rem;
-  color: #666666;
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: justify;
-}
-
-
-/* =========================================
    MÓDULO: NOTICIAS SUSTENTABLES (BLOG)
    ========================================= */
 .noticias-estaticas-seccion {
@@ -1654,7 +1533,7 @@ h1, h2, h3, h4 {
 .noticia-extracto {
   font-family: var(--font-text);
   font-size: 1rem !important;
-  color: #1a1a1a !important; /* Forzado a negro por legibilidad */
+  color: #1a1a1a !important; 
   line-height: 1.6;
   margin: 0 0 20px 0;
   text-align: justify;
@@ -1690,19 +1569,11 @@ h1, h2, h3, h4 {
 
 .noticia-boton-leer:hover {
   color: var(--color-dark);
-}   
+}
 
 /* =========================================
    MEDIA QUERIES GLOBALES (RESPONSIVE)
    ========================================= */
-  /* Manejo del texto del botón */
-.btn-text-mobile { display: none; }
-
-@media (max-width: 600px) {
-  .btn-text-desktop { display: none; }
-  .btn-text-mobile { display: inline; }
-  .subtitulo-hero { font-size: 1.1rem; padding: 0 20px; }
-}
 
 @media (min-width: 900px) {
   .zigzag-fila {
@@ -1718,7 +1589,10 @@ h1, h2, h3, h4 {
     padding: 15px 20px;
   }
 
-  /* EL MENÚ LATERAL MÓVIL (BLANCO ABSOLUTO) */
+  .btn-text-desktop { display: none; }
+  .btn-text-mobile { display: inline; }
+  .subtitulo-hero { font-size: 1.1rem; padding: 0 20px; }
+
   .enlaces-navegacion {
     position: fixed;
     top: 0;
@@ -1738,7 +1612,6 @@ h1, h2, h3, h4 {
     transform: translateX(0);
   }
 
-  /* LAS LETRAS DEL MENÚ MÓVIL (SIEMPRE NEGRAS) */
   .enlaces-navegacion li,
   .barra-navegacion.navbar-scrolled .enlaces-navegacion.activos li {
     color: #1a1a1a !important; 
@@ -1759,7 +1632,6 @@ h1, h2, h3, h4 {
     height: 35px;
   }
 
-  /* Ajustes de espaciado general en móvil */
   .titulo-monumental-limpio {
     font-size: 3.5rem; 
     line-height: 1.1;
@@ -1804,21 +1676,43 @@ h1, h2, h3, h4 {
     padding: 40px 30px;
   }
 
-  .inspiracion-slide-imagen,
-  .aplicacion-img {
-    height: 300px;
+  /* =======================================================
+     CORRECCIÓN: BLOQUES DE APLICACIONES EN MÓVIL
+     ======================================================= */
+  .aplicacion-bloque, 
+  .aplicacion-bloque.reversa {
+    flex-direction: column !important; 
+    gap: 30px !important;
+    padding: 0 !important;
   }
 
-  /* =======================================================
-     OPTIMIZACIÓN DE CONVERSIÓN: CALCULADORA MÓVIL
-     ======================================================= */
+  .aplicacion-imagen-caja, 
+  .aplicacion-texto-caja {
+    width: 100% !important; 
+    flex: none !important;
+  }
+
+  .aplicacion-img {
+    height: 280px !important; 
+    width: 100% !important;
+    object-fit: cover !important; 
+    border-radius: 12px !important;
+  }
+
+  .aplicacion-texto-caja {
+    padding: 20px 0 !important;
+    text-align: left !important;
+  }
+
+  .aplicacion-subtitulo {
+    font-size: 2.5rem !important; 
+    line-height: 1.1 !important;
+  }
+
   .calc-image-panel {
     display: none !important; 
   }
 
-  /* =======================================================
-     ESTILOS DEL ACORDEÓN MÓVIL (FEATURES)
-     ======================================================= */
   .feature-item-wrapper {
     display: flex;
     flex-direction: column;
@@ -1837,14 +1731,8 @@ h1, h2, h3, h4 {
   }
 
   @keyframes deslizarAbajo {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .contenido-acordeon-movil .feature-title {
@@ -1859,9 +1747,38 @@ h1, h2, h3, h4 {
     line-height: 1.6 !important;
   }
 
-  /* =======================================================
-     UX MÓVIL: CARRUSEL HORIZONTAL PARA PRODUCTOS
-     ======================================================= */
+  .productos-pagina-maestra {
+      position: relative; 
+  }
+
+  .productos-pagina-maestra:before,
+  .productos-pagina-maestra:after {
+      content: '';
+      position: absolute;
+      top: 60%; 
+      width: 32px;
+      height: 32px;
+      background-color: var(--color-green); 
+      border-radius: 50%; 
+      z-index: 10;
+      opacity: 0.8;
+      pointer-events: none; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+      background-size: 16px;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  .productos-pagina-maestra:before {
+      left: 10px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>');
+  }
+
+  .productos-pagina-maestra:after {
+      right: 10px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>');
+  }
+
   .productos-grid-principal {
     display: flex !important;
     flex-direction: row !important;
@@ -1870,8 +1787,10 @@ h1, h2, h3, h4 {
     scroll-snap-type: x mandatory;
     padding-bottom: 20px;
     gap: 20px;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+    padding-left: 20px; 
+    padding-right: 20px; 
   }
 
   .productos-grid-principal::-webkit-scrollbar {
@@ -1879,8 +1798,10 @@ h1, h2, h3, h4 {
   }
 
   .producto-item-card {
-    min-width: 85vw;
-    scroll-snap-align: center;
+    min-width: 85vw; 
+    scroll-snap-align: center; 
     flex-shrink: 0;
+    margin-bottom: 0;
   }
 }
+
