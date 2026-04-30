@@ -131,7 +131,7 @@ function App() {
               Calcula el <span className="enfasis-verde">material</span> de tu proyecto
             </h2>
             <p className="subtitulo-seccion-limpio">
-              Selecciona las dimensiones de tu muro para una precisión técnica inmediata.
+              Selecciona las dimensiones del muro que requieres construir en tu casa u oficina para saber cuántas piezas requieres
             </p>
           </div>
           <div className="reveal-content">
