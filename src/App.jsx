@@ -80,7 +80,7 @@ function App() {
 
   const renderInicio = () => (
     <>
-      {/* SECCIÓN HERO: Títulos y Botón Corregidos */}
+      {/* SECCIÓN HERO */}
       <section className="hero-slider">
         {heroImages.map((img, index) => (
           <div
@@ -93,12 +93,13 @@ function App() {
           <h1 className="titulo-monumental-limpio">
             Bloques ecológicos <br /> para tus proyectos
           </h1>
-          <p className="subtitulo-hero">
+          {/* CORRECCIÓN: Color forzado a blanco con style inline */}
+          <p className="subtitulo-hero" style={{ color: '#ffffff', opacity: 1 }}>
             Modificación estructural en tu casa, oficina o lugar de trabajo
           </p>
           <button 
             className="boton-accion-aislado"
-            onClick={() => document.querySelector('.intro-section-v2').scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.querySelector('.intro-section').scrollIntoView({ behavior: 'smooth' })}
           >
             <span className="btn-text-desktop">Calcula la cantidad de brickos para tu proyecto</span>
             <span className="btn-text-mobile">Calcula tu proyecto</span>
@@ -106,20 +107,14 @@ function App() {
         </div>
       </section>
 
-      {/* ENVOLTURA ECOSUSTENTABLE: Inicia con la nueva Intro de Misión */}
       <div className="fondo-ecosustentable">
         
-        <section className="intro-section-v2">
+        {/* SECCIÓN INTRO ACTUALIZADA (Sin "En Bricko..." y sin punto final) */}
+        <section className="intro-section" style={{ padding: '100px 20px', textAlign: 'center' }}>
           <div className="intro-container">
-            <div className="mision-destacada">
-              <h2 className="mision-titulo">En Bricko no solo vendemos bloques...</h2>
-              <p className="mision-texto">
-                Construimos soluciones que contribuyen a mejorar la vida de los 
-                <strong> ecosistemas terrestres</strong> y a la construcción de 
-                <strong> ciudades sustentables</strong>.
-              </p>
-            </div>
-            <div className="divisor-linea"></div>
+            <h3 className="intro-title" style={{ fontSize: '2.5rem', color: '#1a1a1a', fontWeight: '300', margin: 0, textTransform: 'none', lineHeight: '1.3' }}>
+              Redefine los espacios interiores convirtiendo el <span className="text-highlight">papel reciclado</span> en <span className="text-highlight">arquitectura</span>
+            </h3>
           </div>
         </section>
 
