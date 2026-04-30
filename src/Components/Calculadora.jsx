@@ -8,7 +8,7 @@ const Calculadora = () => {
   // 2. LÓGICA DE CÁLCULO (15 unidades por m2 / Redondeo estándar)
   const area = ancho * alto;
   const brickosTotales = Math.round(area * 15); 
-  const costoTotal = brickosTotales * 14;
+  const costoTotal = brickosTotales * 15;
 
   // 3. ENLACE DINÁMICO DE WHATSAPP
   const mensajeWA = `Hola, me interesa adquirir ${brickosTotales} Brickos para mi proyecto. El costo estimado es de $${costoTotal} pesos.`;
