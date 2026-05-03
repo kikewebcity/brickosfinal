@@ -1,10 +1,3 @@
-### **DOCUMENTACIÓN TÉCNICA: COMPONENTE CALCULADORA.JSX**
-A continuación, se presenta el código íntegro del módulo de cálculo dinámico para el proyecto Bricko. Esta versión integra la actualización de costos unitarios, la normalización de la gramática en encabezados y la inclusión de leyendas comerciales solicitadas.
-#### **Especificaciones Técnicas del Módulo**
- * **Costo Unitario:** $15.00 MXN por pieza.
- * **Factor de Rendimiento:** 15 unidades por metro cuadrado (m^2).
- * **Interfaz:** Control mediante deslizadores (*sliders*) para dimensiones de muro y enlace directo a API de WhatsApp para cotización.
-```jsx
 import React, { useState } from 'react';
 
 const Calculadora = () => {
@@ -129,4 +122,4 @@ const Calculadora = () => {
 
 export default Calculadora;
 
-```
+
