@@ -16,7 +16,6 @@ import NoticiasSustentables from './Components/NoticiasSustentables';
 import AvisoPrivacidad from './Components/AvisoPrivacidad';
 import TiemposEnvio from './Components/TiemposEnvio';
 
-
 // 2. Importación de iconos y activos visuales
 import { ShoppingCart, Truck } from 'lucide-react';
 import logoBricko from './assets/logobricko.png';
@@ -85,7 +84,6 @@ function App() {
 
   const renderInicio = () => (
     <>
-      {/* SECCIÓN HERO */}
       <section className="hero-slider">
         {heroImages.map((img, index) => (
           <div
@@ -98,7 +96,6 @@ function App() {
           <h1 className="titulo-monumental-limpio">
             Bloques ecológicos <br /> para tus proyectos
           </h1>
-          {/* CORRECCIÓN: Color forzado a blanco con style inline */}
           <p className="subtitulo-hero" style={{ color: '#ffffff', opacity: 1 }}>
             Modificación estructural en tu casa, oficina o lugar de trabajo
           </p>
@@ -113,8 +110,6 @@ function App() {
       </section>
 
       <div className="fondo-ecosustentable">
-        
-        {/* SECCIÓN INTRO ACTUALIZADA (Sin "En Bricko..." y sin punto final) */}
         <section className="intro-section" style={{ padding: '100px 20px', textAlign: 'center' }}>
           <div className="intro-container">
             <h3 className="intro-title" style={{ fontSize: '2.5rem', color: '#1a1a1a', fontWeight: '300', margin: 0, textTransform: 'none', lineHeight: '1.3' }}>
@@ -160,27 +155,25 @@ function App() {
           <img src={scrolled ? logoWhite : logoBricko} alt="Bricko" className="logo-img" />
         </div>
 
-     {/* Dentro de tu <nav> en App.jsx */}
-<ul className={`enlaces-navegacion ${menuOpen ? 'activos' : ''}`}>
-  {/* NUEVO: Logo dentro del menú móvil */}
-  <li className="logo-movil-menu">
-    <img src=  {logoWhite} alt="Bricko" className="logo-img-menu" />
-  </li>
-  
-  {secciones.map((sec) => (
-    <li
-      key={sec.id}
-      className={vistaActual === sec.id ? 'active-link' : ''}
-      onClick={() => { 
-        setVistaActual(sec.id); 
-        setMenuOpen(false); 
-        window.scrollTo({top: 0, behavior: 'smooth'});
-      }}
-    >
-      {sec.label}
-    </li>
-  ))}
-</ul>
+        <ul className={`enlaces-navegacion ${menuOpen ? 'activos' : ''}`}>
+          <li className="logo-movil-menu">
+            <img src={logoWhite} alt="Bricko" className="logo-img-menu" />
+          </li>
+          
+          {secciones.map((sec) => (
+            <li
+              key={sec.id}
+              className={vistaActual === sec.id ? 'active-link' : ''}
+              onClick={() => { 
+                setVistaActual(sec.id); 
+                setMenuOpen(false); 
+                window.scrollTo({top: 0, behavior: 'smooth'});
+              }}
+            >
+              {sec.label}
+            </li>
+          ))}
+        </ul>
 
         <div className="iconos-navegacion">
           <ShoppingCart size={22} strokeWidth={2.5} className="boton-icono" />
@@ -197,63 +190,55 @@ function App() {
       </nav>
 
       <main className="contenido-principal">{renderContenido()}</main>
-<footer className="footer">
-  <div className="footer-container">
-    {/* COLUMNA IZQUIERDA: IDENTIDAD */}
-    <div className="footer-col left-col">
-      <img src={logoWhite} alt="Bricko" className="footer-logo-img" />
-      <p className="footer-slogan">Revolución Ecológica en Construcción</p>
+
+      <footer className="footer">
+        <div className="footer-container">
+          <div className="footer-col left-col">
+            <img src={logoWhite} alt="Bricko" className="footer-logo-img" />
+            <p className="footer-slogan">Revolución Ecológica en Construcción</p>
+          </div>
+
+          <div className="footer-col center-col">
+            <ul className="footer-links">
+              <li 
+                style={{ cursor: 'pointer' }}
+                onClick={() => { setVistaActual('faq'); window.scrollTo({top: 0, behavior: 'smooth'}); }}
+              >
+                Preguntas Frecuentes
+              </li>
+              <li 
+                style={{ cursor: 'pointer' }} 
+                onClick={() => { 
+                  setVistaActual('envios'); 
+                  window.scrollTo({ top: 0, behavior: 'smooth' }); 
+                }}
+              >
+                Tiempos de Envío
+              </li>
+              <li 
+                style={{ cursor: 'pointer' }} 
+                onClick={() => { 
+                  setVistaActual('privacidad'); 
+                  window.scrollTo({ top: 0, behavior: 'smooth' }); 
+                }}
+              >
+                Aviso de Privacidad
+              </li>
+            </ul>
+          </div>
+
+          <div className="footer-col right-col">
+            <p className="footer-contact">Email: ventas@bricko.com</p>
+            <p className="footer-contact">Tel: -55-55-55-55-55</p>
+            <div className="social-icons">
+              <img src={iconYt} alt="YT" className="social-img" />
+              <img src={iconInsta} alt="IG" className="social-img" />
+              <img src={iconFb} alt="FB" className="social-img" />
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-
-    {/* COLUMNA CENTRAL: NAVEGACIÓN LEGAL Y LOGÍSTICA */}
-    <div className="footer-col center-col">
-      <ul className="footer-links">
-        {/* Preguntas Frecuentes */}
-        <li 
-          style={{ cursor: 'pointer' }} 
-          onClick={() => { setVistaActual('faq'); window.scrollTo({top: 0, behavior: 'smooth'}); }}
-        >
-          Preguntas Frecuentes
-        </li>
-
-        {/* Tiempos de Envío (Ahora dinámico) */}
-        <li 
-          style={{ cursor: 'pointer' }} 
-          onClick={() => { 
-            setVistaActual('envios'); 
-            window.scrollTo({ top: 0, behavior: 'smooth' }); 
-          }}
-        >
-          Tiempos de Envío
-        </li>
-
-        {/* Aviso de Privacidad */}
-        <li 
-          style={{ cursor: 'pointer' }} 
-          onClick={() => { 
-            setVistaActual('privacidad'); 
-            window.scrollTo({ top: 0, behavior: 'smooth' }); 
-          }}
-        >
-          Aviso de Privacidad
-        </li>
-      </ul>
-    </div>
-
-    {/* COLUMNA DERECHA: CONTACTO Y REDES */}
-    <div className="footer-col right-col">
-      <p className="footer-contact">Email: ventas@bricko.com</p>
-      <p className="footer-contact">Tel: -55-55-55-55-55</p>
-      <div className="social-icons">
-        <img src={iconYt} alt="YT" className="social-img" />
-        <img src={iconInsta} alt="IG" className="social-img" />
-        <img src={iconFb} alt="FB" className="social-img" />
-      </div>
-    </div>
-  </div>
-</footer>
-
-     
   );
 }
 
