@@ -32,13 +32,10 @@ const Nosotros = () => {
             <p className="zigzag-parrafo">
               <span className="text-highlight">Somos una empresa 100% mexicana</span>, 
               que se distingue como una marca dedicada a la fabricación de productos 
-              innovadores para la construcción sostenible.
+              innovadores para la construcción sostenible y con enfoque
+              de responsabilidad social.
             </p>
-            <p className="zigzag-parrafo">
-              Nuestro principal producto, los bloques ecológicos, redefine los estándares 
-              de la industria al incorporar materiales reciclados y técnicas avanzadas 
-              de producción para interiores.
-            </p>
+  
           </div>
           <div className="zigzag-imagen">
             <img src="/oficina.webp" alt="Oficina con Bricko" />
