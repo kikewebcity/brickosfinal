@@ -1559,32 +1559,49 @@ p {
   .btn-text-mobile { display: inline; }
   .subtitulo-hero { font-size: 1.1rem; padding: 0 20px; }
 
+  /* 1. CAMBIO DE FONDO: De blanco a Verde Institucional */
   .enlaces-navegacion {
     position: fixed;
     top: 0;
     left: 0;
     width: 80%;
     height: 100vh;
-    background-color: #ffffff !important;
+    background-color: var(--color-green) !important; /* <--- Fondo Verde */
     flex-direction: column;
-    padding: 100px 30px;
+    padding: 30px; /* Ajustado para dar espacio al logo */
     transform: translateX(-100%);
     transition: transform 0.4s ease;
     z-index: 1050;
-    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+    box-shadow: 5px 0 15px rgba(0,0,0,0.2);
   }
 
   .enlaces-navegacion.activos {
     transform: translateX(0);
   }
 
+  /* 2. NUEVO: Estilo para el contenedor del logo dentro del menú */
+  .logo-movil-menu {
+    display: flex !important;
+    justify-content: center;
+    padding-bottom: 20px !important;
+    margin-bottom: 30px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    list-style: none;
+  }
+
+  .logo-img-menu {
+    height: 50px;
+    width: auto;
+  }
+
+  /* 3. CAMBIO DE LETRAS: De negro a Blanco Absoluto */
   .enlaces-navegacion li,
   .barra-navegacion.navbar-scrolled .enlaces-navegacion.activos li {
-    color: #1a1a1a !important; 
+    color: #ffffff !important; /* <--- Letras Blancas */
     font-size: 1.5rem;
     margin-bottom: 25px;
     width: 100%;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Línea sutil blanca */
     padding-bottom: 10px;
     display: block;
   }
