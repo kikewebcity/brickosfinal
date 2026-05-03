@@ -1,126 +1,88 @@
+import React from 'react';
 
-import React, { useState } from 'react';
-
-const Calculadora = () => {
-  // 1. ESTADO DE LAS VARIABLES
-  const [ancho, setAncho] = useState(1.0);
-  const [alto, setAlto] = useState(1.0);
-
-  // 2. LÓGICA DE CÁLCULO
-  const RENDIMIENTO_M2 = 15; 
-  const COSTO_UNITARIO = 15; // Precio verificado en 15 pesos
-
-  const area = ancho * alto;
-  const brickosTotales = Math.round(area * RENDIMIENTO_M2); 
-  const costoTotal = brickosTotales * COSTO_UNITARIO;
-
-  // 3. ENLACE DINÁMICO DE WHATSAPP
-  const mensajeWA = `Hola, me interesa adquirir ${brickosTotales} Brickos para mi proyecto. El costo estimado es de $${costoTotal} pesos.`;
-  const urlWA = `https://wa.me/525555555555?text=${encodeURIComponent(mensajeWA)}`;
-
+const Nosotros = () => {
   return (
-    <div className="calc-main-layout">
-      {/* PANEL DE CONTROL */}
-      <div className="calc-dark-panel" style={{ backgroundColor: '#0a0a0a' }}>
-        
-        {/* TÍTULO: Sin punto y solo primera mayúscula */}
-        <h3 style={{ 
-          color: '#fff', 
-          textAlign: 'center', 
-          marginBottom: '30px', 
+    <div className="nosotros-layout" style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
+      {/* SECCIÓN 1: IDENTIDAD MONUMENTAL */}
+      <section style={{ padding: '120px 20px', textAlign: 'center', maxWidth: '1000px', margin: '0 auto' }}>
+        <h1 className="reveal-header" style={{ 
           fontFamily: 'var(--font-main)', 
-          textTransform: 'none', 
-          fontSize: '1.8rem',
-          letterSpacing: '0.5px' 
+          fontSize: '4rem', 
+          color: 'var(--color-dark)', 
+          marginBottom: '30px',
+          lineHeight: '1.1'
         }}>
-          Calculo el material que requieres para tu proyecto
-        </h3>
-        
-        <div className="calc-sliders-container">
-          <div className="slider-col">
-            <div className="slider-bubble">{ancho.toFixed(1)} m</div>
-            <input
-              type="range"
-              min="0.5"
-              max="10"
-              step="0.1"
-              value={ancho}
-              onChange={(e) => setAncho(parseFloat(e.target.value))}
-              className="custom-range"
-            />
-            <span className="slider-label">Ancho de pared</span>
-          </div>
-
-          <div className="slider-col">
-            <div className="slider-bubble">{alto.toFixed(1)} m</div>
-            <input
-              type="range"
-              min="0.5"
-              max="5"
-              step="0.1"
-              value={alto}
-              onChange={(e) => setAlto(parseFloat(e.target.value))}
-              className="custom-range"
-            />
-            <span className="slider-label">Alto de pared</span>
-          </div>
-        </div>
-
-        {/* INDICADORES DE RESULTADO */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px', marginBottom: '20px' }}>
-          
-          <div style={{ backgroundColor: '#114a1a', border: '2px solid var(--color-green)', borderRadius: '50px', padding: '20px 40px', textAlign: 'center', width: '85%' }}>
-            <span style={{ display: 'block', color: '#fff', fontSize: '1.2rem', fontFamily: 'var(--font-text)' }}>Necesitas</span>
-            <strong style={{ display: 'block', color: '#fff', fontSize: '3.5rem', fontFamily: 'var(--font-main)', lineHeight: '1' }}>{brickosTotales}</strong>
-            <span style={{ display: 'block', color: 'var(--color-green)', fontSize: '1.2rem', fontWeight: 'bold' }}>Brickos</span>
-          </div>
-
-          <div style={{ backgroundColor: 'transparent', border: '2px solid var(--color-green)', borderRadius: '50px', padding: '15px 40px', textAlign: 'center', width: '85%' }}>
-            <strong style={{ color: '#fff', fontSize: '1.4rem', fontFamily: 'var(--font-text)', fontWeight: '500' }}>
-              Costo: <span style={{ color: 'var(--color-green)', fontWeight: 'bold' }}>${costoTotal}</span> pesos
-            </strong>
-          </div>
-        </div>
-
-        {/* LEYENDA CORREGIDA: Usamos div para que se vea blanca y evite el CSS global */}
-        <div style={{ 
-          color: '#ffffff', 
-          fontSize: '0.95rem', 
-          textAlign: 'center', 
-          marginBottom: '20px', 
-          fontFamily: 'var(--font-text)', 
-          fontStyle: 'italic',
-          textTransform: 'lowercase'
+          Transformamos la <span className="enfasis-verde">materia</span> en <span className="enfasis-verde">justicia</span> espacial
+        </h1>
+        <p className="reveal-content" style={{ 
+          fontSize: '1.4rem', 
+          color: '#555', 
+          maxWidth: '700px', 
+          margin: '0 auto', 
+          lineHeight: '1.6' 
         }}>
-          te vendemos solo el material que necesitas
-        </div>
-
-        <a href={urlWA} target="_blank" rel="noopener noreferrer" className="calc-cta">
-          Agregar al carrito
-        </a>
-      </div>
-
-      {/* PANEL DE IMAGEN Y POLÍTICA */}
-      <div className="calc-image-panel" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <img src="/ladrillodivisorio.webp" alt="Muro Bricko" style={{ maxWidth: '100%', height: 'auto', marginBottom: '25px' }} />
-        <p style={{ 
-          fontFamily: 'var(--font-text)', 
-          fontSize: '0.95rem', 
-          color: '#1a1a1a', 
-          textAlign: 'justify', 
-          maxWidth: '90%', 
-          lineHeight: '1.6', 
-          backgroundColor: '#f4f4f4', 
-          padding: '20px', 
-          borderLeft: '4px solid var(--color-green)', 
-          borderRadius: '4px' 
-        }}>
-          <strong>Política de Cero Mermas.</strong> Si te sobran piezas completas, nos las traes y te <strong>DEVOLVEMOS</strong> el dinero equivalente a su costo.
+          En Bricko, no solo fabricamos bloques; diseñamos herramientas de supervivencia y estética sustentable para un mundo que necesita recuperar su voz.
         </p>
-      </div>
+      </section>
+
+      {/* SECCIÓN 2: EL ORIGEN - VÍCTOR AGUIRRE & LÜMINION */}
+      <section style={{ backgroundColor: '#f9f9f9', padding: '100px 20px' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: '50px', alignItems: 'center' }}>
+          <div style={{ flex: '1', minWidth: '300px' }}>
+            <h2 style={{ fontFamily: 'var(--font-main)', fontSize: '2.5rem', marginBottom: '20px' }}>
+              La visión detrás del bloque
+            </h2>
+            <div style={{ lineHeight: '1.8', color: '#333', fontSize: '1.1rem', textAlign: 'justify' }}>
+              <p style={{ marginBottom: '20px' }}>
+                Fundado por <strong>Víctor Aguirre</strong>, consultor en Propiedad Industrial y apasionado de la Biología Molecular, Bricko nace de la intersección entre el rigor técnico de <strong>Lüminion</strong> y la urgencia de crear una arquitectura verdaderamente circular.
+              </p>
+              <p>
+                Nuestra obra es un testimonio de cómo el papel reciclado puede transformarse en una estructura sólida, capaz de redefinir oficinas, hogares y espacios creativos sin dejar huella de carbono, pero dejando una marca profunda en la identidad de quien los habita.
+              </p>
+            </div>
+          </div>
+          <div style={{ flex: '1', minWidth: '300px', textAlign: 'center' }}>
+            <div style={{ 
+              border: '2px solid var(--color-green)', 
+              padding: '40px', 
+              borderRadius: '20px', 
+              display: 'inline-block',
+              backgroundColor: '#fff' 
+            }}>
+              <h3 style={{ color: 'var(--color-green)', fontSize: '3rem', margin: '0' }}>100%</h3>
+              <p style={{ margin: '0', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                Papel Reciclado
+              </p>
+              <div style={{ height: '2px', backgroundColor: '#eee', margin: '20px 0' }}></div>
+              <h3 style={{ color: 'var(--color-green)', fontSize: '3rem', margin: '0' }}>0</h3>
+              <p style={{ margin: '0', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                Mermas Totales
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECCIÓN 3: FILOSOFÍA DE DISEÑO */}
+      <section style={{ padding: '100px 20px', textAlign: 'center' }}>
+        <h2 style={{ fontFamily: 'var(--font-main)', fontSize: '2.5rem', marginBottom: '50px' }}>
+          Arquitectura del <span className="enfasis-verde">orden</span> en el caos
+        </h2>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', flexWrap: 'wrap', maxWidth: '1200px', margin: '0 auto' }}>
+          {[
+            { t: 'Evolución', d: 'No creemos en lo estático. Nuestros bloques permiten que tu espacio crezca contigo.' },
+            { t: 'Conciencia', d: 'Cada pieza de Bricko es una decisión política a favor de la regeneración ambiental.' },
+            { t: 'Legado', d: 'Protegemos tu inversión y tu entorno con la seriedad técnica de la propiedad intelectual.' }
+          ].map((item, i) => (
+            <div key={i} style={{ width: '300px', padding: '30px', borderBottom: '4px solid var(--color-green)', backgroundColor: '#fff' }}>
+              <h4 style={{ fontSize: '1.5rem', marginBottom: '15px', color: 'var(--color-dark)' }}>{item.t}</h4>
+              <p style={{ color: '#666', lineHeight: '1.5' }}>{item.d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 };
 
-export default Calculadora;
-
+export default Nosotros;
