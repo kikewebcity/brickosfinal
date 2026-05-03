@@ -14,6 +14,7 @@ import FaqsProductos from './Components/FaqsProductos';
 import PreguntasFrecuentes from './Components/PreguntasFrecuentes';
 import NoticiasSustentables from './Components/NoticiasSustentables';
 import AvisoPrivacidad from './Components/AvisoPrivacidad';
+import TiemposEnvio from './Components/TiemposEnvio';
 
 
 // 2. Importación de iconos y activos visuales
@@ -77,6 +78,7 @@ function App() {
       case 'ventaja': return <Ventaja />;
       case 'faq': return <PreguntasFrecuentes />;
       case 'privacidad': return <AvisoPrivacidad />;
+      case 'envios': return <TiemposEnvio />;
       default: return renderInicio();
     }
   };
