@@ -27,12 +27,13 @@ const Nosotros = () => {
 <section className="nosotros-manifiesto">
   <div className="manifiesto-contenedor">
     <h2 className="manifiesto-texto">
-      En Bricko <span className="texto-oscuro">no solo vendemos bloques</span>, 
-      representamos soluciones que contribuyen al <span className="texto-verde">mejoramiento de los ecosistemas</span> y a la construcción de <span className="texto-verde">ciudades sustentables
-        </span>
+      En bricko no solo vendemos bloques, representamos también soluciones 
+      que contribuyen al mejoramiento de la vida de los ecosistemas terrestres 
+      y a la construcción de ciudades sustentables.
     </h2>
   </div>
 </section>
+
 
 
       {/* SECCIÓN 2: NARRATIVA EN ZIGZAG */}
