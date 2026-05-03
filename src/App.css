@@ -1244,6 +1244,68 @@ p {
   }
 }
 
+/* =========================================
+   ESTILOS DE VALORES CON IMÁGENES
+   ========================================= */
+
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.valor-card {
+  text-align: center;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Contenedor del ícono */
+.valor-icono-wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.valor-icono {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.valor-card h3 {
+  font-family: var(--font-main);
+  font-size: 1.4rem;
+  color: var(--color-dark);
+  margin-bottom: 15px;
+  text-transform: none; /* Asegura solo la primera en mayúscula */
+}
+
+/* OPTIMIZACIÓN PARA MOBILE (Pantallas pequeñas) */
+@media (max-width: 768px) {
+  .valores-grid {
+    grid-template-columns: 1fr; /* Una sola columna */
+    gap: 30px;
+  }
+
+  .valor-card {
+    padding: 20px;
+    border-bottom: 1px solid #eee; /* Separador sutil */
+  }
+
+  .valor-icono-wrapper {
+    width: 60px; /* Íconos un poco más pequeños en móvil */
+    height: 60px;
+  }
+}
 
 
 .zigzag-fila {
