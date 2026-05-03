@@ -74,6 +74,7 @@ function App() {
       case 'contacto': return <Contacto />;
       case 'ventaja': return <Ventaja />;
       case 'faq': return <PreguntasFrecuentes />;
+      case 'privacidad': return <AvisoPrivacidad />;
       default: return renderInicio();
     }
   };
