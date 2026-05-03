@@ -204,7 +204,16 @@ function App() {
             <ul className="footer-links">
               <li onClick={() => { setVistaActual('faq'); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Preguntas Frecuentes</li>
               <li><a href="/politica-envios.pdf" target="_blank" rel="noopener noreferrer">Tiempos de Envío</a></li>
-              <li><a href="/aviso-privacidad.pdf" target="_blank" rel="noopener noreferrer">Aviso de Privacidad</a></li>
+              <li 
+  style={{ cursor: 'pointer' }} 
+  onClick={() => { 
+    setVistaActual('privacidad'); 
+    window.scrollTo({ top: 0, behavior: 'smooth' }); 
+  }}
+>
+  Aviso de Privacidad
+</li>
+
             </ul>
           </div>
           <div className="footer-col right-col">
