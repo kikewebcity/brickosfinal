@@ -505,8 +505,9 @@ p {
 }
 
 /* =========================================
-   CALCULADORA DE INGENIERÍA
+   COMPONENTE: CALCULADORA.CSS
    ========================================= */
+
 .calc-main-layout {
   display: flex;
   justify-content: center;
@@ -517,51 +518,26 @@ p {
 }
 
 .calc-dark-panel {
-  background-color: var(--color-dark);
+  background-color: var(--color-dark); /* Fondo negro del panel */
   border: 2px solid var(--color-green);
   border-radius: 40px;
   padding: 50px;
-  width: 450px;
+  width: 480px;
   flex-shrink: 0;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.calc-type-selector {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 40px;
-}
+/* CORRECCIÓN: Leyenda visible sobre fondo oscuro */
 .leyenda-material {
-  font-size: 0.9rem;
-  color: #555555; /* Un gris medio para que sea sutil */
-  font-style: italic; /* En cursiva para diferenciarlo */
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border-top: 1px solid #ddd; /* Una línea divisoria opcional */
-  padding-top: 0.5rem;
-}
-.type-btn {
-  flex: 1;
-  background: transparent;
-  border: 1px solid #444;
-  padding: 15px 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  color: #ffffff;
-  border-radius: 8px;
-  transition: var(--transition-smooth);
-}
-
-.type-btn svg {
-  margin-bottom: 10px;
-}
-
-.type-btn.active {
-  border-color: var(--color-green);
-  color: var(--color-green);
-  background-color: rgba(56, 142, 60, 0.05);
+  font-size: 0.95rem;
+  color: #ffffff !important; /* Forzamos blanco para resaltar */
+  font-style: italic;
+  text-align: center;
+  margin: 20px 0;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea sutil */
+  font-family: var(--font-text);
+  text-transform: lowercase;
 }
 
 .calc-sliders-container {
@@ -585,7 +561,6 @@ p {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 1.1rem;
-  font-family: var(--font-text);
 }
 
 .custom-range {
@@ -600,26 +575,6 @@ p {
   font-size: 1.1rem;
   margin-top: 10px;
   letter-spacing: 0.5px;
-}
-
-.calc-result-pill {
-  background: #ffffff;
-  border-radius: 50px;
-  padding: 20px;
-  margin-bottom: 30px;
-  font-family: var(--font-main);
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--color-dark);
-  text-align: center;
-}
-
-.calc-result-pill span {
-  font-size: 1.2rem;
-  display: block;
-  color: #666;
-  margin-top: -5px;
-  font-family: var(--font-text);
 }
 
 .calc-cta {
@@ -653,6 +608,7 @@ p {
   max-height: 500px;
   object-fit: contain;
 }
+
 
 /* =========================================
    FAQ / SOPORTE TÉCNICO
