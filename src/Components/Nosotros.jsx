@@ -1,84 +1,98 @@
 import React from 'react';
+import '../App.css';
+import logobrickoColor from '../assets/logobricko.png'; 
 
 const Nosotros = () => {
   return (
-    <div className="nosotros-layout" style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
-      {/* SECCIÓN 1: IDENTIDAD MONUMENTAL */}
-      <section style={{ padding: '120px 20px', textAlign: 'center', maxWidth: '1000px', margin: '0 auto' }}>
-        <h1 className="reveal-header" style={{ 
-          fontFamily: 'var(--font-main)', 
-          fontSize: '4rem', 
-          color: 'var(--color-dark)', 
-          marginBottom: '30px',
-          lineHeight: '1.1'
-        }}>
-          Transformamos la <span className="enfasis-verde">materia</span> en <span className="enfasis-verde">justicia</span> espacial
-        </h1>
-        <p className="reveal-content" style={{ 
-          fontSize: '1.4rem', 
-          color: '#555', 
-          maxWidth: '700px', 
-          margin: '0 auto', 
-          lineHeight: '1.6' 
-        }}>
-          En Bricko, no solo fabricamos bloques; diseñamos herramientas de supervivencia y estética sustentable para un mundo que necesita recuperar su voz.
-        </p>
-      </section>
-
-      {/* SECCIÓN 2: EL ORIGEN - VÍCTOR AGUIRRE & LÜMINION */}
-      <section style={{ backgroundColor: '#f9f9f9', padding: '100px 20px' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: '50px', alignItems: 'center' }}>
-          <div style={{ flex: '1', minWidth: '300px' }}>
-            <h2 style={{ fontFamily: 'var(--font-main)', fontSize: '2.5rem', marginBottom: '20px' }}>
-              La visión detrás del bloque
-            </h2>
-            <div style={{ lineHeight: '1.8', color: '#333', fontSize: '1.1rem', textAlign: 'justify' }}>
-              <p style={{ marginBottom: '20px' }}>
-                Fundado por <strong>Víctor Aguirre</strong>, consultor en Propiedad Industrial y apasionado de la Biología Molecular, Bricko nace de la intersección entre el rigor técnico de <strong>Lüminion</strong> y la urgencia de crear una arquitectura verdaderamente circular.
-              </p>
-              <p>
-                Nuestra obra es un testimonio de cómo el papel reciclado puede transformarse en una estructura sólida, capaz de redefinir oficinas, hogares y espacios creativos sin dejar huella de carbono, pero dejando una marca profunda en la identidad de quien los habita.
-              </p>
-            </div>
+    <div className="nosotros-pagina">
+      {/* SECCIÓN 1: BANNER CON LOGO Y SLOGAN */}
+      <section className="nosotros-banner-moderno">
+        <div className="nosotros-banner-grid">
+          <div className="nosotros-caja-logo">
+            <img src={logobrickoColor} alt="Logo Bricko Original" className="nosotros-logo-color" />
           </div>
-          <div style={{ flex: '1', minWidth: '300px', textAlign: 'center' }}>
-            <div style={{ 
-              border: '2px solid var(--color-green)', 
-              padding: '40px', 
-              borderRadius: '20px', 
-              display: 'inline-block',
-              backgroundColor: '#fff' 
-            }}>
-              <h3 style={{ color: 'var(--color-green)', fontSize: '3rem', margin: '0' }}>100%</h3>
-              <p style={{ margin: '0', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                Papel Reciclado
-              </p>
-              <div style={{ height: '2px', backgroundColor: '#eee', margin: '20px 0' }}></div>
-              <h3 style={{ color: 'var(--color-green)', fontSize: '3rem', margin: '0' }}>0</h3>
-              <p style={{ margin: '0', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                Mermas Totales
-              </p>
-            </div>
+          <div className="nosotros-caja-texto">
+            <div className="nosotros-fondo-verde-acento"></div>
+            <p className="nosotros-texto-formal">
+              Nuestro slogan, <strong>La Revolución Ecológica en Construcción</strong>, 
+              encapsula nuestra misión de transformar la industria mediante prácticas 
+              innovadoras y productos eco amigables. En Bricko, estamos comprometidos a 
+              liderar un cambio hacia métodos de construcción más sostenibles y responsables.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* SECCIÓN 3: FILOSOFÍA DE DISEÑO */}
-      <section style={{ padding: '100px 20px', textAlign: 'center' }}>
-        <h2 style={{ fontFamily: 'var(--font-main)', fontSize: '2.5rem', marginBottom: '50px' }}>
-          Arquitectura del <span className="enfasis-verde">orden</span> en el caos
-        </h2>
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', flexWrap: 'wrap', maxWidth: '1200px', margin: '0 auto' }}>
-          {[
-            { t: 'Evolución', d: 'No creemos en lo estático. Nuestros bloques permiten que tu espacio crezca contigo.' },
-            { t: 'Conciencia', d: 'Cada pieza de Bricko es una decisión política a favor de la regeneración ambiental.' },
-            { t: 'Legado', d: 'Protegemos tu inversión y tu entorno con la seriedad técnica de la propiedad intelectual.' }
-          ].map((item, i) => (
-            <div key={i} style={{ width: '300px', padding: '30px', borderBottom: '4px solid var(--color-green)', backgroundColor: '#fff' }}>
-              <h4 style={{ fontSize: '1.5rem', marginBottom: '15px', color: 'var(--color-dark)' }}>{item.t}</h4>
-              <p style={{ color: '#666', lineHeight: '1.5' }}>{item.d}</p>
-            </div>
-          ))}
+      {/* SECCIÓN 2: NARRATIVA EN ZIGZAG */}
+      <section className="nosotros-zigzag-contenedor">
+        
+        {/* FILA 1: QUIÉNES SOMOS */}
+        <div className="zigzag-fila">
+          <div className="zigzag-texto">
+            <p className="zigzag-parrafo">
+              <span className="text-highlight">Somos una empresa 100% mexicana</span>, 
+              que se distingue como una marca dedicada a la fabricación de productos 
+              innovadores para la construcción sostenible.
+            </p>
+            <p className="zigzag-parrafo">
+              Nuestro principal producto, los bloques ecológicos, redefine los estándares 
+              de la industria al incorporar materiales reciclados y técnicas avanzadas 
+              de producción para interiores.
+            </p>
+          </div>
+          <div className="zigzag-imagen">
+            <img src="/oficina.webp" alt="Oficina con Bricko" />
+          </div>
+        </div>
+
+        {/* FILA 2: MISIÓN (REVERSA) */}
+        <div className="zigzag-fila reversa">
+          <div className="zigzag-texto">
+            <h2 className="zigzag-titulo">Misión</h2>
+            <p className="zigzag-parrafo">
+              Proporcionar soluciones constructivas de alta calidad que minimicen el impacto ambiental, 
+              fomentando la economía circular y ofreciendo alternativas estéticas y funcionales 
+              para el diseño de espacios modernos.
+            </p>
+          </div>
+          <div className="zigzag-imagen">
+            <img src="/recamara.webp" alt="Recámara con acabados Bricko" />
+          </div>
+        </div>
+
+        {/* FILA 3: VISIÓN */}
+        <div className="zigzag-fila">
+          <div className="zigzag-texto">
+            <h2 className="zigzag-titulo">Visión</h2>
+            <p className="zigzag-parrafo">
+              Ser el referente nacional en materiales de construcción eco-sustentables, 
+              liderando la transición hacia ciudades más verdes y espacios habitables 
+              que respeten el equilibrio de nuestro ecosistema.
+            </p>
+          </div>
+          <div className="zigzag-imagen">
+            <img src="/banop.webp" alt="Baño con muro Bricko" />
+          </div>
+        </div>
+
+      </section>
+
+      {/* SECCIÓN 4: VALORES (CUADRÍCULA) */}
+      <section className="nosotros-valores">
+        <h2 className="titulo-seccion-limpio">Nuestros <span className="enfasis-verde">Valores</span></h2>
+        <div className="valores-grid">
+          <div className="valor-card">
+            <h3>Sustentabilidad</h3>
+            <p>Cada decisión que tomamos prioriza la salud del planeta.</p>
+          </div>
+          <div className="valor-card">
+            <h3>Innovación</h3>
+            <p>Buscamos constantemente nuevas formas de reciclar y construir.</p>
+          </div>
+          <div className="valor-card">
+            <h3>Calidad</h3>
+            <p>La ecología no debe sacrificar la resistencia ni la estética.</p>
+          </div>
         </div>
       </section>
     </div>
