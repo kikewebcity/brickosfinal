@@ -53,7 +53,7 @@ const Calculadora = () => {
 
         {/* LEYENDA: Usamos DIV y el color forzado para que sea visible */}
         <div style={{ color: '#ffffff', fontSize: '0.95rem', textAlign: 'center', marginBottom: '20px', fontFamily: 'var(--font-text)', fontStyle: 'italic', opacity: 1 }}>
-          te vendemos solo el material que necesitas
+          Te vendemos solo el material que necesitas
         </div>
 
         <a href={urlWA} target="_blank" rel="noopener noreferrer" className="calc-cta">
