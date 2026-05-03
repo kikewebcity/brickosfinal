@@ -159,7 +159,7 @@ function App() {
 <ul className={`enlaces-navegacion ${menuOpen ? 'activos' : ''}`}>
   {/* NUEVO: Logo dentro del menú móvil */}
   <li className="logo-movil-menu">
-    <img src=/logowhite.png alt="Bricko" className="logo-img-menu" />
+    <img src= './assets/logowhite.png' alt="Bricko" className="logo-img-menu" />
   </li>
   
   {secciones.map((sec) => (
