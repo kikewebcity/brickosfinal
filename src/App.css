@@ -4,7 +4,7 @@
 }
 
 html, body {
-  overflow-x: clip; 
+  overflow-x: hidden; /* Corrección de clip a hidden para evitar scroll horizontal en móvil */
   width: 100%;
   position: relative;
 }
@@ -243,17 +243,14 @@ p {
   text-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8);
 }
 
-
-/* 1. ESTILOS PARA EL BANNER */
 .subtitulo-hero {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  /* El color por defecto podría ser negro o gris oscuro */
 }
 
 .subtitulo-blanco {
-  color: #ffffff !important; /* Forzamos el color blanco */
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Añadimos sombra para contraste si el fondo es claro */
+  color: #ffffff !important; 
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5); 
 }
 
 .boton-accion-aislado {
@@ -505,7 +502,6 @@ p {
 /* =========================================
    COMPONENTE: CALCULADORA.CSS
    ========================================= */
-
 .calc-main-layout {
   display: flex;
   justify-content: center;
@@ -516,7 +512,7 @@ p {
 }
 
 .calc-dark-panel {
-  background-color: var(--color-dark); /* Fondo negro del panel */
+  background-color: var(--color-dark);
   border: 2px solid var(--color-green);
   border-radius: 40px;
   padding: 50px;
@@ -525,15 +521,14 @@ p {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* CORRECCIÓN: Leyenda visible sobre fondo oscuro */
 .leyenda-material {
   font-size: 0.95rem;
-  color: #ffffff !important; /* Forzamos blanco para resaltar */
+  color: #ffffff !important; 
   font-style: italic;
   text-align: center;
   margin: 20px 0;
   padding-top: 15px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea sutil */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); 
   font-family: var(--font-text);
   text-transform: lowercase;
 }
@@ -606,7 +601,6 @@ p {
   max-height: 500px;
   object-fit: contain;
 }
-
 
 /* =========================================
    FAQ / SOPORTE TÉCNICO
@@ -813,94 +807,6 @@ p {
 .form-area-texto:focus {
   outline: none;
   border-color: var(--color-green);
-}
-
-/* =========================================
-   FOOTER
-   ========================================= */
-.footer {
-  background-color: #050505;
-  color: #ffffff;
-  padding: 80px 40px;
-  border-top: 6px solid var(--color-green);
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-col {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.left-col {
-  align-items: flex-start;
-}
-
-.footer-logo-img {
-  height: 60px;
-  margin-bottom: 15px;
-}
-
-.footer-slogan {
-  font-family: var(--font-main);
-  font-size: 1.3rem;
-  color: #aaaaaa;
-}
-
-.center-col {
-  align-items: center;
-}
-
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-.footer-links li {
-  font-family: var(--font-main);
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.footer-links li:hover {
-  color: var(--color-green);
-}
-
-.right-col {
-  align-items: flex-end;
-}
-
-.footer-contact {
-  font-family: var(--font-main);
-  font-size: 1.3rem;
-  margin: 5px 0;
-}
-
-.social-icons {
-  display: flex;
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.social-img {
-  height: 25px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.social-img:hover {
-  transform: scale(1.1);
 }
 
 /* =========================================
@@ -1267,17 +1173,18 @@ p {
 
 /* Contenedor del ícono */
 .valor-icono-wrapper {
-  width: 80px;
-  height: 80px;
+  width: 100px; /* Tamaño forzado para asegurar visualización */
+  height: 100px;
   margin: 0 auto 20px auto;
-  display: flex;
+  display: flex !important; 
   align-items: center;
   justify-content: center;
 }
 
 .valor-icono {
-  width: 100%;
-  height: auto;
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
   object-fit: contain;
 }
 
@@ -1289,37 +1196,30 @@ p {
   text-transform: none; /* Asegura solo la primera en mayúscula */
 }
 
-/* OPTIMIZACIÓN PARA MOBILE (Pantallas pequeñas) */
-@media (max-width: 768px) {
-  .valores-grid {
-    grid-template-columns: 1fr; /* Una sola columna */
-    gap: 30px;
-  }
-
-  .valor-card {
-    padding: 20px;
-    border-bottom: 1px solid #eee; /* Separador sutil */
-  }
-
-  .valor-icono-wrapper {
-    width: 60px; /* Íconos un poco más pequeños en móvil */
-    height: 60px;
-  }
-}
-
 
 .zigzag-fila {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 60px;
   margin-bottom: 100px;
+}
+
+.zigzag-fila.reversa {
+  flex-direction: row-reverse;
 }
 
 .zigzag-texto {
   flex: 1;
   padding: 0 20px;
 }
+
+.zigzag-titulo {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--color-dark);
+}
+
 
 .zigzag-parrafo {
   font-family: var(--font-text);
@@ -1661,18 +1561,96 @@ p {
 }
 
 /* =========================================
-   MEDIA QUERIES GLOBALES (RESPONSIVE)
+   FOOTER
    ========================================= */
-
-@media (min-width: 900px) {
-  .zigzag-fila {
-    flex-direction: row;
-  }
-  .zigzag-fila.reversa {
-    flex-direction: row-reverse;
-  }
+.footer {
+  background-color: #050505;
+  color: #ffffff;
+  padding: 80px 40px;
+  border-top: 6px solid var(--color-green);
 }
 
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-col {
+  align-items: flex-start;
+}
+
+.footer-logo-img {
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.footer-slogan {
+  font-family: var(--font-main);
+  font-size: 1.3rem;
+  color: #aaaaaa;
+}
+
+.center-col {
+  align-items: center;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.footer-links li {
+  font-family: var(--font-main);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer-links li:hover {
+  color: var(--color-green);
+}
+
+.right-col {
+  align-items: flex-end;
+}
+
+.footer-contact {
+  font-family: var(--font-main);
+  font-size: 1.3rem;
+  margin: 5px 0;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-img {
+  height: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.social-img:hover {
+  transform: scale(1.1);
+}
+
+/* =========================================
+   MEDIA QUERIES GLOBALES (RESPONSIVE)
+   ========================================= */
 @media (max-width: 900px) {
   .barra-navegacion {
     padding: 15px 20px;
@@ -1689,9 +1667,9 @@ p {
     left: 0;
     width: 80%;
     height: 100vh;
-    background-color: var(--color-green) !important; /* <--- Fondo Verde */
+    background-color: var(--color-green) !important;
     flex-direction: column;
-    padding: 30px; /* Ajustado para dar espacio al logo */
+    padding: 30px; 
     transform: translateX(-100%);
     transition: transform 0.4s ease;
     z-index: 1050;
@@ -1702,7 +1680,6 @@ p {
     transform: translateX(0);
   }
 
-  /* 2. NUEVO: Estilo para el contenedor del logo dentro del menú */
   .logo-movil-menu {
     display: flex !important;
     justify-content: center;
@@ -1717,14 +1694,13 @@ p {
     width: auto;
   }
 
-  /* 3. CAMBIO DE LETRAS: De negro a Blanco Absoluto */
   .enlaces-navegacion li,
   .barra-navegacion.navbar-scrolled .enlaces-navegacion.activos li {
-    color: #ffffff !important; /* <--- Letras Blancas */
+    color: #ffffff !important; 
     font-size: 1.5rem;
     margin-bottom: 25px;
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Línea sutil blanca */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
     padding-bottom: 10px;
     display: block;
   }
@@ -1782,9 +1758,49 @@ p {
     padding: 40px 30px;
   }
 
-  /* =======================================================
-     CORRECCIÓN: BLOQUES DE APLICACIONES EN MÓVIL
-     ======================================================= */
+  /* CENTRADO DE MISIÓN Y VISIÓN EN MÓVIL */
+  .zigzag-fila, 
+  .zigzag-fila.reversa {
+    flex-direction: column !important; 
+    gap: 30px;
+  }
+
+  .zigzag-texto {
+    text-align: center !important;
+    padding: 20px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .zigzag-titulo {
+    text-align: center !important;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+  }
+
+  .zigzag-parrafo {
+    text-align: center !important;
+    margin: 0 auto;
+  }
+
+  /* VALORES EN MÓVIL */
+  .valores-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .valor-card {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .valor-icono-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+
   .aplicacion-bloque, 
   .aplicacion-bloque.reversa {
     flex-direction: column !important; 
