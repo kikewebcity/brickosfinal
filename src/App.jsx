@@ -13,6 +13,8 @@ import Ventaja from './Components/Ventaja';
 import FaqsProductos from './Components/FaqsProductos';
 import PreguntasFrecuentes from './Components/PreguntasFrecuentes';
 import NoticiasSustentables from './Components/NoticiasSustentables';
+import AvisoPrivacidad from './Components/AvisoPrivacidad';
+
 
 // 2. Importación de iconos y activos visuales
 import { ShoppingCart, Truck } from 'lucide-react';
