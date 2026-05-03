@@ -1,151 +1,126 @@
-import React from 'react';
-import '../App.css';
-// 1. IMPORTACIÓN DEL LOGO DE COLOR (Ubicado en src/assets)
-import logobrickoColor from '../assets/logobricko.png'; 
 
-const Nosotros = () => {
+import React, { useState } from 'react';
+
+const Calculadora = () => {
+  // 1. ESTADO DE LAS VARIABLES
+  const [ancho, setAncho] = useState(1.0);
+  const [alto, setAlto] = useState(1.0);
+
+  // 2. LÓGICA DE CÁLCULO
+  const RENDIMIENTO_M2 = 15; 
+  const COSTO_UNITARIO = 15; // Precio verificado en 15 pesos
+
+  const area = ancho * alto;
+  const brickosTotales = Math.round(area * RENDIMIENTO_M2); 
+  const costoTotal = brickosTotales * COSTO_UNITARIO;
+
+  // 3. ENLACE DINÁMICO DE WHATSAPP
+  const mensajeWA = `Hola, me interesa adquirir ${brickosTotales} Brickos para mi proyecto. El costo estimado es de $${costoTotal} pesos.`;
+  const urlWA = `https://wa.me/525555555555?text=${encodeURIComponent(mensajeWA)}`;
+
   return (
-    <div className="nosotros-pagina">
-      {/* BANNER INSTITUCIONAL MODERNO */}
-      <section className="nosotros-banner-moderno">
-        <div className="nosotros-banner-grid">
-          <div className="nosotros-caja-logo">
-            {/* 2. USO DE LA VARIABLE IMPORTADA EN EL SRC */}
-            <img
-              src={logobrickoColor}
-              alt="Logo Bricko Original"
-              className="nosotros-logo-color"
+    <div className="calc-main-layout">
+      {/* PANEL DE CONTROL */}
+      <div className="calc-dark-panel" style={{ backgroundColor: '#0a0a0a' }}>
+        
+        {/* TÍTULO: Sin punto y solo primera mayúscula */}
+        <h3 style={{ 
+          color: '#fff', 
+          textAlign: 'center', 
+          marginBottom: '30px', 
+          fontFamily: 'var(--font-main)', 
+          textTransform: 'none', 
+          fontSize: '1.8rem',
+          letterSpacing: '0.5px' 
+        }}>
+          Calculo el material que requieres para tu proyecto
+        </h3>
+        
+        <div className="calc-sliders-container">
+          <div className="slider-col">
+            <div className="slider-bubble">{ancho.toFixed(1)} m</div>
+            <input
+              type="range"
+              min="0.5"
+              max="10"
+              step="0.1"
+              value={ancho}
+              onChange={(e) => setAncho(parseFloat(e.target.value))}
+              className="custom-range"
             />
+            <span className="slider-label">Ancho de pared</span>
           </div>
 
-          <div className="nosotros-caja-texto">
-            <div className="nosotros-fondo-verde-acento"></div>
-            <p className="nosotros-texto-formal">
-              Nuestro slogan,{' '}
-              <strong>La Revolución Ecológica en Construcción</strong>,
-              encapsula nuestra misión de transformar la industria mediante
-              prácticas innovadoras y productos eco amigables. En Bricko,
-              estamos comprometidos a liderar un cambio hacia métodos de
-              construcción más sostenibles y responsables con el medio ambiente.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* NARRATIVA EN ZIG-ZAG */}
-      <section className="nosotros-zigzag-contenedor">
-        <div className="zigzag-fila">
-          <div className="zigzag-texto">
-            <p className="zigzag-parrafo">
-              <span className="text-highlight">
-                Somos una empresa 100% mexicana
-              </span>
-              , que se distingue como una marca dedicada a la fabricación de
-              productos innovadores para la construcción sostenible.
-            </p>
-            <p className="zigzag-parrafo">
-              Nuestro principal producto, Bloques ecológicos, redefine los
-              estándares de la industria al incorporar materiales reciclados y
-              técnicas avanzadas de producción.
-            </p>
-          </div>
-          <div className="zigzag-imagen">
-            {/* CORRECTO: Ruta absoluta a la carpeta public */}
-            <img src="/oficina.webp" alt="Bloques ecológicos Bricko" />
+          <div className="slider-col">
+            <div className="slider-bubble">{alto.toFixed(1)} m</div>
+            <input
+              type="range"
+              min="0.5"
+              max="5"
+              step="0.1"
+              value={alto}
+              onChange={(e) => setAlto(parseFloat(e.target.value))}
+              className="custom-range"
+            />
+            <span className="slider-label">Alto de pared</span>
           </div>
         </div>
 
-        <div className="zigzag-fila reversa">
-          <div className="zigzag-texto">
-            <p className="zigzag-parrafo">
-              <span className="text-highlight">Misión.</span> Ofrecer una
-              alternativa en el ámbito de la construcción, que ayude a resolver
-              el problema ambiental de residuos sólidos y evitar el agotamiento
-              de los recursos naturales.
-            </p>
-            <p className="zigzag-parrafo">
-              <span className="text-highlight">Visión.</span> Ser un referente
-              en la industria de la construcción sustentable, con base en
-              criterios de la economía circular.
-            </p>
-          </div>
-          <div className="zigzag-imagen">
-            {/* CORRECTO: Ruta absoluta a la carpeta public */}
-            <img src="/recamara.webp" alt="Interiorismo con Bricko" />
-          </div>
-        </div>
-      </section>
-
-      {/* CUADRÍCULA DE VALORES */}
-      <section className="nosotros-pilares-contenedor">
-        <div className="pilar-tarjeta">
-          <div className="pilar-icono-caja">
-            <img src="/honestidad.png" alt="Honestidad" />
-          </div>
-          <h2 className="pilar-titulo-valor">HONESTIDAD</h2>
-          <p className="pilar-descripcion">
-            Transparencia total en nuestros procesos de fabricación y asesoría
-            técnica.
-          </p>
-        </div>
-
-        <div className="pilar-tarjeta">
-          <div className="pilar-icono-caja">
-            <img src="/sostenibilidad.png" alt="Sostenibilidad" />
-          </div>
-          <h2 className="pilar-titulo-valor">SOSTENIBILIDAD</h2>
-          <p className="pilar-descripcion">
-            Transformamos residuos en soluciones arquitectónicas.
-          </p>
-        </div>
-
-        <div className="pilar-tarjeta">
-          <div className="pilar-icono-caja">
-            <img src="/inovacion.png" alt="Innovación" />
-          </div>
-          <h2 className="pilar-titulo-valor">INNOVACIÓN</h2>
-          <p className="pilar-descripcion">
-            Redefinimos los límites de la construcción modular.
-          </p>
-        </div>
-
-        <div className="pilar-tarjeta">
-          <div className="pilar-icono-caja">
-            <img src="/responsabilidad.png" alt="Responsabilidad" />
-          </div>
-          <h2 className="pilar-titulo-valor">RESPONSABILIDAD</h2>
-          <p className="pilar-descripcion">
-            Compromiso inquebrantable con el medio ambiente y la estabilidad
-            estructural.
-          </p>
-        </div>
-
-        <div className="pilar-tarjeta">
-                    <div className="pilar-icono-caja">
-            {/* Se agrega ?v=2 para romper la caché */}
-            <img src="/equipo.png?v=2" alt="Trabajo en equipo" />
+        {/* INDICADORES DE RESULTADO */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px', marginBottom: '20px' }}>
+          
+          <div style={{ backgroundColor: '#114a1a', border: '2px solid var(--color-green)', borderRadius: '50px', padding: '20px 40px', textAlign: 'center', width: '85%' }}>
+            <span style={{ display: 'block', color: '#fff', fontSize: '1.2rem', fontFamily: 'var(--font-text)' }}>Necesitas</span>
+            <strong style={{ display: 'block', color: '#fff', fontSize: '3.5rem', fontFamily: 'var(--font-main)', lineHeight: '1' }}>{brickosTotales}</strong>
+            <span style={{ display: 'block', color: 'var(--color-green)', fontSize: '1.2rem', fontWeight: 'bold' }}>Brickos</span>
           </div>
 
-          <h2 className="pilar-titulo-valor">TRABAJO EN EQUIPO</h2>
-          <p className="pilar-descripcion">
-            Sinergia perfecta entre ingeniería, diseño y las necesidades de tu
-            obra.
-          </p>
+          <div style={{ backgroundColor: 'transparent', border: '2px solid var(--color-green)', borderRadius: '50px', padding: '15px 40px', textAlign: 'center', width: '85%' }}>
+            <strong style={{ color: '#fff', fontSize: '1.4rem', fontFamily: 'var(--font-text)', fontWeight: '500' }}>
+              Costo: <span style={{ color: 'var(--color-green)', fontWeight: 'bold' }}>${costoTotal}</span> pesos
+            </strong>
+          </div>
         </div>
 
-        <div className="pilar-tarjeta">
-          <div className="pilar-icono-caja">
-            <img src="/confianza.png" alt="Confianza" />
-          </div>
-          <h2 className="pilar-titulo-valor">CONFIANZA</h2>
-          <p className="pilar-descripcion">
-            Materiales rigurosamente probados que aseguran la durabilidad y
-            seguridad.
-          </p>
+        {/* LEYENDA CORREGIDA: Usamos div para que se vea blanca y evite el CSS global */}
+        <div style={{ 
+          color: '#ffffff', 
+          fontSize: '0.95rem', 
+          textAlign: 'center', 
+          marginBottom: '20px', 
+          fontFamily: 'var(--font-text)', 
+          fontStyle: 'italic',
+          textTransform: 'lowercase'
+        }}>
+          te vendemos solo el material que necesitas
         </div>
-      </section>
+
+        <a href={urlWA} target="_blank" rel="noopener noreferrer" className="calc-cta">
+          Agregar al carrito
+        </a>
+      </div>
+
+      {/* PANEL DE IMAGEN Y POLÍTICA */}
+      <div className="calc-image-panel" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <img src="/ladrillodivisorio.webp" alt="Muro Bricko" style={{ maxWidth: '100%', height: 'auto', marginBottom: '25px' }} />
+        <p style={{ 
+          fontFamily: 'var(--font-text)', 
+          fontSize: '0.95rem', 
+          color: '#1a1a1a', 
+          textAlign: 'justify', 
+          maxWidth: '90%', 
+          lineHeight: '1.6', 
+          backgroundColor: '#f4f4f4', 
+          padding: '20px', 
+          borderLeft: '4px solid var(--color-green)', 
+          borderRadius: '4px' 
+        }}>
+          <strong>Política de Cero Mermas.</strong> Si te sobran piezas completas, nos las traes y te <strong>DEVOLVEMOS</strong> el dinero equivalente a su costo.
+        </p>
+      </div>
     </div>
   );
 };
 
-export default Nosotros;
+export default Calculadora;
+
