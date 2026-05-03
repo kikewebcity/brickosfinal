@@ -28,7 +28,8 @@ const Nosotros = () => {
   <div className="manifiesto-contenedor">
     <h2 className="manifiesto-texto">
       En Bricko <span className="texto-oscuro">no solo vendemos bloques</span>, 
-      representamos soluciones que contribuyen al <span className="texto-verde">mejoramiento de los ecosistemas</span> y a la construcción de <span className="texto-verde">ciudades sustentables</span>.
+      representamos soluciones que contribuyen al <span className="texto-verde">mejoramiento de los ecosistemas</span> y a la construcción de <span className="texto-verde">ciudades sustentables
+        </span>
     </h2>
   </div>
 </section>
