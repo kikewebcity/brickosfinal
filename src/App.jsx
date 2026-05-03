@@ -155,21 +155,28 @@ function App() {
           <img src={scrolled ? logoWhite : logoBricko} alt="Bricko" className="logo-img" />
         </div>
 
-        <ul className={`enlaces-navegacion ${menuOpen ? 'activos' : ''}`}>
-          {secciones.map((sec) => (
-            <li
-              key={sec.id}
-              className={vistaActual === sec.id ? 'active-link' : ''}
-              onClick={() => { 
-                setVistaActual(sec.id); 
-                setMenuOpen(false); 
-                window.scrollTo({top: 0, behavior: 'smooth'});
-              }}
-            >
-              {sec.label}
-            </li>
-          ))}
-        </ul>
+     {/* Dentro de tu <nav> en App.jsx */}
+<ul className={`enlaces-navegacion ${menuOpen ? 'activos' : ''}`}>
+  {/* NUEVO: Logo dentro del menú móvil */}
+  <li className="logo-movil-menu">
+    <img src={logoWhite} alt="Bricko" className="logo-img-menu" />
+  </li>
+  
+  {secciones.map((sec) => (
+    <li
+      key={sec.id}
+      className={vistaActual === sec.id ? 'active-link' : ''}
+      onClick={() => { 
+        setVistaActual(sec.id); 
+        setMenuOpen(false); 
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      }}
+    >
+      {sec.label}
+    </li>
+  ))}
+</ul>
+
 
         <div className="iconos-navegacion">
           <ShoppingCart size={22} strokeWidth={2.5} className="boton-icono" />
