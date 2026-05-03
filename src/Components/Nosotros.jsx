@@ -1,11 +1,9 @@
 import React from 'react';
 import '../App.css';
 
-// 1. Importación de activos visuales
+// 1. IMPORTANTE: Solo importamos el logo si ESTÁ en la carpeta src/assets.
+// Si logobricko.png también lo moviste a 'public', borra esta línea y usa src="/logobricko.png" abajo.
 import logobrickoColor from '../assets/logobricko.png'; 
-import iconoreciclaje from '../assets/iconoreciclaje.png';
-import inovacion from '../assets/inovacion.png';
-import confianza from '../assets/confianza.png';
 
 const Nosotros = () => {
   return (
@@ -29,7 +27,7 @@ const Nosotros = () => {
         </div>
       </section>
 
-      {/* SECCIÓN 2: MANIFIESTO DE IMPACTO (SENTENCE CASE) */}
+      {/* SECCIÓN 2: MANIFIESTO DE IMPACTO */}
       <section className="nosotros-manifiesto">
         <div className="manifiesto-contenedor">
           <h2 className="manifiesto-texto" style={{ textTransform: 'none' }}>
@@ -43,9 +41,10 @@ const Nosotros = () => {
       {/* SECCIÓN 3: NARRATIVA EN ZIGZAG */}
       <section className="nosotros-zigzag-contenedor">
         
-        {/* Quiénes somos */}
+        {/* Identidad corporativa */}
         <div className="zigzag-fila">
           <div className="zigzag-texto">
+            <h2 className="zigzag-titulo" style={{ textTransform: 'none' }}>Identidad corporativa</h2>
             <p className="zigzag-parrafo" style={{ textTransform: 'none' }}>
               <span className="text-highlight">Somos una empresa 100% mexicana</span>, 
               que se distingue como una marca dedicada a la fabricación de productos 
@@ -53,6 +52,7 @@ const Nosotros = () => {
             </p>
           </div>
           <div className="zigzag-imagen">
+            {/* Como está en public, se llama con / */}
             <img src="/oficina.webp" alt="Oficina con Bricko" />
           </div>
         </div>
@@ -86,7 +86,7 @@ const Nosotros = () => {
         </div>
       </section>
 
-      {/* SECCIÓN 4: VALORES CON IMÁGENES (OPTIMIZADO PARA MOBILE) */}
+      {/* SECCIÓN 4: VALORES TÉCNICOS */}
       <section className="nosotros-valores">
         <h2 className="titulo-seccion-limpio" style={{ textTransform: 'none' }}>
           Nuestros <span className="enfasis-verde">valores</span>
@@ -96,7 +96,8 @@ const Nosotros = () => {
           {/* Sustentabilidad */}
           <div className="valor-card">
             <div className="valor-icono-wrapper">
-              <img src={iconoreciclaje} alt="Sustentabilidad" className="valor-icono" />
+              {/* CAMBIO: Se lee directamente desde public/ */}
+              <img src="/iconoreciclaje.png" alt="Sustentabilidad" className="valor-icono" />
             </div>
             <h3 style={{ textTransform: 'none' }}>Sustentabilidad</h3>
             <p>Cada decisión que tomamos prioriza la salud del planeta.</p>
@@ -105,7 +106,7 @@ const Nosotros = () => {
           {/* Innovación */}
           <div className="valor-card">
             <div className="valor-icono-wrapper">
-              <img src={inovacion} alt="Innovación" className="valor-icono" />
+              <img src="/inovacion.png" alt="Innovación" className="valor-icono" />
             </div>
             <h3 style={{ textTransform: 'none' }}>Innovación</h3>
             <p>Buscamos constantemente nuevas formas de reciclar y construir.</p>
@@ -114,7 +115,7 @@ const Nosotros = () => {
           {/* Calidad */}
           <div className="valor-card">
             <div className="valor-icono-wrapper">
-              <img src={confianza} alt="Calidad" className="valor-icono" />
+              <img src="/confianza.png" alt="Calidad" className="valor-icono" />
             </div>
             <h3 style={{ textTransform: 'none' }}>Calidad</h3>
             <p>La ecología no debe sacrificar la resistencia ni la estética.</p>
