@@ -197,41 +197,63 @@ function App() {
       </nav>
 
       <main className="contenido-principal">{renderContenido()}</main>
-
-      <footer className="footer">
-        <div className="footer-container">
-          <div className="footer-col left-col">
-            <img src={logoWhite} alt="Bricko" className="footer-logo-img" />
-            <p className="footer-slogan">Revolución Ecológica en Construcción</p>
-          </div>
-          <div className="footer-col center-col">
-            <ul className="footer-links">
-              <li onClick={() => { setVistaActual('faq'); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Preguntas Frecuentes</li>
-              <li><a href="/politica-envios.pdf" target="_blank" rel="noopener noreferrer">Tiempos de Envío</a></li>
-              <li 
-  style={{ cursor: 'pointer' }} 
-  onClick={() => { 
-    setVistaActual('privacidad'); 
-    window.scrollTo({ top: 0, behavior: 'smooth' }); 
-  }}
->
-  Aviso de Privacidad
-</li>
-
-            </ul>
-          </div>
-          <div className="footer-col right-col">
-            <p className="footer-contact">Email: ventas@bricko.com</p>
-            <p className="footer-contact">Tel: -55-55-55-55-55</p>
-            <div className="social-icons">
-              <img src={iconYt} alt="YT" className="social-img" />
-              <img src={iconInsta} alt="IG" className="social-img" />
-              <img src={iconFb} alt="FB" className="social-img" />
-            </div>
-          </div>
-        </div>
-      </footer>
+<footer className="footer">
+  <div className="footer-container">
+    {/* COLUMNA IZQUIERDA: IDENTIDAD */}
+    <div className="footer-col left-col">
+      <img src={logoWhite} alt="Bricko" className="footer-logo-img" />
+      <p className="footer-slogan">Revolución Ecológica en Construcción</p>
     </div>
+
+    {/* COLUMNA CENTRAL: NAVEGACIÓN LEGAL Y LOGÍSTICA */}
+    <div className="footer-col center-col">
+      <ul className="footer-links">
+        {/* Preguntas Frecuentes */}
+        <li 
+          style={{ cursor: 'pointer' }} 
+          onClick={() => { setVistaActual('faq'); window.scrollTo({top: 0, behavior: 'smooth'}); }}
+        >
+          Preguntas Frecuentes
+        </li>
+
+        {/* Tiempos de Envío (Ahora dinámico) */}
+        <li 
+          style={{ cursor: 'pointer' }} 
+          onClick={() => { 
+            setVistaActual('envios'); 
+            window.scrollTo({ top: 0, behavior: 'smooth' }); 
+          }}
+        >
+          Tiempos de Envío
+        </li>
+
+        {/* Aviso de Privacidad */}
+        <li 
+          style={{ cursor: 'pointer' }} 
+          onClick={() => { 
+            setVistaActual('privacidad'); 
+            window.scrollTo({ top: 0, behavior: 'smooth' }); 
+          }}
+        >
+          Aviso de Privacidad
+        </li>
+      </ul>
+    </div>
+
+    {/* COLUMNA DERECHA: CONTACTO Y REDES */}
+    <div className="footer-col right-col">
+      <p className="footer-contact">Email: ventas@bricko.com</p>
+      <p className="footer-contact">Tel: -55-55-55-55-55</p>
+      <div className="social-icons">
+        <img src={iconYt} alt="YT" className="social-img" />
+        <img src={iconInsta} alt="IG" className="social-img" />
+        <img src={iconFb} alt="FB" className="social-img" />
+      </div>
+    </div>
+  </div>
+</footer>
+
+     
   );
 }
 
