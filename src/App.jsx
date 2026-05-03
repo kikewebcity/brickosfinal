@@ -159,7 +159,7 @@ function App() {
 <ul className={`enlaces-navegacion ${menuOpen ? 'activos' : ''}`}>
   {/* NUEVO: Logo dentro del menú móvil */}
   <li className="logo-movil-menu">
-    <img src={logoWhite} alt="Bricko" className="logo-img-menu" />
+    <img src=/logowhite.png alt="Bricko" className="logo-img-menu" />
   </li>
   
   {secciones.map((sec) => (
@@ -176,7 +176,6 @@ function App() {
     </li>
   ))}
 </ul>
-
 
         <div className="iconos-navegacion">
           <ShoppingCart size={22} strokeWidth={2.5} className="boton-icono" />
