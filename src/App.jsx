@@ -30,10 +30,10 @@ function App() {
   const [vistaActual, setVistaActual] = useState('inicio');
   const [scrolled, setScrolled] = useState(false);
 
-  // Imágenes ubicadas en la carpeta /public
+  // Imágenes de la carpeta /public
   const heroImages = ['/recamara.webp', '/oficina.webp', '/banop.webp'];
 
-  // Etiquetas corregidas a "Sentence case"
+  // Etiquetas corregidas a "Sentence case" (Estética Liz Rangel)
   const secciones = [
     { id: 'inicio', label: 'Inicio' },
     { id: 'nosotros', label: 'Quienes somos' },
@@ -86,7 +86,7 @@ function App() {
 
   const renderInicio = () => (
     <>
-      {/* SECCIÓN HERO */}
+      {/* SECCIÓN HERO: Tipografía corregida vía CSS para evitar desbordamiento */}
       <section className="hero-slider">
         {heroImages.map((img, index) => (
           <div
@@ -99,7 +99,7 @@ function App() {
           <h1 className="titulo-monumental-limpio">
             Bloques ecológicos <br /> para tus proyectos
           </h1>
-          <p className="subtitulo-hero" style={{ color: '#ffffff', opacity: 1 }}>
+          <p className="subtitulo-hero">
             Modificación estructural en tu casa, oficina o lugar de trabajo
           </p>
           <button 
@@ -113,7 +113,6 @@ function App() {
       </section>
 
       <div className="fondo-ecosustentable">
-        {/* SECCIÓN INTRO */}
         <section className="intro-section" style={{ padding: '100px 20px', textAlign: 'center' }}>
           <div className="intro-container">
             <h3 className="intro-title" style={{ fontSize: '2.5rem', color: '#1a1a1a', fontWeight: '300', margin: 0, textTransform: 'none', lineHeight: '1.3' }}>
@@ -130,7 +129,7 @@ function App() {
               Calcula el <span className="enfasis-verde">material</span> de tu proyecto
             </h2>
             <p className="subtitulo-seccion-limpio">
-              Selecciona las dimensiones del muro que requieres construir en tu casa u oficina para saber cuántas piezas requieres
+              Selecciona las dimensiones del muro que requieres para saber cuántas piezas necesitas
             </p>
           </div>
           <div className="reveal-content">
@@ -145,26 +144,27 @@ function App() {
 
   return (
     <div className="main-container">
-      {/* BARRA SUPERIOR */}
+      {/* BARRA SUPERIOR CONSTANTE */}
       <div className="top-bar">
         <Truck size={16} strokeWidth={2.5} style={{ marginRight: '8px' }} />
         <span>Envíos a todo el país</span>
       </div>
 
-      {/* NAVEGACIÓN */}
+      {/* NAVEGACIÓN DINÁMICA */}
       <nav className={`barra-navegacion ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div 
           className="contenedor-logo" 
           onClick={() => { setVistaActual('inicio'); window.scrollTo({top: 0, behavior: 'smooth'}); }} 
           style={{ cursor: 'pointer' }}
         >
+          {/* Logo cambia de color según el estado del scroll */}
           <img src={scrolled ? logoWhite : logoBricko} alt="Bricko" className="logo-img" />
         </div>
 
         <ul className={`enlaces-navegacion ${menuOpen ? 'activos' : ''}`}>
-          {/* Logo móvil dentro del menú lateral */}
+          {/* LOGO MÓVIL: Forzado a blanco para el menú verde */}
           <li className="logo-movil-menu">
-            <img src={logoWhite} alt="Bricko" className="logo-img-menu" />
+            <img src={logoWhite} alt="Bricko Logo" className="logo-img-menu" />
           </li>
           
           {secciones.map((sec) => (
@@ -196,10 +196,9 @@ function App() {
         </div>
       </nav>
 
-      {/* CONTENIDO PRINCIPAL */}
       <main className="contenido-principal">{renderContenido()}</main>
 
-      {/* FOOTER */}
+      {/* FOOTER: Etiquetas corregidas a minúsculas */}
       <footer className="footer">
         <div className="footer-container">
           <div className="footer-col left-col">
@@ -209,28 +208,13 @@ function App() {
 
           <div className="footer-col center-col">
             <ul className="footer-links">
-              <li 
-                style={{ cursor: 'pointer' }}
-                onClick={() => { setVistaActual('faq'); window.scrollTo({top: 0, behavior: 'smooth'}); }}
-              >
+              <li onClick={() => { setVistaActual('faq'); window.scrollTo({top: 0}); }}>
                 Preguntas frecuentes
               </li>
-              <li 
-                style={{ cursor: 'pointer' }} 
-                onClick={() => { 
-                  setVistaActual('envios'); 
-                  window.scrollTo({ top: 0, behavior: 'smooth' }); 
-                }}
-              >
+              <li onClick={() => { setVistaActual('envios'); window.scrollTo({top: 0}); }}>
                 Tiempos de envío
               </li>
-              <li 
-                style={{ cursor: 'pointer' }} 
-                onClick={() => { 
-                  setVistaActual('privacidad'); 
-                  window.scrollTo({ top: 0, behavior: 'smooth' }); 
-                }}
-              >
+              <li onClick={() => { setVistaActual('privacidad'); window.scrollTo({top: 0}); }}>
                 Aviso de privacidad
               </li>
             </ul>
@@ -238,7 +222,6 @@ function App() {
 
           <div className="footer-col right-col">
             <p className="footer-contact">Email: ventas@bricko.com</p>
-            <p className="footer-contact">Tel: -55-55-55-55-55</p>
             <div className="social-icons">
               <img src={iconYt} alt="YT" className="social-img" />
               <img src={iconInsta} alt="IG" className="social-img" />
