@@ -1,63 +1,71 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { 
+  CheckCircle, ShieldCheck, Volume2, Recycle, HardHat, 
+  Clock, Zap, Hammer, Sliders, Leaf, Droplets, TreeDeciduous, CloudSync 
+} from 'lucide-react';
 import '../App.css';
 
 const Ventaja = () => {
+  const advantages = [
+    { id: 1, icon: <Leaf size={32} />, text: "Producto amigable con el medio ambiente" },
+    { id: 2, icon: <ShieldCheck size={32} />, text: "Gran resistencia mecánica" },
+    { id: 3, icon: <Volume2 size={32} />, text: "Gran resistencia acústica" },
+    { id: 4, icon: <Sliders size={32} />, text: "Menor cantidad de materiales empleados" },
+    { id: 5, icon: <Zap size={32} />, text: "No genera desperdicios en su construcción" },
+    { id: 6, icon: <Zap size={32} />, text: "Menor costo de implementación" },
+    { id: 7, icon: <HardHat size={32} />, text: "No requiere mano de obra especializada" },
+    { id: 8, icon: <Clock size={32} />, text: "Mayor facilidad de implementación" },
+    { id: 9, icon: <Volume2 size={32} />, text: "Sin generación de ruido en obra" },
+    { id: 10, icon: <Hammer size={32} />, text: "Libertad en el uso de clavos, pijas y tornillos" },
+  ];
+
   return (
     <div className="ventaja-pagina-maestra">
-      
-      {/* SECCIÓN 1: CABECERA TÉCNICA */}
-      <section className="productos-hero-tecnico">
-        <h1 className="titulo-seccion-productos">
-          LA VENTAJA COMPETITIVA BRICKO
-        </h1>
+      {/* CABECERA */}
+      <section className="ventaja-hero-tecnico">
+        <h1 className="titulo-seccion-productos">Ventajas competitivas</h1>
         <p className="descripcion-cabecera-tecnica">
-          Ingeniería sostenible aplicada. Nuestro sistema no solo reemplaza al bloque tradicional de mampostería, sino que supera sus especificaciones en eficiencia de instalación, peso y huella de carbono.
+          Ingeniería sustentable diseñada para optimizar costos, tiempos y reducir el impacto ambiental en cada obra.
         </p>
       </section>
 
-      {/* SECCIÓN 2: GRID DE BENEFICIOS (Reutilizando la cuadrícula de pilares) */}
-      <section className="nosotros-pilares-contenedor">
-        
-        <div className="pilar-tarjeta">
-          <div className="pilar-icono-caja">
-            <img src="/sostenibilidad.png" alt="Impacto Ecológico" />
+      {/* GRID DE LAS 10 VENTAJAS */}
+      <section className="ventaja-grid-contenedor">
+        {advantages.map((adv) => (
+          <div key={adv.id} className="ventaja-tarjeta-bloque">
+            <div className="ventaja-icono-cabecera">
+              <span className="ventaja-numero">{adv.id < 10 ? `0${adv.id}` : adv.id}</span>
+              <div className="ventaja-icono-svg">{adv.icon}</div>
+            </div>
+            <p className="ventaja-texto-tarjeta">{adv.text}</p>
           </div>
-          <h2 className="pilar-titulo-valor">IMPACTO ECOLÓGICO POSITIVO</h2>
-          <p className="pilar-descripcion">
-            Fabricación fundamentada en la economía circular mediante celulosa reciclada. Reducción directa de residuos sólidos y menor consumo energético en el proceso de fabricación.
-          </p>
-        </div>
+        ))}
+      </section>
 
-        <div className="pilar-tarjeta">
-          <div className="pilar-icono-caja">
-            <img src="/inovacion.png" alt="Ultra Ligereza" />
+      {/* SECCIÓN SABÍAS QUE (EL DATO DE LA TONELADA) */}
+      <section className="seccion-sostenibilidad-impacto">
+        <div className="sostenibilidad-overlay">
+          <h2 className="sabias-que-titulo">Sabías que...</h2>
+          <p className="por-cada-tonelada">Por cada tonelada (1000 kg) de papel reciclado:</p>
+          
+          <div className="stats-impacto-grid">
+            <div className="stat-card">
+              <TreeDeciduous size={48} className="stat-icon" />
+              <h3 className="stat-numero">17</h3>
+              <p className="stat-desc">Árboles salvados</p>
+            </div>
+            <div className="stat-card">
+              <Droplets size={48} className="stat-icon" />
+              <h3 className="stat-numero">26,000</h3>
+              <p className="stat-desc">Litros de agua ahorrados</p>
+            </div>
+            <div className="stat-card">
+              <CloudSync size={48} className="stat-icon" />
+              <h3 className="stat-numero">27.6 kg</h3>
+              <p className="stat-desc">De CO₂ evitados</p>
+            </div>
           </div>
-          <h2 className="pilar-titulo-valor">ULTRA LIGEREZA ESTRUCTURAL</h2>
-          <p className="pilar-descripcion">
-            Hasta un 75% más ligero que los sistemas tradicionales. Esta propiedad reduce las cargas muertas en la edificación, optimiza la logística de transporte y acelera los tiempos de maniobra en obra.
-          </p>
         </div>
-
-        <div className="pilar-tarjeta">
-          <div className="pilar-icono-caja">
-            <img src="/confianza.png" alt="Aislamiento Termoacústico" />
-          </div>
-          <h2 className="pilar-titulo-valor">AISLAMIENTO TERMOACÚSTICO</h2>
-          <p className="pilar-descripcion">
-            La alta densidad de nuestra matriz biopolimérica actúa como una barrera natural, mitigando la transferencia de sonido entre espacios (hasta 37.6 dB) y conservando la estabilidad térmica en interiores.
-          </p> 
-        </div>
-
-        <div className="pilar-tarjeta">
-          <div className="pilar-icono-caja">
-            <img src="/equipo.webp" alt="Instalación en Seco" />
-          </div>
-          <h2 className="pilar-titulo-valor">INSTALACIÓN EN SECO</h2>
-          <p className="pilar-descripcion">
-            Eliminación de aglomerantes húmedos. El ensamblaje modular permite modificaciones limpias, cortes con herramienta básica y cero generación de escombros.
-          </p>
-        </div>
-
       </section>
     </div>
   );
