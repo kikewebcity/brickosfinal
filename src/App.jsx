@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
@@ -30,14 +31,16 @@ function App() {
   const [vistaActual, setVistaActual] = useState('inicio');
   const [scrolled, setScrolled] = useState(false);
 
+  // Imágenes ubicadas en la carpeta /public
   const heroImages = ['/recamara.webp', '/oficina.webp', '/banop.webp'];
 
+  // Etiquetas corregidas a "Sentence case"
   const secciones = [
     { id: 'inicio', label: 'Inicio' },
-    { id: 'nosotros', label: 'Quienes Somos' },
-    { id: 'productos', label: 'Productos & Aplicaciones' },
+    { id: 'nosotros', label: 'Quienes somos' },
+    { id: 'productos', label: 'Productos & aplicaciones' },
     { id: 'ventaja', label: 'Ventaja' },
-    { id: 'noticias', label: 'Bricko News' },
+    { id: 'noticias', label: 'Bricko news' },
     { id: 'contacto', label: 'Contacto' },
   ];
 
@@ -84,6 +87,7 @@ function App() {
 
   const renderInicio = () => (
     <>
+      {/* SECCIÓN HERO */}
       <section className="hero-slider">
         {heroImages.map((img, index) => (
           <div
@@ -110,6 +114,7 @@ function App() {
       </section>
 
       <div className="fondo-ecosustentable">
+        {/* SECCIÓN INTRO */}
         <section className="intro-section" style={{ padding: '100px 20px', textAlign: 'center' }}>
           <div className="intro-container">
             <h3 className="intro-title" style={{ fontSize: '2.5rem', color: '#1a1a1a', fontWeight: '300', margin: 0, textTransform: 'none', lineHeight: '1.3' }}>
@@ -141,11 +146,13 @@ function App() {
 
   return (
     <div className="main-container">
+      {/* BARRA SUPERIOR */}
       <div className="top-bar">
         <Truck size={16} strokeWidth={2.5} style={{ marginRight: '8px' }} />
         <span>Envíos a todo el país</span>
       </div>
 
+      {/* NAVEGACIÓN */}
       <nav className={`barra-navegacion ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div 
           className="contenedor-logo" 
@@ -156,6 +163,7 @@ function App() {
         </div>
 
         <ul className={`enlaces-navegacion ${menuOpen ? 'activos' : ''}`}>
+          {/* Logo móvil dentro del menú lateral */}
           <li className="logo-movil-menu">
             <img src={logoWhite} alt="Bricko" className="logo-img-menu" />
           </li>
@@ -189,13 +197,15 @@ function App() {
         </div>
       </nav>
 
+      {/* CONTENIDO PRINCIPAL */}
       <main className="contenido-principal">{renderContenido()}</main>
 
+      {/* FOOTER */}
       <footer className="footer">
         <div className="footer-container">
           <div className="footer-col left-col">
             <img src={logoWhite} alt="Bricko" className="footer-logo-img" />
-            <p className="footer-slogan">Revolución Ecológica en Construcción</p>
+            <p className="footer-slogan">Revolución ecológica en construcción</p>
           </div>
 
           <div className="footer-col center-col">
@@ -204,7 +214,7 @@ function App() {
                 style={{ cursor: 'pointer' }}
                 onClick={() => { setVistaActual('faq'); window.scrollTo({top: 0, behavior: 'smooth'}); }}
               >
-                Preguntas Frecuentes
+                Preguntas frecuentes
               </li>
               <li 
                 style={{ cursor: 'pointer' }} 
@@ -213,7 +223,7 @@ function App() {
                   window.scrollTo({ top: 0, behavior: 'smooth' }); 
                 }}
               >
-                Tiempos de Envío
+                Tiempos de envío
               </li>
               <li 
                 style={{ cursor: 'pointer' }} 
@@ -222,7 +232,7 @@ function App() {
                   window.scrollTo({ top: 0, behavior: 'smooth' }); 
                 }}
               >
-                Aviso de Privacidad
+                Aviso de privacidad
               </li>
             </ul>
           </div>
