@@ -9,9 +9,6 @@ const Productos = () => {
       
       {/* MÓDULO 1: CABECERA TÉCNICA (Banner verde con letras blancas) */}
       <section className="productos-hero-tecnico">
-        <h1 className="titulo-seccion-productos" style={{ textTransform: 'none' }}>
-          Catálogo estructural
-        </h1>
         <p className="descripcion-cabecera-tecnica">
           Sistemas de construcción en seco basados en una matriz biopolimérica
           de celulosa y amilopectina. Ingeniería ligera diseñada para la
