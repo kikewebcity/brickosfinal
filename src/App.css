@@ -28,10 +28,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* =========================================
+   FORZADO DE SENTENCE CASE (PETICIÓN LIZ RANGEL)
+   ========================================= */
 h1, h2, h3, h4 {
   font-family: var(--font-main);
   margin: 0;
   letter-spacing: 1px;
+  text-transform: none !important; 
 }
 
 p { 
@@ -115,6 +119,7 @@ p {
   cursor: pointer;
   position: relative;
   transition: color 0.3s ease;
+  text-transform: none !important;
 }
 
 .enlaces-navegacion li:hover,
@@ -813,7 +818,6 @@ p {
    PÁGINA DE PRODUCTOS Y APLICACIONES
    ========================================= */
 
-/* 1. Encabezado Técnico (Hero) */
 .productos-hero-tecnico {
   text-align: center;
   padding: 100px 20px;
@@ -824,9 +828,8 @@ p {
 .titulo-seccion-productos {
   font-family: var(--font-main);
   font-size: 3.5rem;
-  color: #ffffff !important; /* Forzamos blanco sobre fondo verde */
+  color: #ffffff !important; 
   margin-bottom: 20px;
-  text-transform: none !important; /* Estética minimalista: solo inicial en mayúscula */
 }
 
 .descripcion-cabecera-tecnica {
@@ -839,17 +842,6 @@ p {
   text-align: center;
 }
 
-/* 2. Reglas de Tipografía (Sentence Case) */
-.aplicaciones-titulo-principal,
-.nombre-producto-ficha,
-.aplicacion-subtitulo,
-.aplicacion-categoria {
-  text-transform: none !important;
-  font-family: var(--font-main);
-  letter-spacing: 0.5px;
-}
-
-/* 3. Cuadrícula de Productos */
 .productos-grid-principal {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -872,7 +864,6 @@ p {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* 4. Galería y Flechas de Navegación */
 .contenedor-galeria-producto {
   position: relative;
   display: flex;
@@ -881,7 +872,7 @@ p {
   margin-bottom: 20px;
   border-radius: 8px;
   overflow: hidden;
-  background-color: #f9f9f9; /* Fondo neutro para resaltar el producto */
+  background-color: #f9f9f9; 
 }
 
 .img-producto-tecnica {
@@ -911,19 +902,12 @@ p {
 .flecha-galeria:hover {
   opacity: 1;
   transform: scale(1.1);
-  background-color: #2e7d32; /* Verde más oscuro al pasar el cursor */
+  background-color: #2e7d32; 
 }
 
-/* Posicionamiento lateral */
-.flecha-izq { 
-  left: 15px; 
-}
+.flecha-izq { left: 15px; }
+.flecha-der { right: 15px; }
 
-.flecha-der { 
-  right: 15px; 
-}
-
-/* 5. Detalles de Ficha Técnica */
 .nombre-producto-ficha {
   font-size: 2.2rem;
   color: var(--color-dark);
@@ -937,23 +921,8 @@ p {
   font-size: 0.95rem;
 }
 
-/* 6. Ajustes para Dispositivos Móviles */
-@media (max-width: 768px) {
-  .productos-hero-tecnico {
-    padding: 60px 20px;
-  }
-
-  .titulo-seccion-productos {
-    font-size: 2.5rem;
-  }
-
-  .flecha-galeria {
-    width: 35px;
-    height: 35px;
-  }
-}
 /* =========================================
-   REESTRUCTURA DE APLICACIONES (ZIGZAG)
+   REESTRUCTURA DE APLICACIONES (ZIGZAG / VERTICAL)
    ========================================= */
 
 .aplicaciones-galeria-seccion {
@@ -965,57 +934,86 @@ p {
 
 .aplicacion-bloque {
   display: flex;
-  flex-direction: column; /* Orden por defecto para Mobile: Texto arriba, Imagen abajo */
-  gap: 30px;
+  flex-direction: column; 
   align-items: center;
 }
 
-/* Configuración para Escritorio (Desktop) */
+.aplicacion-texto-caja {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ESTRICTO ORDEN VISUAL EN MÓVIL Y DESKTOP */
+.aplicacion-categoria {
+  order: 1;
+  color: var(--color-green);
+  font-family: var(--font-main);
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.aplicacion-subtitulo {
+  order: 2;
+  font-family: var(--font-main);
+  font-size: 2.8rem;
+  color: var(--color-dark);
+  margin-bottom: 20px;
+}
+
+.aplicacion-imagen-caja {
+  order: 3;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+.aplicacion-parrafo {
+  order: 4;
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  color: #444444 !important;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.aplicacion-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Configuración para Escritorio (Desktop Zigzag) */
 @media (min-width: 900px) {
   .aplicacion-bloque {
-    flex-direction: row; /* Fila normal: Texto - Imagen */
+    flex-direction: row; 
     gap: 60px;
-    text-align: left;
+    align-items: center;
   }
 
-  /* El segundo bloque (o los pares) se invierten para el efecto zigzag */
   .aplicacion-bloque:nth-child(even) {
-    flex-direction: row-reverse; /* Fila invertida: Imagen - Texto */
+    flex-direction: row-reverse; 
   }
 
-  .aplicacion-texto-caja, 
-  .aplicacion-imagen-caja {
-    flex: 1;
-  }
-}
-
-/* Ajustes específicos para Mobile */
-@media (max-width: 899px) {
+  /* Resetear el order en desktop si quieres texto a un lado y la imagen completa al otro */
   .aplicacion-texto-caja {
-    width: 100%;
-    text-align: left; /* Alineación solicitada por el cliente */
-    order: 1; /* Asegura que el texto sea lo primero */
-  }
-
-  .aplicacion-imagen-caja {
-    width: 100%;
-    order: 2; /* Asegura que la imagen vaya después del título */
-  }
-
-  .aplicacion-subtitulo {
-    font-size: 2.2rem;
-    margin-bottom: 15px;
+    flex: 1;
+    display: block; 
   }
   
-  .aplicacion-categoria {
-    margin-bottom: 5px;
-    display: block;
+  .aplicacion-categoria, .aplicacion-subtitulo, .aplicacion-parrafo {
+    order: initial;
+  }
+
+  .aplicacion-imagen-caja {
+    flex: 1;
+    order: initial;
+    margin-bottom: 0;
   }
 }
-
-
-
-
 
 /* =========================================
    TABLA COMPARATIVA
@@ -1053,27 +1051,6 @@ p {
   border-bottom: 1px solid var(--color-border);
   color: var(--color-dark);
 }
-
-/* =========================================
-   OPTIMIZACIÓN MÓVIL
-   ========================================= */
-@media (max-width: 768px) {
-  .aplicacion-bloque, 
-  .aplicacion-bloque.reversa {
-    flex-direction: column !important;
-    gap: 30px;
-  }
-
-  .aplicacion-img { height: 300px; }
-
-  .aplicaciones-titulo-principal { font-size: 3rem; }
-
-  .flecha-galeria {
-    width: 35px;
-    height: 35px;
-  }
-}
-
 
 /* =========================================
    PÁGINA NOSOTROS
@@ -1165,7 +1142,6 @@ p {
   position: relative;
 }
 
-/* Líneas decorativas sutiles para dar seriedad técnica */
 .manifiesto-contenedor::before,
 .manifiesto-contenedor::after {
   content: "";
@@ -1184,13 +1160,11 @@ p {
   font-family: var(--font-main);
   font-size: 2.8rem;
   line-height: 1.3;
-  color: var(--color-dark); /* Un tono sólido para autoridad */
+  color: var(--color-dark); 
   font-weight: 300;
   letter-spacing: -0.5px;
   text-align: center;
-  text-transform: none !important; 
 }
-
 
 .texto-oscuro {
   color: var(--color-dark);
@@ -1202,21 +1176,9 @@ p {
   font-weight: 700;
 }
 
-/* Ajuste para móvil */
-@media (max-width: 768px) {
-  .manifiesto-texto {
-    font-size: 1.8rem;
-    padding: 0 10px;
-  }
-  .nosotros-manifiesto {
-    padding: 60px 20px;
-  }
-}
-
 /* =========================================
    ESTILOS DE VALORES CON IMÁGENES
    ========================================= */
-
 .valores-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1234,9 +1196,8 @@ p {
   transition: transform 0.3s ease;
 }
 
-/* Contenedor del ícono */
 .valor-icono-wrapper {
-  width: 100px; /* Tamaño forzado para asegurar visualización */
+  width: 100px; 
   height: 100px;
   margin: 0 auto 20px auto;
   display: flex !important; 
@@ -1256,9 +1217,7 @@ p {
   font-size: 1.4rem;
   color: var(--color-dark);
   margin-bottom: 15px;
-  text-transform: none; /* Asegura solo la primera en mayúscula */
 }
-
 
 .zigzag-fila {
   display: flex;
@@ -1282,7 +1241,6 @@ p {
   margin-bottom: 20px;
   color: var(--color-dark);
 }
-
 
 .zigzag-parrafo {
   font-family: var(--font-text);
@@ -1314,70 +1272,6 @@ p {
 
 .zigzag-imagen img:hover {
   transform: scale(1.02);
-}
-
-.nosotros-pilares-contenedor {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px 100px 20px;
-}
-
-.pilar-tarjeta {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 40px 30px;
-  text-align: center;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid var(--color-border);
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.pilar-tarjeta:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(56, 142, 60, 0.08);
-  border-color: rgba(56, 142, 60, 0.3);
-}
-
-.pilar-icono-caja {
-  height: 90px;
-  width: 90px;
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.pilar-icono-caja img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  transition: transform 0.5s ease;
-}
-
-.pilar-tarjeta:hover .pilar-icono-caja img {
-  transform: scale(1.1);
-}
-
-.pilar-titulo-valor {
-  font-family: var(--font-main);
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: var(--color-dark);
-}
-
-.pilar-descripcion {
-  font-family: var(--font-text);
-  color: #444444;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  margin: 0;
-  text-align: justify;
 }
 
 /* =========================================
@@ -1446,7 +1340,6 @@ p {
   font-family: var(--font-main);
   font-size: 3.5rem;
   color: #eaeded; 
-  transition: color 0.4s ease;
   line-height: 1;
 }
 
@@ -1721,7 +1614,7 @@ p {
 
   .btn-text-desktop { display: none; }
   .btn-text-mobile { display: inline; }
-  .subtitulo-hero { font-size: 1.1rem; padding: 0 20px; }
+  .subtitulo-hero { font-size: 1.1rem !important; padding: 0 20px; }
 
   /* 1. CAMBIO DE FONDO: De blanco a Verde Institucional */
   .enlaces-navegacion {
@@ -1746,15 +1639,16 @@ p {
   .logo-movil-menu {
     display: flex !important;
     justify-content: center;
-    padding-bottom: 20px !important;
-    margin-bottom: 30px !important;
+    padding: 20px 0 !important;
+    margin-bottom: 20px !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
     list-style: none;
   }
 
   .logo-img-menu {
-    height: 50px;
+    height: 45px !important;
     width: auto;
+    filter: brightness(0) invert(1) !important; /* CORRECCIÓN DE CAOS DE LOGO */
   }
 
   .enlaces-navegacion li,
@@ -1777,8 +1671,9 @@ p {
     height: 35px;
   }
 
+  /* CORRECCIÓN DE CAOS DEL HERO */
   .titulo-monumental-limpio {
-    font-size: 3.5rem; 
+    font-size: 2.8rem !important; 
     line-height: 1.1;
   }
 
@@ -1862,36 +1757,6 @@ p {
   .valor-icono-wrapper {
     width: 70px;
     height: 70px;
-  }
-
-  .aplicacion-bloque, 
-  .aplicacion-bloque.reversa {
-    flex-direction: column !important; 
-    gap: 30px !important;
-    padding: 0 !important;
-  }
-
-  .aplicacion-imagen-caja, 
-  .aplicacion-texto-caja {
-    width: 100% !important; 
-    flex: none !important;
-  }
-
-  .aplicacion-img {
-    height: 280px !important; 
-    width: 100% !important;
-    object-fit: cover !important; 
-    border-radius: 12px !important;
-  }
-
-  .aplicacion-texto-caja {
-    padding: 20px 0 !important;
-    text-align: left !important;
-  }
-
-  .aplicacion-subtitulo {
-    font-size: 2.5rem !important; 
-    line-height: 1.1 !important;
   }
 
   .calc-image-panel {
@@ -1989,3 +1854,4 @@ p {
     margin-bottom: 0;
   }
 }
+
