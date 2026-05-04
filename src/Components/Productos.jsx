@@ -36,8 +36,6 @@ const Productos = () => {
             <p>Peso: 2 kg (72% más ligero)</p>
           </div>
         </div>
-        
-        {/* PRODUCTO 2: PANEL MONOLÍTICO */}
         <div className="producto-item-card">
           <div className="contenedor-galeria-producto">
             <button className="flecha-galeria flecha-izq">
@@ -61,10 +59,6 @@ const Productos = () => {
           </div>
         </div>
       </section>
-
-      {/* =======================================================
-          MÓDULO 2: GALERÍA DE APLICACIONES
-          ======================================================= */}
       <section className="aplicaciones-hero" style={{ marginTop: '60px', padding: '80px 20px' }}>
         {/* Título corregido: Sin "Arquitectónicas" y solo inicial mayúscula */}
         <h2 className="aplicaciones-titulo-principal" style={{ fontSize: '3.5rem', marginBottom: '15px', textTransform: 'none' }}>
