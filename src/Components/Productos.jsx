@@ -9,12 +9,13 @@ const Productos = () => {
       
       {/* MÓDULO 1: CABECERA TÉCNICA (Verde) */}
       <section className="productos-hero-tecnico">
+        <h1 className="titulo-seccion-productos">Catálogo estructural</h1>
         <p className="descripcion-cabecera-tecnica">
           Sistemas de construcción en seco diseñados para la optimización de cargas en interiores.
         </p>
       </section>
 
-      {/* GRID DE PRODUCTOS (Con PESO incluido) */}
+      {/* GRID DE PRODUCTOS */}
       <section className="productos-grid-principal">
         
         {/* Producto: Bloque */}
@@ -26,7 +27,7 @@ const Productos = () => {
           <h2 className="nombre-producto-ficha">Bloque estructural</h2>
           <div className="mini-tabla-datos">
             <p>Dimensiones: 23 x 14 x 7 cm</p>
-            <p>Peso: 0.5 kg (72% más ligero)</p> {/* DATO RESTAURADO */}
+            <p>Peso: 0.5 kg (72% más ligero)</p>
           </div>
         </div>
         
@@ -39,12 +40,12 @@ const Productos = () => {
           <h2 className="nombre-producto-ficha">Panel monolítico</h2>
           <div className="mini-tabla-datos">
             <p>Dimensiones: 1.22 x 2.44 m</p>
-            <p>Peso: 92.5 kg</p> {/* DATO RESTAURADO */}
+            <p>Peso: 92.5 kg</p>
           </div>
         </div>
       </section>
 
-      {/* MÓDULO 2: SECCIÓN QUE HABÍA DESAPARECIDO (Fondo oscuro, Título verde) */}
+      {/* MÓDULO 2: TRANSICIÓN (Fondo oscuro, Título verde) */}
       <section className="aplicaciones-hero">
         <h2 className="aplicaciones-titulo-principal">Aplicaciones arquitectónicas</h2>
         <p className="aplicaciones-descripcion-hero">
@@ -52,7 +53,7 @@ const Productos = () => {
         </p>
       </section>
 
-      {/* MÓDULO 3: GALERÍA DE APLICACIONES (Título arriba, Texto abajo) */}
+      {/* MÓDULO 3: GALERÍA DE APLICACIONES */}
       <section className="aplicaciones-galeria-seccion">
         
         {/* Aplicación 1 */}
