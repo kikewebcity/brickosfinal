@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
 }
@@ -935,14 +934,9 @@ p {
 .aplicacion-bloque {
   display: flex;
   flex-direction: column; 
-  align-items: center;
-}
-
-.aplicacion-texto-caja {
-  width: 100%;
   text-align: left;
-  display: flex;
-  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* ESTRICTO ORDEN VISUAL EN MÓVIL Y DESKTOP */
@@ -984,35 +978,6 @@ p {
   width: 100%;
   display: block;
   object-fit: cover;
-}
-
-/* Configuración para Escritorio (Desktop Zigzag) */
-@media (min-width: 900px) {
-  .aplicacion-bloque {
-    flex-direction: row; 
-    gap: 60px;
-    align-items: center;
-  }
-
-  .aplicacion-bloque:nth-child(even) {
-    flex-direction: row-reverse; 
-  }
-
-  /* Resetear el order en desktop si quieres texto a un lado y la imagen completa al otro */
-  .aplicacion-texto-caja {
-    flex: 1;
-    display: block; 
-  }
-  
-  .aplicacion-categoria, .aplicacion-subtitulo, .aplicacion-parrafo {
-    order: initial;
-  }
-
-  .aplicacion-imagen-caja {
-    flex: 1;
-    order: initial;
-    margin-bottom: 0;
-  }
 }
 
 /* =========================================
@@ -1648,7 +1613,7 @@ p {
   .logo-img-menu {
     height: 45px !important;
     width: auto;
-    filter: brightness(0) invert(1) !important; /* CORRECCIÓN DE CAOS DE LOGO */
+    filter: brightness(0) invert(1) !important; /* CORRECCIÓN LOGO BLANCO */
   }
 
   .enlaces-navegacion li,
@@ -1671,7 +1636,7 @@ p {
     height: 35px;
   }
 
-  /* CORRECCIÓN DE CAOS DEL HERO */
+  /* CORRECCIÓN DE CAOS DEL HERO (MÓVIL) */
   .titulo-monumental-limpio {
     font-size: 2.8rem !important; 
     line-height: 1.1;
@@ -1854,4 +1819,3 @@ p {
     margin-bottom: 0;
   }
 }
-
