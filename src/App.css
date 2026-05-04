@@ -823,6 +823,25 @@ p {
   background-color: #f8f9fa;
 }
 
+/* Títulos con "Sentence case" forzado */
+.titulo-seccion-productos,
+.aplicaciones-titulo-principal,
+.nombre-producto-ficha,
+.aplicacion-subtitulo {
+  text-transform: none !important;
+  font-family: var(--font-main);
+  letter-spacing: 0.5px;
+}
+
+.titulo-seccion-productos {
+  font-size: 3.5rem;
+  color: var(--color-green);
+  margin-bottom: 20px;
+}
+
+/* =========================================
+   GRID DE PRODUCTOS Y GALERÍA INTERNA
+   ========================================= */
 .productos-grid-principal {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -836,31 +855,75 @@ p {
   background: #ffffff;
   border: 1px solid var(--color-border);
   padding: 30px;
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+  transition: var(--transition-smooth);
+}
+
+.producto-item-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Contenedor para las flechas de navegación */
+.contenedor-galeria-producto {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .img-producto-tecnica {
   width: 100%;
-  height: 250px;
+  height: 280px;
   object-fit: contain;
-  margin-bottom: 20px;
 }
 
-.producto-item-card p,
-.producto-item-card span,
-.mini-tabla-datos p {
-  color: #000000 !important; 
-  font-weight: 500 !important;
+/* Estilo de flechas circulares verdes (Liz Rangel Style) */
+.flecha-galeria {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-green);
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 5;
+  opacity: 0.85;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+.flecha-galeria:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.flecha-izq { left: 10px; }
+.flecha-der { right: 10px; }
 
 .nombre-producto-ficha {
-  font-size: 2rem;
-  color: var(--color-green) !important;
-  margin-bottom: 15px;
+  font-size: 2.2rem;
+  color: var(--color-dark);
+  margin-bottom: 10px;
 }
 
+.mini-tabla-datos p {
+  color: #555555 !important;
+  font-weight: 500 !important;
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+/* =========================================
+   GALERÍA DE APLICACIONES (ZIGZAG)
+   ========================================= */
 .aplicaciones-hero {
   background-color: var(--color-dark);
   color: #ffffff;
@@ -869,20 +932,9 @@ p {
 }
 
 .aplicaciones-titulo-principal {
-  font-family: var(--font-main);
   font-size: 4.5rem;
   color: var(--color-green);
   margin-bottom: 25px;
-}
-
-.aplicaciones-descripcion-hero {
-  font-family: var(--font-text);
-  font-size: 1.2rem;
-  color: #eaeded;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
-  text-align: justify;
 }
 
 .aplicaciones-galeria-seccion {
@@ -900,62 +952,49 @@ p {
   gap: 60px;
 }
 
-.aplicacion-bloque.reversa {
-  flex-direction: row-reverse;
-}
+.aplicacion-bloque.reversa { flex-direction: row-reverse; }
 
 .aplicacion-imagen-caja {
   flex: 1;
-  width: 100%;
+  border-radius: 12px;
   overflow: hidden;
-  border-radius: 4px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .aplicacion-img {
   width: 100%;
-  height: 500px;
+  height: 450px;
   object-fit: cover;
   transition: transform 0.6s ease;
 }
 
-.aplicacion-imagen-caja:hover .aplicacion-img {
-  transform: scale(1.03);
-}
-
-.aplicacion-texto-caja {
-  flex: 1;
-  padding: 20px;
-}
+.aplicacion-texto-caja { flex: 1; }
 
 .aplicacion-categoria {
   font-family: var(--font-main);
-  font-size: 1.2rem;
-  color: #888888;
+  font-size: 1.1rem;
+  color: var(--color-green);
   letter-spacing: 2px;
-  display: block;
-  margin-bottom: 15px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .aplicacion-subtitulo {
-  font-family: var(--font-main);
-  font-size: 3rem;
+  font-size: 3.2rem;
   color: var(--color-dark);
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
-.aplicacion-parrafo,
-.aplicacion-parrafo * {
+.aplicacion-parrafo {
   font-family: var(--font-text);
   font-size: 1.1rem;
-  color: #1a1a1a !important; 
+  color: #444444 !important;
   line-height: 1.7;
   text-align: justify;
-  font-weight: 500 !important;
 }
 
 /* =========================================
-   TABLA COMPARATIVA DE RENDIMIENTO 
+   TABLA COMPARATIVA
    ========================================= */
 .seccion-tabla-comparativa {
   max-width: 1100px;
@@ -963,54 +1002,54 @@ p {
   padding: 0 20px;
 }
 
-.titulo-tabla-rendimiento {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2.8rem;
-  color: var(--color-dark);
-}
-
 .contenedor-tabla-scroll {
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   border-radius: 12px;
-  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   background-color: #ffffff;
 }
 
-.contenedor-tabla-scroll table,
 .tabla-bricko-vs-tradicional {
   width: 100%;
   border-collapse: collapse;
-  font-family: var(--font-text);
-  background-color: #ffffff;
-  min-width: 650px; 
+  min-width: 700px;
 }
 
-.contenedor-tabla-scroll th,
 .tabla-bricko-vs-tradicional th {
-  background-color: var(--color-dark) !important;
-  color: #ffffff !important;
-  padding: 18px 20px;
+  background-color: var(--color-dark);
+  color: #ffffff;
+  padding: 20px;
   text-align: left;
   font-family: var(--font-main);
-  letter-spacing: 1px;
   font-size: 1.4rem;
 }
 
-.contenedor-tabla-scroll td,
 .tabla-bricko-vs-tradicional td {
   padding: 18px 20px;
-  border-bottom: 1px solid #eaeded;
-  color: #1a1a1a !important; 
-  font-size: 1.05rem;
-  line-height: 1.5;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-dark);
 }
 
-.contenedor-tabla-scroll tr:hover {
-  background-color: #f8f9fa;
+/* =========================================
+   OPTIMIZACIÓN MÓVIL
+   ========================================= */
+@media (max-width: 768px) {
+  .aplicacion-bloque, 
+  .aplicacion-bloque.reversa {
+    flex-direction: column !important;
+    gap: 30px;
+  }
+
+  .aplicacion-img { height: 300px; }
+
+  .aplicaciones-titulo-principal { font-size: 3rem; }
+
+  .flecha-galeria {
+    width: 35px;
+    height: 35px;
+  }
 }
+
 
 /* =========================================
    PÁGINA NOSOTROS
