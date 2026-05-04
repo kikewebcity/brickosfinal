@@ -7,7 +7,7 @@ const Productos = () => {
   return (
     <div className="productos-pagina-maestra">
       
-      {/* MÓDULO 1: CATÁLOGO */}
+      {/* MÓDULO 1: CABECERA TÉCNICA (Verde) */}
       <section className="productos-hero-tecnico">
         <h1 className="titulo-seccion-productos">Catálogo estructural</h1>
         <p className="descripcion-cabecera-tecnica">
@@ -15,60 +15,75 @@ const Productos = () => {
         </p>
       </section>
 
+      {/* GRID DE PRODUCTOS (Con PESO incluido) */}
       <section className="productos-grid-principal">
-        {/* Bloque */}
+        
+        {/* Producto: Bloque */}
         <div className="producto-item-card">
           <div className="contenedor-galeria-producto">
-            <img src="/ladrillodivisorio.webp" alt="Bloque" className="img-producto-tecnica" />
+            <img src="/ladrillodivisorio.webp" alt="Bloque estructural" className="img-producto-tecnica" />
             <button className="flecha-galeria flecha-der"><ChevronRight size={24} /></button>
           </div>
           <h2 className="nombre-producto-ficha">Bloque estructural</h2>
           <div className="mini-tabla-datos">
             <p>Dimensiones: 23 x 14 x 7 cm</p>
+            <p>Peso: 0.5 kg (72% más ligero)</p> {/* DATO RESTAURADO */}
           </div>
         </div>
         
-        {/* Panel */}
+        {/* Producto: Panel */}
         <div className="producto-item-card">
           <div className="contenedor-galeria-producto">
             <button className="flecha-galeria flecha-izq"><ChevronLeft size={24} /></button>
-            <img src="/paneldivisorio.png" alt="Panel" className="img-producto-tecnica" />
+            <img src="/paneldivisorio.png" alt="Panel monolítico" className="img-producto-tecnica" />
           </div>
           <h2 className="nombre-producto-ficha">Panel monolítico</h2>
           <div className="mini-tabla-datos">
             <p>Dimensiones: 1.22 x 2.44 m</p>
+            <p>Peso: 92.5 kg</p> {/* DATO RESTAURADO */}
           </div>
         </div>
       </section>
 
-      {/* MÓDULO 2: APLICACIONES (ORDEN CORREGIDO) */}
-      <section className="aplicaciones-hero-transicion">
-        <h2 className="aplicaciones-titulo-principal">Aplicaciones</h2>
+      {/* MÓDULO 2: SECCIÓN QUE HABÍA DESAPARECIDO (Fondo oscuro, Título verde) */}
+      <section className="aplicaciones-hero">
+        <h2 className="aplicaciones-titulo-principal">Aplicaciones arquitectónicas</h2>
+        <p className="aplicaciones-descripcion-hero">
+          Descubre cómo la versatilidad de la celulosa Bricko se adapta a diferentes exigencias espaciales, brindando soluciones acústicas, modulares y estructuralmente seguras.
+        </p>
       </section>
 
+      {/* MÓDULO 3: GALERÍA DE APLICACIONES (Título arriba, Texto abajo) */}
       <section className="aplicaciones-galeria-seccion">
-        {/* Caso 1 */}
+        
+        {/* Aplicación 1 */}
         <div className="aplicacion-bloque">
-          <span className="aplicacion-categoria">Sector corporativo</span>
-          <h3 className="aplicacion-subtitulo">Espacios de trabajo</h3>
-          <div className="aplicacion-imagen-caja">
-            <img src="/oficina.webp" alt="Oficinas" className="aplicacion-img" />
+          <div className="aplicacion-texto-caja">
+            <span className="aplicacion-categoria">Sector corporativo</span>
+            <h3 className="aplicacion-subtitulo">Espacios de trabajo</h3>
+            <div className="aplicacion-imagen-caja">
+              <img src="/oficina.webp" alt="Oficinas" className="aplicacion-img" />
+            </div>
+            <p className="aplicacion-parrafo">
+              Nuestros bloques de celulosa segmentan oficinas abiertas de forma rápida y limpia. 
+              Ideal para crear salas de juntas sin detener operaciones por obra húmeda.
+            </p>
           </div>
-          <p className="aplicacion-parrafo">
-            Nuestros bloques de celulosa segmentan oficinas abiertas de forma rápida y limpia, garantizando aislamiento acústico.
-          </p>
         </div>
 
-        {/* Caso 2 */}
+        {/* Aplicación 2 */}
         <div className="aplicacion-bloque">
-          <span className="aplicacion-categoria">Sector residencial</span>
-          <h3 className="aplicacion-subtitulo">Diseño de interiores</h3>
-          <div className="aplicacion-imagen-caja">
-            <img src="/recamara.webp" alt="Residencial" className="aplicacion-img" />
+          <div className="aplicacion-texto-caja">
+            <span className="aplicacion-categoria">Sector residencial</span>
+            <h3 className="aplicacion-subtitulo">Diseño de interiores</h3>
+            <div className="aplicacion-imagen-caja">
+              <img src="/recamara.webp" alt="Recámara" className="aplicacion-img" />
+            </div>
+            <p className="aplicacion-parrafo">
+              Transforma el hogar con muros de carga nula. La estética natural aporta calidez 
+              permitiendo remodelaciones estéticas y con alto aislamiento térmico.
+            </p>
           </div>
-          <p className="aplicacion-parrafo">
-            Transforma el hogar con muros divisorios de carga nula. La estética natural aporta calidez a cualquier habitación.
-          </p>
         </div>
       </section>
 
