@@ -952,80 +952,70 @@ p {
     height: 35px;
   }
 }
-
-
-
 /* =========================================
-   GALERÍA DE APLICACIONES (ZIGZAG)
+   REESTRUCTURA DE APLICACIONES (ZIGZAG)
    ========================================= */
-.aplicaciones-hero {
-  background-color: var(--color-dark);
-  color: #ffffff;
-  padding: 120px 20px;
-  text-align: center;
-}
-
-.aplicaciones-titulo-principal {
-  font-size: 4.5rem;
-  color: var(--color-green);
-  margin-bottom: 25px;
-}
 
 .aplicaciones-galeria-seccion {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 100px 20px;
   display: flex;
   flex-direction: column;
-  gap: 120px;
+  gap: 80px;
+  padding: 60px 20px;
 }
 
 .aplicacion-bloque {
   display: flex;
+  flex-direction: column; /* Orden por defecto para Mobile: Texto arriba, Imagen abajo */
+  gap: 30px;
   align-items: center;
-  gap: 60px;
 }
 
-.aplicacion-bloque.reversa { flex-direction: row-reverse; }
+/* Configuración para Escritorio (Desktop) */
+@media (min-width: 900px) {
+  .aplicacion-bloque {
+    flex-direction: row; /* Fila normal: Texto - Imagen */
+    gap: 60px;
+    text-align: left;
+  }
 
-.aplicacion-imagen-caja {
-  flex: 1;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  /* El segundo bloque (o los pares) se invierten para el efecto zigzag */
+  .aplicacion-bloque:nth-child(even) {
+    flex-direction: row-reverse; /* Fila invertida: Imagen - Texto */
+  }
+
+  .aplicacion-texto-caja, 
+  .aplicacion-imagen-caja {
+    flex: 1;
+  }
 }
 
-.aplicacion-img {
-  width: 100%;
-  height: 450px;
-  object-fit: cover;
-  transition: transform 0.6s ease;
+/* Ajustes específicos para Mobile */
+@media (max-width: 899px) {
+  .aplicacion-texto-caja {
+    width: 100%;
+    text-align: left; /* Alineación solicitada por el cliente */
+    order: 1; /* Asegura que el texto sea lo primero */
+  }
+
+  .aplicacion-imagen-caja {
+    width: 100%;
+    order: 2; /* Asegura que la imagen vaya después del título */
+  }
+
+  .aplicacion-subtitulo {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .aplicacion-categoria {
+    margin-bottom: 5px;
+    display: block;
+  }
 }
 
-.aplicacion-texto-caja { flex: 1; }
 
-.aplicacion-categoria {
-  font-family: var(--font-main);
-  font-size: 1.1rem;
-  color: var(--color-green);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
 
-.aplicacion-subtitulo {
-  font-size: 3.2rem;
-  color: var(--color-dark);
-  margin-bottom: 20px;
-}
 
-.aplicacion-parrafo {
-  font-family: var(--font-text);
-  font-size: 1.1rem;
-  color: #444444 !important;
-  line-height: 1.7;
-  text-align: justify;
-}
 
 /* =========================================
    TABLA COMPARATIVA
