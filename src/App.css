@@ -812,6 +812,7 @@ p {
   outline: none;
   border-color: var(--color-green);
 }
+
 /* =========================================
    PÁGINA DE PRODUCTOS Y CATÁLOGO
    ========================================= */
@@ -819,8 +820,8 @@ p {
 .productos-hero-tecnico {
   text-align: center;
   padding: 100px 20px;
-  background-color: var(--color-green); /* Fondo verde institucional */
-  color: #ffffff; /* Letras blancas */
+  background-color: var(--color-green);
+  color: #ffffff;
 }
 
 .titulo-seccion-productos {
@@ -828,7 +829,7 @@ p {
   font-size: 3.5rem;
   color: #ffffff !important; 
   margin-bottom: 20px;
-  text-transform: none !important; /* Solo primera mayúscula */
+  text-transform: none !important;
 }
 
 .descripcion-cabecera-tecnica {
@@ -841,6 +842,7 @@ p {
   text-align: center;
 }
 
+/* Grid de Fichas Técnicas */
 .productos-grid-principal {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -859,9 +861,13 @@ p {
   transition: var(--transition-smooth);
 }
 
-/* CORRECCIÓN: Visibilidad de Peso y Dimensiones */
+.producto-item-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Visibilidad de Peso y Dimensiones (Fondo blanco) */
 .mini-tabla-datos p {
-  color: #1a1a1a !important; /* Color oscuro para que se vea sobre el blanco */
+  color: #1a1a1a !important; 
   font-weight: 600 !important;
   margin: 5px 0;
   font-size: 1rem;
@@ -884,6 +890,7 @@ p {
   object-fit: contain;
 }
 
+/* Flechas simples para el catálogo superior */
 .flecha-galeria {
   position: absolute;
   width: 40px;
@@ -898,6 +905,7 @@ p {
   z-index: 5;
   opacity: 0.85;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .flecha-izq { left: 15px; }
@@ -912,11 +920,11 @@ p {
 }
 
 /* =========================================
-   SECCIÓN DE TRANSICIÓN: FONDO NEGRO, TÍTULO VERDE
+   SECCIÓN DE TRANSICIÓN: FONDO NEGRO
    ========================================= */
 
 .aplicaciones-hero {
-  background-color: #1a1a1a !important; /* Fondo negro como imagen 69 */
+  background-color: #1a1a1a !important; 
   color: #ffffff;
   padding: 100px 20px;
   text-align: center;
@@ -925,7 +933,7 @@ p {
 .aplicaciones-titulo-principal {
   font-family: var(--font-main);
   font-size: 4rem;
-  color: var(--color-green) !important; /* Título verde vibrante */
+  color: var(--color-green) !important; 
   margin-bottom: 20px;
   text-transform: none !important;
 }
@@ -935,19 +943,19 @@ p {
   margin: 0 auto;
   font-family: var(--font-text);
   font-size: 1.25rem;
-  color: #ffffff !important; /* Letras blancas */
+  color: #ffffff !important; 
   line-height: 1.6;
 }
 
 /* =========================================
-   GALERÍA APLICACIONES (ORDEN VERTICAL)
+   GALERÍAS DINÁMICAS (APLICACIONES)
    ========================================= */
 
 .aplicaciones-galeria-seccion {
   display: flex;
   flex-direction: column;
   gap: 80px;
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 .aplicacion-bloque {
@@ -976,29 +984,94 @@ p {
   text-transform: none !important;
 }
 
-.aplicacion-imagen-caja {
+/* Contenedor interactivo para la imagen y las flechas flotantes */
+.contenedor-galeria-dinamica {
   order: 3;
+  position: relative;
   width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
 }
 
-.aplicacion-parrafo {
-  order: 4;
-  font-family: var(--font-text);
-  font-size: 1.1rem;
-  color: #444444 !important;
-  line-height: 1.7;
+.aplicacion-imagen-caja {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .aplicacion-img {
   width: 100%;
+  height: 450px; /* Altura fija para estabilidad visual en escritorio */
   display: block;
   object-fit: cover;
 }
 
+/* Botones de flecha para las galerías de 4 imágenes */
+.btn-flecha-img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-green);
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 15;
+  opacity: 0.9;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-flecha-img:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+  background-color: #2e7d32;
+}
+
+.btn-flecha-img.izq { left: 20px; }
+.btn-flecha-img.der { right: 20px; }
+
+.aplicacion-parrafo {
+  order: 4;
+  font-family: var(--font-text);
+  font-size: 1.15rem;
+  color: #444444 !important;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* =========================================
+   OPTIMIZACIÓN MÓVIL
+   ========================================= */
+
+@media (max-width: 768px) {
+  .aplicaciones-titulo-principal {
+    font-size: 3rem;
+  }
+
+  .aplicacion-subtitulo {
+    font-size: 2.2rem;
+  }
+
+  .aplicacion-img {
+    height: 300px; /* Altura reducida para móviles */
+  }
+
+  .btn-flecha-img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .btn-flecha-img.izq { left: 10px; }
+  .btn-flecha-img.der { right: 10px; }
+}
 
 
 
