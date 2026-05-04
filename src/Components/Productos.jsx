@@ -6,26 +6,14 @@ import FaqsProductos from './FaqsProductos';
 const Productos = () => {
   return (
     <div className="productos-pagina-maestra">
-      
-      {/* =======================================================
-          MÓDULO 1: CATÁLOGO TÉCNICO DE PRODUCTOS
-          ======================================================= */}
       <section className="productos-hero-tecnico">
-        {/* Título corregido: Sin "Bricko" y en minúsculas */}
-        <h1 className="titulo-seccion-productos" style={{ textTransform: 'none' }}>
-          Catálogo estructural
-        </h1>
         <p className="descripcion-cabecera-tecnica">
           Sistemas de construcción en seco basados en una matriz biopolimérica
           de celulosa y amilopectina. Ingeniería ligera diseñada para la
           optimización de cargas en interiores.
         </p>
       </section>
-
-      {/* GRID DE PRODUCTOS CON FLECHAS DE NAVEGACIÓN */}
       <section className="productos-grid-principal">
-        
-        {/* PRODUCTO 1: BLOQUE */}
         <div className="producto-item-card">
           <div className="contenedor-galeria-producto">
             <button className="flecha-galeria flecha-izq">
