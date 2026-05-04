@@ -97,7 +97,7 @@ const Nosotros = () => {
           <div className="valor-card">
             <div className="valor-icono-wrapper">
               {/* CAMBIO: Se lee directamente desde public/ */}
-              <img src="/iconoreciclaje.png" alt="Sustentabilidad" className="valor-icono" />
+              <img src="/sustenabilidad.png" alt="Sustentabilidad" className="valor-icono" />
             </div>
             <h3 style={{ textTransform: 'none' }}>Sustentabilidad</h3>
             <p>Cada decisión que tomamos prioriza la salud del planeta.</p>
