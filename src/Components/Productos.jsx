@@ -1,13 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import '../App.css';
 import FaqsProductos from './FaqsProductos'; 
 
 const Productos = () => {
+  // Arreglos de 4 imágenes para cada galería
+  const imagenesCorporativo = [
+    '/oficina.webp', 
+    '/oficina2.webp', // Asegúrate de tener estas imágenes en /public
+    '/oficina3.webp', 
+    '/oficina4.webp'
+  ];
+
+  const imagenesResidencial = [
+    '/recamara.webp', 
+    '/recamara2.webp', 
+    '/recamara3.webp', 
+    '/recamara4.webp'
+  ];
+
+  const [indexCorp, setIndexCorp] = useState(0);
+  const [indexRes, setIndexRes] = useState(0);
+
+  const nextImg = (index, setIndex, total) => setIndex((index + 1) % total);
+  const prevImg = (index, setIndex, total) => setIndex((index - 1 + total) % total);
+
   return (
     <div className="productos-pagina-maestra">
       
-      {/* MÓDULO 1: CABECERA TÉCNICA (Verde) */}
+      {/* MÓDULO 1: CATÁLOGO */}
       <section className="productos-hero-tecnico">
         <h1 className="titulo-seccion-productos">Catálogo estructural</h1>
         <p className="descripcion-cabecera-tecnica">
@@ -15,13 +36,10 @@ const Productos = () => {
         </p>
       </section>
 
-      {/* GRID DE PRODUCTOS */}
       <section className="productos-grid-principal">
-        
-        {/* Producto: Bloque */}
         <div className="producto-item-card">
           <div className="contenedor-galeria-producto">
-            <img src="/ladrillodivisorio.webp" alt="Bloque estructural" className="img-producto-tecnica" />
+            <img src="/ladrillodivisorio.webp" alt="Bloque" className="img-producto-tecnica" />
             <button className="flecha-galeria flecha-der"><ChevronRight size={24} /></button>
           </div>
           <h2 className="nombre-producto-ficha">Bloque estructural</h2>
@@ -31,11 +49,10 @@ const Productos = () => {
           </div>
         </div>
         
-        {/* Producto: Panel */}
         <div className="producto-item-card">
           <div className="contenedor-galeria-producto">
             <button className="flecha-galeria flecha-izq"><ChevronLeft size={24} /></button>
-            <img src="/paneldivisorio.png" alt="Panel monolítico" className="img-producto-tecnica" />
+            <img src="/paneldivisorio.png" alt="Panel" className="img-producto-tecnica" />
           </div>
           <h2 className="nombre-producto-ficha">Panel monolítico</h2>
           <div className="mini-tabla-datos">
@@ -45,46 +62,63 @@ const Productos = () => {
         </div>
       </section>
 
-      {/* MÓDULO 2: TRANSICIÓN (Fondo oscuro, Título verde) */}
+      {/* MÓDULO 2: TRANSICIÓN OSCURA */}
       <section className="aplicaciones-hero">
         <h2 className="aplicaciones-titulo-principal">Aplicaciones arquitectónicas</h2>
         <p className="aplicaciones-descripcion-hero">
-          Descubre cómo la versatilidad de la celulosa Bricko se adapta a diferentes exigencias espaciales, brindando soluciones acústicas, modulares y estructuralmente seguras.
+          Descubre cómo la versatilidad de la celulosa Bricko se adapta a diferentes exigencias espaciales.
         </p>
       </section>
 
-      {/* MÓDULO 3: GALERÍA DE APLICACIONES */}
+      {/* MÓDULO 3: GALERÍAS DE APLICACIONES */}
       <section className="aplicaciones-galeria-seccion">
         
-        {/* Aplicación 1 */}
+        {/* Galería 1: Corporativo */}
         <div className="aplicacion-bloque">
-          <div className="aplicacion-texto-caja">
-            <span className="aplicacion-categoria">Sector corporativo</span>
-            <h3 className="aplicacion-subtitulo">Espacios de trabajo</h3>
+          <span className="aplicacion-categoria">Sector corporativo</span>
+          <h3 className="aplicacion-subtitulo">Espacios de trabajo</h3>
+          
+          <div className="contenedor-galeria-dinamica">
+            <button className="btn-flecha-img izq" onClick={() => prevImg(indexCorp, setIndexCorp, 4)}>
+              <ChevronLeft size={30} />
+            </button>
             <div className="aplicacion-imagen-caja">
-              <img src="/oficina.webp" alt="Oficinas" className="aplicacion-img" />
+              <img src={imagenesCorporativo[indexCorp]} alt="Galería Oficinas" className="aplicacion-img" />
             </div>
-            <p className="aplicacion-parrafo">
-              Nuestros bloques de celulosa segmentan oficinas abiertas de forma rápida y limpia. 
-              Ideal para crear salas de juntas sin detener operaciones por obra húmeda.
-            </p>
+            <button className="btn-flecha-img der" onClick={() => nextImg(indexCorp, setIndexCorp, 4)}>
+              <ChevronRight size={30} />
+            </button>
           </div>
+
+          <p className="aplicacion-parrafo">
+            Nuestros bloques de celulosa segmentan oficinas abiertas de forma rápida y limpia. 
+            Ideal para crear salas de juntas sin detener operaciones por obra húmeda.
+          </p>
         </div>
 
-        {/* Aplicación 2 */}
+        {/* Galería 2: Residencial */}
         <div className="aplicacion-bloque">
-          <div className="aplicacion-texto-caja">
-            <span className="aplicacion-categoria">Sector residencial</span>
-            <h3 className="aplicacion-subtitulo">Diseño de interiores</h3>
+          <span className="aplicacion-categoria">Sector residencial</span>
+          <h3 className="aplicacion-subtitulo">Diseño de interiores</h3>
+
+          <div className="contenedor-galeria-dinamica">
+            <button className="btn-flecha-img izq" onClick={() => prevImg(indexRes, setIndexRes, 4)}>
+              <ChevronLeft size={30} />
+            </button>
             <div className="aplicacion-imagen-caja">
-              <img src="/recamara.webp" alt="Recámara" className="aplicacion-img" />
+              <img src={imagenesResidencial[indexRes]} alt="Galería Residencial" className="aplicacion-img" />
             </div>
-            <p className="aplicacion-parrafo">
-              Transforma el hogar con muros de carga nula. La estética natural aporta calidez 
-              permitiendo remodelaciones estéticas y con alto aislamiento térmico.
-            </p>
+            <button className="btn-flecha-img der" onClick={() => nextImg(indexRes, setIndexRes, 4)}>
+              <ChevronRight size={30} />
+            </button>
           </div>
+
+          <p className="aplicacion-parrafo">
+            Transforma el hogar con muros de carga nula. La estética natural aporta calidez 
+            permitiendo remodelaciones estéticas y con alto aislamiento térmico.
+          </p>
         </div>
+
       </section>
 
       <div style={{ marginTop: '40px' }}>
