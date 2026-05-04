@@ -9,7 +9,6 @@ const Productos = () => {
       
       {/* MÓDULO 1: CABECERA TÉCNICA (Verde) */}
       <section className="productos-hero-tecnico">
-        <h1 className="titulo-seccion-productos">Catálogo estructural</h1>
         <p className="descripcion-cabecera-tecnica">
           Sistemas de construcción en seco diseñados para la optimización de cargas en interiores.
         </p>
