@@ -32,8 +32,8 @@ const Productos = () => {
             Bloque estructural
           </h2>
           <div className="mini-tabla-datos">
-            <p>Dimensiones: 23 x 14 x 7 cm</p>
-            <p>Peso: 0.5 kg (72% más ligero)</p>
+            <p>Dimensiones: 37 x 12 x 18 cm</p>
+            <p>Peso: 2 kg (72% más ligero)</p>
           </div>
         </div>
         
@@ -56,8 +56,8 @@ const Productos = () => {
             Panel monolítico
           </h2>
           <div className="mini-tabla-datos">
-            <p>Dimensiones: 1.22 x 2.44 m</p>
-            <p>Peso: 92.5 kg</p>
+            <p>Dimensiones: 1.20 x 30 cm</p>
+            <p>Peso: 4.5 kg</p>
           </div>
         </div>
       </section>
