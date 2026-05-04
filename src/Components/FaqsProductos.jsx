@@ -39,7 +39,7 @@ const FaqsProductos = () => {
     <section className="soporte-tecnico-seccion">
       <div className="soporte-cabecera">
         <h2 className="soporte-titulo">
-          ESPECIFICACIONES DE RENDIMIENTO Y MANTENIMIENTO
+          Especificaciones de rendimiento y mantenimiento
         </h2>
       </div>
 
