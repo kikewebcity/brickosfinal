@@ -1639,7 +1639,7 @@ p {
   .btn-text-mobile { display: inline; }
   .subtitulo-hero { font-size: 1.1rem !important; padding: 0 20px; }
 
-  /* 1. CAMBIO DE FONDO: De blanco a Verde Institucional */
+  /* 1. MENÚ MÓVIL: Verde Institucional */
   .enlaces-navegacion {
     position: fixed;
     top: 0;
@@ -1671,7 +1671,7 @@ p {
   .logo-img-menu {
     height: 45px !important;
     width: auto;
-    filter: brightness(0) invert(1) !important; /* CORRECCIÓN LOGO BLANCO */
+    filter: brightness(0) invert(1) !important;
   }
 
   .enlaces-navegacion li,
@@ -1694,7 +1694,7 @@ p {
     height: 35px;
   }
 
-  /* CORRECCIÓN DE CAOS DEL HERO (MÓVIL) */
+  /* 2. CORRECCIÓN HERO */
   .titulo-monumental-limpio {
     font-size: 2.8rem !important; 
     line-height: 1.1;
@@ -1704,6 +1704,7 @@ p {
     height: 65vh;
   }
 
+  /* 3. ESTRUCTURA EN COLUMNAS */
   .features-main-grid,
   .calc-main-layout,
   .carrusel-inspiracion-home,
@@ -1739,7 +1740,7 @@ p {
     padding: 40px 30px;
   }
 
-  /* CENTRADO DE MISIÓN Y VISIÓN EN MÓVIL */
+  /* 4. MISIÓN Y VISIÓN */
   .zigzag-fila, 
   .zigzag-fila.reversa {
     flex-direction: column !important; 
@@ -1766,7 +1767,7 @@ p {
     margin: 0 auto;
   }
 
-  /* VALORES EN MÓVIL */
+  /* 5. VALORES */
   .valores-grid {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -1820,38 +1821,7 @@ p {
     line-height: 1.6 !important;
   }
 
-  .productos-pagina-maestra {
-      position: relative; 
-  }
-
-  .productos-pagina-maestra:before,
-  .productos-pagina-maestra:after {
-      content: '';
-      position: absolute;
-      top: 60%; 
-      width: 32px;
-      height: 32px;
-      background-color: var(--color-green); 
-      border-radius: 50%; 
-      z-index: 10;
-      opacity: 0.8;
-      pointer-events: none; 
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
-      background-size: 16px;
-      background-repeat: no-repeat;
-      background-position: center;
-  }
-
-  .productos-pagina-maestra:before {
-      left: 10px;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>');
-  }
-
-  .productos-pagina-maestra:after {
-      right: 10px;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>');
-  }
-
+  /* 6. GRID DE PRODUCTOS (SIN FLECHAS FANTASMA) */
   .productos-grid-principal {
     display: flex !important;
     flex-direction: row !important;
@@ -1877,3 +1847,4 @@ p {
     margin-bottom: 0;
   }
 }
+
