@@ -812,36 +812,44 @@ p {
 /* =========================================
    PÁGINA DE PRODUCTOS Y APLICACIONES
    ========================================= */
-.productos-pagina-maestra {
-  background-color: #ffffff;
-  padding-bottom: 100px;
-}
 
+/* 1. Encabezado Técnico (Hero) */
 .productos-hero-tecnico {
   text-align: center;
-  padding: 80px 20px;
-  background-color: #f8f9fa;
+  padding: 100px 20px;
+  background-color: var(--color-green); /* Fondo verde institucional */
+  color: #ffffff; /* Letras blancas */
 }
 
-/* Títulos con "Sentence case" forzado */
-.titulo-seccion-productos,
+.titulo-seccion-productos {
+  font-family: var(--font-main);
+  font-size: 3.5rem;
+  color: #ffffff !important; /* Forzamos blanco sobre fondo verde */
+  margin-bottom: 20px;
+  text-transform: none !important; /* Estética minimalista: solo inicial en mayúscula */
+}
+
+.descripcion-cabecera-tecnica {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: var(--font-text);
+  font-size: 1.25rem;
+  color: #ffffff !important;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* 2. Reglas de Tipografía (Sentence Case) */
 .aplicaciones-titulo-principal,
 .nombre-producto-ficha,
-.aplicacion-subtitulo {
+.aplicacion-subtitulo,
+.aplicacion-categoria {
   text-transform: none !important;
   font-family: var(--font-main);
   letter-spacing: 0.5px;
 }
 
-.titulo-seccion-productos {
-  font-size: 3.5rem;
-  color: var(--color-green);
-  margin-bottom: 20px;
-}
-
-/* =========================================
-   GRID DE PRODUCTOS Y GALERÍA INTERNA
-   ========================================= */
+/* 3. Cuadrícula de Productos */
 .productos-grid-principal {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -864,7 +872,7 @@ p {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* Contenedor para las flechas de navegación */
+/* 4. Galería y Flechas de Navegación */
 .contenedor-galeria-producto {
   position: relative;
   display: flex;
@@ -873,6 +881,7 @@ p {
   margin-bottom: 20px;
   border-radius: 8px;
   overflow: hidden;
+  background-color: #f9f9f9; /* Fondo neutro para resaltar el producto */
 }
 
 .img-producto-tecnica {
@@ -881,7 +890,6 @@ p {
   object-fit: contain;
 }
 
-/* Estilo de flechas circulares verdes (Liz Rangel Style) */
 .flecha-galeria {
   position: absolute;
   width: 40px;
@@ -903,11 +911,19 @@ p {
 .flecha-galeria:hover {
   opacity: 1;
   transform: scale(1.1);
+  background-color: #2e7d32; /* Verde más oscuro al pasar el cursor */
 }
 
-.flecha-izq { left: 10px; }
-.flecha-der { right: 10px; }
+/* Posicionamiento lateral */
+.flecha-izq { 
+  left: 15px; 
+}
 
+.flecha-der { 
+  right: 15px; 
+}
+
+/* 5. Detalles de Ficha Técnica */
 .nombre-producto-ficha {
   font-size: 2.2rem;
   color: var(--color-dark);
@@ -920,6 +936,24 @@ p {
   margin: 5px 0;
   font-size: 0.95rem;
 }
+
+/* 6. Ajustes para Dispositivos Móviles */
+@media (max-width: 768px) {
+  .productos-hero-tecnico {
+    padding: 60px 20px;
+  }
+
+  .titulo-seccion-productos {
+    font-size: 2.5rem;
+  }
+
+  .flecha-galeria {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+
 
 /* =========================================
    GALERÍA DE APLICACIONES (ZIGZAG)
