@@ -812,9 +812,8 @@ p {
   outline: none;
   border-color: var(--color-green);
 }
-
 /* =========================================
-   PÁGINA DE PRODUCTOS Y APLICACIONES
+   PÁGINA DE PRODUCTOS Y CATÁLOGO
    ========================================= */
 
 .productos-hero-tecnico {
@@ -829,6 +828,7 @@ p {
   font-size: 3.5rem;
   color: #ffffff !important; 
   margin-bottom: 20px;
+  text-transform: none !important; /* Solo primera mayúscula */
 }
 
 .descripcion-cabecera-tecnica {
@@ -859,8 +859,12 @@ p {
   transition: var(--transition-smooth);
 }
 
-.producto-item-card:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+/* CORRECCIÓN: Visibilidad de Peso y Dimensiones */
+.mini-tabla-datos p {
+  color: #1a1a1a !important; /* Color oscuro para que se vea sobre el blanco */
+  font-weight: 600 !important;
+  margin: 5px 0;
+  font-size: 1rem;
 }
 
 .contenedor-galeria-producto {
@@ -891,37 +895,52 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   z-index: 5;
   opacity: 0.85;
-  transition: var(--transition-smooth);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.flecha-galeria:hover {
-  opacity: 1;
-  transform: scale(1.1);
-  background-color: #2e7d32; 
 }
 
 .flecha-izq { left: 15px; }
 .flecha-der { right: 15px; }
 
 .nombre-producto-ficha {
+  font-family: var(--font-main);
   font-size: 2.2rem;
   color: var(--color-dark);
   margin-bottom: 10px;
-}
-
-.mini-tabla-datos p {
-  color: #555555 !important;
-  font-weight: 500 !important;
-  margin: 5px 0;
-  font-size: 0.95rem;
+  text-transform: none !important;
 }
 
 /* =========================================
-   REESTRUCTURA DE APLICACIONES (ZIGZAG / VERTICAL)
+   SECCIÓN DE TRANSICIÓN: FONDO NEGRO, TÍTULO VERDE
+   ========================================= */
+
+.aplicaciones-hero {
+  background-color: #1a1a1a !important; /* Fondo negro como imagen 69 */
+  color: #ffffff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.aplicaciones-titulo-principal {
+  font-family: var(--font-main);
+  font-size: 4rem;
+  color: var(--color-green) !important; /* Título verde vibrante */
+  margin-bottom: 20px;
+  text-transform: none !important;
+}
+
+.aplicaciones-descripcion-hero {
+  max-width: 850px;
+  margin: 0 auto;
+  font-family: var(--font-text);
+  font-size: 1.25rem;
+  color: #ffffff !important; /* Letras blancas */
+  line-height: 1.6;
+}
+
+/* =========================================
+   GALERÍA APLICACIONES (ORDEN VERTICAL)
    ========================================= */
 
 .aplicaciones-galeria-seccion {
@@ -939,13 +958,13 @@ p {
   margin: 0 auto;
 }
 
-/* ESTRICTO ORDEN VISUAL EN MÓVIL Y DESKTOP */
 .aplicacion-categoria {
   order: 1;
   color: var(--color-green);
   font-family: var(--font-main);
   font-size: 1.2rem;
   margin-bottom: 5px;
+  text-transform: none !important;
 }
 
 .aplicacion-subtitulo {
@@ -954,6 +973,7 @@ p {
   font-size: 2.8rem;
   color: var(--color-dark);
   margin-bottom: 20px;
+  text-transform: none !important;
 }
 
 .aplicacion-imagen-caja {
@@ -971,7 +991,6 @@ p {
   font-size: 1.1rem;
   color: #444444 !important;
   line-height: 1.7;
-  text-align: justify;
 }
 
 .aplicacion-img {
@@ -980,42 +999,8 @@ p {
   object-fit: cover;
 }
 
-/* =========================================
-   TABLA COMPARATIVA
-   ========================================= */
-.seccion-tabla-comparativa {
-  max-width: 1100px;
-  margin: 100px auto;
-  padding: 0 20px;
-}
 
-.contenedor-tabla-scroll {
-  overflow-x: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  background-color: #ffffff;
-}
 
-.tabla-bricko-vs-tradicional {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 700px;
-}
-
-.tabla-bricko-vs-tradicional th {
-  background-color: var(--color-dark);
-  color: #ffffff;
-  padding: 20px;
-  text-align: left;
-  font-family: var(--font-main);
-  font-size: 1.4rem;
-}
-
-.tabla-bricko-vs-tradicional td {
-  padding: 18px 20px;
-  border-bottom: 1px solid var(--color-border);
-  color: var(--color-dark);
-}
 
 /* =========================================
    PÁGINA NOSOTROS
