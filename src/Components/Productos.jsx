@@ -6,19 +6,25 @@ import FaqsProductos from './FaqsProductos';
 const Productos = () => {
   return (
     <div className="productos-pagina-maestra">
+      
+      {/* MÓDULO 1: CABECERA TÉCNICA (Banner verde con letras blancas) */}
       <section className="productos-hero-tecnico">
+        <h1 className="titulo-seccion-productos" style={{ textTransform: 'none' }}>
+          Catálogo estructural
+        </h1>
         <p className="descripcion-cabecera-tecnica">
           Sistemas de construcción en seco basados en una matriz biopolimérica
           de celulosa y amilopectina. Ingeniería ligera diseñada para la
           optimización de cargas en interiores.
         </p>
       </section>
+
+      {/* GRID DE PRODUCTOS CON INDICADORES DIRECCIONALES ÚNICOS */}
       <section className="productos-grid-principal">
+        
+        {/* Ficha: Bloque (Solo indicador derecho para sugerir desplazamiento) */}
         <div className="producto-item-card">
           <div className="contenedor-galeria-producto">
-            <button className="flecha-galeria flecha-izq">
-              <ChevronLeft size={24} />
-            </button>
             <img
               src="/ladrillodivisorio.webp"
               alt="Ladrillo Divisorio"
@@ -32,10 +38,12 @@ const Productos = () => {
             Bloque estructural
           </h2>
           <div className="mini-tabla-datos">
-            <p>Dimensiones: 37 x 12 x 18 cm</p>
-            <p>Peso: 2 kg (72% más ligero)</p>
+            <p>Dimensiones: 23 x 14 x 7 cm</p>
+            <p>Peso: 0.5 kg (72% más ligero)</p>
           </div>
         </div>
+        
+        {/* Ficha: Panel (Solo indicador izquierdo para sugerir retorno) */}
         <div className="producto-item-card">
           <div className="contenedor-galeria-producto">
             <button className="flecha-galeria flecha-izq">
@@ -46,32 +54,28 @@ const Productos = () => {
               alt="Panel Monolítico"
               className="img-producto-tecnica"
             />
-            <button className="flecha-galeria flecha-der">
-              <ChevronRight size={24} />
-            </button>
           </div>
           <h2 className="nombre-producto-ficha" style={{ textTransform: 'none' }}>
             Panel monolítico
           </h2>
           <div className="mini-tabla-datos">
-            <p>Dimensiones: 1.20 x 30 cm</p>
-            <p>Peso: 4.5 kg</p>
+            <p>Dimensiones: 1.22 x 2.44 m</p>
+            <p>Peso: 92.5 kg</p>
           </div>
         </div>
       </section>
+
+      {/* MÓDULO 2: GALERÍA DE APLICACIONES */}
       <section className="aplicaciones-hero" style={{ marginTop: '60px', padding: '80px 20px' }}>
-        {/* Título corregido: Sin "Arquitectónicas" y solo inicial mayúscula */}
         <h2 className="aplicaciones-titulo-principal" style={{ fontSize: '3.5rem', marginBottom: '15px', textTransform: 'none' }}>
           Aplicaciones
         </h2>
         <p className="aplicaciones-descripcion-hero">
-          Descubre cómo la versatilidad de la celulosa Bricko se adapta a diferentes exigencias espaciales, brindando soluciones acústicas, modulares y estructuralmente seguras.
+          Descubre cómo la versatilidad de la celulosa Bricko se adapta a diferentes exigencias espaciales.
         </p>
       </section>
 
       <section className="aplicaciones-galeria-seccion" style={{ paddingTop: '80px' }}>
-        
-        {/* CASO DE USO 1: OFICINAS */}
         <div className="aplicacion-bloque">
           <div className="aplicacion-imagen-caja">
             <img src="/oficina.webp" alt="Oficinas Corporativas" className="aplicacion-img" />
@@ -80,13 +84,11 @@ const Productos = () => {
             <span className="aplicacion-categoria">Sector corporativo</span>
             <h3 className="aplicacion-subtitulo" style={{ textTransform: 'none' }}>Espacios de trabajo</h3>
             <p className="aplicacion-parrafo">
-              Nuestros bloques de celulosa segmentan oficinas abiertas de forma rápida y limpia. 
-              La alta densidad garantiza un ambiente aislado del ruido, ideal para crear salas de juntas y cubículos privados.
+              Nuestros bloques de celulosa segmentan oficinas abiertas de forma rápida y limpia.
             </p>
           </div>
         </div>
 
-        {/* CASO DE USO 2: RESIDENCIAL */}
         <div className="aplicacion-bloque reversa">
           <div className="aplicacion-imagen-caja">
             <img src="/recamara.webp" alt="Diseño Residencial" className="aplicacion-img" />
@@ -95,16 +97,12 @@ const Productos = () => {
             <span className="aplicacion-categoria">Sector residencial</span>
             <h3 className="aplicacion-subtitulo" style={{ textTransform: 'none' }}>Diseño de interiores</h3>
             <p className="aplicacion-parrafo">
-              Transforma el hogar con muros divisorios de carga nula. La estética natural y la textura del material reciclado aportan calidez a recámaras y salas de estar, permitiendo remodelaciones veloces.
+              Transforma el hogar con muros divisorios de carga nula.
             </p>
           </div>
         </div>
-
       </section>
 
-      {/* =======================================================
-          MÓDULO 3: PREGUNTAS FRECUENTES
-          ======================================================= */}
       <div style={{ marginTop: '40px' }}>
         <FaqsProductos />
       </div>
