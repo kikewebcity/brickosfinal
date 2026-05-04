@@ -7,103 +7,74 @@ const Productos = () => {
   return (
     <div className="productos-pagina-maestra">
       
-      {/* MÓDULO 1: CABECERA TÉCNICA (Banner verde con letras blancas) */}
+      {/* MÓDULO 1: CATÁLOGO */}
       <section className="productos-hero-tecnico">
+        <h1 className="titulo-seccion-productos">Catálogo estructural</h1>
         <p className="descripcion-cabecera-tecnica">
-          Sistemas de construcción en seco basados en una matriz biopolimérica
-          de celulosa y amilopectina. Ingeniería ligera diseñada para la
-          optimización de cargas en interiores.
+          Sistemas de construcción en seco diseñados para la optimización de cargas en interiores.
         </p>
       </section>
 
-      {/* GRID DE PRODUCTOS CON INDICADORES DIRECCIONALES ÚNICOS */}
       <section className="productos-grid-principal">
-        
-        {/* Ficha: Bloque (Solo indicador derecho para sugerir desplazamiento) */}
+        {/* Bloque */}
         <div className="producto-item-card">
           <div className="contenedor-galeria-producto">
-            <img
-              src="/ladrillodivisorio.webp"
-              alt="Ladrillo Divisorio"
-              className="img-producto-tecnica"
-            />
-            <button className="flecha-galeria flecha-der">
-              <ChevronRight size={24} />
-            </button>
+            <img src="/ladrillodivisorio.webp" alt="Bloque" className="img-producto-tecnica" />
+            <button className="flecha-galeria flecha-der"><ChevronRight size={24} /></button>
           </div>
-          <h2 className="nombre-producto-ficha" style={{ textTransform: 'none' }}>
-            Bloque estructural
-          </h2>
+          <h2 className="nombre-producto-ficha">Bloque estructural</h2>
           <div className="mini-tabla-datos">
             <p>Dimensiones: 23 x 14 x 7 cm</p>
-            <p>Peso: 0.5 kg (72% más ligero)</p>
           </div>
         </div>
         
-        {/* Ficha: Panel (Solo indicador izquierdo para sugerir retorno) */}
+        {/* Panel */}
         <div className="producto-item-card">
           <div className="contenedor-galeria-producto">
-            <button className="flecha-galeria flecha-izq">
-              <ChevronLeft size={24} />
-            </button>
-            <img
-              src="/paneldivisorio.png" 
-              alt="Panel Monolítico"
-              className="img-producto-tecnica"
-            />
+            <button className="flecha-galeria flecha-izq"><ChevronLeft size={24} /></button>
+            <img src="/paneldivisorio.png" alt="Panel" className="img-producto-tecnica" />
           </div>
-          <h2 className="nombre-producto-ficha" style={{ textTransform: 'none' }}>
-            Panel monolítico
-          </h2>
+          <h2 className="nombre-producto-ficha">Panel monolítico</h2>
           <div className="mini-tabla-datos">
             <p>Dimensiones: 1.22 x 2.44 m</p>
-            <p>Peso: 92.5 kg</p>
           </div>
         </div>
       </section>
 
-      {/* MÓDULO 2: GALERÍA DE APLICACIONES */}
-      <section className="aplicaciones-hero" style={{ marginTop: '60px', padding: '80px 20px' }}>
-        <h2 className="aplicaciones-titulo-principal" style={{ fontSize: '3.5rem', marginBottom: '15px', textTransform: 'none' }}>
-          Aplicaciones
-        </h2>
-        <p className="aplicaciones-descripcion-hero">
-          Descubre cómo la versatilidad de la celulosa Bricko se adapta a diferentes exigencias espaciales.
-        </p>
+      {/* MÓDULO 2: APLICACIONES (ORDEN CORREGIDO) */}
+      <section className="aplicaciones-hero-transicion">
+        <h2 className="aplicaciones-titulo-principal">Aplicaciones</h2>
       </section>
 
-      <section className="aplicaciones-galeria-seccion" style={{ paddingTop: '80px' }}>
+      <section className="aplicaciones-galeria-seccion">
+        {/* Caso 1 */}
         <div className="aplicacion-bloque">
+          <span className="aplicacion-categoria">Sector corporativo</span>
+          <h3 className="aplicacion-subtitulo">Espacios de trabajo</h3>
           <div className="aplicacion-imagen-caja">
-            <img src="/oficina.webp" alt="Oficinas Corporativas" className="aplicacion-img" />
+            <img src="/oficina.webp" alt="Oficinas" className="aplicacion-img" />
           </div>
-          <div className="aplicacion-texto-caja">
-            <span className="aplicacion-categoria">Sector corporativo</span>
-            <h3 className="aplicacion-subtitulo" style={{ textTransform: 'none' }}>Espacios de trabajo</h3>
-            <p className="aplicacion-parrafo">
-              Nuestros bloques de celulosa segmentan oficinas abiertas de forma rápida y limpia.
-            </p>
-          </div>
+          <p className="aplicacion-parrafo">
+            Nuestros bloques de celulosa segmentan oficinas abiertas de forma rápida y limpia, garantizando aislamiento acústico.
+          </p>
         </div>
 
-        <div className="aplicacion-bloque reversa">
+        {/* Caso 2 */}
+        <div className="aplicacion-bloque">
+          <span className="aplicacion-categoria">Sector residencial</span>
+          <h3 className="aplicacion-subtitulo">Diseño de interiores</h3>
           <div className="aplicacion-imagen-caja">
-            <img src="/recamara.webp" alt="Diseño Residencial" className="aplicacion-img" />
+            <img src="/recamara.webp" alt="Residencial" className="aplicacion-img" />
           </div>
-          <div className="aplicacion-texto-caja">
-            <span className="aplicacion-categoria">Sector residencial</span>
-            <h3 className="aplicacion-subtitulo" style={{ textTransform: 'none' }}>Diseño de interiores</h3>
-            <p className="aplicacion-parrafo">
-              Transforma el hogar con muros divisorios de carga nula.
-            </p>
-          </div>
+          <p className="aplicacion-parrafo">
+            Transforma el hogar con muros divisorios de carga nula. La estética natural aporta calidez a cualquier habitación.
+          </p>
         </div>
       </section>
 
       <div style={{ marginTop: '40px' }}>
         <FaqsProductos />
       </div>
-
     </div>
   );
 };
