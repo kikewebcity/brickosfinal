@@ -15,7 +15,7 @@ const Calculadora = () => {
 
   // 3. ENLACE DINÁMICO DE WHATSAPP
   const mensajeWA = `Hola, me interesa adquirir ${brickosTotales} Brickos para mi proyecto. El costo estimado es de $${costoTotal} pesos.`;
-  const urlWA = `https://wa.me/+525512306218?text=${encodeURIComponent(mensajeWA)}`;
+  const urlWA = `https://wa.me/525512306218?text=${encodeURIComponent(mensajeWA)}`;
 
   return (
     <div className="calc-main-layout">
