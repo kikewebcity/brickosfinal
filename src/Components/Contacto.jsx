@@ -48,7 +48,7 @@ const Contacto = () => {
             </div>
 
             <div className="form-grupo">
-              <label className="form-etiqueta">Correo Electronico</label>
+              <label className="form-etiqueta">Correo Electrónico</label>
               <input
                 type="email"
                 className="form-entrada"
