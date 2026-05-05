@@ -1,71 +1,71 @@
 import React from 'react';
+import { ExternalLink, ArrowRight } from 'lucide-react';
 import '../App.css';
 
-const NoticiasSustentables = () => {
-  // Matriz de datos (Mockup Técnico) de noticias sobre sustentabilidad
-  const noticias = [
+const Noticias = () => {
+  const articulos = [
     {
       id: 1,
-      etiqueta: 'ECONOMÍA CIRCULAR',
-      titulo: 'De residuo urbano a infraestructura: El ciclo de vida de la celulosa',
-      extracto: 'Análisis técnico sobre cómo la revalorización de mermas de papel está reduciendo la huella de carbono en la industria de la construcción hasta en un 45%, transformando pasivos ambientales en activos arquitectónicos.',
-      imagen: '/noticia2.jpg', // Imagen detectada en su carpeta public
-      fecha: '18 Abril 2026'
+      categoria: "Sustentabilidad estatal",
+      titulo: "Reciclaje y reutilización: pilares de la nueva economía",
+      extracto: "Análisis sobre las políticas actuales de revalorización de materiales y el impacto del reciclaje en el bienestar social.",
+      fuente: "Secretaría de Bienestar",
+      link: "https://www.bienestar.gob.mx/sibien/index.php/sustentabilidad/20-sustentabilidad/29-reciclaje-y-reutilizacion",
+      imagen: "/noticia-reciclaje.webp" // Usa una imagen de ambiente o planta de reciclaje
     },
     {
       id: 2,
-      etiqueta: 'DISEÑO ECOSUSTENTABLE',
-      titulo: 'Biopolímeros y Acústica: El nuevo estándar en corporativos',
-      extracto: 'La implementación de matrices de celulosa prensada en oficinas de planta abierta ha demostrado una mejora del 60% en la absorción acústica, superando a los paneles tradicionales de yeso y fibra de vidrio.',
-      imagen: '/oficina.webp', 
-      fecha: '12 Abril 2026'
+      categoria: "Gestión de residuos",
+      titulo: "Clasificación y valoración de los residuos sólidos urbanos (RSU)",
+      extracto: "Guía técnica sobre la gestión integral de residuos y cómo la industria de la construcción puede aprovechar los RSU como materia prima.",
+      fuente: "SEMARNAT",
+      link: "https://www.gob.mx/semarnat/acciones-y-programas/clasificacion-reciclaje-y-valoracion-de-los-rsu",
+      imagen: "/noticia-rsu.webp" // Imagen de bloques o residuos clasificados
     },
     {
       id: 3,
-      etiqueta: 'NORMATIVA Y MERCADO',
-      titulo: 'Nuevas regulaciones ISO para materiales de construcción en seco',
-      extracto: 'Las normativas internacionales endurecen los límites de emisiones CO2. Los bloques ecosustentables se perfilan como la principal solución para que las constructoras cumplan con las cuotas ambientales de 2030.',
-      imagen: '/recamara.webp', 
-      fecha: '05 Abril 2026'
+      categoria: "Educación ambiental",
+      titulo: "Las tres erres mágicas: reducir, reutilizar y reciclar",
+      extracto: "Estrategias prácticas para implementar el consumo responsable y la optimización de recursos en proyectos arquitectónicos modernos.",
+      fuente: "CONANP",
+      link: "https://www.gob.mx/conanp/es/articulos/las-tres-erres-magicas?idiom=es",
+      imagen: "/noticia-3r.webp" // Imagen conceptual de economía circular
     }
   ];
 
   return (
-    <div className="noticias-estaticas-seccion">
-      {/* CABECERA DE LA SECCIÓN */}
-      <div className="noticias-cabecera">
-        <h1 className="noticias-titulo">ACTUALIDAD SUSTENTABLE</h1>
-        <p className="noticias-subtitulo">
-          Avances técnicos, normativas y casos de éxito en la implementación 
-          de la economía circular dentro del sector de la construcción y diseño de interiores.
+    <div className="noticias-pagina-maestra">
+      {/* CABECERA ESTILO IMAGE_79 */}
+      <section className="noticias-hero">
+        <h1 className="actualidad-titulo">Actualidad sustentable</h1>
+        <p className="actualidad-subtitulo">
+          Avances técnicos, normativas y casos de éxito en la implementación de la economía circular dentro del sector de la construcción.
         </p>
-      </div>
+      </section>
 
-      {/* CUADRÍCULA DE NOTICIAS */}
-      <div className="noticias-cuadricula-estatica">
-        {noticias.map((noticia) => (
-          <article key={noticia.id} className="noticia-tarjeta-solida">
-            <div className="noticia-imagen-contenedor">
-              <img 
-                src={noticia.imagen} 
-                alt={noticia.titulo} 
-                loading="lazy"
-              />
+      {/* GRID DE NOTICIAS */}
+      <section className="noticias-cuadricula">
+        {articulos.map((art) => (
+          <div key={art.id} className="noticia-tarjeta">
+            <div className="noticia-imagen-wrapper">
+              <img src={art.imagen} alt={art.titulo} className="noticia-img-src" />
+              <div className="noticia-fuente-tag">{art.fuente}</div>
             </div>
-            <div className="noticia-contenido">
-              <span className="noticia-etiqueta-tecnica">{noticia.etiqueta}</span>
-              <h2 className="noticia-titular">{noticia.titulo}</h2>
-              <p className="noticia-extracto">{noticia.extracto}</p>
-              <div className="noticia-pie">
-                <span className="noticia-fecha">{noticia.fecha}</span>
-                <button className="noticia-boton-leer">Leer Artículo {'>'}</button>
-              </div>
+            
+            <div className="noticia-cuerpo">
+              <span className="noticia-tag-verde">{art.categoria}</span>
+              <h2 className="noticia-titulo-card">{art.titulo}</h2>
+              <p className="noticia-texto-extracto">{art.extracto}</p>
+              
+              <a href={art.link} target="_blank" rel="noopener noreferrer" className="noticia-link-boton">
+                Leer artículo completo <ExternalLink size={18} style={{marginLeft: '8px'}} />
+              </a>
             </div>
-          </article>
+          </div>
         ))}
-      </div>
+      </section>
     </div>
   );
 };
 
-export default NoticiasSustentables;
+export default Noticias;
