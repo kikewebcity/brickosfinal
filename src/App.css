@@ -777,14 +777,13 @@ p {
   color: var(--color-dark);
   margin: 0;
   line-height: 1.2;
-  /* Forzado de Sentence case para etiquetas según Liz Rangel */
   text-transform: none !important; 
 }
 
 .mapa-contenedor {
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   border-radius: 15px;
-  overflow: hidden; /* Para que el mapa respete las esquinas redondeadas */
+  overflow: hidden; 
 }
 
 .nota-mapa {
@@ -794,11 +793,9 @@ p {
   font-style: italic;
   text-align: center;
 }
-/* Eliminar subrayados automáticos de navegadores */
 .valor-dato {
   text-decoration: none !important;
   border-bottom: none !important;
-  /* Esto evita que el navegador cambie el color o estilo */
   -webkit-text-decoration: none !important;
 }
 
