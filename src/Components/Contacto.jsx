@@ -61,7 +61,7 @@ const Contacto = () => {
               <input
                 type="text"
                 className="form-entrada"
-                placeholder="Cotización, Asesoria tecnica..."
+                placeholder="Cotización, Asesoría técnica..."
               />
             </div>
 
