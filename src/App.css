@@ -1708,6 +1708,8 @@ p {
     transition: transform 0.4s ease;
     z-index: 1050;
     box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    overflow-y:auto;
+    padding-bottom:60px;
   }
 
   .enlaces-navegacion.activos {
@@ -1733,7 +1735,7 @@ p {
   .barra-navegacion.navbar-scrolled .enlaces-navegacion.activos li {
     color: #ffffff !important; 
     font-size: 1.5rem;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     width: 100%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
     padding-bottom: 10px;
