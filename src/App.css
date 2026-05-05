@@ -794,6 +794,23 @@ p {
   font-style: italic;
   text-align: center;
 }
+/* Eliminar subrayados automáticos de navegadores */
+.valor-dato {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  /* Esto evita que el navegador cambie el color o estilo */
+  -webkit-text-decoration: none !important;
+}
+
+/* Forzar que cualquier enlace dentro de la columna de info no tenga subrayado */
+.contacto-info-col a, 
+.contacto-info-col p,
+.contacto-info-col span {
+  text-decoration: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 
 /* RESPONSIVE MÓVIL */
 @media (max-width: 900px) {
