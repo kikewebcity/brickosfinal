@@ -15,28 +15,28 @@ const Contacto = () => {
       <main className="contacto-grid-principal">
         <div className="contacto-informacion-columna">
           <div className="contacto-dato-bloque">
-            <span className="contacto-etiqueta">CORREO ELECTRONICO</span>
+            <span className="contacto-etiqueta">Correo electrónico</span>
             <p className="contacto-valor">ventas@bricko.com</p>
           </div>
 
           <div className="contacto-dato-bloque">
-            <span className="contacto-etiqueta">TELEFONO DE ATENCION</span>
+            <span className="contacto-etiqueta">Teléfono de atención</span>
             <p className="contacto-valor">+52 55 5555 5555</p>
           </div>
 
           <div className="contacto-dato-bloque">
-            <span className="contacto-etiqueta">UBICACION</span>
+            <span className="contacto-etiqueta">Ubicación</span>
             <p className="contacto-valor">Ciudad de Mexico, Mexico</p>
           </div>
 
           <div className="contacto-dato-bloque">
-            <span className="contacto-etiqueta">HORARIO</span>
+            <span className="contacto-etiqueta">Horario</span>
             <p className="contacto-valor">Lunes a Viernes: 9:00 - 18:00 hrs</p>
           </div>
         </div>
 
         <div className="contacto-formulario-columna">
-          <h3 className="contacto-subtitulo-form">ENVIANOS UN MENSAJE</h3>
+          <h3 className="contacto-subtitulo-form">Envíenos un mensaje</h3>
           <form className="contacto-formulario-tecnico">
             <div className="form-grupo">
               <label className="form-etiqueta">Nombre Completo</label>
@@ -61,7 +61,7 @@ const Contacto = () => {
               <input
                 type="text"
                 className="form-entrada"
-                placeholder="Cotizacion, Asesoria tecnica..."
+                placeholder="Cotización, Asesoria tecnica..."
               />
             </div>
 
