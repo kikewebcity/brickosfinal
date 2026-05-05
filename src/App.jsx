@@ -32,16 +32,15 @@ function App() {
 
   // Imágenes de la carpeta /public
   const heroImages = ['/recamara.webp', '/oficina.webp', '/banop.webp'];
-
-  // Etiquetas corregidas a "Sentence case" (Estética Liz Rangel)
   const secciones = [
     { id: 'inicio', label: 'Inicio' },
     { id: 'nosotros', label: 'Quienes somos' },
     { id: 'productos', label: 'Productos & aplicaciones' },
-    { id: 'ventaja', label: 'Ventaja' },
+    { id: 'ventaja', label: 'Ventajas' }, // Cambiado de 'Ventaja' a 'Ventajas'
     { id: 'noticias', label: 'Bricko news' },
     { id: 'contacto', label: 'Contacto' },
   ];
+
 
   useEffect(() => {
     const slideInterval = setInterval(() => {
