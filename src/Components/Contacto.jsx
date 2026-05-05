@@ -21,7 +21,7 @@ const Contacto = () => {
 
           <div className="contacto-dato-bloque">
             <span className="contacto-etiqueta">Teléfono de atención</span>
-            <p className="contacto-valor">+52 55 5555 5555</p>
+            <p className="contacto-valor">+525512306218</p>
           </div>
 
           <div className="contacto-dato-bloque">
