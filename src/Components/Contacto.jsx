@@ -8,7 +8,7 @@ const Contacto = () => {
         <h2 className="titulo-seccion-productos">CONTACTO</h2>
         <p className="descripcion-cabecera-tecnica">
           Estamos listos para asesorarte en la implementación técnica de Bricko
-          en tu proximo desarrollo arquitectónico o escenográfico.
+          en tu próximo desarrollo arquitectónico o escenográfico.
         </p>
       </section>
 
