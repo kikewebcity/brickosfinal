@@ -11,7 +11,7 @@ const Noticias = () => {
       extracto: "Análisis sobre las políticas actuales de revalorización de materiales y el impacto del reciclaje en el bienestar social.",
       fuente: "Secretaría de Bienestar",
       link: "https://www.bienestar.gob.mx/sibien/index.php/sustentabilidad/20-sustentabilidad/29-reciclaje-y-reutilizacion",
-      imagen: "/noticia-reciclaje.webp" // Usa una imagen de ambiente o planta de reciclaje
+      imagen: "/Reciclaje.webp" // Usa una imagen de ambiente o planta de reciclaje
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const Noticias = () => {
       extracto: "Guía técnica sobre la gestión integral de residuos y cómo la industria de la construcción puede aprovechar los RSU como materia prima.",
       fuente: "SEMARNAT",
       link: "https://www.gob.mx/semarnat/acciones-y-programas/clasificacion-reciclaje-y-valoracion-de-los-rsu",
-      imagen: "/noticia-rsu.webp" // Imagen de bloques o residuos clasificados
+      imagen: "/clasificacion.webp" // Imagen de bloques o residuos clasificados
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ const Noticias = () => {
       extracto: "Estrategias prácticas para implementar el consumo responsable y la optimización de recursos en proyectos arquitectónicos modernos.",
       fuente: "CONANP",
       link: "https://www.gob.mx/conanp/es/articulos/las-tres-erres-magicas?idiom=es",
-      imagen: "/noticia-3r.webp" // Imagen conceptual de economía circular
+      imagen: "/educacion_ambiental.webp" // Imagen conceptual de economía circular
     }
   ];
 
