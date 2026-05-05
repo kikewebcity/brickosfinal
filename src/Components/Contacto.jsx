@@ -26,7 +26,8 @@ const Contacto = () => {
 
           <div className="contacto-dato-bloque">
             <span className="contacto-etiqueta">Ubicación</span>
-            <p className="contacto-valor">Ciudad de Mexico, Mexico</p>
+            <p className="contacto-valor">, Calle Mérida # 58, Los Reyes Acatlixhuayan, Municipio de Temamatla, Estado de México,
+Mexico</p>
           </div>
 
           <div className="contacto-dato-bloque">
