@@ -250,6 +250,7 @@ p {
 .subtitulo-hero {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  color: #ffffff !important; 
 }
 
 .subtitulo-blanco {
