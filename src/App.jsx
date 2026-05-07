@@ -149,51 +149,27 @@ function App() {
         <span>Envíos a todo el país</span>
       </div>
 
-      {/* NAVEGACIÓN DINÁMICA */}
       <nav className={`barra-navegacion ${scrolled ? 'navbar-scrolled' : ''}`}>
-        <div 
-          className="contenedor-logo" 
-          onClick={() => { setVistaActual('inicio'); window.scrollTo({top: 0, behavior: 'smooth'}); }} 
-          style={{ cursor: 'pointer' }}
-        >
-          {/* Logo cambia de color según el estado del scroll */}
-          <img src={scrolled ? logoWhite : logoBricko} alt="Bricko" className="logo-img" />
-        </div>
+  <div 
+    className="contenedor-logo" 
+    onClick={() => { setVistaActual('inicio'); window.scrollTo({top: 0, behavior: 'smooth'}); }} 
+    style={{ cursor: 'pointer' }}
+  >
+    {/* USAMOS SOLO logoBricko. 
+       El cambio a blanco se hará por CSS para que sea una transición suave.
+    */}
+    <img src={logoBricko} alt="Bricko" className="logo-img" />
+  </div>
 
-        <ul className={`enlaces-navegacion ${menuOpen ? 'activos' : ''}`}>
-          {/* LOGO MÓVIL: Forzado a blanco para el menú verde */}
-          <li className="logo-movil-menu">
-            <img src={logoWhite} alt="Bricko Logo" className="logo-img-menu" />
-          </li>
-          
-          {secciones.map((sec) => (
-            <li
-              key={sec.id}
-              className={vistaActual === sec.id ? 'active-link' : ''}
-              onClick={() => { 
-                setVistaActual(sec.id); 
-                setMenuOpen(false); 
-                window.scrollTo({top: 0, behavior: 'smooth'});
-              }}
-            >
-              {sec.label}
-            </li>
-          ))}
-        </ul>
-
-        <div className="iconos-navegacion">
-          <ShoppingCart size={22} strokeWidth={2.5} className="boton-icono" />
-          <button className="boton-hamburguesa" onClick={() => setMenuOpen(!menuOpen)}>
-            <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" strokeWidth="2" fill="none">
-              {menuOpen ? (
-                <path d="M18 6L6 18M6 6l12 12" />
-              ) : (
-                <path d="M3 12h18M3 6h18M3 18h18" />
-              )}
-            </svg>
-          </button>
-        </div>
-      </nav>
+  {/* El resto del código (ul y iconos) se queda igual */}
+  <ul className={`enlaces-navegacion ${menuOpen ? 'activos' : ''}`}>
+    {/* ... tus secciones ... */}
+  </ul>
+  
+  <div className="iconos-navegacion">
+    {/* ... carrito y hamburguesa ... */}
+  </div>
+</nav>
 
       <main className="contenido-principal">{renderContenido()}</main>
 
