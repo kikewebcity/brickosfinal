@@ -75,27 +75,29 @@ p {
   filter: brightness(0) invert(1);
   transition: var(--transition-smooth);
 }
-
 /* =========================================
-   BARRA DE NAVEGACIÓN BASE
+   BARRA DE NAVEGACIÓN (SISTEMA STICKY)
    ========================================= */
 .barra-navegacion {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px; /* Reducimos padding vertical para controlarlo con height */
-  height: 80px;    /* Altura fija para evitar saltos al hacer scroll */
+  padding: 0 40px; 
+  height: 80px;      /* Altura fija para evitar saltos visuales */
   background-color: #ffffff;
-  position: sticky;
+  position: sticky;  /* El navegador te sigue al bajar */
   top: 0;
-  z-index: 1000;
+  z-index: 2000;     /* Por encima de todo el contenido */
   border-bottom: 1px solid var(--color-border);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
+
+/* DISTRIBUCIÓN EQUILIBRADA (1 - 2 - 1) */
 .contenedor-logo {
-  flex: 1; /* Ocupa espacio a la izquierda */
+  flex: 1; 
   display: flex;
   align-items: center;
+  z-index: 2001;
 }
 
 .logo-img {
@@ -105,9 +107,9 @@ p {
 }
 
 .enlaces-navegacion {
-  flex: 2; /* Ocupa más espacio central */
+  flex: 2; /* Ocupa el espacio central */
   display: flex;
-  justify-content: center; /* Centra los links perfectamente */
+  justify-content: center; /* Centra los links */
   list-style: none;
   gap: 30px;
   margin: 0;
@@ -115,22 +117,17 @@ p {
 }
 
 .enlaces-navegacion li {
-  color: #000000;
+  color: #1a1a1a !important; /* Letras NEGRAS al inicio para que se vean */
   font-family: var(--font-main);
   font-weight: 700;
-  font-size: 1.3rem;
-  letter-spacing: 1px;
+  font-size: 1.15rem;
   cursor: pointer;
+  text-transform: none !important; /* Sentence Case Liz Rangel */
   position: relative;
   transition: color 0.3s ease;
-  text-transform: none !important;
 }
 
-.enlaces-navegacion li:hover,
-.enlaces-navegacion li.active-link {
-  color: var(--color-green);
-}
-
+/* Efecto Underline */
 .enlaces-navegacion li::after {
   content: '';
   position: absolute;
@@ -139,7 +136,7 @@ p {
   bottom: -5px;
   left: 50%;
   background-color: var(--color-green);
-  transition: var(--transition-smooth);
+  transition: 0.3s ease;
   transform: translateX(-50%);
 }
 
@@ -154,15 +151,15 @@ p {
   justify-content: flex-end;
   gap: 20px;
   align-items: center;
+  z-index: 2001;
 }
 
 .boton-hamburguesa {
-  display: none;
+  display: none; /* Se activa solo en móvil */
   background: none;
   border: none;
   color: #000000;
   cursor: pointer;
-  transition: color 0.3s ease;
 }
 
 /* =========================================
@@ -170,31 +167,25 @@ p {
    ========================================= */
 .navbar-scrolled {
   background-color: var(--color-green) !important;
-  height: 70px; /* Se hace un poco más delgada al bajar */
+  height: 70px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .navbar-scrolled .logo-img {
-  filter: brightness(0) invert(1) !important;
+  filter: brightness(0) invert(1) !important; /* Logo se vuelve BLANCO */
 }
 
 .navbar-scrolled .enlaces-navegacion li {
-  color: #ffffff !important;
-}
-
-.navbar-scrolled .enlaces-navegacion li:hover {
-  opacity: 0.8;
+  color: #ffffff !important; /* Letras se vuelven BLANCAS */
 }
 
 .navbar-scrolled .enlaces-navegacion li::after {
-  background-color: #ffffff;
+  background-color: #ffffff; /* Underline blanco */
 }
 
-.navbar-scrolled .iconos-navegacion {
-  color: #ffffff !important;
-}
-
+.navbar-scrolled .iconos-navegacion,
 .navbar-scrolled .boton-hamburguesa {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 /* =========================================
@@ -216,7 +207,6 @@ p {
   inset: 0;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
   z-index: 1;
@@ -231,7 +221,7 @@ p {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.35); /* Capa oscura para legibilidad */
   z-index: 3;
 }
 
@@ -239,6 +229,7 @@ p {
   position: relative;
   z-index: 10;
   text-align: center;
+  padding: 0 20px;
 }
 
 .titulo-monumental-limpio {
@@ -246,19 +237,19 @@ p {
   font-size: 6.5rem;
   line-height: 0.9;
   color: #ffffff;
-  margin-bottom: 20px;
-  text-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8);
+  margin-bottom: 25px;
+  text-transform: none !important;
+  text-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .subtitulo-hero {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #ffffff !important; 
-}
-
-.subtitulo-blanco {
-  color: #ffffff !important; 
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5); 
+  font-family: var(--font-text);
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  color: #ffffff !important;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .boton-accion-aislado {
@@ -267,21 +258,20 @@ p {
   border: none;
   padding: 18px 50px;
   font-family: var(--font-main);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   border-radius: 4px;
   cursor: pointer;
-  box-shadow: 0 10px 20px rgba(56, 142, 60, 0.4);
-  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 10px 20px rgba(56, 142, 60, 0.3);
+  transition: all 0.3s ease;
 }
 
 .boton-accion-aislado:hover {
   background-color: #2e7d32;
   transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(56, 142, 60, 0.5);
 }
 
-.btn-text-mobile { 
-  display: none; 
-}
+
 
 /* =========================================
    FONDO ECOSUSTENTABLE Y SECCIÓN INTRO
@@ -1706,15 +1696,13 @@ p {
     left: 0;
     width: 80%;
     height: 100vh;
-    background-color: var(--color-green) !important;
+    background-color: var(--color-green);
     flex-direction: column;
-    padding: 30px; 
+    justify-content: flex-start;
+    padding: 100px 30px;
     transform: translateX(-100%);
     transition: transform 0.4s ease;
-    z-index: 1050;
-    box-shadow: 5px 0 15px rgba(0,0,0,0.2);
-    overflow-y:auto;
-    padding-bottom:60px;
+    z-index: 3000;
   }
 
   .enlaces-navegacion.activos {
@@ -1738,13 +1726,11 @@ p {
 
   .enlaces-navegacion li,
   .barra-navegacion.navbar-scrolled .enlaces-navegacion.activos li {
-    color: #ffffff !important; 
+   color: #ffffff !important;
     font-size: 1.5rem;
-    margin-bottom: 20px;
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
-    padding-bottom: 10px;
-    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 15px;
   }
 
   .boton-hamburguesa {
