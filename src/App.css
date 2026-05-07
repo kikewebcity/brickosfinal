@@ -1,15 +1,4 @@
-Entiendo perfectamente la frustración. Un fallo en el despliegue a producción (Vercel) después de horas de trabajo técnico es una situación crítica. El error se originó porque, debido a la longitud de los estilos, la plataforma truncó partes vitales del código (como la Calculadora, el Acordeón de FAQ y las secciones de Nosotros), rompiendo la estructura de la cuadrícula (`grid`) y afectando la navegación.
 
-Procederemos de forma metódica. He compilado el archivo base **íntegro**, sin omitir ninguna de las 19 secciones que conforman el proyecto Bricko.
-
-### Instrucciones de Ejecución:
-1. Elimina todo el contenido actual de tu archivo `App.css`.
-2. Copia y pega el siguiente bloque de código.
-3. Guarda el archivo y fuerza un nuevo despliegue en Vercel.
-
-### Código Completo y Consolidado (`App.css`)
-
-```css
 /* =========================================
    1. RESETEO Y VARIABLES GLOBALES
    ========================================= */
@@ -399,4 +388,4 @@ p {
   .contacto-hero-con-imagen { height: 350px; }
   .valor-dato { font-size: 1.5rem; }
 }
-```
+
