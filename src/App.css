@@ -83,28 +83,33 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  padding: 0 40px; /* Reducimos padding vertical para controlarlo con height */
+  height: 80px;    /* Altura fija para evitar saltos al hacer scroll */
   background-color: #ffffff;
-  position: -webkit-sticky; 
-  position: sticky;         
-  top: 0;                   
-  z-index: 1000;            
-  will-change: transform;   
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   border-bottom: 1px solid var(--color-border);
-  transition: var(--transition-smooth);
+  transition: all 0.3s ease;
+}
+.contenedor-logo {
+  flex: 1; /* Ocupa espacio a la izquierda */
+  display: flex;
+  align-items: center;
 }
 
 .logo-img {
-  height: 45px;
+  height: 40px;
   width: auto;
-  transition: var(--transition-smooth);
-  filter: none;
+  transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .enlaces-navegacion {
+  flex: 2; /* Ocupa más espacio central */
   display: flex;
+  justify-content: center; /* Centra los links perfectamente */
   list-style: none;
-  gap: 35px;
+  gap: 30px;
   margin: 0;
   padding: 0;
 }
@@ -144,11 +149,11 @@ p {
 }
 
 .iconos-navegacion {
+  flex: 1; 
   display: flex;
+  justify-content: flex-end;
+  gap: 20px;
   align-items: center;
-  gap: 25px;
-  color: #000000;
-  transition: color 0.3s ease;
 }
 
 .boton-hamburguesa {
@@ -165,9 +170,7 @@ p {
    ========================================= */
 .navbar-scrolled {
   background-color: var(--color-green) !important;
-  border-bottom: none;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  padding: 10px 40px;
+  height: 70px; /* Se hace un poco más delgada al bajar */
 }
 
 .navbar-scrolled .logo-img {
