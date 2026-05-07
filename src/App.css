@@ -1,7 +1,8 @@
- * { box-sizing: border-box; }
-
+* {
+  box-sizing: border-box;
+}
 html, body {
-  overflow-x: hidden; 
+  overflow-x: hidden; /* Corrección de clip a hidden para evitar scroll horizontal en móvil */
   width: 100%;
   position: relative;
 }
@@ -25,6 +26,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* =========================================
+   FORZADO DE SENTENCE CASE (PETICIÓN LIZ RANGEL)
+   ========================================= */
 h1, h2, h3, h4 {
   font-family: var(--font-main);
   margin: 0;
