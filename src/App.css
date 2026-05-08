@@ -44,26 +44,45 @@ p {
   font-weight: 500 !important;
   line-height: 1.6;
 }
+
+/* =========================================
+   LIMPIEZA DE ENLACES (Router Fix)
+   ========================================= */
+
 a {
   text-decoration: none !important;
   color: inherit !important;
 }
 
 .enlaces-navegacion li a {
-  color: #1a1a1a !important; 
+  color: #1a1a1a !important;
   font-family: var(--font-main);
   font-weight: 700;
-  display: block;
+  transition: color 0.3s ease;
+}
+
+.enlaces-navegacion li a:hover, 
+.enlaces-navegacion li a.active-link {
+  color: var(--color-green) !important;
 }
 
 .navbar-scrolled .enlaces-navegacion li a {
   color: #ffffff !important;
 }
 
+.navbar-scrolled .enlaces-navegacion li a:hover {
+  opacity: 0.8;
+}
+
 .footer-links li a {
   color: #ffffff !important;
+  font-family: var(--font-main);
   display: inline-block;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+.footer-links li a:hover {
+  color: var(--color-green) !important;
 }
 
 .main-container { width: 100%; display: flex; flex-direction: column; }
