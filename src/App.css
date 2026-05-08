@@ -889,7 +889,19 @@ a {
   .feature-title { font-size: 2.2rem !important; text-align: left; }
   .feature-paragraph { font-size: 1.05rem !important; text-align: left; }
 
-  /* 5. Ajustes Específicos: NOSOTROS */
+  /* 5. Ajustes Específicos: NOSOTROS (Banner y Valores) */
+  .nosotros-banner-moderno { padding: 60px 20px; }
+  .nosotros-caja-texto { padding: 40px 30px !important; }
+  .nosotros-texto-formal { font-size: 1.15rem !important; text-align: center; }
+
+  .valor-card { padding: 30px !important; }
+  .valor-icono-wrapper { 
+    width: 80px !important; /* Iconos más pequeños para móvil */
+    height: 80px !important; 
+    margin-bottom: 15px; 
+  }
+
+  /* 6. Ajustes Específicos: NOSOTROS (Zigzag) */
   .nosotros-zigzag-contenedor { padding: 40px 20px; }
   .zigzag-fila { gap: 30px !important; margin-bottom: 80px !important; }
   .zigzag-titulo { font-size: 2.5rem !important; }
@@ -899,9 +911,8 @@ a {
     max-width: 100% !important; 
     border-radius: 15px; 
   }
-  .valor-card { padding: 30px !important; }
 
-  /* 6. Ajustes Específicos: VENTAJAS Y SOSTENIBILIDAD */
+  /* 7. Ajustes Específicos: VENTAJAS Y SOSTENIBILIDAD */
   .ventaja-grid-contenedor { margin-top: 20px; padding: 0 20px; gap: 20px; }
   .ventaja-tarjeta-bloque { padding: 30px !important; min-height: auto !important; }
   .ventaja-numero { font-size: 2.5rem !important; }
@@ -913,7 +924,7 @@ a {
   .stats-impacto-grid { grid-template-columns: 1fr; gap: 25px; }
   .stat-numero { font-size: 3.5rem !important; }
 
-  /* 7. Final y Productos */
+  /* 8. Final y Productos */
   .titulo-contacto { font-size: 3.5rem !important; }
   .contacto-hero-con-imagen { height: 350px; }
   .valor-dato { font-size: 1.5rem !important; }
