@@ -44,6 +44,27 @@ p {
   font-weight: 500 !important;
   line-height: 1.6;
 }
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.enlaces-navegacion li a {
+  color: #1a1a1a !important; 
+  font-family: var(--font-main);
+  font-weight: 700;
+  display: block;
+}
+
+.navbar-scrolled .enlaces-navegacion li a {
+  color: #ffffff !important;
+}
+
+.footer-links li a {
+  color: #ffffff !important;
+  display: inline-block;
+  margin-bottom: 10px;
+}
 
 .main-container { width: 100%; display: flex; flex-direction: column; }
 
