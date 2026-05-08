@@ -6,7 +6,7 @@ import FaqsProductos from './FaqsProductos';
 function Inicio() {
   const [currentSlide, setCurrentSlide] = useState(0);
   
-  // Revisa si tus imágenes son .webp o .png según tu último cambio
+  // Mantenemos .webp como mencionaste
   const heroImages = ['/recamara.webp', '/oficina.webp', '/banop.webp'];
 
   useEffect(() => {
@@ -50,13 +50,17 @@ function Inicio() {
             Redefine los espacios interiores convirtiendo el <strong>papel reciclado</strong> en <strong>arquitectura</strong>
           </p>
         </section>
+        
+        {/* Aquí es donde se usan tus otros componentes */}
         <FeaturesSection />
+        
         <section className="contenedor-seccion-aire">
           <h2 className="titulo-seccion-limpio">
             Calcula el <span className="enfasis-verde">material</span> de tu proyecto
           </h2>
           <Calculadora />
         </section>
+        
         <FaqsProductos />
       </div>
     </>
