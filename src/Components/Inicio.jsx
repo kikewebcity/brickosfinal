@@ -5,8 +5,6 @@ import FaqsProductos from './FaqsProductos';
 
 function Inicio() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  
-  // Mantenemos .webp como mencionaste
   const heroImages = ['/recamara.webp', '/oficina.webp', '/banop.webp'];
 
   useEffect(() => {
@@ -50,8 +48,6 @@ function Inicio() {
             Redefine los espacios interiores convirtiendo el <strong>papel reciclado</strong> en <strong>arquitectura</strong>
           </p>
         </section>
-        
-        {/* Aquí es donde se usan tus otros componentes */}
         <FeaturesSection />
         
         <section className="contenedor-seccion-aire">
