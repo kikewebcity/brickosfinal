@@ -272,20 +272,100 @@ a {
 .subtitulo-seccion-limpio { text-align: justify; font-size: 1.1rem; color: #666; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto; font-family: var(--font-text); }
 
 /* =========================================
-   7. CARACTERÍSTICAS TÉCNICAS (PILLS)
+   7. CARACTERÍSTICAS TÉCNICAS (PILLS) - ESCALADO
    ========================================= */
-.features-section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
-.features-main-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: center; }
-.features-pills-col { display: flex; flex-direction: column; gap: 15px; }
-.feature-pill { display: flex; justify-content: space-between; align-items: center; padding: 18px 25px; background-color: #ffffff; color: var(--color-dark); border-radius: 50px; border: 1px solid var(--color-border); cursor: pointer; transition: all 0.3s ease; }
-.pill-content-left { display: flex; align-items: center; gap: 15px; }
-.pill-icon { color: var(--color-green); transition: all 0.3s ease; }
-.pill-label { font-family: var(--font-main); font-size: 1.2rem; letter-spacing: 0.5px; }
-.feature-pill.active { background-color: var(--color-green); color: #ffffff; border-color: var(--color-green); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
-.feature-pill.active .pill-icon, .feature-pill.active .pill-label { color: #ffffff; font-weight: 700; }
-.features-content-col { padding: 50px; border-radius: 25px; border: 1px solid var(--color-border); background-color: #ffffff; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02); }
-.feature-title { font-size: 2.2rem; color: var(--color-dark); margin-bottom: 25px; }
-.feature-paragraph { font-family: var(--font-text); font-size: 1.15rem; color: #555555; line-height: 1.6; margin: 0; text-align: justify; }
+
+/* Aumentamos el ancho máximo de 1200px a 1450px */
+.features-section { 
+  padding: 100px 40px; 
+  max-width: 1450px; 
+  margin: 0 auto; 
+}
+
+/* Ajustamos las proporciones del grid para que el contenido respire */
+.features-main-grid { 
+  display: grid; 
+  grid-template-columns: 1.2fr 2.5fr; /* Damos un poco más de peso a la columna de texto */
+  gap: 60px; /* Más espacio entre columnas */
+  align-items: start; 
+}
+
+.features-pills-col { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 20px; /* Más espacio entre botones */
+}
+
+/* Pestañas más grandes y cómodas */
+.feature-pill { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 22px 35px; /* Aumentamos el tamaño del botón */
+  background-color: #ffffff; 
+  color: var(--color-dark); 
+  border-radius: 60px; 
+  border: 1px solid var(--color-border); 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
+}
+
+.pill-content-left { 
+  display: flex; 
+  align-items: center; 
+  gap: 20px; 
+}
+
+.pill-icon { 
+  transform: scale(1.3); /* Iconos un 30% más grandes */
+  color: var(--color-green); 
+  transition: all 0.3s ease; 
+}
+
+.pill-label { 
+  font-family: var(--font-main); 
+  font-size: 1.5rem; /* Fuente de pestaña más grande (estaba en 1.2) */
+  letter-spacing: 0.5px; 
+}
+
+.feature-pill.active { 
+  background-color: var(--color-green); 
+  color: #ffffff; 
+  border-color: var(--color-green); 
+  box-shadow: 0 10px 25px rgba(56, 142, 60, 0.2); 
+}
+
+.feature-pill.active .pill-icon, 
+.feature-pill.active .pill-label { 
+  color: #ffffff; 
+  font-weight: 700; 
+}
+
+/* Columna de contenido (Derecha) */
+.features-content-col { 
+  padding: 60px; /* Más aire interno */
+  border-radius: 30px; 
+  border: 1px solid var(--color-border); 
+  background-color: #ffffff; 
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.03); 
+  min-height: 400px; /* Evita que la caja cambie de tamaño bruscamente */
+}
+
+.feature-title { 
+  font-size: 3.5rem; /* Título mucho más imponente (estaba en 2.2) */
+  color: var(--color-dark); 
+  margin-bottom: 30px; 
+  line-height: 1;
+}
+
+.feature-paragraph { 
+  font-family: var(--font-text); 
+  font-size: 1.3rem; /* Texto de lectura más cómodo (estaba en 1.15) */
+  color: #444444; 
+  line-height: 1.8; 
+  margin: 0; 
+  text-align: justify; 
+}
 
 /* =========================================
    8. CALCULADORA DE MATERIALES
