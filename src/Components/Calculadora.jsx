@@ -62,7 +62,7 @@ const Calculadora = () => {
       </div>
 
       <div className="calc-image-panel" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <img src="/ladrillodivisorio.webp" alt="Muro Bricko" style={{ maxWidth: '100%', height: 'auto', marginBottom: '25px' }} />
+        <img src="/ladrillodivisorio.png" alt="Muro Bricko" style={{ maxWidth: '100%', height: 'auto', marginBottom: '25px' }} />
         <p style={{ fontFamily: 'var(--font-text)', fontSize: '0.95rem', color: '#1a1a1a', textAlign: 'justify', backgroundColor: '#f4f4f4', padding: '20px', borderLeft: '4px solid var(--color-green)', borderRadius: '4px' }}>
         </p>
       </div>
