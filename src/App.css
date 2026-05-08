@@ -401,11 +401,11 @@ a {
 .faq-respuesta { font-family: var(--font-text); font-size: 1.05rem; color: #555555; line-height: 1.6; margin: 0; text-align: justify; }
 
 /* =========================================
-   10. PÁGINA NOSOTROS (ZIGZAG & VALORES) - REDISEÑO ESCALADO
+   10. PÁGINA NOSOTROS (ZIGZAG & VALORES) - FULL REDESIGN
    ========================================= */
 .nosotros-pagina { width: 100%; background-color: #ffffff; }
 
-/* 1. Banner Superior */
+/* --- BANNER SUPERIOR --- */
 .nosotros-banner-moderno { 
   width: 100%; 
   background-color: #ffffff; 
@@ -414,7 +414,7 @@ a {
 }
 
 .nosotros-banner-grid { 
-  max-width: 1450px; /* Aumentado */
+  max-width: 1450px; 
   margin: 0 auto; 
   display: flex; 
   align-items: stretch; 
@@ -451,35 +451,40 @@ a {
   position: relative; 
   z-index: 1; 
   font-family: var(--font-text); 
-  font-size: 1.4rem; /* Más grande */
+  font-size: 1.4rem; 
   color: var(--color-dark); 
   line-height: 1.8; 
   text-align: justify; 
   margin: 0; 
 }
 
-/* 2. Manifiesto (Introducción a los valores) */
+/* --- MANIFIESTO --- */
 .nosotros-manifiesto { padding: 100px 20px; background-color: #ffffff; text-align: center; }
 .manifiesto-contenedor { max-width: 1100px; margin: 0 auto; position: relative; }
-.manifiesto-contenedor::before, .manifiesto-contenedor::after { content: ""; display: block; width: 80px; height: 3px; background-color: var(--color-green); margin: 0 auto 40px auto; }
+.manifiesto-contenedor::before, .manifiesto-contenedor::after { 
+  content: ""; display: block; width: 80px; height: 3px; 
+  background-color: var(--color-green); margin: 0 auto 40px auto; 
+}
 .manifiesto-contenedor::after { margin: 40px auto 0 auto; }
 
 .manifiesto-texto { 
   font-family: var(--font-main); 
-  font-size: 3.5rem; /* Más imponente */
+  font-size: 3.5rem; 
   line-height: 1.2; 
   color: var(--color-dark); 
   font-weight: 300; 
   text-align: center; 
 }
 
-/* 3. Cuadrícula de Valores (Ahora debajo del Manifiesto) */
+/* --- CUADRÍCULA DE VALORES (FIX DESBORDAMIENTO) --- */
+.nosotros-valores { padding: 80px 20px; background-color: #ffffff; }
+
 .valores-grid { 
   display: grid; 
   grid-template-columns: repeat(3, 1fr); 
   gap: 50px; 
-  max-width: 1350px; 
-  margin: 0 auto 120px auto; /* Espacio inferior para separar del zigzag */
+  max-width: 1300px; 
+  margin: 0 auto 100px auto; 
   padding: 0 40px; 
 }
 
@@ -490,35 +495,45 @@ a {
   border-radius: 30px; 
   border: 1px solid var(--color-border);
   transition: all 0.4s ease; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.valor-card:hover { 
-  transform: translateY(-10px); 
-  background: #ffffff;
-  border-color: var(--color-green);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+.valor-card:hover { transform: translateY(-10px); border-color: var(--color-green); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+
+.valor-icono-wrapper { 
+  width: 100px; /* Tamaño controlado para evitar iconos gigantes */
+  height: 100px; 
+  margin-bottom: 25px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden;
 }
 
-.valor-card h3 { 
-  font-family: var(--font-main); 
-  font-size: 1.8rem; 
-  color: var(--color-dark); 
-  margin-bottom: 15px; 
+.valor-icono { 
+  max-width: 100%; 
+  max-height: 100%; 
+  object-fit: contain; 
 }
 
-/* 4. Narrativa Zigzag (Identidad, Misión, Visión) */
+.valor-card h3 { font-family: var(--font-main); font-size: 1.8rem; color: var(--color-dark); margin-bottom: 15px; }
+.valor-card p { font-family: var(--font-text); font-size: 1.15rem; color: #555; line-height: 1.6; }
+
+/* --- NARRATIVA ZIGZAG (ESCALADO) --- */
 .nosotros-zigzag-contenedor { 
   max-width: 1450px; 
   margin: 0 auto; 
-  padding: 100px 40px 150px 40px; 
+  padding: 50px 40px 150px 40px; 
 }
 
 .zigzag-fila { 
   display: flex; 
   flex-direction: row; 
   align-items: center; 
-  gap: 120px; /* Mucho más espacio entre foto y texto */
-  margin-bottom: 180px; /* Aire entre bloques */
+  gap: 120px; 
+  margin-bottom: 180px; 
 }
 
 .zigzag-fila.reversa { flex-direction: row-reverse; }
@@ -527,7 +542,7 @@ a {
 
 .zigzag-titulo { 
   font-family: var(--font-main);
-  font-size: 4.5rem; /* Título monumental */
+  font-size: 4.5rem; 
   line-height: 1;
   margin-bottom: 30px; 
   color: var(--color-dark); 
@@ -535,22 +550,18 @@ a {
 
 .zigzag-parrafo { 
   font-family: var(--font-text); 
-  font-size: 1.35rem; /* Lectura cómoda */
+  font-size: 1.35rem; 
   line-height: 1.8; 
   color: #444; 
   text-align: justify; 
 }
 
-.zigzag-imagen { 
-  flex: 1.3; /* La imagen ocupa un poco más que el texto */
-  display: flex; 
-  justify-content: center; 
-}
+.zigzag-imagen { flex: 1.3; display: flex; justify-content: center; }
 
 .zigzag-imagen img { 
   width: 100%; 
-  max-width: 850px; /* Aumentado drásticamente */
-  height: 550px; /* Altura generosa */
+  max-width: 850px; 
+  height: 550px; 
   object-fit: cover; 
   border-radius: 30px; 
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15); 
