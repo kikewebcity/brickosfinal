@@ -52,7 +52,7 @@ function Inicio() {
         
         <section className="contenedor-seccion-aire">
           <h2 className="titulo-seccion-limpio">
-            Calcula el <span className="enfasis-verde">material</span> de tu proyecto
+            Calcula el <span className="enfasis-verde">material</span> que requieres para tu proyecto
           </h2>
           <Calculadora />
         </section>
