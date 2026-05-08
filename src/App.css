@@ -108,59 +108,135 @@ a {
 .top-bar svg, .top-bar img { margin-right: 10px; filter: brightness(0) invert(1); transition: var(--transition-smooth); }
 
 /* =========================================
-   4. NAVEGACIÓN MAESTRA (STICKY)
+   4. NAVEGACIÓN MAESTRA (STICKY & ESCALADO)
    ========================================= */
 .barra-navegacion {
   display: flex; 
   justify-content: space-between; 
   align-items: center;
-  padding: 0 40px; 
-  height: 80px; 
+  padding: 0 60px; /* Aumentado para dar más aire lateral */
+  height: 110px;   /* Altura aumentada para mayor presencia en escritorio */
   background-color: #ffffff !important; 
   
   /* STICKY FIX */
-  position: -webkit-sticky; /* Soporte para Safari */
+  position: -webkit-sticky; 
   position: sticky; 
   top: 0; 
   left: 0;
   width: 100%;
   z-index: 9999; 
+  
   border-bottom: 1px solid var(--color-border);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   align-self: flex-start; 
 }
 
-.contenedor-logo { flex: 1; display: flex; align-items: center; z-index: 2001; }
-.logo-img { height: 40px; width: auto; filter: brightness(1) contrast(1); transition: var(--transition-smooth); }
+.contenedor-logo { 
+  flex: 1; 
+  display: flex; 
+  align-items: center; 
+  z-index: 2001; 
+  cursor: pointer;
+}
+
+.logo-img { 
+  height: 60px; /* Logo agrandado de 40px a 60px */
+  width: auto; 
+  filter: brightness(1) contrast(1); 
+  transition: var(--transition-smooth); 
+}
 
 .enlaces-navegacion {
-  flex: 2; display: flex; justify-content: center; list-style: none; gap: 30px; margin: 0; padding: 0;
+  flex: 3; /* Le damos más espacio al centro */
+  display: flex; 
+  justify-content: center; 
+  list-style: none; 
+  gap: 45px; /* Más separación entre los enlaces */
+  margin: 0; 
+  padding: 0;
 }
 
-/* Letras Negras al Inicio */
-.enlaces-navegacion li {
+/* Enlaces del Menú (Ajuste de Router y Tamaño) */
+.enlaces-navegacion li a {
   color: #1a1a1a !important; 
-  font-family: var(--font-main); font-weight: 700; font-size: 1.15rem;
-  cursor: pointer; text-transform: none !important; position: relative; transition: color 0.3s ease;
+  font-family: var(--font-main); 
+  font-weight: 700; 
+  font-size: 1.4rem; /* Fuente más legible y grande */
+  letter-spacing: 0.5px;
+  cursor: pointer; 
+  text-transform: none !important; 
+  position: relative; 
+  transition: color 0.3s ease;
+  text-decoration: none !important; /* Elimina el subrayado azul del router */
 }
 
-.enlaces-navegacion li::after {
-  content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 50%;
-  background-color: var(--color-green); transition: 0.3s ease; transform: translateX(-50%);
+/* Línea decorativa inferior */
+.enlaces-navegacion li a::after {
+  content: ''; 
+  position: absolute; 
+  width: 0; 
+  height: 3px; 
+  bottom: -8px; 
+  left: 50%;
+  background-color: var(--color-green); 
+  transition: 0.3s ease; 
+  transform: translateX(-50%);
 }
 
-.enlaces-navegacion li:hover::after, .enlaces-navegacion li.active-link::after { width: 100%; }
-.enlaces-navegacion li:hover, .enlaces-navegacion li.active-link { color: var(--color-green) !important; }
+.enlaces-navegacion li a:hover::after, 
+.enlaces-navegacion li a.active-link::after { 
+  width: 100%; 
+}
 
-.iconos-navegacion { flex: 1; display: flex; justify-content: flex-end; gap: 20px; align-items: center; z-index: 2001; color: #1a1a1a !important; }
-.boton-hamburguesa { display: none; background: none; border: none; color: #1a1a1a; cursor: pointer; }
+.enlaces-navegacion li a:hover, 
+.enlaces-navegacion li a.active-link { 
+  color: var(--color-green) !important; 
+}
+
+.iconos-navegacion { 
+  flex: 1; 
+  display: flex; 
+  justify-content: flex-end; 
+  gap: 25px; 
+  align-items: center; 
+  z-index: 2001; 
+  color: #1a1a1a !important; 
+}
+
+.boton-hamburguesa { 
+  display: none; 
+  background: none; 
+  border: none; 
+  color: #1a1a1a; 
+  cursor: pointer; 
+}
 
 /* ESTADO SCROLLED (AL BAJAR LA PÁGINA) */
-.navbar-scrolled { background-color: var(--color-green) !important; height: 70px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); border-bottom: none;}
-.navbar-scrolled .logo-img { filter: brightness(0) invert(1) !important; }
-.navbar-scrolled .enlaces-navegacion li { color: #ffffff !important; }
-.navbar-scrolled .enlaces-navegacion li::after { background-color: #ffffff; }
-.navbar-scrolled .iconos-navegacion, .navbar-scrolled .boton-hamburguesa { color: #ffffff !important; }
+.navbar-scrolled { 
+  background-color: var(--color-green) !important; 
+  height: 85px; /* Se reduce un poco para no tapar contenido */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); 
+  border-bottom: none;
+}
+
+.navbar-scrolled .logo-img { 
+  height: 45px; /* Logo se adapta al tamaño compacto */
+  filter: brightness(0) invert(1) !important; 
+}
+
+.navbar-scrolled .enlaces-navegacion li a { 
+  color: #ffffff !important; 
+  font-size: 1.25rem;
+}
+
+.navbar-scrolled .enlaces-navegacion li a::after { 
+  background-color: #ffffff; 
+}
+
+.navbar-scrolled .iconos-navegacion, 
+.navbar-scrolled .boton-hamburguesa { 
+  color: #ffffff !important; 
+}
 
 /* =========================================
    5. PORTADA (HERO SLIDER)
