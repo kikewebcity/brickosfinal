@@ -1,8 +1,5 @@
 import React from 'react';
 import '../App.css';
-
-// 1. IMPORTANTE: Solo importamos el logo si ESTÁ en la carpeta src/assets.
-// Si logobricko.png también lo moviste a 'public', borra esta línea y usa src="/logobricko.png" abajo.
 import logobrickoColor from '../assets/logobricko.png'; 
 
 const Nosotros = () => {
@@ -17,7 +14,7 @@ const Nosotros = () => {
           </div>
           <div className="nosotros-caja-texto">
             <div className="nosotros-fondo-verde-acento"></div>
-            <p className="nosotros-texto-formal" style={{ textTransform: 'none' }}>
+            <p className="nosotros-texto-formal">
               Nuestro slogan, <strong>La revolución ecológica en construcción</strong>, 
               encapsula nuestra misión de transformar la industria mediante prácticas 
               innovadoras y productos eco amigables. En bricko, estamos comprometidos a 
@@ -30,7 +27,7 @@ const Nosotros = () => {
       {/* SECCIÓN 2: MANIFIESTO DE IMPACTO */}
       <section className="nosotros-manifiesto">
         <div className="manifiesto-contenedor">
-          <h2 className="manifiesto-texto" style={{ textTransform: 'none' }}>
+          <h2 className="manifiesto-texto">
             En bricko no solo vendemos bloques, representamos también soluciones 
             que contribuyen al mejoramiento de la vida de los ecosistemas terrestres 
             y a la construcción de ciudades sustentables.
@@ -38,21 +35,53 @@ const Nosotros = () => {
         </div>
       </section>
 
-      {/* SECCIÓN 3: NARRATIVA EN ZIGZAG */}
+      {/* SECCIÓN 3: VALORES TÉCNICOS (Subido aquí) */}
+      <section className="nosotros-valores">
+        <h2 className="titulo-seccion-limpio">
+          Nuestros <span className="enfasis-verde">valores</span>
+        </h2>
+        
+        <div className="valores-grid">
+          <div className="valor-card">
+            <div className="valor-icono-wrapper">
+              <img src="/sostenibilidad.png" alt="Sustentabilidad" className="valor-icono" />
+            </div>
+            <h3>Sustentabilidad</h3>
+            <p>Cada decisión que tomamos prioriza la salud del planeta.</p>
+          </div>
+
+          <div className="valor-card">
+            <div className="valor-icono-wrapper">
+              <img src="/inovacion.png" alt="Innovación" className="valor-icono" />
+            </div>
+            <h3>Innovación</h3>
+            <p>Buscamos constantemente nuevas formas de reciclar y construir.</p>
+          </div>
+
+          <div className="valor-card">
+            <div className="valor-icono-wrapper">
+              <img src="/confianza.png" alt="Calidad" className="valor-icono" />
+            </div>
+            <h3>Calidad</h3>
+            <p>La ecología no debe sacrificar la resistencia ni la estética.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* SECCIÓN 4: NARRATIVA EN ZIGZAG (Agrandada por CSS) */}
       <section className="nosotros-zigzag-contenedor">
         
         {/* Identidad corporativa */}
         <div className="zigzag-fila">
           <div className="zigzag-texto">
-            <h2 className="zigzag-titulo" style={{ textTransform: 'none' }}>Identidad corporativa</h2>
-            <p className="zigzag-parrafo" style={{ textTransform: 'none' }}>
+            <h2 className="zigzag-titulo">Identidad corporativa</h2>
+            <p className="zigzag-parrafo">
               <span className="text-highlight">Somos una empresa 100% mexicana</span>, 
               que se distingue como una marca dedicada a la fabricación de productos 
               innovadores para la construcción sostenible.
             </p>
           </div>
           <div className="zigzag-imagen">
-            {/* Como está en public, se llama con / */}
             <img src="/oficina.webp" alt="Oficina con Bricko" />
           </div>
         </div>
@@ -60,8 +89,8 @@ const Nosotros = () => {
         {/* Misión */}
         <div className="zigzag-fila reversa">
           <div className="zigzag-texto">
-            <h2 className="zigzag-titulo" style={{ textTransform: 'none' }}>Misión</h2>
-            <p className="zigzag-parrafo" style={{ textTransform: 'none' }}>
+            <h2 className="zigzag-titulo">Misión</h2>
+            <p className="zigzag-parrafo">
               Proporcionar soluciones constructivas de alta calidad que minimicen el impacto ambiental, 
               fomentando la economía circular y ofreciendo alternativas estéticas y funcionales.
             </p>
@@ -74,8 +103,8 @@ const Nosotros = () => {
         {/* Visión */}
         <div className="zigzag-fila">
           <div className="zigzag-texto">
-            <h2 className="zigzag-titulo" style={{ textTransform: 'none' }}>Visión</h2>
-            <p className="zigzag-parrafo" style={{ textTransform: 'none' }}>
+            <h2 className="zigzag-titulo">Visión</h2>
+            <p className="zigzag-parrafo">
               Ser el referente nacional en materiales de construcción eco-sustentables, 
               liderando la transición hacia ciudades más verdes y espacios habitables.
             </p>
@@ -86,45 +115,9 @@ const Nosotros = () => {
         </div>
       </section>
 
-      {/* SECCIÓN 4: VALORES TÉCNICOS */}
-      <section className="nosotros-valores">
-        <h2 className="titulo-seccion-limpio" style={{ textTransform: 'none' }}>
-          Nuestros <span className="enfasis-verde">valores</span>
-        </h2>
-        
-        <div className="valores-grid">
-          {/* Sustentabilidad */}
-          <div className="valor-card">
-            <div className="valor-icono-wrapper">
-              {/* CAMBIO: Se lee directamente desde public/ */}
-              <img src="/sostenibilidad.png" alt="Sustentabilidad" className="valor-icono" />
-            </div>
-            <h3 style={{ textTransform: 'none' }}>Sustentabilidad</h3>
-            <p>Cada decisión que tomamos prioriza la salud del planeta.</p>
-          </div>
-
-          {/* Innovación */}
-          <div className="valor-card">
-            <div className="valor-icono-wrapper">
-              <img src="/inovacion.png" alt="Innovación" className="valor-icono" />
-            </div>
-            <h3 style={{ textTransform: 'none' }}>Innovación</h3>
-            <p>Buscamos constantemente nuevas formas de reciclar y construir.</p>
-          </div>
-
-          {/* Calidad */}
-          <div className="valor-card">
-            <div className="valor-icono-wrapper">
-              <img src="/confianza.png" alt="Calidad" className="valor-icono" />
-            </div>
-            <h3 style={{ textTransform: 'none' }}>Calidad</h3>
-            <p>La ecología no debe sacrificar la resistencia ni la estética.</p>
-          </div>
-        </div>
-      </section>
-
     </div>
   );
 };
 
 export default Nosotros;
+
