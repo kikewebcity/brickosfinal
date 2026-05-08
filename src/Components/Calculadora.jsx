@@ -21,7 +21,7 @@ const Calculadora = () => {
     <div className="calc-main-layout">
       <div className="calc-dark-panel">
         <h3 style={{ color: '#fff', textAlign: 'center', marginBottom: '30px', fontFamily: 'var(--font-main)', textTransform: 'none', fontSize: '1.8rem' }}>
-          Calculo el material que requieres para tu proyecto
+         Selecciona las dimensiones del muro que requieres para saber cuántas piezas necesitas
         </h3>
         
         <div className="calc-sliders-container">
