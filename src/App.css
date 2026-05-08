@@ -594,27 +594,65 @@ a {
    16. MEDIA QUERIES GLOBALES (MÓVIL)
    ========================================= */
 @media (max-width: 900px) {
-  .barra-navegacion { padding: 15px 20px; }
+  /* 1. Reset de Navegación para Móvil */
+  .barra-navegacion { 
+    padding: 0 20px; 
+    height: 70px !important; /* Forzamos altura compacta en móvil */
+  }
+
+  .logo-img { 
+    height: 35px !important; /* Logo más pequeño para celular */
+  }
+
   .btn-text-desktop { display: none; }
   .btn-text-mobile { display: inline; }
   .subtitulo-hero { font-size: 1.1rem !important; padding: 0 20px; }
 
-  /* Menú Móvil Verde */
+  /* 2. Menú Móvil Verde (Ajustes de Router) */
   .enlaces-navegacion {
-    position: fixed; top: 0; left: 0; width: 80%; height: 100vh;
-    background-color: var(--color-green) !important; flex-direction: column; justify-content: flex-start;
-    padding: 100px 30px; transform: translateX(-100%); transition: transform 0.4s ease; z-index: 3000;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 80%; 
+    height: 100vh;
+    background-color: var(--color-green) !important; 
+    flex-direction: column; 
+    justify-content: flex-start;
+    padding: 100px 30px; 
+    transform: translateX(-100%); 
+    transition: transform 0.4s ease; 
+    z-index: 3000;
   }
+
   .enlaces-navegacion.activos { transform: translateX(0); }
-  .enlaces-navegacion li { color: #ffffff !important; font-size: 1.5rem; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
-  .boton-hamburguesa { display: block !important; z-index: 1100; color: #1a1a1a; }
+
+  .enlaces-navegacion li { 
+    width: 100%; 
+    border-bottom: 1px solid rgba(255,255,255,0.1); 
+    padding-bottom: 15px; 
+  }
+
+  /* Estilo de los links dentro del menú móvil */
+  .enlaces-navegacion li a {
+    color: #ffffff !important; 
+    font-size: 1.5rem !important;
+    text-decoration: none !important;
+    display: block;
+    width: 100%;
+  }
+
+  .boton-hamburguesa { 
+    display: block !important; 
+    z-index: 3100; 
+    color: #1a1a1a; 
+  }
+  
   .navbar-scrolled .boton-hamburguesa { color: #ffffff !important; }
-  .logo-img { height: 35px; }
 
   .titulo-monumental-limpio { font-size: 2.8rem !important; line-height: 1.1; }
   .hero-slider { height: 65vh; }
 
-  /* Columnas y Layouts Generales */
+  /* 3. Columnas y Layouts Generales */
   .features-main-grid, 
   .calc-main-layout, 
   .contacto-grid-principal, 
@@ -631,22 +669,11 @@ a {
   
   .left-col, .right-col, .zigzag-texto { align-items: center; text-align: center !important; }
   .nosotros-fondo-verde-acento { border-left: none; border-top: 8px solid var(--color-green); border-radius: 0 0 12px 12px; }
+  
+  /* Ocultar imagen del ladrillo en móvil para que la calculadora no sea eterna */
   .calc-image-panel { display: none !important; }
 
-  /* Acordeón Soporte (Corrección de visibilidad) */
-  .contenido-acordeon-movil { margin-top: 10px; margin-bottom: 20px; padding: 25px 20px !important; background-color: #fcfcfc; border-radius: 12px !important; border: 1px solid var(--color-border); }
-  .contenido-acordeon-movil .feature-title { font-size: 1.8rem !important; text-align: left !important; margin-bottom: 10px; }
-  .contenido-acordeon-movil .feature-paragraph { text-align: left !important; font-size: 1.05rem !important; line-height: 1.6 !important; }
-
-  /* Limpieza de flechas fantasma en productos */
-  .productos-grid-principal { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 20px; gap: 20px; scrollbar-width: none; -ms-overflow-style: none; }
-  .productos-grid-principal::-webkit-scrollbar { display: none; }
-  .producto-item-card { min-width: 85vw; scroll-snap-align: center; flex-shrink: 0; margin-bottom: 0; }
-  .productos-pagina-maestra:before, .productos-pagina-maestra:after { display: none !important; content: none !important; }
-
-  /* =========================================
-     AJUSTES ESPECÍFICOS DE VENTAJAS (MÓVIL)
-     ========================================= */
+  /* 4. Ajustes de Ventajas (Reset de Escala) */
   .ventaja-grid-contenedor { 
     margin-top: 20px; 
     grid-template-columns: 1fr; 
@@ -655,42 +682,38 @@ a {
   }
 
   .ventaja-tarjeta-bloque {
-    padding: 30px;      /* Reducimos el padding de 50px a 30px */
-    min-height: auto;   /* Quitamos la altura mínima para que no sea tan larga */
+    padding: 30px !important; /* Bajamos los 50px de escritorio a 30px */
+    min-height: auto !important; 
   }
 
-  .ventaja-numero {
-    font-size: 2.5rem;  /* Reducimos el tamaño del número */
-  }
+  .ventaja-numero { font-size: 2.5rem !important; }
+  .ventaja-texto-tarjeta { font-size: 1.1rem !important; }
+  .ventaja-icono-svg { transform: scale(1) !important; }
 
-  .ventaja-texto-tarjeta {
-    font-size: 1.1rem;  /* Texto más pequeño para celular */
-  }
-
-  .ventaja-icono-svg {
-    transform: scale(1); /* Icono a tamaño normal */
-  }
-
-  /* Sostenibilidad móvil */
-  .sabias-que-titulo { font-size: 3rem; }
-  .por-cada-tonelada { font-size: 1.2rem; margin-bottom: 40px; }
+  /* 5. Sostenibilidad móvil */
+  .sabias-que-titulo { font-size: 3rem !important; }
+  .por-cada-tonelada { font-size: 1.2rem !important; margin-bottom: 40px; }
   
   .stats-impacto-grid { 
     grid-template-columns: 1fr; 
     gap: 25px; 
   }
 
-  .stat-card {
-    padding: 30px 20px;
-  }
+  .stat-card { padding: 30px 20px; }
+  .stat-numero { font-size: 3.5rem !important; }
 
-  .stat-numero { font-size: 3.5rem; }
-
-  /* Contacto móvil */
-  .titulo-contacto { font-size: 3.5rem; }
+  /* 6. Otros Ajustes */
+  .titulo-contacto { font-size: 3.5rem !important; }
   .contacto-hero-con-imagen { height: 350px; }
-  .valor-dato { font-size: 1.5rem; }
-  
+  .valor-dato { font-size: 1.5rem !important; }
   .aplicacion-img { height: 300px; }
+  
+  /* Limpieza de flechas en productos móvil */
+  .productos-grid-principal { 
+    display: flex !important; 
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    gap: 20px; 
+  }
+  .producto-item-card { min-width: 85vw; scroll-snap-align: center; }
 }
-
