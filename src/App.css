@@ -401,40 +401,163 @@ a {
 .faq-respuesta { font-family: var(--font-text); font-size: 1.05rem; color: #555555; line-height: 1.6; margin: 0; text-align: justify; }
 
 /* =========================================
-   10. PÁGINA NOSOTROS (ZIGZAG & VALORES)
+   10. PÁGINA NOSOTROS (ZIGZAG & VALORES) - REDISEÑO ESCALADO
    ========================================= */
 .nosotros-pagina { width: 100%; background-color: #ffffff; }
-.nosotros-banner-moderno { width: 100%; background-color: #ffffff; padding: 100px 20px; border-bottom: 1px solid var(--color-border); }
-.nosotros-banner-grid { max-width: 1200px; margin: 0 auto; display: flex; align-items: stretch; gap: 50px; }
-.nosotros-caja-logo { flex: 1; display: flex; justify-content: center; align-items: center; padding: 50px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); border: 1px solid var(--color-border); }
-.nosotros-logo-color { max-width: 280px; height: auto; object-fit: contain; }
-.nosotros-caja-texto { flex: 1.5; position: relative; display: flex; align-items: center; padding: 50px 60px; }
-.nosotros-fondo-verde-acento { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(56, 142, 60, 0.06); border-left: 8px solid var(--color-green); border-radius: 0 12px 12px 0; z-index: 0; }
-.nosotros-texto-formal { position: relative; z-index: 1; font-family: var(--font-text); font-size: 1.25rem; color: var(--color-dark); line-height: 1.8; text-align: justify; margin: 0; }
 
-.nosotros-zigzag-contenedor { max-width: 1200px; margin: 0 auto; padding: 100px 20px; }
-.zigzag-fila { display: flex; flex-direction: row; align-items: center; gap: 60px; margin-bottom: 100px; }
-.zigzag-fila.reversa { flex-direction: row-reverse; }
-.zigzag-texto { flex: 1; padding: 0 20px; }
-.zigzag-titulo { font-size: 3rem; margin-bottom: 20px; color: var(--color-dark); }
-.zigzag-parrafo { font-family: var(--font-text); font-size: 1.15rem; line-height: 1.6; color: var(--color-dark); margin-bottom: 25px; text-align: justify; }
-.zigzag-imagen { flex: 1; width: 100%; display: flex; justify-content: center; align-items: center; }
-.zigzag-imagen img { max-width: 550px; max-height: 450px; width: 100%; height: auto; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12); transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
+/* 1. Banner Superior */
+.nosotros-banner-moderno { 
+  width: 100%; 
+  background-color: #ffffff; 
+  padding: 120px 20px; 
+  border-bottom: 1px solid var(--color-border); 
+}
 
+.nosotros-banner-grid { 
+  max-width: 1450px; /* Aumentado */
+  margin: 0 auto; 
+  display: flex; 
+  align-items: stretch; 
+  gap: 60px; 
+}
+
+.nosotros-caja-logo { 
+  flex: 1; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  padding: 60px; 
+  background-color: #ffffff; 
+  border-radius: 20px; 
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05); 
+  border: 1px solid var(--color-border); 
+}
+
+.nosotros-logo-color { max-width: 320px; height: auto; object-fit: contain; }
+
+.nosotros-caja-texto { flex: 1.5; position: relative; display: flex; align-items: center; padding: 60px 80px; }
+
+.nosotros-fondo-verde-acento { 
+  position: absolute; 
+  top: 0; left: 0; 
+  width: 100%; height: 100%; 
+  background-color: rgba(56, 142, 60, 0.04); 
+  border-left: 10px solid var(--color-green); 
+  border-radius: 0 20px 20px 0; 
+  z-index: 0; 
+}
+
+.nosotros-texto-formal { 
+  position: relative; 
+  z-index: 1; 
+  font-family: var(--font-text); 
+  font-size: 1.4rem; /* Más grande */
+  color: var(--color-dark); 
+  line-height: 1.8; 
+  text-align: justify; 
+  margin: 0; 
+}
+
+/* 2. Manifiesto (Introducción a los valores) */
 .nosotros-manifiesto { padding: 100px 20px; background-color: #ffffff; text-align: center; }
-.manifiesto-contenedor { max-width: 900px; margin: 0 auto; position: relative; }
-.manifiesto-contenedor::before, .manifiesto-contenedor::after { content: ""; display: block; width: 60px; height: 2px; background-color: var(--color-green); margin: 0 auto 30px auto; }
-.manifiesto-contenedor::after { margin: 30px auto 0 auto; }
-.manifiesto-texto { font-family: var(--font-main); font-size: 2.8rem; line-height: 1.3; color: var(--color-dark); font-weight: 300; letter-spacing: -0.5px; text-align: center; }
-.texto-oscuro { color: var(--color-dark); font-weight: 700; }
-.texto-verde { color: var(--color-green); font-weight: 700; }
+.manifiesto-contenedor { max-width: 1100px; margin: 0 auto; position: relative; }
+.manifiesto-contenedor::before, .manifiesto-contenedor::after { content: ""; display: block; width: 80px; height: 3px; background-color: var(--color-green); margin: 0 auto 40px auto; }
+.manifiesto-contenedor::after { margin: 40px auto 0 auto; }
 
-.valores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1100px; margin: 50px auto; padding: 0 20px; }
-.valor-card { text-align: center; padding: 30px; background: #ffffff; border-radius: 20px; transition: transform 0.3s ease; }
-.valor-icono-wrapper { width: 100px; height: 100px; margin: 0 auto 20px auto; display: flex !important; align-items: center; justify-content: center; }
-.valor-icono { width: 100% !important; height: auto !important; display: block !important; object-fit: contain; }
-.valor-card h3 { font-family: var(--font-main); font-size: 1.4rem; color: var(--color-dark); margin-bottom: 15px; }
+.manifiesto-texto { 
+  font-family: var(--font-main); 
+  font-size: 3.5rem; /* Más imponente */
+  line-height: 1.2; 
+  color: var(--color-dark); 
+  font-weight: 300; 
+  text-align: center; 
+}
 
+/* 3. Cuadrícula de Valores (Ahora debajo del Manifiesto) */
+.valores-grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 50px; 
+  max-width: 1350px; 
+  margin: 0 auto 120px auto; /* Espacio inferior para separar del zigzag */
+  padding: 0 40px; 
+}
+
+.valor-card { 
+  text-align: center; 
+  padding: 50px 40px; 
+  background: #fcfcfc; 
+  border-radius: 30px; 
+  border: 1px solid var(--color-border);
+  transition: all 0.4s ease; 
+}
+
+.valor-card:hover { 
+  transform: translateY(-10px); 
+  background: #ffffff;
+  border-color: var(--color-green);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.valor-card h3 { 
+  font-family: var(--font-main); 
+  font-size: 1.8rem; 
+  color: var(--color-dark); 
+  margin-bottom: 15px; 
+}
+
+/* 4. Narrativa Zigzag (Identidad, Misión, Visión) */
+.nosotros-zigzag-contenedor { 
+  max-width: 1450px; 
+  margin: 0 auto; 
+  padding: 100px 40px 150px 40px; 
+}
+
+.zigzag-fila { 
+  display: flex; 
+  flex-direction: row; 
+  align-items: center; 
+  gap: 120px; /* Mucho más espacio entre foto y texto */
+  margin-bottom: 180px; /* Aire entre bloques */
+}
+
+.zigzag-fila.reversa { flex-direction: row-reverse; }
+
+.zigzag-texto { flex: 1; padding: 0; }
+
+.zigzag-titulo { 
+  font-family: var(--font-main);
+  font-size: 4.5rem; /* Título monumental */
+  line-height: 1;
+  margin-bottom: 30px; 
+  color: var(--color-dark); 
+}
+
+.zigzag-parrafo { 
+  font-family: var(--font-text); 
+  font-size: 1.35rem; /* Lectura cómoda */
+  line-height: 1.8; 
+  color: #444; 
+  text-align: justify; 
+}
+
+.zigzag-imagen { 
+  flex: 1.3; /* La imagen ocupa un poco más que el texto */
+  display: flex; 
+  justify-content: center; 
+}
+
+.zigzag-imagen img { 
+  width: 100%; 
+  max-width: 850px; /* Aumentado drásticamente */
+  height: 550px; /* Altura generosa */
+  object-fit: cover; 
+  border-radius: 30px; 
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15); 
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1); 
+}
+
+.zigzag-imagen img:hover { transform: scale(1.03); }
 /* =========================================
    11. PRODUCTOS Y CATÁLOGO
    ========================================= */
@@ -674,27 +797,25 @@ a {
    16. MEDIA QUERIES GLOBALES (MÓVIL)
    ========================================= */
 @media (max-width: 900px) {
-  /* 1. Reset de Navegación para Móvil */
+  /* 1. Reset de Navegación */
   .barra-navegacion { 
     padding: 0 20px; 
-    height: 70px !important; /* Forzamos altura compacta en móvil */
+    height: 70px !important; 
   }
 
   .logo-img { 
-    height: 35px !important; /* Logo más pequeño para celular */
+    height: 35px !important; 
   }
 
   .btn-text-desktop { display: none; }
   .btn-text-mobile { display: inline; }
   .subtitulo-hero { font-size: 1.1rem !important; padding: 0 20px; }
 
-  /* 2. Menú Móvil Verde (Ajustes de Router) */
+  /* 2. Menú Móvil Verde */
   .enlaces-navegacion {
     position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 80%; 
-    height: 100vh;
+    top: 0; left: 0; 
+    width: 80%; height: 100vh;
     background-color: var(--color-green) !important; 
     flex-direction: column; 
     justify-content: flex-start;
@@ -712,13 +833,11 @@ a {
     padding-bottom: 15px; 
   }
 
-  /* Estilo de los links dentro del menú móvil */
   .enlaces-navegacion li a {
     color: #ffffff !important; 
     font-size: 1.5rem !important;
     text-decoration: none !important;
     display: block;
-    width: 100%;
   }
 
   .boton-hamburguesa { 
@@ -732,7 +851,7 @@ a {
   .titulo-monumental-limpio { font-size: 2.8rem !important; line-height: 1.1; }
   .hero-slider { height: 65vh; }
 
-  /* 3. Columnas y Layouts Generales */
+  /* 3. Layouts de Columna Única */
   .features-main-grid, 
   .calc-main-layout, 
   .contacto-grid-principal, 
@@ -742,53 +861,52 @@ a {
   .zigzag-fila, 
   .zigzag-fila.reversa {
     flex-direction: column !important; 
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr !important; 
     gap: 40px; 
     text-align: center;
   }
   
   .left-col, .right-col, .zigzag-texto { align-items: center; text-align: center !important; }
   .nosotros-fondo-verde-acento { border-left: none; border-top: 8px solid var(--color-green); border-radius: 0 0 12px 12px; }
-  
-  /* Ocultar imagen del ladrillo en móvil para que la calculadora no sea eterna */
   .calc-image-panel { display: none !important; }
 
-  /* 4. Ajustes de Ventajas (Reset de Escala) */
-  .ventaja-grid-contenedor { 
-    margin-top: 20px; 
-    grid-template-columns: 1fr; 
-    padding: 0 20px;
-    gap: 20px;
-  }
+  /* 4. Ajustes Específicos: PESTAÑAS (Features) */
+  .features-section { padding: 40px 20px; }
+  .feature-pill { padding: 15px 20px; }
+  .pill-label { font-size: 1.1rem !important; }
+  .features-content-col { padding: 30px 20px; min-height: auto; }
+  .feature-title { font-size: 2.2rem !important; text-align: left; }
+  .feature-paragraph { font-size: 1.05rem !important; text-align: left; }
 
-  .ventaja-tarjeta-bloque {
-    padding: 30px !important; /* Bajamos los 50px de escritorio a 30px */
-    min-height: auto !important; 
+  /* 5. Ajustes Específicos: NOSOTROS */
+  .nosotros-zigzag-contenedor { padding: 40px 20px; }
+  .zigzag-fila { gap: 30px !important; margin-bottom: 80px !important; }
+  .zigzag-titulo { font-size: 2.5rem !important; }
+  .zigzag-parrafo { font-size: 1.1rem !important; }
+  .zigzag-imagen img { 
+    height: 300px !important; 
+    max-width: 100% !important; 
+    border-radius: 15px; 
   }
+  .valor-card { padding: 30px !important; }
 
+  /* 6. Ajustes Específicos: VENTAJAS Y SOSTENIBILIDAD */
+  .ventaja-grid-contenedor { margin-top: 20px; padding: 0 20px; gap: 20px; }
+  .ventaja-tarjeta-bloque { padding: 30px !important; min-height: auto !important; }
   .ventaja-numero { font-size: 2.5rem !important; }
   .ventaja-texto-tarjeta { font-size: 1.1rem !important; }
   .ventaja-icono-svg { transform: scale(1) !important; }
 
-  /* 5. Sostenibilidad móvil */
   .sabias-que-titulo { font-size: 3rem !important; }
   .por-cada-tonelada { font-size: 1.2rem !important; margin-bottom: 40px; }
-  
-  .stats-impacto-grid { 
-    grid-template-columns: 1fr; 
-    gap: 25px; 
-  }
-
-  .stat-card { padding: 30px 20px; }
+  .stats-impacto-grid { grid-template-columns: 1fr; gap: 25px; }
   .stat-numero { font-size: 3.5rem !important; }
 
-  /* 6. Otros Ajustes */
+  /* 7. Final y Productos */
   .titulo-contacto { font-size: 3.5rem !important; }
   .contacto-hero-con-imagen { height: 350px; }
   .valor-dato { font-size: 1.5rem !important; }
-  .aplicacion-img { height: 300px; }
   
-  /* Limpieza de flechas en productos móvil */
   .productos-grid-principal { 
     display: flex !important; 
     overflow-x: auto; 
