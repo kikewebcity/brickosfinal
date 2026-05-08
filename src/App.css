@@ -524,8 +524,18 @@ a {
   .hero-slider { height: 65vh; }
 
   /* Columnas y Layouts Generales */
-  .features-main-grid, .calc-main-layout, .contacto-grid-principal, .footer-container, .nosotros-banner-grid, .valores-grid, .zigzag-fila, .zigzag-fila.reversa {
-    flex-direction: column !important; grid-template-columns: 1fr; gap: 40px; text-align: center;
+  .features-main-grid, 
+  .calc-main-layout, 
+  .contacto-grid-principal, 
+  .footer-container, 
+  .nosotros-banner-grid, 
+  .valores-grid, 
+  .zigzag-fila, 
+  .zigzag-fila.reversa {
+    flex-direction: column !important; 
+    grid-template-columns: 1fr; 
+    gap: 40px; 
+    text-align: center;
   }
   
   .left-col, .right-col, .zigzag-texto { align-items: center; text-align: center !important; }
@@ -543,12 +553,53 @@ a {
   .producto-item-card { min-width: 85vw; scroll-snap-align: center; flex-shrink: 0; margin-bottom: 0; }
   .productos-pagina-maestra:before, .productos-pagina-maestra:after { display: none !important; content: none !important; }
 
-  /* Ajustes Menores */
-  .ventaja-grid-contenedor { margin-top: 20px; grid-template-columns: 1fr; }
-  .sabias-que-titulo, .stat-numero { font-size: 3rem; }
-  .aplicacion-img { height: 300px; }
+  /* =========================================
+     AJUSTES ESPECÍFICOS DE VENTAJAS (MÓVIL)
+     ========================================= */
+  .ventaja-grid-contenedor { 
+    margin-top: 20px; 
+    grid-template-columns: 1fr; 
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  .ventaja-tarjeta-bloque {
+    padding: 30px;      /* Reducimos el padding de 50px a 30px */
+    min-height: auto;   /* Quitamos la altura mínima para que no sea tan larga */
+  }
+
+  .ventaja-numero {
+    font-size: 2.5rem;  /* Reducimos el tamaño del número */
+  }
+
+  .ventaja-texto-tarjeta {
+    font-size: 1.1rem;  /* Texto más pequeño para celular */
+  }
+
+  .ventaja-icono-svg {
+    transform: scale(1); /* Icono a tamaño normal */
+  }
+
+  /* Sostenibilidad móvil */
+  .sabias-que-titulo { font-size: 3rem; }
+  .por-cada-tonelada { font-size: 1.2rem; margin-bottom: 40px; }
+  
+  .stats-impacto-grid { 
+    grid-template-columns: 1fr; 
+    gap: 25px; 
+  }
+
+  .stat-card {
+    padding: 30px 20px;
+  }
+
+  .stat-numero { font-size: 3.5rem; }
+
+  /* Contacto móvil */
   .titulo-contacto { font-size: 3.5rem; }
   .contacto-hero-con-imagen { height: 350px; }
   .valor-dato { font-size: 1.5rem; }
+  
+  .aplicacion-img { height: 300px; }
 }
 
