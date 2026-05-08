@@ -18,7 +18,7 @@ const Nosotros = () => {
               Nuestro slogan, <strong>La revolución ecológica en construcción</strong>, 
               encapsula nuestra misión de transformar la industria mediante prácticas 
               innovadoras y productos eco amigables. En bricko, estamos comprometidos a 
-              liderar un cambio hacia métodos de construcción más sostenibles y responsables.
+              liderar un cambio hacia métodos de construcción más sostenibles y con enfoque en resposabilidad social.
             </p>
           </div>
         </div>
