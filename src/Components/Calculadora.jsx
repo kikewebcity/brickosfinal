@@ -5,9 +5,9 @@ const Calculadora = () => {
   const [ancho, setAncho] = useState(1.0);
   const [alto, setAlto] = useState(1.0);
 
-  // 2. LÓGICA DE CÁLCULO (15 unidades por m2 / Costo de 15 pesos)
+  // 2. LÓGICA DE CÁLCULO
   const RENDIMIENTO_M2 = 15; 
-  const COSTO_UNITARIO = 15; // <--- Verificado: 15 pesos por bloque
+  const COSTO_UNITARIO = 15; 
 
   const area = ancho * alto;
   const brickosTotales = Math.round(area * RENDIMIENTO_M2); 
@@ -20,7 +20,6 @@ const Calculadora = () => {
   return (
     <div className="calc-main-layout">
       <div className="calc-dark-panel">
-        {/* TÍTULO: Sin punto y con minúsculas (excepto la primera) */}
         <h3 style={{ color: '#fff', textAlign: 'center', marginBottom: '30px', fontFamily: 'var(--font-main)', textTransform: 'none', fontSize: '1.8rem' }}>
           Calculo el material que requieres para tu proyecto
         </h3>
@@ -51,7 +50,6 @@ const Calculadora = () => {
           </div>
         </div>
 
-        {/* LEYENDA: Usamos DIV y el color forzado para que sea visible */}
         <div style={{ color: '#ffffff', fontSize: '0.95rem', textAlign: 'center', marginBottom: '20px', fontFamily: 'var(--font-text)', fontStyle: 'italic', opacity: 1 }}>
           Te vendemos solo el material que necesitas
         </div>
@@ -61,10 +59,13 @@ const Calculadora = () => {
         </a>
       </div>
 
-      <div className="calc-image-panel" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <img src="/ladrillodivisorio.png" alt="Muro Bricko" style={{ maxWidth: '100%', height: 'auto', marginBottom: '25px' }} />
-        <p style={{ fontFamily: 'var(--font-text)', fontSize: '0.95rem', color: '#1a1a1a', textAlign: 'justify', backgroundColor: '#f4f4f4', padding: '20px', borderLeft: '4px solid var(--color-green)', borderRadius: '4px' }}>
-        </p>
+      <div className="calc-image-panel" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <img 
+          src="/ladrillodivisorio.png" 
+          alt="Muro Bricko" 
+          style={{ maxWidth: '100%', height: 'auto' }} 
+        />
+        {/* Se eliminó la etiqueta <p> vacía que generaba la mancha visual */}
       </div>
     </div>
   );
