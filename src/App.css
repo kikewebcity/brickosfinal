@@ -570,37 +570,187 @@ a {
 
 .zigzag-imagen img:hover { transform: scale(1.03); }
 /* =========================================
-   11. PRODUCTOS Y CATÁLOGO
+   11. PRODUCTOS Y CATÁLOGO (ESCALADO)
    ========================================= */
-.productos-hero-tecnico { text-align: center; padding: 100px 20px; background-color: var(--color-green); color: #ffffff; }
-.titulo-seccion-productos { font-family: var(--font-main); font-size: 3.5rem; color: #ffffff !important; margin-bottom: 20px; text-transform: none !important; }
-.descripcion-cabecera-tecnica { max-width: 800px; margin: 0 auto; font-family: var(--font-text); font-size: 1.25rem; color: #ffffff !important; line-height: 1.6; text-align: center; }
+.productos-hero-tecnico { 
+  text-align: center; 
+  padding: 120px 20px; 
+  background-color: var(--color-green); 
+  color: #ffffff; 
+}
 
-.productos-grid-principal { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1200px; margin: 60px auto; padding: 0 20px; }
-.producto-item-card { background: #ffffff; border: 1px solid var(--color-border); padding: 30px; border-radius: 12px; text-align: center; transition: var(--transition-smooth); }
-.producto-item-card:hover { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
-.mini-tabla-datos p { color: #1a1a1a !important; font-weight: 600 !important; margin: 5px 0; font-size: 1rem; }
-.contenedor-galeria-producto { position: relative; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; border-radius: 8px; overflow: hidden; background-color: #f9f9f9; }
-.img-producto-tecnica { width: 100%; height: 280px; object-fit: contain; }
-.nombre-producto-ficha { font-family: var(--font-main); font-size: 2.2rem; color: var(--color-dark); margin-bottom: 10px; text-transform: none !important; }
+.titulo-seccion-productos { 
+  font-family: var(--font-main); 
+  font-size: 4.5rem; /* Aumentado para mayor jerarquía */
+  color: #ffffff !important; 
+  margin-bottom: 25px; 
+  text-transform: none !important; 
+  line-height: 1;
+}
 
-/* APLICACIONES (NEGRO) */
-.aplicaciones-hero { background-color: #1a1a1a !important; color: #ffffff; padding: 100px 20px; text-align: center; }
-.aplicaciones-titulo-principal { font-family: var(--font-main); font-size: 4rem; color: var(--color-green) !important; margin-bottom: 20px; text-transform: none !important; }
-.aplicaciones-descripcion-hero { max-width: 850px; margin: 0 auto; font-family: var(--font-text); font-size: 1.25rem; color: #ffffff !important; line-height: 1.6; }
+.descripcion-cabecera-tecnica { 
+  max-width: 950px; 
+  margin: 0 auto; 
+  font-family: var(--font-text); 
+  font-size: 1.4rem; /* Más legible en escritorio */
+  color: #ffffff !important; 
+  line-height: 1.8; 
+  text-align: center; 
+}
 
-.aplicaciones-galeria-seccion { display: flex; flex-direction: column; gap: 80px; padding: 80px 20px; }
-.aplicacion-bloque { display: flex; flex-direction: column; text-align: left; max-width: 900px; margin: 0 auto; }
-.aplicacion-categoria { order: 1; color: var(--color-green); font-family: var(--font-main); font-size: 1.2rem; margin-bottom: 5px; text-transform: none !important; }
-.aplicacion-subtitulo { order: 2; font-family: var(--font-main); font-size: 2.8rem; color: var(--color-dark); margin-bottom: 20px; text-transform: none !important; }
-.contenedor-galeria-dinamica { order: 3; position: relative; width: 100%; margin-bottom: 25px; display: flex; align-items: center; }
-.aplicacion-imagen-caja { width: 100%; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); }
-.aplicacion-img { width: 100%; height: 450px; display: block; object-fit: cover; }
-.btn-flecha-img { position: absolute; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; background-color: var(--color-green); color: #ffffff; border: none; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 15; opacity: 0.9; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); transition: all 0.3s ease; }
-.btn-flecha-img:hover { opacity: 1; transform: translateY(-50%) scale(1.1); background-color: #2e7d32; }
-.btn-flecha-img.izq { left: 20px; }
-.btn-flecha-img.der { right: 20px; }
-.aplicacion-parrafo { order: 4; font-family: var(--font-text); font-size: 1.15rem; color: #444444 !important; line-height: 1.7; text-align: justify; }
+/* Grilla de productos: estándar 1450px */
+.productos-grid-principal { 
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas grandes e imponentes */
+  gap: 60px; 
+  max-width: 1450px; 
+  margin: 80px auto; 
+  padding: 0 40px; 
+}
+
+.producto-item-card { 
+  background: #ffffff; 
+  border: 1px solid var(--color-border); 
+  padding: 60px; /* Más aire interno */
+  border-radius: 30px; 
+  text-align: center; 
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+
+.producto-item-card:hover { 
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08); 
+  transform: translateY(-10px);
+  border-color: var(--color-green);
+}
+
+.nombre-producto-ficha { 
+  font-family: var(--font-main); 
+  font-size: 3rem; /* Título de producto imponente */
+  color: var(--color-dark); 
+  margin-bottom: 15px; 
+  text-transform: none !important; 
+}
+
+.mini-tabla-datos p { 
+  color: #444 !important; 
+  font-weight: 600 !important; 
+  margin: 8px 0; 
+  font-size: 1.2rem; 
+}
+
+.contenedor-galeria-producto { 
+  position: relative; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin-bottom: 35px; 
+  border-radius: 20px; 
+  overflow: hidden; 
+  background-color: #f9f9f9; 
+  height: 350px; /* Mayor altura para la vitrina */
+}
+
+.img-producto-tecnica { 
+  width: 90%; 
+  height: 100%; 
+  object-fit: contain; 
+}
+
+/* --- APLICACIONES (DISEÑO EDITORIAL) --- */
+.aplicaciones-hero { 
+  background-color: #1a1a1a !important; 
+  color: #ffffff; 
+  padding: 120px 20px; 
+  text-align: center; 
+}
+
+.aplicaciones-titulo-principal { 
+  font-family: var(--font-main); 
+  font-size: 5rem; /* Tamaño máximo para impacto */
+  color: var(--color-green) !important; 
+  margin-bottom: 25px; 
+  text-transform: none !important; 
+}
+
+.aplicaciones-descripcion-hero { 
+  max-width: 1000px; 
+  margin: 0 auto; 
+  font-family: var(--font-text); 
+  font-size: 1.4rem; 
+  color: #ffffff !important; 
+  line-height: 1.8; 
+}
+
+.aplicaciones-galeria-seccion { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 150px; /* Espaciado generoso entre aplicaciones */
+  padding: 120px 20px; 
+}
+
+.aplicacion-bloque { 
+  display: flex; 
+  flex-direction: column; 
+  text-align: left; 
+  max-width: 1200px; /* Bloques más anchos */
+  margin: 0 auto; 
+}
+
+.aplicacion-categoria { 
+  order: 1; 
+  color: var(--color-green); 
+  font-family: var(--font-main); 
+  font-size: 1.4rem; 
+  margin-bottom: 10px; 
+  letter-spacing: 2px;
+}
+
+.aplicacion-subtitulo { 
+  order: 2; 
+  font-family: var(--font-main); 
+  font-size: 4rem; /* Títulos de sección monumentales */
+  color: var(--color-dark); 
+  margin-bottom: 30px; 
+  line-height: 1;
+}
+
+.contenedor-galeria-dinamica { 
+  order: 3; 
+  position: relative; 
+  width: 100%; 
+  margin-bottom: 40px; 
+  display: flex; 
+  align-items: center; 
+}
+
+.aplicacion-imagen-caja { 
+  width: 100%; 
+  border-radius: 30px; 
+  overflow: hidden; 
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15); 
+}
+
+.aplicacion-img { 
+  width: 100%; 
+  height: 600px; /* Imágenes mucho más altas y arquitectónicas */
+  display: block; 
+  object-fit: cover; 
+}
+
+.btn-flecha-img { 
+  width: 60px; 
+  height: 60px; 
+  font-size: 1.5rem;
+}
+
+.aplicacion-parrafo { 
+  order: 4; 
+  font-family: var(--font-text); 
+  font-size: 1.35rem; /* Lectura cómoda */
+  color: #333333 !important; 
+  line-height: 1.8; 
+  text-align: justify; 
+}
 
 /* =========================================
    12. VENTAJA COMPETITIVA Y SOSTENIBILIDAD
@@ -870,7 +1020,8 @@ a {
   .nosotros-banner-grid, 
   .valores-grid, 
   .zigzag-fila, 
-  .zigzag-fila.reversa {
+  .zigzag-fila.reversa,
+  .aplicacion-bloque {
     flex-direction: column !important; 
     grid-template-columns: 1fr !important; 
     gap: 40px; 
@@ -889,19 +1040,18 @@ a {
   .feature-title { font-size: 2.2rem !important; text-align: left; }
   .feature-paragraph { font-size: 1.05rem !important; text-align: left; }
 
-  /* 5. Ajustes Específicos: NOSOTROS (Banner y Valores) */
+  /* 5. Ajustes Específicos: NOSOTROS */
   .nosotros-banner-moderno { padding: 60px 20px; }
   .nosotros-caja-texto { padding: 40px 30px !important; }
   .nosotros-texto-formal { font-size: 1.15rem !important; text-align: center; }
 
   .valor-card { padding: 30px !important; }
   .valor-icono-wrapper { 
-    width: 80px !important; /* Iconos más pequeños para móvil */
+    width: 80px !important; 
     height: 80px !important; 
     margin-bottom: 15px; 
   }
 
-  /* 6. Ajustes Específicos: NOSOTROS (Zigzag) */
   .nosotros-zigzag-contenedor { padding: 40px 20px; }
   .zigzag-fila { gap: 30px !important; margin-bottom: 80px !important; }
   .zigzag-titulo { font-size: 2.5rem !important; }
@@ -912,7 +1062,36 @@ a {
     border-radius: 15px; 
   }
 
-  /* 7. Ajustes Específicos: VENTAJAS Y SOSTENIBILIDAD */
+  /* 6. Ajustes Específicos: PRODUCTOS Y CATÁLOGO */
+  .titulo-seccion-productos { font-size: 2.8rem !important; }
+  .descripcion-cabecera-tecnica { font-size: 1.1rem !important; }
+  
+  .productos-grid-principal { 
+    display: flex !important; 
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    gap: 20px; 
+    padding: 0 20px 20px 20px;
+  }
+  .producto-item-card { 
+    min-width: 85vw; 
+    scroll-snap-align: center; 
+    padding: 40px 20px; 
+  }
+  .nombre-producto-ficha { font-size: 2.2rem !important; }
+  .contenedor-galeria-producto { height: 280px; }
+
+  /* 7. Ajustes Específicos: APLICACIONES ARQUITECTÓNICAS */
+  .aplicaciones-hero { padding: 60px 20px; }
+  .aplicaciones-titulo-principal { font-size: 3.2rem !important; }
+  .aplicaciones-descripcion-hero { font-size: 1.1rem !important; }
+  .aplicaciones-galeria-seccion { gap: 80px; padding: 60px 20px; }
+  
+  .aplicacion-subtitulo { font-size: 2.5rem !important; }
+  .aplicacion-img { height: 350px !important; }
+  .aplicacion-parrafo { font-size: 1.1rem !important; text-align: left; }
+
+  /* 8. Ajustes Específicos: VENTAJAS Y SOSTENIBILIDAD */
   .ventaja-grid-contenedor { margin-top: 20px; padding: 0 20px; gap: 20px; }
   .ventaja-tarjeta-bloque { padding: 30px !important; min-height: auto !important; }
   .ventaja-numero { font-size: 2.5rem !important; }
@@ -924,16 +1103,9 @@ a {
   .stats-impacto-grid { grid-template-columns: 1fr; gap: 25px; }
   .stat-numero { font-size: 3.5rem !important; }
 
-  /* 8. Final y Productos */
+  /* 9. Final y Contacto */
   .titulo-contacto { font-size: 3.5rem !important; }
   .contacto-hero-con-imagen { height: 350px; }
   .valor-dato { font-size: 1.5rem !important; }
-  
-  .productos-grid-principal { 
-    display: flex !important; 
-    overflow-x: auto; 
-    scroll-snap-type: x mandatory; 
-    gap: 20px; 
-  }
-  .producto-item-card { min-width: 85vw; scroll-snap-align: center; }
+  .aplicacion-img { height: 300px; }
 }
