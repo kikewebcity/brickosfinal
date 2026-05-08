@@ -829,7 +829,80 @@ a {
   margin: 0; 
   text-transform: none !important; 
 }
+/* =========================================
+   12B. SOPORTE TÉCNICO (EVIDENCIA DE ANCLAJE)
+   ========================================= */
+.soporte-tecnico-seccion {
+  padding: 80px 40px 120px 40px;
+  background-color: #ffffff;
+}
 
+.soporte-contenedor {
+  max-width: 1450px; /* Alineado al estándar de la página */
+  margin: 0 auto;
+}
+
+.soporte-cabecera {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.soporte-titulo {
+  font-family: var(--font-main);
+  font-size: 3.5rem;
+  color: var(--color-dark);
+  margin-bottom: 20px;
+  text-transform: none !important;
+}
+
+.soporte-leyenda {
+  font-family: var(--font-text);
+  font-size: 1.3rem;
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Control para evitar imágenes gigantes */
+.soporte-grid-imagenes {
+  display: flex; /* Cambiado a flex para centrar mejor */
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap; /* En pantallas medianas bajan de renglón */
+}
+
+.soporte-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 450px; /* LÍMITE DE ANCHO: esto evita que crezcan sin control */
+  width: 100%;
+}
+
+.soporte-item img {
+  width: 100%;
+  height: 500px; /* Altura controlada */
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--color-border);
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+.soporte-item img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.soporte-item span {
+  font-family: var(--font-main);
+  font-size: 1.2rem;
+  color: var(--color-green);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 /* =========================================
    SOSTENIBILIDAD E IMPACTO (BLOQUE INFERIOR)
    ========================================= */
@@ -1107,5 +1180,16 @@ a {
   .titulo-contacto { font-size: 3.5rem !important; }
   .contacto-hero-con-imagen { height: 350px; }
   .valor-dato { font-size: 1.5rem !important; }
-  .aplicacion-img { height: 300px; }
+
+  /* 10. NUEVO: Soporte Técnico y Resistencia */
+  .soporte-tecnico-seccion { padding: 60px 20px; }
+  .soporte-titulo { font-size: 2.5rem !important; }
+  .soporte-leyenda { font-size: 1.1rem !important; text-align: center; }
+  .soporte-grid-imagenes { 
+    flex-direction: column !important; 
+    align-items: center;
+    gap: 30px; 
+  }
+  .soporte-item { max-width: 100% !important; }
+  .soporte-item img { height: 350px !important; border-radius: 15px; }
 }
