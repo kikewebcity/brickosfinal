@@ -42,7 +42,7 @@ const Productos = () => {
       <section className="productos-grid-principal">
         <div className="producto-item-card">
           <div className="contenedor-galeria-producto">
-            <img src="/ladrillodivisorio.webp" alt="Bloque estructural" className="img-producto-tecnica" />
+            <img src="/ladrillodivisorio.png" alt="Bloque estructural" className="img-producto-tecnica" />
           </div>
           <h2 className="nombre-producto-ficha">Bloque estructural</h2>
           <div className="mini-tabla-datos">
