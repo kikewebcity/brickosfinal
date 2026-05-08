@@ -366,7 +366,6 @@ a {
   margin: 0; 
   text-align: justify; 
 }
-
 /* =========================================
    8. CALCULADORA DE MATERIALES
    ========================================= */
@@ -382,6 +381,7 @@ a {
 .calc-cta:hover { background: #2e7d32; }
 .calc-image-panel { flex: 1; display: flex; justify-content: center; }
 .calc-image-panel img { width: 100%; max-height: 500px; object-fit: contain; }
+
 
 /* =========================================
    9. FAQ / SOPORTE TÉCNICO
