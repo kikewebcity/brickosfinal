@@ -300,26 +300,150 @@ a {
 /* =========================================
    12. VENTAJA COMPETITIVA Y SOSTENIBILIDAD
    ========================================= */
-.ventaja-pagina-maestra { background-color: #ffffff; padding-bottom: 0; }
-.ventaja-hero-tecnico { text-align: center; padding: 100px 20px; background-color: var(--color-green); color: #ffffff; }
+.ventaja-pagina-maestra { 
+  background-color: #ffffff; 
+  padding-bottom: 0; 
+}
 
-.ventaja-grid-contenedor { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: -50px auto 80px auto; padding: 0 20px; position: relative; z-index: 10; }
-.ventaja-tarjeta-bloque { background-color: #ffffff; border: 1px solid var(--color-border); border-radius: 12px; padding: 30px; transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-.ventaja-tarjeta-bloque:hover { transform: translateY(-8px); border-color: var(--color-green); box-shadow: 0 15px 35px rgba(56, 142, 60, 0.15); }
-.ventaja-icono-cabecera { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--color-border); padding-bottom: 15px; }
-.ventaja-numero { font-family: var(--font-main); font-size: 2.5rem; color: #eaeded; line-height: 1; }
-.ventaja-icono-svg { color: var(--color-green); }
-.ventaja-texto-tarjeta { font-family: var(--font-text); font-size: 1.1rem; font-weight: 600; color: var(--color-dark); line-height: 1.4; margin: 0; text-transform: none !important; }
+.ventaja-hero-tecnico { 
+  text-align: center; 
+  padding: 120px 20px; /* Aumentado de 100px a 120px */
+  background-color: var(--color-green); 
+  color: #ffffff; 
+}
 
-.seccion-sostenibilidad-impacto { background-color: var(--color-dark); color: #ffffff; padding: 100px 20px; text-align: center; }
-.sabias-que-titulo { font-family: var(--font-main); font-size: 4rem; color: var(--color-green); margin-bottom: 10px; text-transform: none !important; }
-.por-cada-tonelada { font-family: var(--font-text); font-size: 1.4rem; font-weight: 300; margin-bottom: 60px; color: #eaeded; }
-.stats-impacto-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; max-width: 1100px; margin: 0 auto; }
-.stat-card { padding: 40px 20px; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; transition: all 0.3s ease; background: rgba(255, 255, 255, 0.02); }
-.stat-card:hover { background: rgba(56, 142, 60, 0.08); border-color: var(--color-green); }
-.stat-icon { color: var(--color-green); margin-bottom: 20px; }
-.stat-numero { font-family: var(--font-main); font-size: 4rem; color: #ffffff; margin: 0; line-height: 1; }
-.stat-desc { font-family: var(--font-text); font-size: 1.1rem; color: #aaaaaa; margin-top: 10px; text-transform: lowercase; }
+/* 1. Ajuste del contenedor principal: se aumentó el max-width de 1200px a 1450px */
+.ventaja-grid-contenedor { 
+  display: grid; 
+  /* Aumentado el minmax de 280px a 350px para tarjetas más anchas */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+  gap: 35px; /* Aumentado de 25px a 35px */
+  max-width: 1450px; 
+  margin: -60px auto 100px auto; /* Ajustado el margen superior negativo */
+  padding: 0 40px; 
+  position: relative; 
+  z-index: 10; 
+}
+
+/* 2. Ajuste de la tarjeta: mayor padding y altura mínima */
+.ventaja-tarjeta-bloque { 
+  background-color: #ffffff; 
+  border: 1px solid var(--color-border); 
+  border-radius: 15px; 
+  padding: 50px; /* Aumentado de 30px a 50px */
+  min-height: 280px; /* Asegura uniformidad */
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+  display: flex; 
+  flex-direction: column; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+}
+
+.ventaja-tarjeta-bloque:hover { 
+  transform: translateY(-12px); 
+  border-color: var(--color-green); 
+  box-shadow: 0 20px 40px rgba(56, 142, 60, 0.15); 
+}
+
+.ventaja-icono-cabecera { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 30px; /* Aumentado de 20px a 30px */
+  border-bottom: 1px solid var(--color-border); 
+  padding-bottom: 20px; 
+}
+
+.ventaja-numero { 
+  font-family: var(--font-main); 
+  font-size: 3.5rem; /* Aumentado de 2.5rem a 3.5rem */
+  color: #eaeded; 
+  line-height: 1; 
+}
+
+.ventaja-icono-svg { 
+  color: var(--color-green); 
+  transform: scale(1.3); /* Iconos 30% más grandes */
+}
+
+.ventaja-texto-tarjeta { 
+  font-family: var(--font-text); 
+  font-size: 1.3rem; /* Aumentado de 1.1rem a 1.3rem */
+  font-weight: 600; 
+  color: var(--color-dark); 
+  line-height: 1.5; 
+  margin: 0; 
+  text-transform: none !important; 
+}
+
+/* =========================================
+   SOSTENIBILIDAD E IMPACTO (BLOQUE INFERIOR)
+   ========================================= */
+.seccion-sostenibilidad-impacto { 
+  background-color: var(--color-dark); 
+  color: #ffffff; 
+  padding: 120px 20px; 
+  text-align: center; 
+}
+
+.sabias-que-titulo { 
+  font-family: var(--font-main); 
+  font-size: 5rem; /* Aumentado de 4rem a 5rem */
+  color: var(--color-green); 
+  margin-bottom: 15px; 
+  text-transform: none !important; 
+}
+
+.por-cada-tonelada { 
+  font-family: var(--font-text); 
+  font-size: 1.6rem; /* Aumentado de 1.4rem a 1.6rem */
+  font-weight: 300; 
+  margin-bottom: 80px; 
+  color: #eaeded; 
+}
+
+.stats-impacto-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+  gap: 50px; 
+  max-width: 1250px; 
+  margin: 0 auto; 
+}
+
+.stat-card { 
+  padding: 50px 30px; 
+  border: 1px solid rgba(255,255,255,0.1); 
+  border-radius: 25px; 
+  transition: all 0.3s ease; 
+  background: rgba(255, 255, 255, 0.02); 
+}
+
+.stat-card:hover { 
+  background: rgba(56, 142, 60, 0.08); 
+  border-color: var(--color-green); 
+  transform: scale(1.05);
+}
+
+.stat-icon { 
+  color: var(--color-green); 
+  margin-bottom: 25px; 
+  transform: scale(1.2);
+}
+
+.stat-numero { 
+  font-family: var(--font-main); 
+  font-size: 5rem; /* Aumentado de 4rem a 5rem */
+  color: #ffffff; 
+  margin: 0; 
+  line-height: 1; 
+}
+
+.stat-desc { 
+  font-family: var(--font-text); 
+  font-size: 1.25rem; 
+  color: #aaaaaa; 
+  margin-top: 15px; 
+  text-transform: lowercase; 
+}
 
 /* =========================================
    13. BRICKO NEWS
