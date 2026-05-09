@@ -78,7 +78,7 @@ const Nosotros = () => {
             <p className="zigzag-parrafo">
               <span className="text-highlight">Somos una empresa 100% mexicana</span>, 
               que se distingue como una marca dedicada a la fabricación de productos 
-              innovadores para la construcción sostenible.
+              innovadores para la construcción sostenible y enfoque en responsabilidad social.
             </p>
           </div>
           <div className="zigzag-imagen">
