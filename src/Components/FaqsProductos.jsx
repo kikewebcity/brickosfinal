@@ -25,7 +25,7 @@ const FaqsProductos = () => {
     },
     {
       id: 4,
-      pregunta: 'Capacidad de absorción de acabados',
+      pregunta: '4.Capacidad de absorción de acabados',
       respuesta:
         'La textura rústica y plana de los bloques está diseñada para integrarse estéticamente con facilidad. La superficie soporta la aplicación directa de pinturas vinílicas de base agua. Al eliminar por completo los tiempos de fraguado de mezclas húmedas tradicionales, el proceso de acabado final es inmediato y logísticamente eficiente.',
     },
