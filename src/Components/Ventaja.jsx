@@ -1,7 +1,8 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 import { 
-  CheckCircle, ShieldCheck, Volume2, Recycle, HardHat, 
-  Clock, Zap, Hammer, Sliders, Leaf, Droplets, TreeDeciduous, CloudSync 
+  ShieldCheck, Volume2, HardHat, 
+  Clock, Zap, Hammer, Sliders, Leaf, 
+  Droplets, TreeDeciduous, CloudSync 
 } from 'lucide-react';
 import '../App.css';
 
@@ -42,7 +43,31 @@ const Ventaja = () => {
         ))}
       </section>
 
-      {/* SECCIÓN SABÍAS QUE (EL DATO DE LA TONELADA) */}
+      {/* NUEVA SECCIÓN: EVIDENCIA TÉCNICA DE ANCLAJE */}
+      <section className="soporte-tecnico-seccion">
+        <div className="soporte-contenedor">
+          <div className="soporte-cabecera">
+            <h2 className="soporte-titulo">Anclaje y Resistencia</h2>
+            <p className="soporte-leyenda">
+              La libertad de intervenir el muro no es un detalle estético, es un testimonio de la densidad estructural. 
+              Nuestros bloques permiten un anclaje firme para elementos mecánicos, soportando cargas sin fisuras.
+            </p>
+          </div>
+          
+          <div className="soporte-grid-imagenes">
+            <div className="soporte-item">
+              <img src="/soportefrontal.webp" alt="Prueba de anclaje frontal" />
+              <span>Vista de instalación</span>
+            </div>
+            <div className="soporte-item">
+              <img src="/soporte.webp" alt="Prueba de carga con peso" />
+              <span>Demostración de carga activa</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECCIÓN SABÍAS QUE */}
       <section className="seccion-sostenibilidad-impacto">
         <div className="sostenibilidad-overlay">
           <h2 className="sabias-que-titulo">Sabías que...</h2>

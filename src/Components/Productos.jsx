@@ -33,20 +33,17 @@ const Productos = () => {
       {/* SECCIÓN HERO TÉCNICO */}
       <section className="productos-hero-tecnico">
         <h1 className="titulo-seccion-productos">Catálogo estructural</h1>
-        <p className="descripcion-cabecera-tecnica">
-          Sistemas de construcción en seco diseñados para la optimización de cargas en interiores.
-        </p>
       </section>
 
       {/* GRID DE FICHAS TÉCNICAS (BLOQUE Y PANEL) */}
       <section className="productos-grid-principal">
         <div className="producto-item-card">
           <div className="contenedor-galeria-producto">
-            <img src="/ladrillodivisorio.webp" alt="Bloque estructural" className="img-producto-tecnica" />
+            <img src="/ladrillodivisorio.png" alt="Bloque estructural" className="img-producto-tecnica" />
           </div>
           <h2 className="nombre-producto-ficha">Bloque estructural</h2>
           <div className="mini-tabla-datos">
-            <p>Dimensiones: 23 x 14 x 7 cm</p>
+            <p>Dimensiones: 23 cm x 14 cm x 7 cm</p>
             <p>Peso: 0.5 kg (72% más ligero)</p>
           </div>
         </div>
@@ -57,7 +54,7 @@ const Productos = () => {
           </div>
           <h2 className="nombre-producto-ficha">Panel monolítico</h2>
           <div className="mini-tabla-datos">
-            <p>Dimensiones: 1.22 x 2.44 m</p>
+            <p>Dimensiones: 140 cm x 60 cm</p>
             <p>Peso: 92.5 kg</p>
           </div>
         </div>
