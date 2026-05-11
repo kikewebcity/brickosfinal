@@ -6,19 +6,28 @@ const Contacto = () => {
   return (
     <div className="contacto-pagina-maestra">
       
-      {/* BANNER CON IMAGEN DE FONDO */}
-      <section className="contacto-hero-con-imagen">
-        <div className="hero-overlay-dark">
-          <h1 className="titulo-contacto">Contacto</h1>
-          <p className="subtitulo-contacto">
+      {/* 1. BANNER VISUAL (SIN TEXTO) */}
+      <section className="contacto-banner-imagen">
+        <img 
+          src="/ruta-a-tu-imagen-fabrica.jpg" 
+          alt="Instalaciones de Fábrica Bricko" 
+          className="img-banner-completa"
+        />
+      </section>
+
+      {/* 2. SECCIÓN DE CABECERA TÉCNICA */}
+      <section className="contacto-cabecera-texto">
+        <div className="contenedor-1450">
+          <h1 className="titulo-contacto-limpio">Contacto</h1>
+          <p className="descripcion-contacto-gris">
             Estamos listos para asesorarte en la implementación técnica de Bricko en tu próximo desarrollo arquitectónico o escenográfico.
           </p>
         </div>
       </section>
 
+      {/* 3. GRID DE INFORMACIÓN Y MAPA */}
       <div className="contacto-grid-principal">
         
-        {/* COLUMNA DE DATOS (Basado en tablas de cliente) */}
         <div className="contacto-info-col">
           <div className="dato-bloque">
             <Mail className="icon-verde" size={28} />
@@ -56,17 +65,11 @@ const Contacto = () => {
           </div>
         </div>
 
-        {/* COLUMNA DEL MAPA */}
-        <div className="mapa-contenedor">
-          <iframe 
-            title="Ubicación Bricko"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.332304677761!2d-98.87342892534568!3d19.203649581898143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce19a774786631%3A0xc3b865527a20689b!2sCalle%20M%C3%A9rida%2058%2C%20Los%20Reyes%20Acatlixhuayan%2C%2056643%20Temamatla%2C%20M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1715000000000" 
-            width="100%" 
-            height="450" 
-            style={{ border: 0 }} 
-            allowFullScreen="" 
-            loading="lazy"
-          ></iframe>
+        {/* CONTENEDOR DEL MAPA PERSONALIZADO */}
+        <div className="mapa-contenedor-especial">
+          <div id="google-map-custom" style={{ height: '100%', width: '100%', minHeight: '450px' }}>
+            {/* Aquí se inicializa el mapa mediante API para permitir el logo personalizado */}
+          </div>
         </div>
       </div>
     </div>
