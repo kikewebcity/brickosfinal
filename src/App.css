@@ -261,7 +261,7 @@ a {
 .mision-destacada { max-width: 800px; margin: 0 auto 50px auto; }
 .mision-titulo { font-family: var(--font-main); font-size: 4rem; color: var(--color-green); margin-bottom: 20px; letter-spacing: 2px; }
 .mision-texto { font-size: 2.5rem !important; line-height: 1.4 !important; color: #333 !important; }
-.mision-texto strong { color: var(--color-dark); border-bottom: 3px solid var(--color-green); }
+.mision-texto strong { color: var(--color-dark); border-bottom: 3px; }
 .divisor-linea { width: 60px; height: 4px; background-color: var(--color-green); margin: 40px auto; }
 .intro-title-secundario { font-family: var(--font-text); font-size: 2rem; font-weight: 300; color: #666; }
 .text-highlight { position: relative; font-weight: 700; color: var(--color-green); white-space: nowrap; }
