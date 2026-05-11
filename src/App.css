@@ -1089,6 +1089,13 @@ a {
   height: 500px;
   background-color: #eee;
 }
+
+/* Esto asegura que el mapa llene el contenedor de 500px que ya creaste */
+.mapa-bricko-render {
+  height: 100%;
+  width: 100%;
+  z-index: 1; /* Evita que se encime con otros elementos del diseño noir */
+}
 /* =========================================
    15. FOOTER
    ========================================= */
