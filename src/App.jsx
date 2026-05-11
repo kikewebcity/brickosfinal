@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, NavLink, useLocation } from 'react-router-dom';
+import 'leaflet/dist/leaflet.css';
 import './App.css';
 
 // Componentes
