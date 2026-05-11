@@ -45,7 +45,7 @@ function Inicio() {
         <section className="intro-section-v2">
           <h3 className="mision-titulo">NUESTRA MISIÓN</h3>
           <p className="mision-texto">
-            Redefine los espacios interiores convirtiendo el <strong>papel reciclado</strong> en <strong>arquitectura</strong>
+            Redefine los espacios interiores convirtiendo el papel reciclado en arquitectura 
           </p>
         </section>
         <FeaturesSection />
