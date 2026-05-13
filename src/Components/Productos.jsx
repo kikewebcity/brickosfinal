@@ -50,7 +50,7 @@ const Productos = () => {
         
         <div className="producto-item-card">
           <div className="contenedor-galeria-producto">
-            <img src="/paneldivisorio.wepb" alt="Panel monolítico" className="img-producto-tecnica" />
+            <img src="/paneldivisorio.webp" alt="Panel monolítico" className="img-producto-tecnica" />
           </div>
           <h2 className="nombre-producto-ficha">Panel monolítico</h2>
           <div className="mini-tabla-datos">
