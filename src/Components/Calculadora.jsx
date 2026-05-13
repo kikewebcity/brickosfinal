@@ -52,19 +52,19 @@ const Calculadora = () => {
         </div>
 
         {/* BOTÓN DE SNIPCART ACTUALIZADO A $15 */}
-        <button 
-          className="snipcart-add-item calc-cta"
-          style={{ width: '100%', border: 'none', cursor: 'pointer' }}
-          data-item-id="ladrillo-eco-bricko"
-          data-item-price={COSTO_UNITARIO}
-          data-item-quantity={brickosTotales}
-          data-item-url="https://brickomexico.com"
-          data-item-name="Ladrillo Ecológico Bricko"
-          data-item-description={`Paquete para muro de ${ancho}m x ${alto}m`}
-          data-item-image="/ladrillodivisorio.png"
-        >
-          Agregar {brickosTotales} piezas al carrito
-        </button>
+       <button 
+  className="snipcart-add-item calc-cta"
+  style={{ width: '100%', border: 'none', cursor: 'pointer' }}
+  data-item-id="ladrillo-eco-bricko"
+  data-item-price={COSTO_UNITARIO}
+  data-item-quantity={brickosTotales}
+  data-item-url="/" // <--- CAMBIA ESTO. Antes decía "https://brickomexico.com"
+  data-item-name="Ladrillo Ecológico Bricko"
+  data-item-description={`Paquete para muro de ${ancho}m x ${alto}m`}
+  data-item-image="/ladrillodivisorio.png"
+>
+  Agregar {brickosTotales} piezas al carrito
+</button>
       </div>
 
       <div className="calc-image-panel">
