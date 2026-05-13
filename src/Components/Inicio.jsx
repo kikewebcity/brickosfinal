@@ -31,13 +31,7 @@ function Inicio() {
           <p className="subtitulo-hero">
             Modificación estructural en tu casa, oficina o lugar de trabajo
           </p>
-          <button 
-            className="boton-accion-aislado"
-            onClick={() => document.querySelector('.intro-section-v2')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            <span className="btn-text-desktop">Calcula la cantidad de brickos para tu proyecto</span>
-            <span className="btn-text-mobile">Calcula tu proyecto</span>
-          </button>
+          {/* El botón ha sido eliminado de esta sección */}
         </div>
       </section>
 
